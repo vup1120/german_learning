@@ -1,0 +1,148 @@
+[
+  {
+    "episode_id": "S04E18",
+    "title_de": "Gib dem Kind einen Namen",
+    "title_en": "The One With Rachel’s New Dress",
+    "source_member": "S04E18.TOW.Rachel's.New.Dress.German.srt",
+    "source_sha256": "68cdbb6adb777e656c4802479d86d813ad5efcf380a4d6cec3e1f75bd136126a",
+    "source_type": "user_provided_subtitle",
+    "audio_verified": false,
+    "subtitle_reviewed": true,
+    "timing_version_specific": true,
+    "content_type": "original_lesson_based_on_user_subtitles",
+    "summary_de": "Rachel plant einen romantischen Abend mit Joshua. Wegen seiner Angst vor Vögeln wechseln sie in die Wohnung seiner Eltern. Als diese unerwartet zurückkommen, versucht Rachel, ihre Unterwäsche als modisches Kleid zu erklären. Phoebe soll unterdessen einen Namen für eines der Babys aussuchen. Joey und Chandler konkurrieren darum, bis Chandler seinen eigenen Namen infrage stellt. Außerdem reagiert Ross eifersüchtig auf Emilys Freundschaft mit Susan; seine Freunde raten ihm, frühere Enttäuschungen nicht auf die neue Beziehung zu übertragen.",
+    "summary_zh": "Rachel為Joshua安排浪漫晚餐，但他害怕鳥類，兩人便轉往他父母的住處。父母突然回家後，Rachel試圖把自己的內衣說成時尚洋裝。另一方面，Phoebe要替其中一個寶寶取名；Joey與Chandler競相推薦自己的名字，最後Chandler甚至開始質疑自己的名字。此外，Ross對Emily與Susan的友誼感到嫉妒，朋友們勸他不要讓過去的失望影響新的關係。",
+    "learning_goals_zh": [
+      "用較委婉的句型提出選擇與建議，並說明理由。",
+      "以間接問句確認資訊，區分已知事實與個人猜測。",
+      "以德文討論取名、誤會與關係中的信任。"
+    ],
+    "vocabulary": [
+      {
+        "de": "sich etwas ausdenken",
+        "zh": "想出；構思某事",
+        "example_de": "Für unser Treffen denke ich mir ein kleines Sprachspiel aus.",
+        "example_zh": "我為我們的聚會構思一個小小的語言遊戲。",
+        "source_cue_id": 23,
+        "source_start_ms": 83992,
+        "source_end_ms": 87537,
+        "source_form": "ausdenken"
+      },
+      {
+        "de": "sich für etwas entscheiden",
+        "zh": "決定選擇某事物",
+        "example_de": "Nach dem Vergleich der Angebote entscheide ich mich für den Abendkurs.",
+        "example_zh": "比較各個方案後，我決定選擇晚間課程。",
+        "source_cue_id": 62,
+        "source_start_ms": 270011,
+        "source_end_ms": 272722,
+        "source_form": "entscheiden"
+      },
+      {
+        "de": "jemanden herumführen",
+        "zh": "帶某人參觀",
+        "example_de": "Am ersten Arbeitstag führt mich eine Kollegin im Büro herum.",
+        "example_zh": "第一天上班時，一位同事帶我參觀辦公室。",
+        "source_cue_id": 44,
+        "source_start_ms": 206448,
+        "source_end_ms": 208283,
+        "source_form": "herumführen"
+      },
+      {
+        "de": "der Kompromiss",
+        "zh": "妥協；折衷方案",
+        "example_de": "Wir finden einen Kompromiss: Heute kochen wir zu Hause und morgen gehen wir essen.",
+        "example_zh": "我們找到折衷方案：今天在家煮飯，明天外出用餐。",
+        "source_cue_id": 133,
+        "source_start_ms": 527810,
+        "source_end_ms": 533024,
+        "source_form": "Kompromiss"
+      },
+      {
+        "de": "die Modebranche",
+        "zh": "時尚產業",
+        "example_de": "Meine Schwester arbeitet in der Modebranche und entwirft praktische Alltagskleidung.",
+        "example_zh": "我的姊妹在時尚產業工作，設計實用的日常服裝。",
+        "source_cue_id": 240,
+        "source_start_ms": 959325,
+        "source_end_ms": 961702,
+        "source_form": "Modebranche"
+      },
+      {
+        "de": "eifersüchtig",
+        "zh": "嫉妒的；吃醋的",
+        "example_de": "Er war eifersüchtig, sprach aber offen über seine Unsicherheit.",
+        "example_zh": "他感到嫉妒，但坦誠說出自己的不安。",
+        "source_cue_id": 293,
+        "source_start_ms": 1136085,
+        "source_end_ms": 1139672,
+        "source_form": "eifersüchtig"
+      }
+    ],
+    "grammar": [
+      {
+        "focus_zh": "würde 加不定詞：委婉提出選擇",
+        "explanation_zh": "würde 是 werden 的第二虛擬式形式；與句尾的不定詞搭配，可把選擇或建議說得較委婉。反身動詞的代名詞仍需與主詞相應。",
+        "example_de": "Ich würde mich für den kleineren Kurs entscheiden, weil dort mehr Zeit zum Sprechen bleibt.",
+        "example_zh": "我會選擇人數較少的課程，因為那樣有更多時間練習說話。",
+        "source_cue_id": 62,
+        "source_start_ms": 270011,
+        "source_end_ms": 272722
+      },
+      {
+        "focus_zh": "ob：間接的是非問句",
+        "explanation_zh": "想確認一件事是否成立時，可用 ob 引導間接問句，並把變位動詞放在子句末。這種句型適合詢問資訊，而不預先假定答案。",
+        "example_de": "Ich möchte wissen, ob der Kurs am Samstag stattfindet.",
+        "example_zh": "我想知道這門課是否在星期六上課。",
+        "source_cue_id": 243,
+        "source_start_ms": 968668,
+        "source_end_ms": 972880
+      }
+    ],
+    "discussion": [
+      {
+        "question_de": "Welche Eigenschaften sollte ein Name für dich haben? Begründe deine Wahl.",
+        "question_zh": "對你而言，一個名字應該具備哪些特點？請說明理由。",
+        "level": "B1"
+      },
+      {
+        "question_de": "Wie könnte Rachel die unangenehme Begegnung mit Joshuas Eltern ehrlich erklären?",
+        "question_zh": "Rachel可以如何誠實說明與Joshua父母見面時的尷尬情況？",
+        "level": "B1"
+      },
+      {
+        "question_de": "Welche Erfahrungen beeinflussen Ross' Reaktion? Wie könnten seine Freunde ihn unterstützen, ohne seine Vermutungen zu bestätigen?",
+        "question_zh": "哪些經歷影響了Ross的反應？朋友們可以如何支持他，同時避免把他的猜測說成事實？",
+        "level": "B2"
+      }
+    ],
+    "practice": [
+      {
+        "task_de": "Fasse zusammen, welche Eigenschaften Phoebe in einem Namen sucht und wie Joey und Chandler ihre Vorschläge begründen. Formuliere danach einen eigenen, respektvollen Vorschlag.",
+        "task_zh": "整理Phoebe希望名字具備哪些特點，以及Joey和Chandler如何說明自己的建議。接著提出一個自己的建議，注意尊重他人的偏好。",
+        "source_cue_start": 54,
+        "source_cue_end": 75,
+        "start_ms": 240315,
+        "end_ms": 317600,
+        "answer_hint_de": "Phoebe sucht einen starken, selbstsicher klingenden Namen. Joey und Chandler verbinden ihre Namen mit positiven Eigenschaften. Ein eigener Vorschlag kann mit „Ich würde mich für … entscheiden, weil …“ beginnen.",
+        "answer_hint_zh": "Phoebe希望名字聽起來有力量、有自信。Joey與Chandler把自己的名字連結到正面的特質。自己的建議可以用「Ich würde mich für … entscheiden, weil …」開頭。"
+      },
+      {
+        "task_de": "Nenne zuerst, was Ross tatsächlich über Emilys Abend weiß. Erkläre dann, welche Vermutung er daraus macht und wie seine Freunde reagieren. Gib ihm einen Rat mit „Du könntest …“.",
+        "task_zh": "先說明Ross實際知道Emily當晚的什麼安排，再解釋他由此作出什麼猜測，以及朋友們如何回應。最後用「Du könntest …」給他一個建議。",
+        "source_cue_start": 280,
+        "source_cue_end": 308,
+        "start_ms": 1095920,
+        "end_ms": 1183716,
+        "answer_hint_de": "Ross weiß, dass Emily mit Susan zu einer Dichterlesung gehen will. Daraus leitet er eine romantische Beziehung ab, ohne einen entsprechenden Beleg zu nennen. Die Freunde verbinden seine Eifersucht mit der früheren Trennung und raten ihm, die neue Beziehung dadurch nicht zu belasten.",
+        "answer_hint_zh": "Ross知道Emily打算和Susan參加詩歌朗讀會，卻在沒有提出相應證據的情況下推測兩人有戀情。朋友們把他的嫉妒與過去的分手連結起來，勸他不要因此傷害新的關係。"
+      }
+    ],
+    "source_notes_zh": [
+      "原始字幕有少量拼字或辨識痕跡；原檔保留原樣，教材例句使用標準德文。"
+    ],
+    "source_version_id": "S04E18_68cdbb6adb77",
+    "source_batch_id": "batch_2026-11-16_02",
+    "source_caption_type_hint": "not established"
+  }
+]

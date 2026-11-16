@@ -10,6 +10,9 @@ The manifest contains hashes, source filenames, timing statistics and version
 relationships. Original SRT bytes, full cue JSON and readable cue text are
 written only under --private-dir. Keep that directory out of version control.
 Timestamps refer to each supplied subtitle edition, not verified video/audio.
+Filename conflicts fail by default. A content-reviewed per-member resolution
+can be supplied with --episode-resolutions data/subtitle_resolutions/batch.json.
+Each resolution must match the exact archive and subtitle SHA-256 hashes.
 """
 
 from __future__ import annotations
@@ -28,10 +31,11 @@ from zipfile import BadZipFile, ZipFile
 MAX_MEMBER_BYTES = 10 * 1024 * 1024
 MAX_SUBTITLE_OCCURRENCES = 1000
 EPISODE_RE = re.compile(r"(?<![A-Za-z0-9])s(\d{1,2})[._ -]*e(\d{1,2})(?!\d)", re.I)
+X_EPISODE_RE = re.compile(r"(?<![A-Za-z0-9])(\d{1,2})x(\d{1,2})(?!\d)", re.I)
 TIME_RE = re.compile(r"^(\d{2,}):([0-5]\d):([0-5]\d)[,.](\d{3})$")
 HTML_TAG_RE = re.compile(r"</?[A-Za-z][^>]*>")
 ASS_TAG_RE = re.compile(r"\{\\[^}]*\}")
-METADATA_RE = re.compile(r"^(?:Edited at https?://\S+|\[German\s*-\s*SDH\])$", re.I)
+METADATA_RE = re.compile(r"^(?:Edited at https?://\S+|\[German\s*-\s*SDH\]|German SDH Subtitles by\s+.+)$", re.I)
 
 
 def digest(data: bytes) -> str:
@@ -39,7 +43,7 @@ def digest(data: bytes) -> str:
 
 
 def infer_episode(name: str) -> str | None:
-    found = {f"S{int(m[1]):02d}E{int(m[2]):02d}" for m in EPISODE_RE.finditer(name)}
+    found = {f"S{int(m[1]):02d}E{int(m[2]):02d}" for pattern in (EPISODE_RE, X_EPISODE_RE) for m in pattern.finditer(name)}
     if len(found) > 1:
         raise ValueError(f"Conflicting episode identifiers in filename: {name}")
     return next(iter(found), None)
@@ -157,8 +161,38 @@ def discover_archives(inputs: list[Path]) -> list[Path]:
     return sorted(found.values(), key=lambda p: (p.name, str(p.resolve())))
 
 
-def import_archives(inputs: list[Path], private_dir: Path, manifest_path: Path, batch_id: str, processed_on: str) -> dict:
+def prepare_resolutions(resolutions: list[dict] | None) -> dict:
+    """Validate explicit, byte-bound content review decisions; never infer one."""
+    if resolutions is None:
+        return {}
+    if not isinstance(resolutions, list):
+        raise ValueError("Episode resolution config must contain an array")
+    indexed = {}
+    for item in resolutions:
+        if not isinstance(item, dict):
+            raise ValueError("Invalid episode resolution record")
+        for field in ("archive_name", "member_name", "reason", "reviewed_on", "review_method"):
+            if not isinstance(item.get(field), str) or not item[field].strip():
+                raise ValueError(f"Episode resolution is missing {field}")
+        for field in ("archive_sha256", "subtitle_sha256"):
+            if not isinstance(item.get(field), str) or not re.fullmatch(r"[0-9a-f]{64}", item[field]):
+                raise ValueError(f"Episode resolution has invalid {field}")
+        if item.get("reviewed") is not True or not isinstance(item.get("resolved_episode_id"), str) or not re.fullmatch(r"S\d{2}E\d{2}", item["resolved_episode_id"]):
+            raise ValueError("Episode resolution must be explicitly reviewed and have a normalized episode ID")
+        evidence = item.get("evidence_cue_ids")
+        if not isinstance(evidence, list) or not evidence or any(not isinstance(c, int) or c <= 0 for c in evidence):
+            raise ValueError("Episode resolution must identify content-review evidence cue IDs")
+        key = (item["archive_name"], item["archive_sha256"], item["member_name"])
+        if key in indexed:
+            raise ValueError("Duplicate episode resolution selector")
+        indexed[key] = item.copy()
+    return indexed
+
+
+def import_archives(inputs: list[Path], private_dir: Path, manifest_path: Path, batch_id: str, processed_on: str, episode_resolutions: list[dict] | None = None) -> dict:
     archives = discover_archives(inputs)
+    resolutions = prepare_resolutions(episode_resolutions)
+    used_resolutions = set()
     versions: dict[str, dict] = {}
     archive_records: list[dict] = []
     occurrences: list[dict] = []
@@ -179,35 +213,51 @@ def import_archives(inputs: list[Path], private_dir: Path, manifest_path: Path, 
                 if len(occurrences) >= MAX_SUBTITLE_OCCURRENCES:
                     raise ValueError("Too many subtitle members in one batch")
                 member_episode = infer_episode(info.filename)
-                if archive_episode and member_episode and archive_episode != member_episode:
+                raw = zf.read(info)
+                content_hash = digest(raw)
+                resolution_key = (archive.name, archive_hash, info.filename)
+                resolution = resolutions.get(resolution_key)
+                if resolution:
+                    if resolution["subtitle_sha256"] != content_hash:
+                        raise ValueError(f"Reviewed resolution subtitle hash mismatch: {info.filename}")
+                    episode = resolution["resolved_episode_id"]
+                    used_resolutions.add(resolution_key)
+                elif archive_episode and member_episode and archive_episode != member_episode:
                     raise ValueError(f"Archive/member episode conflict: {archive.name} / {info.filename}")
-                episode = member_episode or archive_episode
+                else:
+                    episode = member_episode or archive_episode
                 if not episode:
                     raise ValueError(f"Missing episode identifier: {info.filename}")
-                raw = zf.read(info)
                 text, encoding = decode_subtitle(raw)
                 cues, warnings = parse_srt(text)
-                content_hash = digest(raw)
+                if resolution and not set(resolution["evidence_cue_ids"]).issubset({cue["cue_id"] for cue in cues}):
+                    raise ValueError(f"Reviewed resolution cites absent cue IDs: {info.filename}")
                 if content_hash in versions and versions[content_hash]["episode_id"] != episode:
                     raise ValueError("Identical subtitle bytes assigned to different episodes")
-                record = {"archive_name": archive.name, "archive_sha256": archive_hash, "member_name": info.filename, "subtitle_sha256": content_hash, "episode_id": episode, "duplicate_content": content_hash in versions}
+                record = {"archive_name": archive.name, "archive_sha256": archive_hash, "archive_episode_id": archive_episode, "member_name": info.filename, "member_episode_id": member_episode, "subtitle_sha256": content_hash, "episode_id": episode, "duplicate_content": content_hash in versions, "episode_assignment_method": "reviewed_content_resolution" if resolution else "filename_agreement" if archive_episode == member_episode else "member_filename" if member_episode else "archive_filename", "reviewed_resolution": resolution}
                 occurrences.append(record)
-                member_records.append({"member_name": info.filename, "subtitle_sha256": content_hash, "episode_id": episode, "duplicate_content": record["duplicate_content"]})
+                member_records.append({key: value for key, value in record.items() if key not in ("archive_name", "archive_sha256")})
                 if content_hash not in versions:
-                    versions[content_hash] = {"episode_id": episode, "version_id": f"{episode}_{content_hash[:12]}", "subtitle_sha256": content_hash, "encoding": encoding, "raw": raw, "cues": cues, "warnings": warnings, "source_members": [], "source_archives": []}
+                    versions[content_hash] = {"episode_id": episode, "version_id": f"{episode}_{content_hash[:12]}", "subtitle_sha256": content_hash, "encoding": encoding, "raw": raw, "cues": cues, "warnings": warnings, "source_members": [], "source_archives": [], "source_assignments": []}
                 version = versions[content_hash]
                 if info.filename not in version["source_members"]:
                     version["source_members"].append(info.filename)
                 version["source_archives"].append({"archive_name": archive.name, "archive_sha256": archive_hash})
+                version["source_assignments"].append({key: value for key, value in record.items() if key != "duplicate_content"})
         if not member_records:
             raise ValueError(f"No SRT members found in archive: {archive.name}")
-        archive_records.append({"archive_name": archive.name, "archive_sha256": archive_hash, "subtitle_members": member_records})
+        archive_records.append({"archive_name": archive.name, "archive_sha256": archive_hash, "archive_episode_id": archive_episode, "subtitle_members": member_records})
+
+    if used_resolutions != set(resolutions):
+        raise ValueError("Episode resolution config contains an unmatched archive/member/hash selector")
 
     # Validate the complete batch before writing any output.
     episodes = []
     for episode in sorted({v["episode_id"] for v in versions.values()}):
         group = [v for v in versions.values() if v["episode_id"] == episode]
         reference, reason = select_reference(group)
+        if any(assignment["reviewed_resolution"] for assignment in reference["source_assignments"]):
+            reason += " The selected source's episode identity was explicitly corrected after subtitle-content review; original archive/member episode labels remain in source_assignments."
         comparisons = [compare_versions(reference, v) for v in group if v is not reference]
         public_versions = []
         for v in sorted(group, key=lambda v: v["version_id"]):
@@ -215,8 +265,9 @@ def import_archives(inputs: list[Path], private_dir: Path, manifest_path: Path, 
             public_versions.append({
                 "version_id": v["version_id"], "subtitle_sha256": v["subtitle_sha256"],
                 "source_members": v["source_members"], "source_archives": v["source_archives"],
+                "source_assignments": v["source_assignments"],
                 "encoding": v["encoding"], "byte_count": len(v["raw"]),
-                "caption_type_hint": "SDH indicated by subtitle file contents" if any(c["text_clean"].lower() == "[german - sdh]" for c in v["cues"]) else "not established",
+                "caption_type_hint": "SDH indicated by subtitle file contents" if any(c["text_clean"].lower() == "[german - sdh]" or c["text_clean"].lower().startswith("german sdh subtitles by ") for c in v["cues"]) else "not established",
                 "cue_count": len(v["cues"]), "content_cue_count": len(content_cues),
                 "metadata_cue_ids": [c["cue_id"] for c in v["cues"] if c["kind"] == "file_metadata"],
                 "first_cue_start_ms": min(c["start_ms"] for c in v["cues"]),
@@ -231,12 +282,14 @@ def import_archives(inputs: list[Path], private_dir: Path, manifest_path: Path, 
             "canonical_selection_reason": reason, "versions": public_versions, "version_comparisons": comparisons,
         })
     manifest = {
-        "schema_version": "1.0", "batch_id": batch_id, "processed_on": processed_on,
+        "schema_version": "1.1", "batch_id": batch_id, "processed_on": processed_on,
         "source_type": "user_supplied_subtitle_archives", "public_manifest_contains_subtitle_text": False,
         "audio_verified": False, "timing_version_specific": True,
         "input_archive_count": len(archives), "subtitle_occurrence_count": len(occurrences),
         "unique_subtitle_version_count": len(versions), "duplicate_subtitle_occurrence_count": len(occurrences) - len(versions),
         "episode_count": len(episodes),
+        "reviewed_episode_resolution_count": len(used_resolutions),
+        "reviewed_episode_resolutions": list(resolutions.values()),
         "canonical_cue_count_total": sum(next(v["cue_count"] for v in e["versions"] if v["version_id"] == e["canonical_version_id"]) for e in episodes),
         "archives": archive_records, "episodes": episodes,
     }
@@ -244,7 +297,7 @@ def import_archives(inputs: list[Path], private_dir: Path, manifest_path: Path, 
     for v in versions.values():
         base = private_dir / v["version_id"]
         base.with_suffix(".srt").write_bytes(v["raw"])
-        private = {"episode_id": v["episode_id"], "version_id": v["version_id"], "source_member": v["source_members"][0], "subtitle_sha256": v["subtitle_sha256"], "encoding": v["encoding"], "audio_verified": False, "timing_version_specific": True, "cues": v["cues"]}
+        private = {"episode_id": v["episode_id"], "version_id": v["version_id"], "source_member": v["source_members"][0], "source_assignments": v["source_assignments"], "subtitle_sha256": v["subtitle_sha256"], "encoding": v["encoding"], "audio_verified": False, "timing_version_specific": True, "cues": v["cues"]}
         base.with_suffix(".json").write_text(json.dumps(private, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         base.with_suffix(".txt").write_text("\n".join(f"{c['cue_id']:03d} [{c['start_timestamp']} --> {c['end_timestamp']}] {c['text_clean']}" for c in v["cues"]) + "\n", encoding="utf-8")
     manifest_path.parent.mkdir(parents=True, exist_ok=True)
@@ -259,9 +312,11 @@ def main() -> int:
     parser.add_argument("--manifest", required=True, type=Path)
     parser.add_argument("--batch-id", required=True)
     parser.add_argument("--processed-on", required=True, help="User-facing ISO date, YYYY-MM-DD")
+    parser.add_argument("--episode-resolutions", type=Path, help="Explicit content-reviewed per-member resolution JSON array")
     args = parser.parse_args()
     try:
-        result = import_archives(args.inputs, args.private_dir, args.manifest, args.batch_id, args.processed_on)
+        resolutions = json.loads(args.episode_resolutions.read_text(encoding="utf-8")) if args.episode_resolutions else None
+        result = import_archives(args.inputs, args.private_dir, args.manifest, args.batch_id, args.processed_on, resolutions)
     except (OSError, ValueError, UnicodeError, BadZipFile) as exc:
         print(f"Import failed: {exc}", file=sys.stderr)
         return 1

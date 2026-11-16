@@ -7,30 +7,29 @@
   "timing_version_specific": true,
   "counts": {
     "total_episode_count": 236,
-    "episodes_with_subtitles": 7,
-    "episodes_with_lessons": 7,
-    "unique_subtitle_version_count": 8,
-    "distinct_version_id_count": 8,
-    "batch_manifest_count": 1,
-    "lesson_file_count": 1
+    "episodes_with_subtitles": 18,
+    "episodes_with_lessons": 18,
+    "unique_subtitle_version_count": 25,
+    "distinct_version_id_count": 25,
+    "batch_manifest_count": 2,
+    "lesson_file_count": 3
   },
   "batch_manifest_paths": [
+    "data/subtitle_imports/batch_2026-11-16_02.json",
     "data/subtitle_imports/batch_2026-11-16_s05.json"
   ],
   "lesson_file_paths": [
+    "data/subtitle_lessons/season_01.json",
+    "data/subtitle_lessons/season_04.json",
     "data/subtitle_lessons/season_05.json"
   ],
   "seasons": [
     {
       "season": 1,
       "total_episode_count": 24,
-      "episodes_with_subtitles": 0,
-      "episodes_with_lessons": 0,
+      "episodes_with_subtitles": 5,
+      "episodes_with_lessons": 5,
       "missing_subtitle_episode_ids": [
-        "S01E01",
-        "S01E02",
-        "S01E03",
-        "S01E04",
         "S01E05",
         "S01E06",
         "S01E07",
@@ -44,7 +43,6 @@
         "S01E15",
         "S01E16",
         "S01E17",
-        "S01E18",
         "S01E19",
         "S01E20",
         "S01E21",
@@ -53,10 +51,6 @@
         "S01E24"
       ],
       "missing_lesson_episode_ids": [
-        "S01E01",
-        "S01E02",
-        "S01E03",
-        "S01E04",
         "S01E05",
         "S01E06",
         "S01E07",
@@ -70,7 +64,6 @@
         "S01E15",
         "S01E16",
         "S01E17",
-        "S01E18",
         "S01E19",
         "S01E20",
         "S01E21",
@@ -200,8 +193,8 @@
     {
       "season": 4,
       "total_episode_count": 24,
-      "episodes_with_subtitles": 0,
-      "episodes_with_lessons": 0,
+      "episodes_with_subtitles": 1,
+      "episodes_with_lessons": 1,
       "missing_subtitle_episode_ids": [
         "S04E01",
         "S04E02",
@@ -220,7 +213,6 @@
         "S04E15",
         "S04E16",
         "S04E17",
-        "S04E18",
         "S04E19",
         "S04E20",
         "S04E21",
@@ -246,7 +238,6 @@
         "S04E15",
         "S04E16",
         "S04E17",
-        "S04E18",
         "S04E19",
         "S04E20",
         "S04E21",
@@ -258,14 +249,9 @@
     {
       "season": 5,
       "total_episode_count": 24,
-      "episodes_with_subtitles": 7,
-      "episodes_with_lessons": 7,
+      "episodes_with_subtitles": 12,
+      "episodes_with_lessons": 12,
       "missing_subtitle_episode_ids": [
-        "S05E01",
-        "S05E02",
-        "S05E03",
-        "S05E04",
-        "S05E05",
         "S05E06",
         "S05E07",
         "S05E15",
@@ -280,11 +266,6 @@
         "S05E24"
       ],
       "missing_lesson_episode_ids": [
-        "S05E01",
-        "S05E02",
-        "S05E03",
-        "S05E04",
-        "S05E05",
         "S05E06",
         "S05E07",
         "S05E15",
@@ -585,77 +566,121 @@
       "episode_id": "S01E01",
       "season": 1,
       "episode": 1,
-      "subtitle_available": false,
-      "lesson_available": false,
-      "status": "missing_subtitles",
+      "subtitle_available": true,
+      "lesson_available": true,
+      "status": "subtitle_lesson_ready",
       "audio_verified": false,
       "timing_version_specific": true,
-      "unique_subtitle_version_count": 0,
-      "version_ids": [],
-      "subtitle_sha256s": [],
-      "batch_manifest_paths": [],
-      "batch_reference_version_ids": [],
-      "batch_reference_status": "none",
-      "lesson_path": null,
-      "lesson_source_version_id": null,
-      "lesson_source_sha256": null
+      "unique_subtitle_version_count": 3,
+      "version_ids": [
+        "S01E01_36e39ce4bbb5",
+        "S01E01_df3646c584d8",
+        "S01E01_f0876207037a"
+      ],
+      "subtitle_sha256s": [
+        "36e39ce4bbb58aa794f9a890ae4b9e40b940d0ef36f976a3ca3ca1cc61a9ca2c",
+        "df3646c584d8ed507b48a05009cf8e6adb90d1fc8986457174ace964fbba15e6",
+        "f0876207037a24bff6fee9a3b1e4ecef3d4fb7958324252884b8e8042d149bef"
+      ],
+      "batch_manifest_paths": [
+        "data/subtitle_imports/batch_2026-11-16_02.json"
+      ],
+      "batch_reference_version_ids": [
+        "S01E01_df3646c584d8"
+      ],
+      "batch_reference_status": "consistent",
+      "lesson_path": "data/subtitle_lessons/season_01.json",
+      "lesson_source_version_id": "S01E01_df3646c584d8",
+      "lesson_source_sha256": "df3646c584d8ed507b48a05009cf8e6adb90d1fc8986457174ace964fbba15e6"
     },
     {
       "episode_id": "S01E02",
       "season": 1,
       "episode": 2,
-      "subtitle_available": false,
-      "lesson_available": false,
-      "status": "missing_subtitles",
+      "subtitle_available": true,
+      "lesson_available": true,
+      "status": "subtitle_lesson_ready",
       "audio_verified": false,
       "timing_version_specific": true,
-      "unique_subtitle_version_count": 0,
-      "version_ids": [],
-      "subtitle_sha256s": [],
-      "batch_manifest_paths": [],
-      "batch_reference_version_ids": [],
-      "batch_reference_status": "none",
-      "lesson_path": null,
-      "lesson_source_version_id": null,
-      "lesson_source_sha256": null
+      "unique_subtitle_version_count": 2,
+      "version_ids": [
+        "S01E02_835f4afe61f1",
+        "S01E02_becf320ed006"
+      ],
+      "subtitle_sha256s": [
+        "835f4afe61f1a409a32b1052f0fa08acf332fb64dcc730cb6102fd3419fa536c",
+        "becf320ed0062c089da2723278fa5b6f63f0ce9e78c2d8ca5d73073591bec4f8"
+      ],
+      "batch_manifest_paths": [
+        "data/subtitle_imports/batch_2026-11-16_02.json"
+      ],
+      "batch_reference_version_ids": [
+        "S01E02_becf320ed006"
+      ],
+      "batch_reference_status": "consistent",
+      "lesson_path": "data/subtitle_lessons/season_01.json",
+      "lesson_source_version_id": "S01E02_becf320ed006",
+      "lesson_source_sha256": "becf320ed0062c089da2723278fa5b6f63f0ce9e78c2d8ca5d73073591bec4f8"
     },
     {
       "episode_id": "S01E03",
       "season": 1,
       "episode": 3,
-      "subtitle_available": false,
-      "lesson_available": false,
-      "status": "missing_subtitles",
+      "subtitle_available": true,
+      "lesson_available": true,
+      "status": "subtitle_lesson_ready",
       "audio_verified": false,
       "timing_version_specific": true,
-      "unique_subtitle_version_count": 0,
-      "version_ids": [],
-      "subtitle_sha256s": [],
-      "batch_manifest_paths": [],
-      "batch_reference_version_ids": [],
-      "batch_reference_status": "none",
-      "lesson_path": null,
-      "lesson_source_version_id": null,
-      "lesson_source_sha256": null
+      "unique_subtitle_version_count": 3,
+      "version_ids": [
+        "S01E03_09df0ffd541d",
+        "S01E03_99e1ca9488eb",
+        "S01E03_d2dad7950013"
+      ],
+      "subtitle_sha256s": [
+        "09df0ffd541dd2773e5718ba4cdd4426f0cb5913e9a83380d1450c8405e38778",
+        "99e1ca9488eba6ac0a158bcd388e75aefbd84857351a534e0e4475a9bba499f1",
+        "d2dad795001319afcaf7a73a58f4506ba651b93b219a1ba8b1dade7f04ef257b"
+      ],
+      "batch_manifest_paths": [
+        "data/subtitle_imports/batch_2026-11-16_02.json"
+      ],
+      "batch_reference_version_ids": [
+        "S01E03_d2dad7950013"
+      ],
+      "batch_reference_status": "consistent",
+      "lesson_path": "data/subtitle_lessons/season_01.json",
+      "lesson_source_version_id": "S01E03_d2dad7950013",
+      "lesson_source_sha256": "d2dad795001319afcaf7a73a58f4506ba651b93b219a1ba8b1dade7f04ef257b"
     },
     {
       "episode_id": "S01E04",
       "season": 1,
       "episode": 4,
-      "subtitle_available": false,
-      "lesson_available": false,
-      "status": "missing_subtitles",
+      "subtitle_available": true,
+      "lesson_available": true,
+      "status": "subtitle_lesson_ready",
       "audio_verified": false,
       "timing_version_specific": true,
-      "unique_subtitle_version_count": 0,
-      "version_ids": [],
-      "subtitle_sha256s": [],
-      "batch_manifest_paths": [],
-      "batch_reference_version_ids": [],
-      "batch_reference_status": "none",
-      "lesson_path": null,
-      "lesson_source_version_id": null,
-      "lesson_source_sha256": null
+      "unique_subtitle_version_count": 2,
+      "version_ids": [
+        "S01E04_0f1240cffe6e",
+        "S01E04_3af6367c6102"
+      ],
+      "subtitle_sha256s": [
+        "0f1240cffe6ee012641f7bafedaf628dda327685d4136092008a40c8a527bb89",
+        "3af6367c61020ae51699d1fcb7a293e422acd1aba6c62ad22a87972325dec39a"
+      ],
+      "batch_manifest_paths": [
+        "data/subtitle_imports/batch_2026-11-16_02.json"
+      ],
+      "batch_reference_version_ids": [
+        "S01E04_0f1240cffe6e"
+      ],
+      "batch_reference_status": "consistent",
+      "lesson_path": "data/subtitle_lessons/season_01.json",
+      "lesson_source_version_id": "S01E04_0f1240cffe6e",
+      "lesson_source_sha256": "0f1240cffe6ee012641f7bafedaf628dda327685d4136092008a40c8a527bb89"
     },
     {
       "episode_id": "S01E05",
@@ -908,20 +933,28 @@
       "episode_id": "S01E18",
       "season": 1,
       "episode": 18,
-      "subtitle_available": false,
-      "lesson_available": false,
-      "status": "missing_subtitles",
+      "subtitle_available": true,
+      "lesson_available": true,
+      "status": "subtitle_lesson_ready",
       "audio_verified": false,
       "timing_version_specific": true,
-      "unique_subtitle_version_count": 0,
-      "version_ids": [],
-      "subtitle_sha256s": [],
-      "batch_manifest_paths": [],
-      "batch_reference_version_ids": [],
-      "batch_reference_status": "none",
-      "lesson_path": null,
-      "lesson_source_version_id": null,
-      "lesson_source_sha256": null
+      "unique_subtitle_version_count": 1,
+      "version_ids": [
+        "S01E18_6b53201cc39e"
+      ],
+      "subtitle_sha256s": [
+        "6b53201cc39e5ca8896f4761a15109d5d4c8578832edc5486d9b08eb07ffe921"
+      ],
+      "batch_manifest_paths": [
+        "data/subtitle_imports/batch_2026-11-16_02.json"
+      ],
+      "batch_reference_version_ids": [
+        "S01E18_6b53201cc39e"
+      ],
+      "batch_reference_status": "consistent",
+      "lesson_path": "data/subtitle_lessons/season_01.json",
+      "lesson_source_version_id": "S01E18_6b53201cc39e",
+      "lesson_source_sha256": "6b53201cc39e5ca8896f4761a15109d5d4c8578832edc5486d9b08eb07ffe921"
     },
     {
       "episode_id": "S01E19",
@@ -2295,20 +2328,28 @@
       "episode_id": "S04E18",
       "season": 4,
       "episode": 18,
-      "subtitle_available": false,
-      "lesson_available": false,
-      "status": "missing_subtitles",
+      "subtitle_available": true,
+      "lesson_available": true,
+      "status": "subtitle_lesson_ready",
       "audio_verified": false,
       "timing_version_specific": true,
-      "unique_subtitle_version_count": 0,
-      "version_ids": [],
-      "subtitle_sha256s": [],
-      "batch_manifest_paths": [],
-      "batch_reference_version_ids": [],
-      "batch_reference_status": "none",
-      "lesson_path": null,
-      "lesson_source_version_id": null,
-      "lesson_source_sha256": null
+      "unique_subtitle_version_count": 1,
+      "version_ids": [
+        "S04E18_68cdbb6adb77"
+      ],
+      "subtitle_sha256s": [
+        "68cdbb6adb777e656c4802479d86d813ad5efcf380a4d6cec3e1f75bd136126a"
+      ],
+      "batch_manifest_paths": [
+        "data/subtitle_imports/batch_2026-11-16_02.json"
+      ],
+      "batch_reference_version_ids": [
+        "S04E18_68cdbb6adb77"
+      ],
+      "batch_reference_status": "consistent",
+      "lesson_path": "data/subtitle_lessons/season_04.json",
+      "lesson_source_version_id": "S04E18_68cdbb6adb77",
+      "lesson_source_sha256": "68cdbb6adb777e656c4802479d86d813ad5efcf380a4d6cec3e1f75bd136126a"
     },
     {
       "episode_id": "S04E19",
@@ -2428,96 +2469,136 @@
       "episode_id": "S05E01",
       "season": 5,
       "episode": 1,
-      "subtitle_available": false,
-      "lesson_available": false,
-      "status": "missing_subtitles",
+      "subtitle_available": true,
+      "lesson_available": true,
+      "status": "subtitle_lesson_ready",
       "audio_verified": false,
       "timing_version_specific": true,
-      "unique_subtitle_version_count": 0,
-      "version_ids": [],
-      "subtitle_sha256s": [],
-      "batch_manifest_paths": [],
-      "batch_reference_version_ids": [],
-      "batch_reference_status": "none",
-      "lesson_path": null,
-      "lesson_source_version_id": null,
-      "lesson_source_sha256": null
+      "unique_subtitle_version_count": 1,
+      "version_ids": [
+        "S05E01_a4ef041f1b07"
+      ],
+      "subtitle_sha256s": [
+        "a4ef041f1b074dbe027334307a810d0217dc53fb78e723e1ad33f38962f42f07"
+      ],
+      "batch_manifest_paths": [
+        "data/subtitle_imports/batch_2026-11-16_02.json"
+      ],
+      "batch_reference_version_ids": [
+        "S05E01_a4ef041f1b07"
+      ],
+      "batch_reference_status": "consistent",
+      "lesson_path": "data/subtitle_lessons/season_05.json",
+      "lesson_source_version_id": "S05E01_a4ef041f1b07",
+      "lesson_source_sha256": "a4ef041f1b074dbe027334307a810d0217dc53fb78e723e1ad33f38962f42f07"
     },
     {
       "episode_id": "S05E02",
       "season": 5,
       "episode": 2,
-      "subtitle_available": false,
-      "lesson_available": false,
-      "status": "missing_subtitles",
+      "subtitle_available": true,
+      "lesson_available": true,
+      "status": "subtitle_lesson_ready",
       "audio_verified": false,
       "timing_version_specific": true,
-      "unique_subtitle_version_count": 0,
-      "version_ids": [],
-      "subtitle_sha256s": [],
-      "batch_manifest_paths": [],
-      "batch_reference_version_ids": [],
-      "batch_reference_status": "none",
-      "lesson_path": null,
-      "lesson_source_version_id": null,
-      "lesson_source_sha256": null
+      "unique_subtitle_version_count": 1,
+      "version_ids": [
+        "S05E02_6eed5d5f298a"
+      ],
+      "subtitle_sha256s": [
+        "6eed5d5f298a962687f236997a59c19f1511b679353f5a73e41b548e8afa510d"
+      ],
+      "batch_manifest_paths": [
+        "data/subtitle_imports/batch_2026-11-16_02.json"
+      ],
+      "batch_reference_version_ids": [
+        "S05E02_6eed5d5f298a"
+      ],
+      "batch_reference_status": "consistent",
+      "lesson_path": "data/subtitle_lessons/season_05.json",
+      "lesson_source_version_id": "S05E02_6eed5d5f298a",
+      "lesson_source_sha256": "6eed5d5f298a962687f236997a59c19f1511b679353f5a73e41b548e8afa510d"
     },
     {
       "episode_id": "S05E03",
       "season": 5,
       "episode": 3,
-      "subtitle_available": false,
-      "lesson_available": false,
-      "status": "missing_subtitles",
+      "subtitle_available": true,
+      "lesson_available": true,
+      "status": "subtitle_lesson_ready",
       "audio_verified": false,
       "timing_version_specific": true,
-      "unique_subtitle_version_count": 0,
-      "version_ids": [],
-      "subtitle_sha256s": [],
-      "batch_manifest_paths": [],
-      "batch_reference_version_ids": [],
-      "batch_reference_status": "none",
-      "lesson_path": null,
-      "lesson_source_version_id": null,
-      "lesson_source_sha256": null
+      "unique_subtitle_version_count": 1,
+      "version_ids": [
+        "S05E03_effe1c44920b"
+      ],
+      "subtitle_sha256s": [
+        "effe1c44920beccab768530bd3239a9949daf6454b2636eb1ab3f01a59776d19"
+      ],
+      "batch_manifest_paths": [
+        "data/subtitle_imports/batch_2026-11-16_02.json"
+      ],
+      "batch_reference_version_ids": [
+        "S05E03_effe1c44920b"
+      ],
+      "batch_reference_status": "consistent",
+      "lesson_path": "data/subtitle_lessons/season_05.json",
+      "lesson_source_version_id": "S05E03_effe1c44920b",
+      "lesson_source_sha256": "effe1c44920beccab768530bd3239a9949daf6454b2636eb1ab3f01a59776d19"
     },
     {
       "episode_id": "S05E04",
       "season": 5,
       "episode": 4,
-      "subtitle_available": false,
-      "lesson_available": false,
-      "status": "missing_subtitles",
+      "subtitle_available": true,
+      "lesson_available": true,
+      "status": "subtitle_lesson_ready",
       "audio_verified": false,
       "timing_version_specific": true,
-      "unique_subtitle_version_count": 0,
-      "version_ids": [],
-      "subtitle_sha256s": [],
-      "batch_manifest_paths": [],
-      "batch_reference_version_ids": [],
-      "batch_reference_status": "none",
-      "lesson_path": null,
-      "lesson_source_version_id": null,
-      "lesson_source_sha256": null
+      "unique_subtitle_version_count": 1,
+      "version_ids": [
+        "S05E04_e59c3e979404"
+      ],
+      "subtitle_sha256s": [
+        "e59c3e97940488f643c0e104db9f2c974a6a5f2db3d642273f7a886bc5e14338"
+      ],
+      "batch_manifest_paths": [
+        "data/subtitle_imports/batch_2026-11-16_02.json"
+      ],
+      "batch_reference_version_ids": [
+        "S05E04_e59c3e979404"
+      ],
+      "batch_reference_status": "consistent",
+      "lesson_path": "data/subtitle_lessons/season_05.json",
+      "lesson_source_version_id": "S05E04_e59c3e979404",
+      "lesson_source_sha256": "e59c3e97940488f643c0e104db9f2c974a6a5f2db3d642273f7a886bc5e14338"
     },
     {
       "episode_id": "S05E05",
       "season": 5,
       "episode": 5,
-      "subtitle_available": false,
-      "lesson_available": false,
-      "status": "missing_subtitles",
+      "subtitle_available": true,
+      "lesson_available": true,
+      "status": "subtitle_lesson_ready",
       "audio_verified": false,
       "timing_version_specific": true,
-      "unique_subtitle_version_count": 0,
-      "version_ids": [],
-      "subtitle_sha256s": [],
-      "batch_manifest_paths": [],
-      "batch_reference_version_ids": [],
-      "batch_reference_status": "none",
-      "lesson_path": null,
-      "lesson_source_version_id": null,
-      "lesson_source_sha256": null
+      "unique_subtitle_version_count": 1,
+      "version_ids": [
+        "S05E05_ab583ef1943f"
+      ],
+      "subtitle_sha256s": [
+        "ab583ef1943f48a98617ba7c7b351ed63b1a3f3104a62493f8868d3af49f483c"
+      ],
+      "batch_manifest_paths": [
+        "data/subtitle_imports/batch_2026-11-16_02.json"
+      ],
+      "batch_reference_version_ids": [
+        "S05E05_ab583ef1943f"
+      ],
+      "batch_reference_status": "consistent",
+      "lesson_path": "data/subtitle_lessons/season_05.json",
+      "lesson_source_version_id": "S05E05_ab583ef1943f",
+      "lesson_source_sha256": "ab583ef1943f48a98617ba7c7b351ed63b1a3f3104a62493f8868d3af49f483c"
     },
     {
       "episode_id": "S05E06",

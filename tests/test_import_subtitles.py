@@ -90,8 +90,50 @@ class SubtitleImportTests(unittest.TestCase):
     def test_episode_identifiers_accept_archive_spelling(self):
         self.assertEqual(mod.infer_episode("friends.tv.s05.e09.ger.zip"), "S05E09")
         self.assertEqual(mod.infer_episode("Friends.S05E09.German.srt"), "S05E09")
+        self.assertEqual(mod.infer_episode("01x18.The One With All The Poker.deu.srt"), "S01E18")
+        self.assertEqual(mod.infer_episode("01X04.de.srt"), "S01E04")
         with self.assertRaises(ValueError):
             mod.infer_episode("S05E08-S05E09.srt")
+        with self.assertRaises(ValueError):
+            mod.infer_episode("S01E01.01x18.srt")
+
+    def test_reviewed_resolution_handles_conflict_and_hidden_filename_error(self):
+        for member_name, resolved in (("01x18.Poker.srt", "S01E18"), ("Friends.S01E01.srt", "S01E03")):
+            with self.subTest(member=member_name), tempfile.TemporaryDirectory() as d:
+                root = Path(d)
+                archive = root / "S01E01.zip"
+                with ZipFile(archive, "w") as z:
+                    z.writestr(member_name, SRT.encode("utf-8"))
+                resolution = {"archive_name": archive.name, "archive_sha256": mod.digest(archive.read_bytes()), "member_name": member_name, "subtitle_sha256": mod.digest(SRT.encode("utf-8")), "resolved_episode_id": resolved, "reviewed": True, "reviewed_on": "2026-11-16", "review_method": "subtitle_content_review", "reason": "Synthetic content review fixture.", "evidence_cue_ids": [1]}
+                result = mod.import_archives([archive], root / "private", root / "manifest.json", "test", "2026-11-16", [resolution])
+                self.assertEqual(result["episodes"][0]["episode_id"], resolved)
+                self.assertEqual(result["reviewed_episode_resolution_count"], 1)
+                source = result["episodes"][0]["versions"][0]["source_assignments"][0]
+                self.assertEqual(source["archive_episode_id"], "S01E01")
+                self.assertEqual(source["member_episode_id"], mod.infer_episode(member_name))
+                self.assertEqual(source["episode_assignment_method"], "reviewed_content_resolution")
+                self.assertEqual(next((root / "private").glob("*.srt")).read_bytes(), SRT.encode("utf-8"))
+
+    def test_unreviewed_or_byte_mismatched_resolution_is_rejected(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            archive = root / "S01E01.zip"
+            with ZipFile(archive, "w") as z:
+                z.writestr("01x18.Poker.srt", SRT.encode("utf-8"))
+            resolution = {"archive_name": archive.name, "archive_sha256": mod.digest(archive.read_bytes()), "member_name": "01x18.Poker.srt", "subtitle_sha256": "0" * 64, "resolved_episode_id": "S01E18", "reviewed": True, "reviewed_on": "2026-11-16", "review_method": "subtitle_content_review", "reason": "Synthetic content review fixture.", "evidence_cue_ids": [1]}
+            with self.assertRaisesRegex(ValueError, "subtitle hash mismatch"):
+                mod.import_archives([archive], root / "private", root / "manifest.json", "test", "2026-11-16", [resolution])
+            resolution["subtitle_sha256"] = mod.digest(SRT.encode("utf-8"))
+            resolution["reviewed"] = False
+            with self.assertRaisesRegex(ValueError, "explicitly reviewed"):
+                mod.import_archives([archive], root / "private", root / "manifest.json", "test", "2026-11-16", [resolution])
+            self.assertFalse((root / "manifest.json").exists())
+
+    def test_observed_sdh_credit_is_file_metadata(self):
+        source = "1\n00:00:01,000 --> 00:00:02,000\nGerman SDH Subtitles by Untertitel: Gelula/SDI\n\n2\n00:00:03,000 --> 00:00:04,000\nHallo!\n"
+        cues, _ = mod.parse_srt(source)
+        self.assertEqual(cues[0]["kind"], "file_metadata")
+        self.assertEqual(cues[1]["kind"], "subtitle")
 
     def test_retimed_variant_is_not_concatenated(self):
         a, _ = mod.parse_srt(SRT)

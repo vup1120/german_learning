@@ -1,18 +1,452 @@
-# Friends 第5季字幕學習單：第8–14集
+# Friends 第5季字幕學習單
 
-這7份學習單以本次提供的德文字幕為來源，採德文與繁體中文對照。摘要、例句、討論題與答案提示為原創教材；詞彙來源位置按字幕原檔核對。
+本頁涵蓋12集：S05E01、S05E02、S05E03、S05E04、S05E05、S05E08、S05E09、S05E10、S05E11、S05E12、S05E13、S05E14。
 
-**使用方式：**先讀德文摘要，再以自己的觀看版本定位場景，完成口說或短文。沒有影片時，也可以用提供的字幕完成閱讀、重述與討論。時間碼只適用於指定字幕版本，尚未與音訊核對。
+這些學習單以提供的德文字幕為來源，採德文與繁體中文對照。摘要、例句、討論題與答案提示為原創教材；詞彙來源位置按字幕原檔核對。
 
-本批共42個詞彙項目、14個語法重點、21題討論與14個場景練習。字幕中的音效描述及片尾SDH標籤不應當作角色台詞。
+**使用方式：**先讀德文摘要，再以自己的觀看版本定位場景，完成口說或短文。沒有影片時，也可以用字幕完成閱讀、重述與討論。時間碼只適用於指定字幕版本，尚未與音訊核對。
 
-[JSON資料](../data/subtitle_lessons/season_05.json) · [匯入來源紀錄](../data/subtitle_imports/batch_2026-11-16_s05.json) · [接續進度](../PROJECT_STATUS.md)
+本頁共72個詞彙項目、24個語法重點、36題討論與24個場景練習。字幕中的音效、片名或檔案標籤不應當作角色台詞。
+
+[JSON資料](../data/subtitle_lessons/season_05.json) · [字幕涵蓋進度](../data/subtitle_coverage.json) · [接續進度](../PROJECT_STATUS.md)
+
+## S05E01 — Flitterwochen mit der anderen
+
+英文集名：The One After Ross Says Rachel
+
+字幕版本：`S05E01_a4ef041f1b07`。原檔名：`Friends.S05E01.German.DL.720p.BluRay.x264-NoGRP_ger.srt`。
+
+[本集來源紀錄](../data/subtitle_imports/batch_2026-11-16_02.json)
+
+### 學習目標
+
+- 描述誤會、失言及道歉，區分事件與人物的解讀。
+- 使用時間條件句與禮貌假設句協調安排。
+- 練習在旅程改變時提出建議，並說明理由。
+
+### 劇情閱讀
+
+Bei seiner Hochzeit mit Emily nennt Ross versehentlich Rachels Namen. Die Zeremonie geht weiter, doch Emily ist verletzt und verschwindet. Ross sucht sie und wartet später am Flughafen auf sie. Als sie zunächst nicht erscheint, lädt er Rachel ein, die geplante Reise mit ihm anzutreten. Emilys spätes Auftauchen verändert den Plan erneut. Gleichzeitig suchen Monica und Chandler ständig einen ungestörten Moment und müssen entscheiden, was ihre neue Nähe nach der Rückkehr nach New York bedeutet.
+
+與Emily結婚時，Ross不小心說出了Rachel的名字。儀式繼續進行，但Emily受到傷害，隨後離開。Ross四處尋找她，之後到機場等待。她起初沒有出現，Ross便邀Rachel一同踏上原定的旅程；Emily稍後現身，又讓計畫改變。另一方面，Monica與Chandler不斷尋找不被打擾的相處機會，也必須面對回到紐約後，這段新的親密關係意味著什麼。
+
+### 詞彙與原創例句
+
+| 德文詞彙 | 繁中 | 原創例句與翻譯 | 字幕來源位置 |
+| --- | --- | --- | --- |
+| verwechseln | 弄混；認錯 | Ich habe die beiden Haltestellen verwechselt und bin zu früh ausgestiegen.<br>我把兩個車站弄混，提早下車了。 | cue 55 · 00:03:43.850–00:03:46.894 · 詞形：verwechseln |
+| sich verabreden | 約好見面 | Wir haben uns für Samstag im Museum verabredet.<br>我們約好星期六在博物館見面。 | cue 74 · 00:04:59.133–00:05:02.053 · 詞形：verabredet |
+| gefährden | 危及；使陷入風險 | Ein unklarer Zeitplan kann das ganze Projekt gefährden.<br>不明確的時程可能危及整個專案。 | cue 75 · 00:05:02.220–00:05:05.807 · 詞形：gefährden |
+| etwas überstürzen | 倉促行事；過急地決定 | Wir sollten die Entscheidung nicht überstürzen und zuerst alle Angebote vergleichen.<br>我們不應倉促決定，而應先比較所有方案。 | cue 95 · 00:06:05.116–00:06:08.244 · 詞形：Überstürze |
+| jemandem Gesellschaft leisten | 陪伴某人 | Ich leiste meiner Nachbarin beim Warten Gesellschaft.<br>等待時，我陪著鄰居。 | cue 202 · 00:12:11.440–00:12:14.109 · 詞形：Gesellschaft leisten |
+| der Tapetenwechsel | 換個環境；轉換心情〔口語〕 | Nach einer langen Arbeitswoche tut mir ein Tapetenwechsel gut.<br>忙碌工作一週後，換個環境對我很有幫助。 | cue 321 · 00:20:00.659–00:20:03.370 · 詞形：Tapetenwechsel |
+
+### 語法練習
+
+**1. 用 solange 限定持續的時間**
+
+solange 引導的子句表示「只要某個狀態還持續，就……」。子句的變位動詞放在句尾；若子句置前，後面的主句先放變位動詞。
+
+原創例句：Solange es regnet, bleiben wir im Café.
+
+只要雨還在下，我們就待在咖啡店。
+
+對應字幕：cue 83，00:05:26.869–00:05:30.915。
+
+**2. 用 Es wäre …, wenn … 提出柔和的請求**
+
+wäre 與 würde＋不定詞可以讓願望或請求更委婉。這裡的第二虛擬式表達假設或期待，不是在敘述過去發生的事。
+
+原創例句：Es wäre hilfreich, wenn du mir die Adresse schicken würdest.
+
+如果你能把地址傳給我，會很有幫助。
+
+對應字幕：cue 341，00:20:53.503–00:20:55.046。
+
+### 討論
+
+1. **A2** — Was machst du, wenn sich deine Reisepläne plötzlich ändern?  
+   旅遊計畫突然改變時，你會怎麼做？
+
+2. **B1** — Wie kann man sich nach einem peinlichen Versprecher ehrlich entschuldigen?  
+   在尷尬的口誤之後，可以怎樣真誠道歉？
+
+3. **B2** — Wie können Freunde jemanden unterstützen, ohne vorschnell zu entscheiden, was ein Fehler bedeutet?  
+   朋友可以怎樣支持當事人，同時不急著斷定一個錯誤代表什麼？
+
+### 場景練習
+
+**練習1｜00:04:55.463–00:05:45.471，cue 73–88**
+
+Welche Grenze setzen Monica und Chandler ihrer neuen Nähe zunächst? Erkläre, welche Sorge und welche besondere Situation ihre Entscheidung beeinflussen.
+
+Monica與Chandler起初為新的親密關係設下什麼界線？說明哪一項顧慮，以及哪一種特殊情境影響了他們的決定。
+
+參考方向：Sie wollen ihre Nähe zunächst auf den Aufenthalt in London begrenzen. Einerseits fürchten sie um ihre Freundschaft, andererseits sehen sie die Reise und die romantische Umgebung als besondere Situation.
+
+他們起初想把親密關係限定在倫敦停留期間。一方面，他們擔心影響友誼；另一方面，他們認為旅行與浪漫環境是一種特殊情境。
+
+**練習2｜00:19:46.645–00:20:55.046，cue 315–341**
+
+Wie entwickelt sich der Reisevorschlag am Flughafen? Beschreibe zuerst Rachels Rat und dann Ross' Einladung.
+
+機場裡的旅行提議如何改變？先說明Rachel的建議，再說明Ross的邀請。
+
+參考方向：Rachel rät Ross zunächst, allein zu reisen, um Abstand und Klarheit zu gewinnen. Danach lädt Ross sie ein mitzukommen, weil er zwei Tickets hat und ihre Gesellschaft angenehm fände.
+
+Rachel起初建議Ross獨自旅行，拉開距離、理清想法。之後Ross邀她一起去，因為他有兩張機票，也希望有她陪伴。
+
+## S05E02 — Hilfe, die Babys kommen
+
+英文集名：The One With All The Kissing
+
+字幕版本：`S05E02_6eed5d5f298a`。原檔名：`Friends.S05E02.German.DL.720p.BluRay.x264-NoGRP_ger.srt`。
+
+[本集來源紀錄](../data/subtitle_imports/batch_2026-11-16_02.json)
+
+### 學習目標
+
+- 辨識表面說法與私下感受之間的落差。
+- 練習表達被忽略或不自在的感覺，並提出明確請求。
+- 使用間接問句與時間子句安排活動。
+
+### 劇情閱讀
+
+Zurück in New York versuchen Monica und Chandler, ihre Beziehung geheim zu halten. Chandlers auffällige Abschiedsküsse sollen als neue Gewohnheit erscheinen, bringen die anderen jedoch in Verlegenheit. Rachel ist von ihrer Reise enttäuscht und überlässt Monica zunächst Entscheidungen über ihr Liebesleben. Später setzt sie sich darüber hinweg und spricht mit Ross. Phoebe fühlt sich durch die vielen London-Erzählungen ausgeschlossen. Die Freunde planen einen gemeinsamen Ausflug, doch kurz vor der Abfahrt platzt ihre Fruchtblase.
+
+回到紐約後，Monica與Chandler試著隱瞞戀情。Chandler異常的道別親吻被包裝成新習慣，卻讓其他人感到不自在。Rachel對旅行失望，一度把感情生活的決定交給Monica；後來她仍自行決定與Ross談清楚。朋友們不斷聊起倫敦之旅，讓Phoebe覺得被排除在外。大家於是規劃共同出遊，但出發前，她的羊水破了。
+
+### 詞彙與原創例句
+
+| 德文詞彙 | 繁中 | 原創例句與翻譯 | 字幕來源位置 |
+| --- | --- | --- | --- |
+| die Verspätung | 延誤；遲到 | Wegen einer Verspätung verpasse ich den Anschlusszug.<br>因為誤點，我趕不上接駁的火車。 | cue 42 · 00:02:47.001–00:02:48.503 · 詞形：Verspätung |
+| sich beklagen | 抱怨 | Über den freundlichen Service kann ich mich nicht beklagen.<br>服務這麼親切，我沒什麼好抱怨的。 | cue 66 · 00:04:00.116–00:04:02.326 · 詞形：beklagen |
+| eine Entscheidung treffen | 做決定 | Bevor ich eine wichtige Entscheidung treffe, nehme ich mir genug Zeit zum Nachdenken.<br>做重要決定之前，我會留給自己足夠的時間思考。 | cue 86 · 00:05:13.064–00:05:16.442 · 詞形：Entscheidungen treffe |
+| sich ausgeschlossen fühlen | 覺得被排除在外 | Bei der Besprechung fühle ich mich ausgeschlossen, wenn niemand nach meiner Meinung fragt.<br>開會時，如果沒有人問我的意見，我會覺得被排除在外。 | cue 236 · 00:14:28.077–00:14:29.870 · 詞形：ausgeschlossen gefühlt |
+| sich unwohl fühlen | 感到不舒服；不自在 | Ich fühle mich unwohl, wenn jemand ohne zu fragen meine Sachen nimmt.<br>有人沒先問就拿我的東西時，我會覺得不自在。 | cue 253 · 00:15:19.128–00:15:22.297 · 詞形：unwohl |
+| etwas vorschlagen | 提議某事 | Für unser Treffen habe ich einen Spaziergang am Fluss vorgeschlagen.<br>我提議這次見面可以到河邊散步。 | cue 269 · 00:16:17.352–00:16:19.396 · 詞形：vorgeschlagen |
+
+### 語法練習
+
+**1. 用 ob 轉述是非問句**
+
+若原本的問題可以回答「是／否」，轉述時可用 ob 引導間接問句。間接問句中的變位動詞放在句尾，不維持直接問句的倒裝。
+
+原創例句：Sie fragt, ob der Kurs auch online stattfindet.
+
+她問這門課是否也有線上授課。
+
+對應字幕：cue 14，00:00:50.176–00:00:52.637。
+
+**2. 用 bevor 表示先後順序**
+
+bevor 表示「在……之前」。bevor 子句所描述的事發生得較晚；主句說明在那之前要先做什麼。
+
+原創例句：Bevor ich ein Ticket kaufe, vergleiche ich die Preise.
+
+買票之前，我會先比較價格。
+
+對應字幕：cue 226，00:13:51.040–00:13:54.168。
+
+### 討論
+
+1. **A2** — Wen würdest du zu einem gemeinsamen Ausflug einladen, und wohin würdet ihr fahren?  
+   你會邀誰一起出遊？你們會去哪裡？
+
+2. **B1** — Wie kann eine Gruppe jemanden besser einbeziehen, der bei einer gemeinsamen Reise nicht dabei war?  
+   如果有朋友沒有參加共同旅行，大家可以怎樣讓對方更有參與感？
+
+3. **B2** — Wo liegt die Grenze zwischen einem hilfreichen Rat und dem Übernehmen fremder Entscheidungen?  
+   提供有幫助的建議與代替他人做決定，兩者的界線在哪裡？
+
+### 場景練習
+
+**練習1｜00:07:37.959–00:08:17.081，cue 125–137**
+
+Warum fühlt sich Phoebe beim Betrachten der Fotos unwohl? Nenne auch, woran die anderen ihr eigenes Verhalten erkennen.
+
+看照片時，Phoebe為什麼不自在？也請說明其他人如何察覺自己的談話方式有問題。
+
+參考方向：Die Fotos erinnern Phoebe an eine gemeinsame Reise, bei der sie nicht dabei sein konnte. Die anderen merken, dass sie sehr viel über London gesprochen haben, während Phoebes Alltag von der Schwangerschaft bestimmt wird.
+
+照片讓Phoebe想起自己沒能參加的共同旅行。其他人察覺自己一直談倫敦，而Phoebe的日常幾乎都圍繞著懷孕。
+
+**練習2｜00:15:09.868–00:15:34.268，cue 250–257**
+
+Wie wird in diesem Gespräch eine persönliche Grenze formuliert? Schreibe danach eine eigene höfliche Bitte, mit einem unangenehmen Verhalten aufzuhören.
+
+這段對話如何表達個人界線？接著寫一句自己的禮貌請求，請對方停止讓人不舒服的行為。
+
+參考方向：Eine Freundin benennt zunächst das Verhalten, erklärt dann ihr Unbehagen und bittet deutlich darum, damit aufzuhören. Eine eigene Bitte sollte ebenso konkret sein und die persönliche Wirkung beschreiben.
+
+一位朋友先指出對方的行為，再說明自己感到不自在，最後明確請對方停止。自己的請求也可以具體描述行為及其對自己的影響。
+
+## S05E03 — Hurra, die Drillinge sind da
+
+英文集名：The One-hundredth
+
+字幕版本：`S05E03_effe1c44920b`。原檔名：`Friends.S05E03.German.DL.720p.BluRay.x264-NoGRP_ger.srt`。
+
+[本集來源紀錄](../data/subtitle_imports/batch_2026-11-16_02.json)
+
+### 學習目標
+
+- 辨識醫院情境中的人物、事件及情緒詞彙。
+- 用鼓勵、傾聽與信任相關表達支持他人。
+- 練習描述一個事件中同時存在的喜悅與不捨。
+
+### 劇情閱讀
+
+Phoebe kommt zur Geburt der Drillinge ins Krankenhaus. Ihre vertraute Ärztin fällt aus, und die Eigenheiten der Vertretung machen sie zunächst unsicher. Während ihre Freunde sie begleiten, wird auch Joey wegen starker Schmerzen untersucht; er hat Nierensteine. Rachel organisiert Verabredungen mit zwei Pflegern, wodurch Monica und Chandler über die Bedeutung ihrer Beziehung sprechen müssen. Nach der Geburt freut sich Phoebe für Frank und Alice, erlebt die bevorstehende Trennung von den Babys aber als besonders schwer.
+
+Phoebe到醫院準備生下三胞胎。原本的女醫師臨時無法到場，代班醫師的特殊習慣讓她一開始不太安心。朋友陪著她的同時，Joey也因劇痛接受檢查，原來他有腎結石。Rachel安排與兩位男護理師約會，促使Monica與Chandler討論兩人關係的意義。孩子出生後，Phoebe替Frank與Alice開心，卻也因即將與寶寶分開而感到難過。
+
+### 詞彙與原創例句
+
+| 德文詞彙 | 繁中 | 原創例句與翻譯 | 字幕來源位置 |
+| --- | --- | --- | --- |
+| die Wehen (Plural) | 陣痛；分娩時的子宮收縮 | Sie berichtet ihrer Schwester, dass die Wehen begonnen haben.<br>她告訴姊妹，陣痛已經開始了。 | cue 3 · 00:00:09.093–00:00:11.638 · 詞形：Wehen |
+| das Mitgefühl | 同理；同情與關懷 | Sein Mitgefühl zeigte sich darin, dass er einfach zuhörte.<br>他用單純的傾聽表達關懷。 | cue 39 · 00:02:59.013–00:03:00.890 · 詞形：Mitgefühl |
+| jemandem etwas anvertrauen | 把心事或祕密告訴某人 | Ich möchte dir etwas Persönliches anvertrauen.<br>我想告訴你一件私人的心事。 | cue 145 · 00:09:36.202–00:09:38.079 · 詞形：anvertrauen |
+| die Gelegenheit | 機會；合適的時機 | Nach dem Kurs habe ich Gelegenheit, der Lehrerin eine Frage zu stellen.<br>下課後，我有機會問老師一個問題。 | cue 176 · 00:11:40.284–00:11:44.038 · 詞形：Gelegenheit |
+| jemandem die Daumen drücken | 祝某人好運；替某人加油 | Ich drücke dir für das Vorstellungsgespräch die Daumen.<br>我祝你面試順利。 | cue 230 · 00:14:46.220–00:14:48.013 · 詞形：drücke die Daumen |
+| absagen | 取消；婉拒已安排的活動 | Ich muss das Treffen absagen, weil mein Zug ausfällt.<br>因為火車停駛，我必須取消這次見面。 | cue 297 · 00:19:02.100–00:19:04.936 · 詞形：sag wieder ab |
+
+### 語法練習
+
+**1. 用過去完成式說明更早發生的事**
+
+hatte／war＋過去分詞可以交代某個過去事件之前已發生的事情。例句先用過去式敘述搭公車，再用過去完成式說明前一天的原因。
+
+原創例句：Ich nahm den Bus, weil ich mein Fahrrad am Vortag zur Reparatur gebracht hatte.
+
+我搭了公車，因為前一天已經把腳踏車送去修理。
+
+對應字幕：cue 17，00:00:55.473–00:00:58.226。
+
+**2. nicht brauchen … zu：沒有必要**
+
+否定形式 nicht brauchen … zu 表示「不需要／不必」，不是「不准」。可分動詞的 zu 放在前綴與動詞之間，例如 auszufüllen。
+
+原創例句：Du brauchst das Formular nicht noch einmal auszufüllen.
+
+你不必再填一次這張表格。
+
+對應字幕：cue 42，00:03:09.023–00:03:12.360。
+
+### 討論
+
+1. **A2** — Welche einfachen Worte machen dir Mut, wenn du nervös bist?  
+   緊張時，哪些簡單的話會讓你有勇氣？
+
+2. **B1** — Wie können Freunde Unterstützung anbieten, ohne zu behaupten, dass alles leicht ist?  
+   朋友可以怎樣提供支持，同時不把困難說得太輕鬆？
+
+3. **B2** — Kann man sich über eine Veränderung freuen und gleichzeitig traurig sein? Erkläre das anhand dieser Folge.  
+   一個人能對改變感到高興，同時也感到難過嗎？請用本集內容說明。
+
+### 場景練習
+
+**練習1｜00:07:17.313–00:07:44.382，cue 114–121**
+
+Welches Missverständnis entsteht zwischen Monica und Chandler? Erkläre, warum Monica ihre ursprüngliche Entscheidung über das Treffen ändert.
+
+Monica與Chandler之間出現了什麼誤會？說明Monica為什麼改變原本對約會的決定。
+
+參考方向：Chandler stellt ihre gemeinsame Beziehung als unverbindlich dar. Monica wollte sich zuerst nicht mit dem Pfleger treffen, reagiert aber auf Chandlers Darstellung, indem sie nun doch zusagt.
+
+Chandler把兩人的關係說成只是隨意相處。Monica原先不想與護理師約會，但聽到Chandler這樣形容後，反而決定赴約。
+
+**練習2｜00:20:13.588–00:21:04.639，cue 311–320**
+
+Welche gemischten Gefühle beschreibt Phoebe nach der Geburt? Erkläre, welche Rolle sie künftig im Leben der Kinder haben möchte.
+
+生產後，Phoebe描述了哪些交織的感受？說明她希望未來在孩子生命中扮演什麼角色。
+
+參考方向：Phoebe empfindet das Loslassen als besonders schwer und würde die Babys gern mit nach Hause nehmen. Zugleich sucht sie einen neuen Platz in ihrem Leben und möchte ihnen als liebevolle Tante nahebleiben.
+
+Phoebe覺得放手格外困難，也很想把寶寶帶回家。同時，她也試著找到新的相處位置，希望以疼愛孩子的姑姑身分繼續陪伴。
+
+## S05E04 — Harte Bedingung
+
+英文集名：The One Where Phoebe Hates Pbs
+
+字幕版本：`S05E04_e59c3e979404`。原檔名：`Friends.S05E04.German.DL.720p.BluRay.x264-NoGRP_ger.srt`。
+
+[本集來源紀錄](../data/subtitle_imports/batch_2026-11-16_02.json)
+
+### 學習目標
+
+- 比較不同立場，練習為抽象觀點提出例子與理由。
+- 辨識募款、電話接聽及協調條件的常見用語。
+- 使用目的句與讓步句區分動機、結果和反差。
+
+### 劇情閱讀
+
+Joey freut sich auf einen Fernsehauftritt bei einer Spendensendung, erfährt vor Ort aber, dass er nur Telefonanrufe entgegennehmen soll. Mit Phoebe diskutiert er darüber, ob es wirklich uneigennützige gute Taten gibt. Ihre Versuche führen schließlich zu einer Spende, die ausgerechnet Joey einen sichtbaren Auftritt verschafft. Unterdessen verhandeln Ross und Emily über ihre gemeinsame Zukunft. Emily möchte nur nach New York kommen, wenn Ross Rachel nicht mehr trifft. Monica und Chandler halten ihre Beziehung weiterhin geheim.
+
+Joey期待在募款節目中亮相，到場後卻發現自己只是負責接聽電話。他與Phoebe爭論世上是否存在真正無私的善行。Phoebe幾番嘗試後決定捐款，結果這筆捐款恰好讓Joey獲得在鏡頭前露面的機會。另一方面，Ross與Emily討論兩人的未來。Emily願意到紐約生活，但條件是Ross不再與Rachel見面。Monica與Chandler則繼續隱瞞戀情。
+
+### 詞彙與原創例句
+
+| 德文詞彙 | 繁中 | 原創例句與翻譯 | 字幕來源位置 |
+| --- | --- | --- | --- |
+| uneigennützig | 無私的；不求自身利益的 | Die Nachbarin hilft uneigennützig und erwartet keine Gegenleistung.<br>這位鄰居無私地幫忙，不期待回報。 | cue 63 · 00:04:20.178–00:04:23.556 · 詞形：uneigennützig |
+| spenden | 捐贈；捐款 | Wir möchten Bücher für die neue Schulbibliothek spenden.<br>我們想捐書給新的學校圖書館。 | cue 244 · 00:14:35.751–00:14:38.879 · 詞形：spenden |
+| einen Anruf entgegennehmen | 接聽電話 | Die Kollegin nimmt während der Mittagspause die Anrufe entgegen.<br>午休期間由這位同事接聽電話。 | cue 125 · 00:07:39.502–00:07:44.173 · 詞形：nehmen die Anrufe entgegen |
+| die Bedingung | 條件 | Eine Bedingung für die Teilnahme ist eine rechtzeitige Anmeldung.<br>參加的條件之一是及時報名。 | cue 180 · 00:10:49.483–00:10:53.112 · 詞形：Bedingung |
+| jemandem aus dem Weg gehen | 避開某人 | Nach dem Streit ging er mir mehrere Tage aus dem Weg.<br>爭執之後，他好幾天都避著我。 | cue 189 · 00:11:26.520–00:11:29.607 · 詞形：aus dem Weg gehen |
+| etwas verschieben | 延後；更改時間 | Wegen des Streiks verschieben wir unseren Besuch auf nächste Woche.<br>因為罷工，我們把拜訪延到下週。 | cue 327 · 00:19:35.634–00:19:39.888 · 詞形：verschieben |
+
+### 語法練習
+
+**1. 用 damit 表示行動目的**
+
+damit 引導目的子句，變位動詞置於句尾。主句與目的子句可以有不同的主語，適合說明自己的行動希望幫別人達成什麼。
+
+原創例句：Ich schreibe die Adresse auf, damit meine Gäste den Raum finden.
+
+我把地址寫下來，讓客人找得到房間。
+
+對應字幕：cue 157，00:09:36.660–00:09:39.705。
+
+**2. 用 obwohl 表達與預期相反的情況**
+
+obwohl 表示「雖然／儘管」。它引導的子句動詞置於句尾；兩個子句之間呈現反差，而不是單純的原因關係。
+
+原創例句：Ich helfe beim Aufräumen, obwohl ich eigentlich schon müde bin.
+
+雖然我其實已經累了，還是幫忙收拾。
+
+對應字幕：cue 282，00:16:43.045–00:16:48.258。
+
+### 討論
+
+1. **A2** — Welche kleine gute Tat könntest du heute für jemanden tun?  
+   今天你可以為別人做哪一件小小的好事？
+
+2. **B2** — Wird eine gute Tat weniger wertvoll, wenn man sich danach selbst freut? Begründe deine Meinung.  
+   做好事後自己也感到高興，會讓這件善行比較沒有價值嗎？請說明理由。
+
+3. **B2** — Wie sollten Partner über Vertrauen und persönliche Freundschaften sprechen, wenn ihre Erwartungen nicht zusammenpassen?  
+   當彼此的期待不同時，伴侶應該怎樣討論信任與各自的友誼？
+
+### 場景練習
+
+**練習1｜00:03:50.940–00:04:47.121，cue 53–70**
+
+Vergleiche die Positionen von Joey und Phoebe. Warum hält Joey ein gutes Gefühl für problematisch, und was möchte Phoebe beweisen?
+
+比較Joey與Phoebe的立場。Joey為什麼把做好事後的好感受當成問題？Phoebe又想證明什麼？
+
+參考方向：Joey meint, dass eine helfende Person durch das eigene gute Gefühl ebenfalls einen Vorteil hat. Phoebe widerspricht der Schlussfolgerung, dass deshalb keine uneigennützigen Handlungen existieren, und will ein Gegenbeispiel finden.
+
+Joey認為，幫助別人所帶來的好感受，也讓行善的人獲益。Phoebe不同意因此就斷言不存在無私的行為，並想找出反例。
+
+**練習2｜00:09:59.100–00:10:53.112，cue 165–180**
+
+Welche Erlebnisse nennt Emily als Grund für ihre Unsicherheit? Formuliere danach ihre konkrete Bedingung in einem eigenen Satz.
+
+Emily提到哪些經歷，說明自己為何不安心？接著用自己的句子重述她提出的具體條件。
+
+參考方向：Emily erinnert an die Demütigung bei der Hochzeit und daran, Ross am Flughafen mit Rachel gesehen zu haben. Sie will nur nach New York kommen, wenn Ross auf weitere Treffen mit Rachel verzichtet.
+
+Emily提起婚禮上的羞辱，以及在機場看見Ross與Rachel在一起的事。她願意到紐約的條件，是Ross今後不再與Rachel見面。
+
+## S05E05 — Endlich allein!
+
+英文集名：The One With The Kips
+
+字幕版本：`S05E05_ab583ef1943f`。原檔名：`Friends.S05E05.German.DL.720p.BluRay.x264-NoGRP_ger.srt`。
+
+[本集來源紀錄](../data/subtitle_imports/batch_2026-11-16_02.json)
+
+### 學習目標
+
+- 描述住宿需求，並提出有禮貌的協調方式。
+- 區分爭吵、和解與結束關係的表達。
+- 練習從不同人物的角度分析朋友圈中的變化。
+
+### 劇情閱讀
+
+Monica und Chandler fahren heimlich für ein Wochenende weg. Doch Monicas Wunsch nach einem perfekten Hotelzimmer und Chandlers Interesse am Fernsehprogramm führen zu Streit. Zurück in New York lernen sie, dass ein Konflikt nicht automatisch das Ende ihrer Beziehung bedeutet. Ross erklärt Rachel inzwischen, dass Emily von ihm einen Kontaktabbruch verlangt. Rachel fürchtet, dadurch auch ihren Platz im Freundeskreis zu verlieren. Schließlich bemerkt Joey gemeinsame Details der angeblich getrennten Reisen und entdeckt Monicas und Chandlers Geheimnis.
+
+Monica與Chandler偷偷一起度週末，但Monica希望飯店房間完美，Chandler卻被電視節目吸引，兩人因此爭執。回到紐約後，他們學到發生衝突並不代表關係一定結束。Ross則向Rachel說明，Emily要求他與她斷絕聯絡。Rachel擔心自己也會因此失去在朋友圈裡的位置。最後，Joey注意到兩段「各自旅行」中的共同細節，發現Monica與Chandler的祕密。
+
+### 詞彙與原創例句
+
+| 德文詞彙 | 繁中 | 原創例句與翻譯 | 字幕來源位置 |
+| --- | --- | --- | --- |
+| die Heimlichkeit | 祕密行事；隱瞞〔常用複數〕 | Die ständigen Heimlichkeiten machen die Zusammenarbeit anstrengend.<br>不斷隱瞞事情，讓合作變得很累。 | cue 13 · 00:00:47.382–00:00:50.176 · 詞形：Heimlichkeiten |
+| das Zimmer wechseln | 換房間 | Das Fenster lässt sich nicht schließen; könnten wir das Zimmer wechseln?<br>窗戶關不起來；我們可以換房間嗎？ | cue 86 · 00:06:00.987–00:06:02.572 · 詞形：Zimmer wechseln |
+| der Meeresblick | 海景 | Wir haben ein kleines Apartment mit Meeresblick gebucht.<br>我們訂了一間有海景的小公寓。 | cue 121 · 00:07:52.264–00:07:55.601 · 詞形：Meeresblick |
+| unter vier Augen | 私下；只有兩人在場 | Ich würde diese Frage gern unter vier Augen besprechen.<br>我想私下討論這個問題。 | cue 123 · 00:08:01.857–00:08:04.986 · 詞形：unter 4 Augen |
+| den Kontakt zu jemandem abbrechen | 與某人斷絕聯絡 | Nach mehreren enttäuschenden Gesprächen brach sie den Kontakt zu ihrem früheren Geschäftspartner ab.<br>經過幾次令人失望的談話後，她與以前的生意夥伴斷了聯絡。 | cue 154 · 00:10:07.650–00:10:11.612 · 詞形：Kontakt zu dir abbreche |
+| sich aussprechen | 把話說開；坦誠溝通以釐清誤會 | Nach dem Missverständnis haben wir uns in Ruhe ausgesprochen.<br>發生誤會後，我們冷靜地把話說開了。 | cue 292 · 00:19:13.820–00:19:18.075 · 詞形：spricht sich einfach aus |
+
+### 語法練習
+
+**1. 用 Was hältst du davon, wenn …? 徵詢意見**
+
+這個句型先詢問對方對提議的看法，再用 wenn 子句說明具體安排。wenn 子句的變位動詞放在句尾，比直接下決定更能邀請對方參與。
+
+原創例句：Was hältst du davon, wenn wir die Aufgaben morgen gemeinsam durchgehen?
+
+你覺得我們明天一起討論這些題目怎麼樣？
+
+對應字幕：cue 14，00:00:50.343–00:00:54.639。
+
+**2. 用 würde 與 wenn 假設另一種立場**
+
+第二虛擬式可以想像自己處在不同角色或情境。würde 搭配不定詞；wenn 子句使用假設形式，不表示事情已經發生。
+
+原創例句：Was würdest du ändern, wenn du unseren Kurs organisieren würdest?
+
+如果由你安排我們的課程，你會改變什麼？
+
+對應字幕：cue 266，00:17:21.542–00:17:25.254。
+
+### 討論
+
+1. **A2** — Was brauchst du, damit ein kurzer Urlaub für dich angenehm ist?  
+   要讓一趟短旅行過得愉快，你需要哪些條件？
+
+2. **B1** — Wie können zwei Menschen nach einem Streit miteinander sprechen, ohne sofort das Ende der Beziehung zu erwarten?  
+   兩個人爭執後，可以怎樣溝通，而不立刻認為關係就要結束？
+
+3. **B2** — Welche Verantwortung hat eine Freundesgruppe, wenn ein Konflikt zwischen zwei Mitgliedern andere mitbetrifft?  
+   如果兩位成員的衝突影響到其他人，整個朋友圈有什麼責任？
+
+### 場景練習
+
+**練習1｜00:18:29.192–00:19:36.426，cue 279–297**
+
+Warum denkt Chandler, dass die Beziehung vorbei ist? Erkläre, welche andere Sicht Monica ihm anbietet.
+
+Chandler為什麼以為關係結束了？說明Monica提供了什麼不同的看法。
+
+參考方向：Chandler versteht ihren Streit als Zeichen für das Ende der Beziehung. Monica erklärt, dass man Konflikte besprechen kann und nicht nach jeder Auseinandersetzung auseinandergehen muss.
+
+Chandler把爭吵視為關係結束的訊號。Monica說明，衝突可以透過溝通處理，不需要每次吵架就分開。
+
+**練習2｜00:09:39.288–00:10:41.267，cue 147–161**
+
+Welche Nachricht teilt Ross Rachel endlich mit? Erkläre sowohl seine Begründung als auch Rachels erste Reaktion.
+
+Ross終於向Rachel說出什麼消息？請同時說明他的理由，以及Rachel最初的反應。
+
+參考方向：Ross sagt, dass Emily einen Abbruch des Kontakts zu Rachel verlangt und er sich daran halten will, um seine Ehe zu retten. Rachel hält die Forderung zunächst für absurd und begreift dann erschrocken, dass Ross zugestimmt hat.
+
+Ross說Emily要求他與Rachel斷絕聯絡，而他為了挽救婚姻，打算遵守。Rachel起初覺得要求荒謬，之後才震驚地明白Ross已經答應了。
 
 ## S05E08 — Fatales Geständnis
 
 英文集名：The One With All The Thanksgiving
 
-字幕版本：`S05E08_3da0faa49a3a`。檔案：`Friends.S05E08.German.DL.720p.BluRay.x264-NoGRP_ger.srt`。
+字幕版本：`S05E08_3da0faa49a3a`。原檔名：`Friends.S05E08.German.DL.720p.BluRay.x264-NoGRP_ger.srt`。
+
+[本集來源紀錄](../data/subtitle_imports/batch_2026-11-16_s05.json)
 
 ### 學習目標
 
@@ -96,7 +530,9 @@ Chandler 得知 Monica 當年的報復計畫與自己的傷有關。她強調那
 
 英文集名：The One With Ross’ Sandwich
 
-字幕版本：`S05E09_f7a4a5823424`。檔案：`Friends.S05E09.German.DL.720p.BluRay.x264-NoGRP_ger.srt`。
+字幕版本：`S05E09_f7a4a5823424`。原檔名：`Friends.S05E09.German.DL.720p.BluRay.x264-NoGRP_ger.srt`。
+
+[本集來源紀錄](../data/subtitle_imports/batch_2026-11-16_s05.json)
 
 ### 學習目標
 
@@ -180,7 +616,9 @@ Rachel 主要想一起玩得開心；Phoebe 則確實想學習，並覺得自己
 
 英文集名：The One With The Inappropriate Sister
 
-字幕版本：`S05E10_a0f3e949dbb9`。檔案：`Friends.S05E10.German.DL.720p.BluRay.x264-NoGRP_ger.srt`。
+字幕版本：`S05E10_a0f3e949dbb9`。原檔名：`Friends.S05E10.German.DL.720p.BluRay.x264-NoGRP_ger.srt`。
+
+[本集來源紀錄](../data/subtitle_imports/batch_2026-11-16_s05.json)
 
 ### 學習目標
 
@@ -264,7 +702,9 @@ Rachel 提到 Danny 與姊妹特別親密的關係；他解釋為彼此感情很
 
 英文集名：The One With All The Resolutions
 
-字幕版本：`S05E11_94e837204782`。檔案：`Friends.S05E11.German.DL.720p.BluRay.x264-NoGRP_ger.srt`。
+字幕版本：`S05E11_94e837204782`。原檔名：`Friends.S05E11.German.DL.720p.BluRay.x264-NoGRP_ger.srt`。
+
+[本集來源紀錄](../data/subtitle_imports/batch_2026-11-16_s05.json)
 
 ### 學習目標
 
@@ -348,7 +788,9 @@ Ross 脫下皮褲後就穿不回去。他猜想可能是汗水讓褲子縮水，
 
 英文集名：The One With Chandler’s Work Laugh
 
-字幕版本：`S05E12_d184992de533`。檔案：`Friends.S05E12.German.DL.720p.BluRay.x264-NoGRP_ger.srt`。
+字幕版本：`S05E12_d184992de533`。原檔名：`Friends.S05E12.German.DL.720p.BluRay.x264-NoGRP_ger.srt`。
+
+[本集來源紀錄](../data/subtitle_imports/batch_2026-11-16_s05.json)
 
 ### 學習目標
 
@@ -432,7 +874,9 @@ Rachel因Monica繼續用藉口瞞她而受傷。Monica還不想公開戀情，�
 
 英文集名：The One With Joey’s Bag
 
-字幕版本：`S05E13_723d47240e33`。檔案：`Friends.S05E13.German.DL.720p.BluRay.x264-NoGRP_ger.srt`。
+字幕版本：`S05E13_723d47240e33`。原檔名：`Friends.S05E13.German.DL.720p.BluRay.x264-NoGRP_ger.srt`。
+
+[本集來源紀錄](../data/subtitle_imports/batch_2026-11-16_s05.json)
 
 ### 學習目標
 
@@ -516,7 +960,9 @@ Monica希望彼此誠實，但Chandler真正說出想法時，她仍感到受傷
 
 英文集名：The One Where Everybody Finds Out
 
-字幕版本：`S05E14_11ba6504020f`。檔案：`Friends.S05E14.German.DL.720p.BluRay.x264-NoGRP_ger.srt`。
+字幕版本：`S05E14_11ba6504020f`。原檔名：`Friends.S05E14.German.DL.720p.BluRay.x264-NoGRP_ger.srt`。
+
+[本集來源紀錄](../data/subtitle_imports/batch_2026-11-16_s05.json)
 
 ### 學習目標
 

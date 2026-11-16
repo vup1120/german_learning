@@ -1,0 +1,53 @@
+[
+  {
+    "archive_name": "friends.the.one.where.monica.gets.a.roommate.(1994).tv.s01.e01.ger.4cd.zip",
+    "archive_sha256": "0f323b56f82d37d4ded2cc50847b78880bda8951a0ca14e28cf71a2d0dd8426c",
+    "member_name": "01x18.The One With All The Poker.deu.srt",
+    "subtitle_sha256": "6b53201cc39e5ca8896f4761a15109d5d4c8578832edc5486d9b08eb07ffe921",
+    "resolved_episode_id": "S01E18",
+    "reviewed": true,
+    "reviewed_on": "2026-11-16",
+    "review_method": "subtitle_content_review",
+    "reason": "Content review: poker episode title, Rachel job search and repeated poker games; this is an extra episode in the pilot archive.",
+    "evidence_cue_ids": [
+      2,
+      14,
+      51,
+      158,
+      290
+    ]
+  },
+  {
+    "archive_name": "friends.the.one.with.george.stephanopoulos.(1994).tv.s01.e04.ger.3cd.zip",
+    "archive_sha256": "57b6d811a73892da2464a79b57b9356d6c6e6c11471a1c6f2167c3b2067ac0f0",
+    "member_name": "Friends.S01E03.1080p.BluRay.x264_ger.srt",
+    "subtitle_sha256": "0f1240cffe6ee012641f7bafedaf628dda327685d4136092008a40c8a527bb89",
+    "resolved_episode_id": "S01E04",
+    "reviewed": true,
+    "reviewed_on": "2026-11-16",
+    "review_method": "subtitle_content_review",
+    "reason": "Content review: omnipotence opening, hockey tickets and George Stephanopoulos pizza identify S01E04 despite the member filename.",
+    "evidence_cue_ids": [
+      3,
+      41,
+      264
+    ]
+  },
+  {
+    "archive_name": "friends.the.one.with.george.stephanopoulos.(1994).tv.s01.e04.ger.3cd.zip",
+    "archive_sha256": "57b6d811a73892da2464a79b57b9356d6c6e6c11471a1c6f2167c3b2067ac0f0",
+    "member_name": "Friends.S01E04.1080p.BluRay.x264_ger.srt",
+    "subtitle_sha256": "d2dad795001319afcaf7a73a58f4506ba651b93b219a1ba8b1dade7f04ef257b",
+    "resolved_episode_id": "S01E03",
+    "reviewed": true,
+    "reviewed_on": "2026-11-16",
+    "review_method": "subtitle_content_review",
+    "reason": "Content review: Chandler smoking, Monica and Alan, and a thumb found in a drink identify S01E03 despite both archive and member filenames.",
+    "evidence_cue_ids": [
+      34,
+      100,
+      217,
+      297
+    ]
+  }
+]

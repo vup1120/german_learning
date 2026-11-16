@@ -1,0 +1,5354 @@
+{
+  "schema_version": "1.1",
+  "batch_id": "batch_2026-11-16_02",
+  "processed_on": "2026-11-16",
+  "source_type": "user_supplied_subtitle_archives",
+  "public_manifest_contains_subtitle_text": false,
+  "audio_verified": false,
+  "timing_version_specific": true,
+  "input_archive_count": 10,
+  "subtitle_occurrence_count": 17,
+  "unique_subtitle_version_count": 17,
+  "duplicate_subtitle_occurrence_count": 0,
+  "episode_count": 11,
+  "reviewed_episode_resolution_count": 3,
+  "reviewed_episode_resolutions": [
+    {
+      "archive_name": "friends.the.one.where.monica.gets.a.roommate.(1994).tv.s01.e01.ger.4cd.zip",
+      "archive_sha256": "0f323b56f82d37d4ded2cc50847b78880bda8951a0ca14e28cf71a2d0dd8426c",
+      "member_name": "01x18.The One With All The Poker.deu.srt",
+      "subtitle_sha256": "6b53201cc39e5ca8896f4761a15109d5d4c8578832edc5486d9b08eb07ffe921",
+      "resolved_episode_id": "S01E18",
+      "reviewed": true,
+      "reviewed_on": "2026-11-16",
+      "review_method": "subtitle_content_review",
+      "reason": "Content review: poker episode title, Rachel job search and repeated poker games; this is an extra episode in the pilot archive.",
+      "evidence_cue_ids": [
+        2,
+        14,
+        51,
+        158,
+        290
+      ]
+    },
+    {
+      "archive_name": "friends.the.one.with.george.stephanopoulos.(1994).tv.s01.e04.ger.3cd.zip",
+      "archive_sha256": "57b6d811a73892da2464a79b57b9356d6c6e6c11471a1c6f2167c3b2067ac0f0",
+      "member_name": "Friends.S01E03.1080p.BluRay.x264_ger.srt",
+      "subtitle_sha256": "0f1240cffe6ee012641f7bafedaf628dda327685d4136092008a40c8a527bb89",
+      "resolved_episode_id": "S01E04",
+      "reviewed": true,
+      "reviewed_on": "2026-11-16",
+      "review_method": "subtitle_content_review",
+      "reason": "Content review: omnipotence opening, hockey tickets and George Stephanopoulos pizza identify S01E04 despite the member filename.",
+      "evidence_cue_ids": [
+        3,
+        41,
+        264
+      ]
+    },
+    {
+      "archive_name": "friends.the.one.with.george.stephanopoulos.(1994).tv.s01.e04.ger.3cd.zip",
+      "archive_sha256": "57b6d811a73892da2464a79b57b9356d6c6e6c11471a1c6f2167c3b2067ac0f0",
+      "member_name": "Friends.S01E04.1080p.BluRay.x264_ger.srt",
+      "subtitle_sha256": "d2dad795001319afcaf7a73a58f4506ba651b93b219a1ba8b1dade7f04ef257b",
+      "resolved_episode_id": "S01E03",
+      "reviewed": true,
+      "reviewed_on": "2026-11-16",
+      "review_method": "subtitle_content_review",
+      "reason": "Content review: Chandler smoking, Monica and Alan, and a thumb found in a drink identify S01E03 despite both archive and member filenames.",
+      "evidence_cue_ids": [
+        34,
+        100,
+        217,
+        297
+      ]
+    }
+  ],
+  "canonical_cue_count_total": 3935,
+  "archives": [
+    {
+      "archive_name": "friends.the.one.after.ross.says.rachel.(1998).tv.s05.e01.ger.1cd.zip",
+      "archive_sha256": "819b93e4a32845419d82725ec13329d139af54679f32013457ce5cf0576b0ee9",
+      "archive_episode_id": "S05E01",
+      "subtitle_members": [
+        {
+          "archive_episode_id": "S05E01",
+          "member_name": "Friends.S05E01.German.DL.720p.BluRay.x264-NoGRP_ger.srt",
+          "member_episode_id": "S05E01",
+          "subtitle_sha256": "a4ef041f1b074dbe027334307a810d0217dc53fb78e723e1ad33f38962f42f07",
+          "episode_id": "S05E01",
+          "duplicate_content": false,
+          "episode_assignment_method": "filename_agreement",
+          "reviewed_resolution": null
+        }
+      ]
+    },
+    {
+      "archive_name": "friends.the.one.hundredth.(1998).tv.s05.e03.ger.1cd.zip",
+      "archive_sha256": "e8f633729e66ce431ef588728be4d3910b43979bccc6a9a23bf9860681760a2c",
+      "archive_episode_id": "S05E03",
+      "subtitle_members": [
+        {
+          "archive_episode_id": "S05E03",
+          "member_name": "Friends.S05E03.German.DL.720p.BluRay.x264-NoGRP_ger.srt",
+          "member_episode_id": "S05E03",
+          "subtitle_sha256": "effe1c44920beccab768530bd3239a9949daf6454b2636eb1ab3f01a59776d19",
+          "episode_id": "S05E03",
+          "duplicate_content": false,
+          "episode_assignment_method": "filename_agreement",
+          "reviewed_resolution": null
+        }
+      ]
+    },
+    {
+      "archive_name": "friends.the.one.where.monica.gets.a.roommate.(1994).tv.s01.e01.ger.4cd.zip",
+      "archive_sha256": "0f323b56f82d37d4ded2cc50847b78880bda8951a0ca14e28cf71a2d0dd8426c",
+      "archive_episode_id": "S01E01",
+      "subtitle_members": [
+        {
+          "archive_episode_id": "S01E01",
+          "member_name": "Friends.S01E01.de.srt",
+          "member_episode_id": "S01E01",
+          "subtitle_sha256": "36e39ce4bbb58aa794f9a890ae4b9e40b940d0ef36f976a3ca3ca1cc61a9ca2c",
+          "episode_id": "S01E01",
+          "duplicate_content": false,
+          "episode_assignment_method": "filename_agreement",
+          "reviewed_resolution": null
+        },
+        {
+          "archive_episode_id": "S01E01",
+          "member_name": "01x18.The One With All The Poker.deu.srt",
+          "member_episode_id": "S01E18",
+          "subtitle_sha256": "6b53201cc39e5ca8896f4761a15109d5d4c8578832edc5486d9b08eb07ffe921",
+          "episode_id": "S01E18",
+          "duplicate_content": false,
+          "episode_assignment_method": "reviewed_content_resolution",
+          "reviewed_resolution": {
+            "archive_name": "friends.the.one.where.monica.gets.a.roommate.(1994).tv.s01.e01.ger.4cd.zip",
+            "archive_sha256": "0f323b56f82d37d4ded2cc50847b78880bda8951a0ca14e28cf71a2d0dd8426c",
+            "member_name": "01x18.The One With All The Poker.deu.srt",
+            "subtitle_sha256": "6b53201cc39e5ca8896f4761a15109d5d4c8578832edc5486d9b08eb07ffe921",
+            "resolved_episode_id": "S01E18",
+            "reviewed": true,
+            "reviewed_on": "2026-11-16",
+            "review_method": "subtitle_content_review",
+            "reason": "Content review: poker episode title, Rachel job search and repeated poker games; this is an extra episode in the pilot archive.",
+            "evidence_cue_ids": [
+              2,
+              14,
+              51,
+              158,
+              290
+            ]
+          }
+        },
+        {
+          "archive_episode_id": "S01E01",
+          "member_name": "Friends.S01E01.1080p.BluRay.x264_ger.srt",
+          "member_episode_id": "S01E01",
+          "subtitle_sha256": "df3646c584d8ed507b48a05009cf8e6adb90d1fc8986457174ace964fbba15e6",
+          "episode_id": "S01E01",
+          "duplicate_content": false,
+          "episode_assignment_method": "filename_agreement",
+          "reviewed_resolution": null
+        },
+        {
+          "archive_episode_id": "S01E01",
+          "member_name": "S01E01.TOW.It.All.Began.de.srt",
+          "member_episode_id": "S01E01",
+          "subtitle_sha256": "f0876207037a24bff6fee9a3b1e4ecef3d4fb7958324252884b8e8042d149bef",
+          "episode_id": "S01E01",
+          "duplicate_content": false,
+          "episode_assignment_method": "filename_agreement",
+          "reviewed_resolution": null
+        }
+      ]
+    },
+    {
+      "archive_name": "friends.the.one.where.phoebe.hates.pbs.(1998).tv.s05.e04.ger.1cd.zip",
+      "archive_sha256": "06f396c23b99043bc993d529675585c397a066aa124f04d166466bf596886948",
+      "archive_episode_id": "S05E04",
+      "subtitle_members": [
+        {
+          "archive_episode_id": "S05E04",
+          "member_name": "Friends.S05E04.German.DL.720p.BluRay.x264-NoGRP_ger.srt",
+          "member_episode_id": "S05E04",
+          "subtitle_sha256": "e59c3e97940488f643c0e104db9f2c974a6a5f2db3d642273f7a886bc5e14338",
+          "episode_id": "S05E04",
+          "duplicate_content": false,
+          "episode_assignment_method": "filename_agreement",
+          "reviewed_resolution": null
+        }
+      ]
+    },
+    {
+      "archive_name": "friends.the.one.with.all.the.kissing.(1998).tv.s05.e02.ger.1cd.zip",
+      "archive_sha256": "3334394e4c81b0495fbef684b799ac38c4f2ce031de6b95bd946706b10ef2300",
+      "archive_episode_id": "S05E02",
+      "subtitle_members": [
+        {
+          "archive_episode_id": "S05E02",
+          "member_name": "Friends.S05E02.German.DL.720p.BluRay.x264-NoGRP_ger.srt",
+          "member_episode_id": "S05E02",
+          "subtitle_sha256": "6eed5d5f298a962687f236997a59c19f1511b679353f5a73e41b548e8afa510d",
+          "episode_id": "S05E02",
+          "duplicate_content": false,
+          "episode_assignment_method": "filename_agreement",
+          "reviewed_resolution": null
+        }
+      ]
+    },
+    {
+      "archive_name": "friends.the.one.with.george.stephanopoulos.(1994).tv.s01.e04.ger.3cd.zip",
+      "archive_sha256": "57b6d811a73892da2464a79b57b9356d6c6e6c11471a1c6f2167c3b2067ac0f0",
+      "archive_episode_id": "S01E04",
+      "subtitle_members": [
+        {
+          "archive_episode_id": "S01E04",
+          "member_name": "01x04.The One With George Stephanopoulos.deu.srt",
+          "member_episode_id": "S01E04",
+          "subtitle_sha256": "3af6367c61020ae51699d1fcb7a293e422acd1aba6c62ad22a87972325dec39a",
+          "episode_id": "S01E04",
+          "duplicate_content": false,
+          "episode_assignment_method": "filename_agreement",
+          "reviewed_resolution": null
+        },
+        {
+          "archive_episode_id": "S01E04",
+          "member_name": "Friends.S01E03.1080p.BluRay.x264_ger.srt",
+          "member_episode_id": "S01E03",
+          "subtitle_sha256": "0f1240cffe6ee012641f7bafedaf628dda327685d4136092008a40c8a527bb89",
+          "episode_id": "S01E04",
+          "duplicate_content": false,
+          "episode_assignment_method": "reviewed_content_resolution",
+          "reviewed_resolution": {
+            "archive_name": "friends.the.one.with.george.stephanopoulos.(1994).tv.s01.e04.ger.3cd.zip",
+            "archive_sha256": "57b6d811a73892da2464a79b57b9356d6c6e6c11471a1c6f2167c3b2067ac0f0",
+            "member_name": "Friends.S01E03.1080p.BluRay.x264_ger.srt",
+            "subtitle_sha256": "0f1240cffe6ee012641f7bafedaf628dda327685d4136092008a40c8a527bb89",
+            "resolved_episode_id": "S01E04",
+            "reviewed": true,
+            "reviewed_on": "2026-11-16",
+            "review_method": "subtitle_content_review",
+            "reason": "Content review: omnipotence opening, hockey tickets and George Stephanopoulos pizza identify S01E04 despite the member filename.",
+            "evidence_cue_ids": [
+              3,
+              41,
+              264
+            ]
+          }
+        },
+        {
+          "archive_episode_id": "S01E04",
+          "member_name": "Friends.S01E04.1080p.BluRay.x264_ger.srt",
+          "member_episode_id": "S01E04",
+          "subtitle_sha256": "d2dad795001319afcaf7a73a58f4506ba651b93b219a1ba8b1dade7f04ef257b",
+          "episode_id": "S01E03",
+          "duplicate_content": false,
+          "episode_assignment_method": "reviewed_content_resolution",
+          "reviewed_resolution": {
+            "archive_name": "friends.the.one.with.george.stephanopoulos.(1994).tv.s01.e04.ger.3cd.zip",
+            "archive_sha256": "57b6d811a73892da2464a79b57b9356d6c6e6c11471a1c6f2167c3b2067ac0f0",
+            "member_name": "Friends.S01E04.1080p.BluRay.x264_ger.srt",
+            "subtitle_sha256": "d2dad795001319afcaf7a73a58f4506ba651b93b219a1ba8b1dade7f04ef257b",
+            "resolved_episode_id": "S01E03",
+            "reviewed": true,
+            "reviewed_on": "2026-11-16",
+            "review_method": "subtitle_content_review",
+            "reason": "Content review: Chandler smoking, Monica and Alan, and a thumb found in a drink identify S01E03 despite both archive and member filenames.",
+            "evidence_cue_ids": [
+              34,
+              100,
+              217,
+              297
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "archive_name": "friends.the.one.with.rachels.new.dress.(1998).tv.s04.e18.ger.1cd.zip",
+      "archive_sha256": "0e85d9bb40bc11052485960dd002e4ba5ccdb26c57ce2eb14705befe0d4c4b73",
+      "archive_episode_id": "S04E18",
+      "subtitle_members": [
+        {
+          "archive_episode_id": "S04E18",
+          "member_name": "S04E18.TOW.Rachel's.New.Dress.German.srt",
+          "member_episode_id": "S04E18",
+          "subtitle_sha256": "68cdbb6adb777e656c4802479d86d813ad5efcf380a4d6cec3e1f75bd136126a",
+          "episode_id": "S04E18",
+          "duplicate_content": false,
+          "episode_assignment_method": "filename_agreement",
+          "reviewed_resolution": null
+        }
+      ]
+    },
+    {
+      "archive_name": "friends.the.one.with.the.kips.(1998).tv.s05.e05.ger.1cd.zip",
+      "archive_sha256": "8b72dc96d6b68f7b87e3663d1e09e3dc184287c42d6b2743b19224809a422051",
+      "archive_episode_id": "S05E05",
+      "subtitle_members": [
+        {
+          "archive_episode_id": "S05E05",
+          "member_name": "Friends.S05E05.German.DL.720p.BluRay.x264-NoGRP_ger.srt",
+          "member_episode_id": "S05E05",
+          "subtitle_sha256": "ab583ef1943f48a98617ba7c7b351ed63b1a3f3104a62493f8868d3af49f483c",
+          "episode_id": "S05E05",
+          "duplicate_content": false,
+          "episode_assignment_method": "filename_agreement",
+          "reviewed_resolution": null
+        }
+      ]
+    },
+    {
+      "archive_name": "friends.the.one.with.the.sonogram.at.the.end.(1994).tv.s01.e02.ger.2cd.zip",
+      "archive_sha256": "bd2b280508f7155bf3ca161f80137c8519fa3ccf4c7bd8e29c427df7ff90e5d3",
+      "archive_episode_id": "S01E02",
+      "subtitle_members": [
+        {
+          "archive_episode_id": "S01E02",
+          "member_name": "01x02.The One With The Sonogram At The End.deu.srt",
+          "member_episode_id": "S01E02",
+          "subtitle_sha256": "835f4afe61f1a409a32b1052f0fa08acf332fb64dcc730cb6102fd3419fa536c",
+          "episode_id": "S01E02",
+          "duplicate_content": false,
+          "episode_assignment_method": "filename_agreement",
+          "reviewed_resolution": null
+        },
+        {
+          "archive_episode_id": "S01E02",
+          "member_name": "Friends.S01E02.1080p.BluRay.x264_ger.srt",
+          "member_episode_id": "S01E02",
+          "subtitle_sha256": "becf320ed0062c089da2723278fa5b6f63f0ce9e78c2d8ca5d73073591bec4f8",
+          "episode_id": "S01E02",
+          "duplicate_content": false,
+          "episode_assignment_method": "filename_agreement",
+          "reviewed_resolution": null
+        }
+      ]
+    },
+    {
+      "archive_name": "friends.the.one.with.the.thumb.(1994).tv.s01.e03.ger.2cd.zip",
+      "archive_sha256": "d43379ab54304f62e926b3a0960654f84ef2d941c0d6f94498d77246539d6763",
+      "archive_episode_id": "S01E03",
+      "subtitle_members": [
+        {
+          "archive_episode_id": "S01E03",
+          "member_name": "01x03.The One With The Thumb.deu.srt",
+          "member_episode_id": "S01E03",
+          "subtitle_sha256": "09df0ffd541dd2773e5718ba4cdd4426f0cb5913e9a83380d1450c8405e38778",
+          "episode_id": "S01E03",
+          "duplicate_content": false,
+          "episode_assignment_method": "filename_agreement",
+          "reviewed_resolution": null
+        },
+        {
+          "archive_episode_id": "S01E03",
+          "member_name": "S01E03.srt",
+          "member_episode_id": "S01E03",
+          "subtitle_sha256": "99e1ca9488eba6ac0a158bcd388e75aefbd84857351a534e0e4475a9bba499f1",
+          "episode_id": "S01E03",
+          "duplicate_content": false,
+          "episode_assignment_method": "filename_agreement",
+          "reviewed_resolution": null
+        }
+      ]
+    }
+  ],
+  "episodes": [
+    {
+      "episode_id": "S01E01",
+      "language": "de",
+      "subtitle_available": true,
+      "audio_verified": false,
+      "timing_version_specific": true,
+      "canonical_version_id": "S01E01_df3646c584d8",
+      "canonical_selection_status": "provisional_lesson_reference",
+      "canonical_selection_reason": "Provisional lesson reference: prefer the explicitly named BluRay release for consistency with this batch, then a file without an editor-credit cue. All alternatives are retained; audio and playback synchronization are unverified.",
+      "versions": [
+        {
+          "version_id": "S01E01_36e39ce4bbb5",
+          "subtitle_sha256": "36e39ce4bbb58aa794f9a890ae4b9e40b940d0ef36f976a3ca3ca1cc61a9ca2c",
+          "source_members": [
+            "Friends.S01E01.de.srt"
+          ],
+          "source_archives": [
+            {
+              "archive_name": "friends.the.one.where.monica.gets.a.roommate.(1994).tv.s01.e01.ger.4cd.zip",
+              "archive_sha256": "0f323b56f82d37d4ded2cc50847b78880bda8951a0ca14e28cf71a2d0dd8426c"
+            }
+          ],
+          "source_assignments": [
+            {
+              "archive_name": "friends.the.one.where.monica.gets.a.roommate.(1994).tv.s01.e01.ger.4cd.zip",
+              "archive_sha256": "0f323b56f82d37d4ded2cc50847b78880bda8951a0ca14e28cf71a2d0dd8426c",
+              "archive_episode_id": "S01E01",
+              "member_name": "Friends.S01E01.de.srt",
+              "member_episode_id": "S01E01",
+              "subtitle_sha256": "36e39ce4bbb58aa794f9a890ae4b9e40b940d0ef36f976a3ca3ca1cc61a9ca2c",
+              "episode_id": "S01E01",
+              "episode_assignment_method": "filename_agreement",
+              "reviewed_resolution": null
+            }
+          ],
+          "encoding": "cp1252",
+          "byte_count": 28594,
+          "caption_type_hint": "SDH indicated by subtitle file contents",
+          "cue_count": 351,
+          "content_cue_count": 350,
+          "metadata_cue_ids": [
+            2
+          ],
+          "first_cue_start_ms": 2440,
+          "last_cue_end_ms": 1304392,
+          "last_content_cue_end_ms": 1304392,
+          "warnings": []
+        },
+        {
+          "version_id": "S01E01_df3646c584d8",
+          "subtitle_sha256": "df3646c584d8ed507b48a05009cf8e6adb90d1fc8986457174ace964fbba15e6",
+          "source_members": [
+            "Friends.S01E01.1080p.BluRay.x264_ger.srt"
+          ],
+          "source_archives": [
+            {
+              "archive_name": "friends.the.one.where.monica.gets.a.roommate.(1994).tv.s01.e01.ger.4cd.zip",
+              "archive_sha256": "0f323b56f82d37d4ded2cc50847b78880bda8951a0ca14e28cf71a2d0dd8426c"
+            }
+          ],
+          "source_assignments": [
+            {
+              "archive_name": "friends.the.one.where.monica.gets.a.roommate.(1994).tv.s01.e01.ger.4cd.zip",
+              "archive_sha256": "0f323b56f82d37d4ded2cc50847b78880bda8951a0ca14e28cf71a2d0dd8426c",
+              "archive_episode_id": "S01E01",
+              "member_name": "Friends.S01E01.1080p.BluRay.x264_ger.srt",
+              "member_episode_id": "S01E01",
+              "subtitle_sha256": "df3646c584d8ed507b48a05009cf8e6adb90d1fc8986457174ace964fbba15e6",
+              "episode_id": "S01E01",
+              "episode_assignment_method": "filename_agreement",
+              "reviewed_resolution": null
+            }
+          ],
+          "encoding": "utf-8-sig",
+          "byte_count": 29577,
+          "caption_type_hint": "not established",
+          "cue_count": 364,
+          "content_cue_count": 364,
+          "metadata_cue_ids": [],
+          "first_cue_start_ms": 47953,
+          "last_cue_end_ms": 1358512,
+          "last_content_cue_end_ms": 1358512,
+          "warnings": []
+        },
+        {
+          "version_id": "S01E01_f0876207037a",
+          "subtitle_sha256": "f0876207037a24bff6fee9a3b1e4ecef3d4fb7958324252884b8e8042d149bef",
+          "source_members": [
+            "S01E01.TOW.It.All.Began.de.srt"
+          ],
+          "source_archives": [
+            {
+              "archive_name": "friends.the.one.where.monica.gets.a.roommate.(1994).tv.s01.e01.ger.4cd.zip",
+              "archive_sha256": "0f323b56f82d37d4ded2cc50847b78880bda8951a0ca14e28cf71a2d0dd8426c"
+            }
+          ],
+          "source_assignments": [
+            {
+              "archive_name": "friends.the.one.where.monica.gets.a.roommate.(1994).tv.s01.e01.ger.4cd.zip",
+              "archive_sha256": "0f323b56f82d37d4ded2cc50847b78880bda8951a0ca14e28cf71a2d0dd8426c",
+              "archive_episode_id": "S01E01",
+              "member_name": "S01E01.TOW.It.All.Began.de.srt",
+              "member_episode_id": "S01E01",
+              "subtitle_sha256": "f0876207037a24bff6fee9a3b1e4ecef3d4fb7958324252884b8e8042d149bef",
+              "episode_id": "S01E01",
+              "episode_assignment_method": "filename_agreement",
+              "reviewed_resolution": null
+            }
+          ],
+          "encoding": "utf-8-sig",
+          "byte_count": 28402,
+          "caption_type_hint": "not established",
+          "cue_count": 350,
+          "content_cue_count": 350,
+          "metadata_cue_ids": [],
+          "first_cue_start_ms": 50038,
+          "last_cue_end_ms": 1358512,
+          "last_content_cue_end_ms": 1358512,
+          "warnings": []
+        }
+      ],
+      "version_comparisons": [
+        {
+          "reference_version_id": "S01E01_df3646c584d8",
+          "alternate_version_id": "S01E01_36e39ce4bbb5",
+          "relationship": "different_content_review_required",
+          "matching_content_cues": 178,
+          "reference_content_cues": 364,
+          "alternate_content_cues": 350,
+          "text_sequence_similarity": 0.498599,
+          "changed_cue_groups": [
+            {
+              "reference_cue_ids": [
+                1,
+                2
+              ],
+              "alternate_cue_ids": [
+                1,
+                3
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                5,
+                6,
+                7,
+                8,
+                9
+              ],
+              "alternate_cue_ids": [
+                6,
+                7,
+                8,
+                9,
+                10
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                11,
+                12
+              ],
+              "alternate_cue_ids": [
+                12,
+                13
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                14,
+                15
+              ],
+              "alternate_cue_ids": [
+                15,
+                16
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                17,
+                18,
+                19,
+                20
+              ],
+              "alternate_cue_ids": [
+                18,
+                19,
+                20,
+                21
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                24,
+                25
+              ],
+              "alternate_cue_ids": [
+                25,
+                26
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                27
+              ],
+              "alternate_cue_ids": [],
+              "operation": "delete"
+            },
+            {
+              "reference_cue_ids": [
+                29,
+                30,
+                31
+              ],
+              "alternate_cue_ids": [
+                29,
+                30,
+                31
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                33,
+                34
+              ],
+              "alternate_cue_ids": [
+                33,
+                34
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                36
+              ],
+              "alternate_cue_ids": [
+                36
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                40
+              ],
+              "alternate_cue_ids": [
+                40
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                45
+              ],
+              "alternate_cue_ids": [
+                45
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                48
+              ],
+              "alternate_cue_ids": [
+                48
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                50,
+                51,
+                52
+              ],
+              "alternate_cue_ids": [
+                50,
+                51,
+                52
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                54,
+                55,
+                56,
+                57,
+                58,
+                59
+              ],
+              "alternate_cue_ids": [
+                54,
+                55,
+                56,
+                57
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                62,
+                63
+              ],
+              "alternate_cue_ids": [
+                60,
+                61
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                65,
+                66,
+                67,
+                68,
+                69
+              ],
+              "alternate_cue_ids": [
+                63,
+                64,
+                65,
+                66,
+                67
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                73,
+                74
+              ],
+              "alternate_cue_ids": [
+                71,
+                72
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                76,
+                77,
+                78,
+                79,
+                80,
+                81
+              ],
+              "alternate_cue_ids": [
+                74,
+                75,
+                76,
+                77,
+                78,
+                79
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                83
+              ],
+              "alternate_cue_ids": [
+                81
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                85,
+                86,
+                87
+              ],
+              "alternate_cue_ids": [
+                83,
+                84
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                105,
+                106,
+                107
+              ],
+              "alternate_cue_ids": [
+                102,
+                103,
+                104
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                110
+              ],
+              "alternate_cue_ids": [
+                107
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                114
+              ],
+              "alternate_cue_ids": [
+                111
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                116
+              ],
+              "alternate_cue_ids": [
+                113
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                118
+              ],
+              "alternate_cue_ids": [
+                115
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                122,
+                123
+              ],
+              "alternate_cue_ids": [
+                119,
+                120
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                125
+              ],
+              "alternate_cue_ids": [
+                122
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                129,
+                130,
+                131,
+                132,
+                133,
+                134,
+                135,
+                136
+              ],
+              "alternate_cue_ids": [
+                126,
+                127,
+                128,
+                129,
+                130,
+                131
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                138,
+                139
+              ],
+              "alternate_cue_ids": [
+                133,
+                134
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                141,
+                142,
+                143,
+                144,
+                145
+              ],
+              "alternate_cue_ids": [
+                136,
+                137,
+                138,
+                139,
+                140
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                148,
+                149
+              ],
+              "alternate_cue_ids": [
+                143,
+                144
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                151,
+                152,
+                153,
+                154
+              ],
+              "alternate_cue_ids": [
+                146,
+                147,
+                148,
+                149
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                160
+              ],
+              "alternate_cue_ids": [
+                155
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                163,
+                164,
+                165,
+                166
+              ],
+              "alternate_cue_ids": [
+                158,
+                159,
+                160,
+                161
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                172,
+                173,
+                174,
+                175
+              ],
+              "alternate_cue_ids": [
+                167,
+                168,
+                169,
+                170
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                178,
+                179
+              ],
+              "alternate_cue_ids": [
+                173
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                187,
+                188,
+                189
+              ],
+              "alternate_cue_ids": [
+                181,
+                182,
+                183
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                201,
+                202,
+                203,
+                204,
+                205,
+                206
+              ],
+              "alternate_cue_ids": [
+                195,
+                196,
+                197,
+                198,
+                199
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                208
+              ],
+              "alternate_cue_ids": [],
+              "operation": "delete"
+            },
+            {
+              "reference_cue_ids": [
+                210,
+                211
+              ],
+              "alternate_cue_ids": [
+                202,
+                203
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                217
+              ],
+              "alternate_cue_ids": [
+                209,
+                210
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                221,
+                222,
+                223,
+                224
+              ],
+              "alternate_cue_ids": [
+                214,
+                215,
+                216,
+                217
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                226
+              ],
+              "alternate_cue_ids": [
+                219
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                228,
+                229,
+                230,
+                231,
+                232
+              ],
+              "alternate_cue_ids": [
+                221,
+                222,
+                223,
+                224
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                236,
+                237
+              ],
+              "alternate_cue_ids": [
+                228,
+                229
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                239,
+                240
+              ],
+              "alternate_cue_ids": [
+                231,
+                232
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                242,
+                243
+              ],
+              "alternate_cue_ids": [
+                234,
+                235
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                247
+              ],
+              "alternate_cue_ids": [
+                239
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                252,
+                253,
+                254
+              ],
+              "alternate_cue_ids": [
+                244,
+                245,
+                246
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                259,
+                260,
+                261,
+                262
+              ],
+              "alternate_cue_ids": [
+                251,
+                252,
+                253,
+                254,
+                255
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                265
+              ],
+              "alternate_cue_ids": [
+                258
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                267
+              ],
+              "alternate_cue_ids": [
+                260
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                269
+              ],
+              "alternate_cue_ids": [
+                262,
+                263
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                271
+              ],
+              "alternate_cue_ids": [
+                265
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                274
+              ],
+              "alternate_cue_ids": [
+                268
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                277,
+                278
+              ],
+              "alternate_cue_ids": [
+                271,
+                272
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                280,
+                281
+              ],
+              "alternate_cue_ids": [
+                274,
+                275
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                287,
+                288
+              ],
+              "alternate_cue_ids": [
+                281,
+                282
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                290,
+                291
+              ],
+              "alternate_cue_ids": [
+                284,
+                285
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                293,
+                294,
+                295
+              ],
+              "alternate_cue_ids": [
+                287,
+                288,
+                289
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                297
+              ],
+              "alternate_cue_ids": [
+                291
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                300
+              ],
+              "alternate_cue_ids": [
+                294
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                310,
+                311
+              ],
+              "alternate_cue_ids": [
+                304
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                313,
+                314,
+                315
+              ],
+              "alternate_cue_ids": [
+                306,
+                307,
+                308,
+                309
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                317,
+                318,
+                319,
+                320
+              ],
+              "alternate_cue_ids": [
+                311,
+                312,
+                313,
+                314
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                325,
+                326,
+                327,
+                328,
+                329,
+                330
+              ],
+              "alternate_cue_ids": [
+                319,
+                320,
+                321
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                332
+              ],
+              "alternate_cue_ids": [],
+              "operation": "delete"
+            },
+            {
+              "reference_cue_ids": [
+                334,
+                335
+              ],
+              "alternate_cue_ids": [
+                324,
+                325
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                337
+              ],
+              "alternate_cue_ids": [
+                327
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                339
+              ],
+              "alternate_cue_ids": [
+                329
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                342
+              ],
+              "alternate_cue_ids": [
+                332
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                345,
+                346,
+                347
+              ],
+              "alternate_cue_ids": [
+                335,
+                336
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                349,
+                350
+              ],
+              "alternate_cue_ids": [],
+              "operation": "delete"
+            },
+            {
+              "reference_cue_ids": [
+                352,
+                353,
+                354
+              ],
+              "alternate_cue_ids": [
+                339,
+                340,
+                341
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                356
+              ],
+              "alternate_cue_ids": [
+                343
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                358,
+                359
+              ],
+              "alternate_cue_ids": [
+                345,
+                346
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                362,
+                363
+              ],
+              "alternate_cue_ids": [
+                349,
+                350
+              ],
+              "operation": "replace"
+            }
+          ],
+          "matching_cue_start_offset_ms_range": [
+            -53695,
+            -2281
+          ],
+          "single_constant_start_offset": false,
+          "concatenate_automatically": false
+        },
+        {
+          "reference_version_id": "S01E01_df3646c584d8",
+          "alternate_version_id": "S01E01_f0876207037a",
+          "relationship": "overlapping_edited_version",
+          "matching_content_cues": 316,
+          "reference_content_cues": 364,
+          "alternate_content_cues": 350,
+          "text_sequence_similarity": 0.885154,
+          "changed_cue_groups": [
+            {
+              "reference_cue_ids": [
+                1
+              ],
+              "alternate_cue_ids": [],
+              "operation": "delete"
+            },
+            {
+              "reference_cue_ids": [
+                13
+              ],
+              "alternate_cue_ids": [
+                12
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                17
+              ],
+              "alternate_cue_ids": [
+                16
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                27
+              ],
+              "alternate_cue_ids": [
+                26
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                55
+              ],
+              "alternate_cue_ids": [
+                54
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                59
+              ],
+              "alternate_cue_ids": [],
+              "operation": "delete"
+            },
+            {
+              "reference_cue_ids": [
+                71
+              ],
+              "alternate_cue_ids": [
+                69
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                77
+              ],
+              "alternate_cue_ids": [],
+              "operation": "delete"
+            },
+            {
+              "reference_cue_ids": [
+                84
+              ],
+              "alternate_cue_ids": [
+                81
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                86,
+                87
+              ],
+              "alternate_cue_ids": [
+                83
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                105,
+                106
+              ],
+              "alternate_cue_ids": [
+                101,
+                102
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                110
+              ],
+              "alternate_cue_ids": [
+                106
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                116
+              ],
+              "alternate_cue_ids": [],
+              "operation": "delete"
+            },
+            {
+              "reference_cue_ids": [
+                118
+              ],
+              "alternate_cue_ids": [
+                113
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                129,
+                130
+              ],
+              "alternate_cue_ids": [
+                124
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                132,
+                133
+              ],
+              "alternate_cue_ids": [
+                126,
+                127
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                135
+              ],
+              "alternate_cue_ids": [],
+              "operation": "delete"
+            },
+            {
+              "reference_cue_ids": [
+                165
+              ],
+              "alternate_cue_ids": [
+                158
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                178
+              ],
+              "alternate_cue_ids": [],
+              "operation": "delete"
+            },
+            {
+              "reference_cue_ids": [
+                217
+              ],
+              "alternate_cue_ids": [
+                209
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                230,
+                231,
+                232
+              ],
+              "alternate_cue_ids": [
+                222,
+                223,
+                224
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                234,
+                235
+              ],
+              "alternate_cue_ids": [
+                226,
+                227
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                240
+              ],
+              "alternate_cue_ids": [
+                232
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                253,
+                254
+              ],
+              "alternate_cue_ids": [
+                245,
+                246
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                311
+              ],
+              "alternate_cue_ids": [
+                303
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                313,
+                314
+              ],
+              "alternate_cue_ids": [
+                305,
+                306
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                317
+              ],
+              "alternate_cue_ids": [],
+              "operation": "delete"
+            },
+            {
+              "reference_cue_ids": [
+                319
+              ],
+              "alternate_cue_ids": [
+                310
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                326,
+                327,
+                328
+              ],
+              "alternate_cue_ids": [
+                317
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                347
+              ],
+              "alternate_cue_ids": [],
+              "operation": "delete"
+            },
+            {
+              "reference_cue_ids": [
+                349,
+                350
+              ],
+              "alternate_cue_ids": [],
+              "operation": "delete"
+            },
+            {
+              "reference_cue_ids": [
+                352
+              ],
+              "alternate_cue_ids": [
+                338
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                356
+              ],
+              "alternate_cue_ids": [
+                342
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                359,
+                360
+              ],
+              "alternate_cue_ids": [
+                345,
+                346
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                362
+              ],
+              "alternate_cue_ids": [
+                348
+              ],
+              "operation": "replace"
+            }
+          ],
+          "matching_cue_start_offset_ms_range": [
+            0,
+            0
+          ],
+          "single_constant_start_offset": true,
+          "concatenate_automatically": false
+        }
+      ]
+    },
+    {
+      "episode_id": "S01E02",
+      "language": "de",
+      "subtitle_available": true,
+      "audio_verified": false,
+      "timing_version_specific": true,
+      "canonical_version_id": "S01E02_becf320ed006",
+      "canonical_selection_status": "provisional_lesson_reference",
+      "canonical_selection_reason": "Provisional lesson reference: prefer the explicitly named BluRay release for consistency with this batch, then a file without an editor-credit cue. All alternatives are retained; audio and playback synchronization are unverified.",
+      "versions": [
+        {
+          "version_id": "S01E02_835f4afe61f1",
+          "subtitle_sha256": "835f4afe61f1a409a32b1052f0fa08acf332fb64dcc730cb6102fd3419fa536c",
+          "source_members": [
+            "01x02.The One With The Sonogram At The End.deu.srt"
+          ],
+          "source_archives": [
+            {
+              "archive_name": "friends.the.one.with.the.sonogram.at.the.end.(1994).tv.s01.e02.ger.2cd.zip",
+              "archive_sha256": "bd2b280508f7155bf3ca161f80137c8519fa3ccf4c7bd8e29c427df7ff90e5d3"
+            }
+          ],
+          "source_assignments": [
+            {
+              "archive_name": "friends.the.one.with.the.sonogram.at.the.end.(1994).tv.s01.e02.ger.2cd.zip",
+              "archive_sha256": "bd2b280508f7155bf3ca161f80137c8519fa3ccf4c7bd8e29c427df7ff90e5d3",
+              "archive_episode_id": "S01E02",
+              "member_name": "01x02.The One With The Sonogram At The End.deu.srt",
+              "member_episode_id": "S01E02",
+              "subtitle_sha256": "835f4afe61f1a409a32b1052f0fa08acf332fb64dcc730cb6102fd3419fa536c",
+              "episode_id": "S01E02",
+              "episode_assignment_method": "filename_agreement",
+              "reviewed_resolution": null
+            }
+          ],
+          "encoding": "cp1252",
+          "byte_count": 26948,
+          "caption_type_hint": "SDH indicated by subtitle file contents",
+          "cue_count": 352,
+          "content_cue_count": 351,
+          "metadata_cue_ids": [
+            22
+          ],
+          "first_cue_start_ms": 2760,
+          "last_cue_end_ms": 1306835,
+          "last_content_cue_end_ms": 1306835,
+          "warnings": []
+        },
+        {
+          "version_id": "S01E02_becf320ed006",
+          "subtitle_sha256": "becf320ed0062c089da2723278fa5b6f63f0ce9e78c2d8ca5d73073591bec4f8",
+          "source_members": [
+            "Friends.S01E02.1080p.BluRay.x264_ger.srt"
+          ],
+          "source_archives": [
+            {
+              "archive_name": "friends.the.one.with.the.sonogram.at.the.end.(1994).tv.s01.e02.ger.2cd.zip",
+              "archive_sha256": "bd2b280508f7155bf3ca161f80137c8519fa3ccf4c7bd8e29c427df7ff90e5d3"
+            }
+          ],
+          "source_assignments": [
+            {
+              "archive_name": "friends.the.one.with.the.sonogram.at.the.end.(1994).tv.s01.e02.ger.2cd.zip",
+              "archive_sha256": "bd2b280508f7155bf3ca161f80137c8519fa3ccf4c7bd8e29c427df7ff90e5d3",
+              "archive_episode_id": "S01E02",
+              "member_name": "Friends.S01E02.1080p.BluRay.x264_ger.srt",
+              "member_episode_id": "S01E02",
+              "subtitle_sha256": "becf320ed0062c089da2723278fa5b6f63f0ce9e78c2d8ca5d73073591bec4f8",
+              "episode_id": "S01E02",
+              "episode_assignment_method": "filename_agreement",
+              "reviewed_resolution": null
+            }
+          ],
+          "encoding": "utf-8-sig",
+          "byte_count": 27350,
+          "caption_type_hint": "not established",
+          "cue_count": 357,
+          "content_cue_count": 357,
+          "metadata_cue_ids": [],
+          "first_cue_start_ms": 2879,
+          "last_cue_end_ms": 1360986,
+          "last_content_cue_end_ms": 1360986,
+          "warnings": []
+        }
+      ],
+      "version_comparisons": [
+        {
+          "reference_version_id": "S01E02_becf320ed006",
+          "alternate_version_id": "S01E02_835f4afe61f1",
+          "relationship": "different_content_review_required",
+          "matching_content_cues": 209,
+          "reference_content_cues": 357,
+          "alternate_content_cues": 351,
+          "text_sequence_similarity": 0.590395,
+          "changed_cue_groups": [
+            {
+              "reference_cue_ids": [
+                1,
+                2
+              ],
+              "alternate_cue_ids": [
+                1,
+                2
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                5
+              ],
+              "alternate_cue_ids": [
+                5
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                7,
+                8,
+                9,
+                10
+              ],
+              "alternate_cue_ids": [
+                7,
+                8,
+                9,
+                10
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                12,
+                13,
+                14,
+                15,
+                16,
+                17
+              ],
+              "alternate_cue_ids": [
+                12,
+                13,
+                14,
+                15,
+                16,
+                17
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                19
+              ],
+              "alternate_cue_ids": [
+                19
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                21,
+                22,
+                23
+              ],
+              "alternate_cue_ids": [
+                21,
+                23,
+                24
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                25,
+                26,
+                27
+              ],
+              "alternate_cue_ids": [
+                26,
+                27,
+                28
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                29,
+                30
+              ],
+              "alternate_cue_ids": [
+                30,
+                31
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                32,
+                33
+              ],
+              "alternate_cue_ids": [
+                33,
+                34
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                35,
+                36,
+                37
+              ],
+              "alternate_cue_ids": [
+                36,
+                37
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                40,
+                41,
+                42
+              ],
+              "alternate_cue_ids": [
+                40,
+                41,
+                42,
+                43
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                46
+              ],
+              "alternate_cue_ids": [
+                47
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                48,
+                49,
+                50
+              ],
+              "alternate_cue_ids": [
+                49,
+                50,
+                51,
+                52
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                53,
+                54
+              ],
+              "alternate_cue_ids": [
+                55,
+                56
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                56,
+                57,
+                58,
+                59
+              ],
+              "alternate_cue_ids": [
+                58,
+                59,
+                60
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                61,
+                62,
+                63
+              ],
+              "alternate_cue_ids": [
+                62,
+                63,
+                64
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                70
+              ],
+              "alternate_cue_ids": [
+                71
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                72
+              ],
+              "alternate_cue_ids": [
+                73
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                79,
+                80,
+                81,
+                82
+              ],
+              "alternate_cue_ids": [
+                80,
+                81,
+                82,
+                83
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                84
+              ],
+              "alternate_cue_ids": [
+                85
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                90
+              ],
+              "alternate_cue_ids": [
+                91
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                92
+              ],
+              "alternate_cue_ids": [
+                93
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                96
+              ],
+              "alternate_cue_ids": [
+                97
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                99
+              ],
+              "alternate_cue_ids": [
+                100
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                104
+              ],
+              "alternate_cue_ids": [
+                105
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                106,
+                107
+              ],
+              "alternate_cue_ids": [
+                107,
+                108
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                116,
+                117
+              ],
+              "alternate_cue_ids": [
+                117,
+                118
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                123
+              ],
+              "alternate_cue_ids": [
+                124
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                132,
+                133
+              ],
+              "alternate_cue_ids": [
+                133,
+                134
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                137
+              ],
+              "alternate_cue_ids": [
+                138
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                139,
+                140,
+                141,
+                142
+              ],
+              "alternate_cue_ids": [
+                140,
+                141,
+                142,
+                143
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                144,
+                145,
+                146,
+                147
+              ],
+              "alternate_cue_ids": [
+                145,
+                146,
+                147,
+                148
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                153,
+                154
+              ],
+              "alternate_cue_ids": [
+                154,
+                155
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                160,
+                161
+              ],
+              "alternate_cue_ids": [
+                161,
+                162
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                164,
+                165,
+                166
+              ],
+              "alternate_cue_ids": [
+                165,
+                166,
+                167
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                174
+              ],
+              "alternate_cue_ids": [
+                175
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                179
+              ],
+              "alternate_cue_ids": [
+                180
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                184
+              ],
+              "alternate_cue_ids": [
+                185
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                186,
+                187
+              ],
+              "alternate_cue_ids": [
+                187,
+                188
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                191
+              ],
+              "alternate_cue_ids": [
+                192
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                193
+              ],
+              "alternate_cue_ids": [],
+              "operation": "delete"
+            },
+            {
+              "reference_cue_ids": [
+                197
+              ],
+              "alternate_cue_ids": [
+                197
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                208,
+                209,
+                210
+              ],
+              "alternate_cue_ids": [
+                208,
+                209,
+                210
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                212,
+                213
+              ],
+              "alternate_cue_ids": [
+                212
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                215,
+                216
+              ],
+              "alternate_cue_ids": [
+                214,
+                215
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                222
+              ],
+              "alternate_cue_ids": [
+                221
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                224
+              ],
+              "alternate_cue_ids": [
+                223
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                229,
+                230
+              ],
+              "alternate_cue_ids": [
+                228,
+                229
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                233
+              ],
+              "alternate_cue_ids": [
+                232,
+                233
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                235,
+                236
+              ],
+              "alternate_cue_ids": [
+                235
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                242
+              ],
+              "alternate_cue_ids": [
+                241
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                245,
+                246,
+                247,
+                248,
+                249,
+                250,
+                251,
+                252,
+                253
+              ],
+              "alternate_cue_ids": [
+                244,
+                245,
+                246,
+                247,
+                248,
+                249,
+                250,
+                251
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                256
+              ],
+              "alternate_cue_ids": [
+                254
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                258
+              ],
+              "alternate_cue_ids": [
+                256
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                261
+              ],
+              "alternate_cue_ids": [
+                259
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                266,
+                267
+              ],
+              "alternate_cue_ids": [
+                264,
+                265,
+                266
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                269
+              ],
+              "alternate_cue_ids": [],
+              "operation": "delete"
+            },
+            {
+              "reference_cue_ids": [
+                271
+              ],
+              "alternate_cue_ids": [
+                269
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                274
+              ],
+              "alternate_cue_ids": [
+                272
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                280,
+                281,
+                282
+              ],
+              "alternate_cue_ids": [
+                278
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                287,
+                288,
+                289,
+                290
+              ],
+              "alternate_cue_ids": [
+                283,
+                284,
+                285,
+                286
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                292,
+                293,
+                294
+              ],
+              "alternate_cue_ids": [
+                288,
+                289,
+                290
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                296,
+                297
+              ],
+              "alternate_cue_ids": [
+                292,
+                293
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                300
+              ],
+              "alternate_cue_ids": [
+                296
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                310
+              ],
+              "alternate_cue_ids": [
+                306
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                324,
+                325,
+                326,
+                327
+              ],
+              "alternate_cue_ids": [
+                320,
+                321,
+                322,
+                323
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                329
+              ],
+              "alternate_cue_ids": [
+                325
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                336
+              ],
+              "alternate_cue_ids": [
+                332
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                338,
+                339,
+                340
+              ],
+              "alternate_cue_ids": [
+                334,
+                335,
+                336
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                344
+              ],
+              "alternate_cue_ids": [],
+              "operation": "delete"
+            },
+            {
+              "reference_cue_ids": [
+                352,
+                353,
+                354,
+                355,
+                356,
+                357
+              ],
+              "alternate_cue_ids": [
+                347,
+                348,
+                349,
+                350,
+                351,
+                352
+              ],
+              "operation": "replace"
+            }
+          ],
+          "matching_cue_start_offset_ms_range": [
+            -53272,
+            -317
+          ],
+          "single_constant_start_offset": false,
+          "concatenate_automatically": false
+        }
+      ]
+    },
+    {
+      "episode_id": "S01E03",
+      "language": "de",
+      "subtitle_available": true,
+      "audio_verified": false,
+      "timing_version_specific": true,
+      "canonical_version_id": "S01E03_d2dad7950013",
+      "canonical_selection_status": "provisional_lesson_reference",
+      "canonical_selection_reason": "Provisional lesson reference: prefer the explicitly named BluRay release for consistency with this batch, then a file without an editor-credit cue. All alternatives are retained; audio and playback synchronization are unverified. The selected source's episode identity was explicitly corrected after subtitle-content review; original archive/member episode labels remain in source_assignments.",
+      "versions": [
+        {
+          "version_id": "S01E03_09df0ffd541d",
+          "subtitle_sha256": "09df0ffd541dd2773e5718ba4cdd4426f0cb5913e9a83380d1450c8405e38778",
+          "source_members": [
+            "01x03.The One With The Thumb.deu.srt"
+          ],
+          "source_archives": [
+            {
+              "archive_name": "friends.the.one.with.the.thumb.(1994).tv.s01.e03.ger.2cd.zip",
+              "archive_sha256": "d43379ab54304f62e926b3a0960654f84ef2d941c0d6f94498d77246539d6763"
+            }
+          ],
+          "source_assignments": [
+            {
+              "archive_name": "friends.the.one.with.the.thumb.(1994).tv.s01.e03.ger.2cd.zip",
+              "archive_sha256": "d43379ab54304f62e926b3a0960654f84ef2d941c0d6f94498d77246539d6763",
+              "archive_episode_id": "S01E03",
+              "member_name": "01x03.The One With The Thumb.deu.srt",
+              "member_episode_id": "S01E03",
+              "subtitle_sha256": "09df0ffd541dd2773e5718ba4cdd4426f0cb5913e9a83380d1450c8405e38778",
+              "episode_id": "S01E03",
+              "episode_assignment_method": "filename_agreement",
+              "reviewed_resolution": null
+            }
+          ],
+          "encoding": "cp1252",
+          "byte_count": 27367,
+          "caption_type_hint": "SDH indicated by subtitle file contents",
+          "cue_count": 361,
+          "content_cue_count": 360,
+          "metadata_cue_ids": [
+            28
+          ],
+          "first_cue_start_ms": 5520,
+          "last_cue_end_ms": 1309473,
+          "last_content_cue_end_ms": 1309473,
+          "warnings": []
+        },
+        {
+          "version_id": "S01E03_99e1ca9488eb",
+          "subtitle_sha256": "99e1ca9488eba6ac0a158bcd388e75aefbd84857351a534e0e4475a9bba499f1",
+          "source_members": [
+            "S01E03.srt"
+          ],
+          "source_archives": [
+            {
+              "archive_name": "friends.the.one.with.the.thumb.(1994).tv.s01.e03.ger.2cd.zip",
+              "archive_sha256": "d43379ab54304f62e926b3a0960654f84ef2d941c0d6f94498d77246539d6763"
+            }
+          ],
+          "source_assignments": [
+            {
+              "archive_name": "friends.the.one.with.the.thumb.(1994).tv.s01.e03.ger.2cd.zip",
+              "archive_sha256": "d43379ab54304f62e926b3a0960654f84ef2d941c0d6f94498d77246539d6763",
+              "archive_episode_id": "S01E03",
+              "member_name": "S01E03.srt",
+              "member_episode_id": "S01E03",
+              "subtitle_sha256": "99e1ca9488eba6ac0a158bcd388e75aefbd84857351a534e0e4475a9bba499f1",
+              "episode_id": "S01E03",
+              "episode_assignment_method": "filename_agreement",
+              "reviewed_resolution": null
+            }
+          ],
+          "encoding": "utf-8-sig",
+          "byte_count": 27518,
+          "caption_type_hint": "not established",
+          "cue_count": 356,
+          "content_cue_count": 355,
+          "metadata_cue_ids": [
+            1
+          ],
+          "first_cue_start_ms": 0,
+          "last_cue_end_ms": 1359982,
+          "last_content_cue_end_ms": 1359982,
+          "warnings": []
+        },
+        {
+          "version_id": "S01E03_d2dad7950013",
+          "subtitle_sha256": "d2dad795001319afcaf7a73a58f4506ba651b93b219a1ba8b1dade7f04ef257b",
+          "source_members": [
+            "Friends.S01E04.1080p.BluRay.x264_ger.srt"
+          ],
+          "source_archives": [
+            {
+              "archive_name": "friends.the.one.with.george.stephanopoulos.(1994).tv.s01.e04.ger.3cd.zip",
+              "archive_sha256": "57b6d811a73892da2464a79b57b9356d6c6e6c11471a1c6f2167c3b2067ac0f0"
+            }
+          ],
+          "source_assignments": [
+            {
+              "archive_name": "friends.the.one.with.george.stephanopoulos.(1994).tv.s01.e04.ger.3cd.zip",
+              "archive_sha256": "57b6d811a73892da2464a79b57b9356d6c6e6c11471a1c6f2167c3b2067ac0f0",
+              "archive_episode_id": "S01E04",
+              "member_name": "Friends.S01E04.1080p.BluRay.x264_ger.srt",
+              "member_episode_id": "S01E04",
+              "subtitle_sha256": "d2dad795001319afcaf7a73a58f4506ba651b93b219a1ba8b1dade7f04ef257b",
+              "episode_id": "S01E03",
+              "episode_assignment_method": "reviewed_content_resolution",
+              "reviewed_resolution": {
+                "archive_name": "friends.the.one.with.george.stephanopoulos.(1994).tv.s01.e04.ger.3cd.zip",
+                "archive_sha256": "57b6d811a73892da2464a79b57b9356d6c6e6c11471a1c6f2167c3b2067ac0f0",
+                "member_name": "Friends.S01E04.1080p.BluRay.x264_ger.srt",
+                "subtitle_sha256": "d2dad795001319afcaf7a73a58f4506ba651b93b219a1ba8b1dade7f04ef257b",
+                "resolved_episode_id": "S01E03",
+                "reviewed": true,
+                "reviewed_on": "2026-11-16",
+                "review_method": "subtitle_content_review",
+                "reason": "Content review: Chandler smoking, Monica and Alan, and a thumb found in a drink identify S01E03 despite both archive and member filenames.",
+                "evidence_cue_ids": [
+                  34,
+                  100,
+                  217,
+                  297
+                ]
+              }
+            }
+          ],
+          "encoding": "utf-8-sig",
+          "byte_count": 27345,
+          "caption_type_hint": "not established",
+          "cue_count": 354,
+          "content_cue_count": 354,
+          "metadata_cue_ids": [],
+          "first_cue_start_ms": 5757,
+          "last_cue_end_ms": 1360193,
+          "last_content_cue_end_ms": 1360193,
+          "warnings": []
+        }
+      ],
+      "version_comparisons": [
+        {
+          "reference_version_id": "S01E03_d2dad7950013",
+          "alternate_version_id": "S01E03_09df0ffd541d",
+          "relationship": "different_content_review_required",
+          "matching_content_cues": 196,
+          "reference_content_cues": 354,
+          "alternate_content_cues": 360,
+          "text_sequence_similarity": 0.54902,
+          "changed_cue_groups": [
+            {
+              "reference_cue_ids": [
+                1
+              ],
+              "alternate_cue_ids": [
+                1
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "alternate_cue_ids": [
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                11,
+                12,
+                13,
+                14,
+                15
+              ],
+              "alternate_cue_ids": [
+                10,
+                11,
+                12,
+                13,
+                14
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23
+              ],
+              "alternate_cue_ids": [
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                25,
+                26
+              ],
+              "alternate_cue_ids": [
+                24,
+                25
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                28,
+                29
+              ],
+              "alternate_cue_ids": [
+                27,
+                29,
+                30
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                32,
+                33
+              ],
+              "alternate_cue_ids": [
+                33,
+                34
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                36,
+                37
+              ],
+              "alternate_cue_ids": [],
+              "operation": "delete"
+            },
+            {
+              "reference_cue_ids": [
+                41,
+                42,
+                43
+              ],
+              "alternate_cue_ids": [
+                40,
+                41,
+                42
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                45
+              ],
+              "alternate_cue_ids": [
+                44
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                49
+              ],
+              "alternate_cue_ids": [
+                48
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                51
+              ],
+              "alternate_cue_ids": [
+                50,
+                51
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                56,
+                57
+              ],
+              "alternate_cue_ids": [
+                56,
+                57
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                61,
+                62,
+                63
+              ],
+              "alternate_cue_ids": [
+                61,
+                62,
+                63
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                65
+              ],
+              "alternate_cue_ids": [
+                65,
+                66
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                67,
+                68
+              ],
+              "alternate_cue_ids": [
+                68,
+                69,
+                70
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                73
+              ],
+              "alternate_cue_ids": [
+                75
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                75
+              ],
+              "alternate_cue_ids": [
+                77
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                80
+              ],
+              "alternate_cue_ids": [
+                82
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                84,
+                85
+              ],
+              "alternate_cue_ids": [
+                86,
+                87
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                88
+              ],
+              "alternate_cue_ids": [
+                90
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                91,
+                92
+              ],
+              "alternate_cue_ids": [
+                93,
+                94,
+                95
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                96,
+                97
+              ],
+              "alternate_cue_ids": [
+                99,
+                100
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                99
+              ],
+              "alternate_cue_ids": [
+                102
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                101,
+                102
+              ],
+              "alternate_cue_ids": [
+                104,
+                105
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                104
+              ],
+              "alternate_cue_ids": [
+                107
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                107,
+                108
+              ],
+              "alternate_cue_ids": [
+                110,
+                111
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                112,
+                113,
+                114,
+                115,
+                116,
+                117
+              ],
+              "alternate_cue_ids": [
+                115,
+                116,
+                117,
+                118,
+                119,
+                120
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                119,
+                120,
+                121
+              ],
+              "alternate_cue_ids": [
+                122,
+                123,
+                124
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                125
+              ],
+              "alternate_cue_ids": [
+                128
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                127
+              ],
+              "alternate_cue_ids": [
+                130
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                129,
+                130,
+                131,
+                132,
+                133,
+                134,
+                135
+              ],
+              "alternate_cue_ids": [
+                132,
+                133,
+                134,
+                135,
+                136,
+                137,
+                138
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                137,
+                138,
+                139
+              ],
+              "alternate_cue_ids": [
+                140,
+                141,
+                142
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                144,
+                145,
+                146,
+                147,
+                148,
+                149
+              ],
+              "alternate_cue_ids": [
+                147,
+                148,
+                149,
+                150,
+                151,
+                152,
+                153
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                151
+              ],
+              "alternate_cue_ids": [],
+              "operation": "delete"
+            },
+            {
+              "reference_cue_ids": [
+                156,
+                157
+              ],
+              "alternate_cue_ids": [
+                159,
+                160
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                160,
+                161,
+                162
+              ],
+              "alternate_cue_ids": [
+                163,
+                164
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                166
+              ],
+              "alternate_cue_ids": [
+                168
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                168,
+                169
+              ],
+              "alternate_cue_ids": [
+                170,
+                171
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                172,
+                173
+              ],
+              "alternate_cue_ids": [
+                174,
+                175
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                176
+              ],
+              "alternate_cue_ids": [
+                178
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                183
+              ],
+              "alternate_cue_ids": [
+                185
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                189
+              ],
+              "alternate_cue_ids": [
+                191,
+                192
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                193
+              ],
+              "alternate_cue_ids": [
+                196
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                197
+              ],
+              "alternate_cue_ids": [
+                200
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                199
+              ],
+              "alternate_cue_ids": [
+                202
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                208
+              ],
+              "alternate_cue_ids": [
+                211
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                210,
+                211
+              ],
+              "alternate_cue_ids": [
+                213,
+                214
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                216
+              ],
+              "alternate_cue_ids": [
+                219
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                218,
+                219,
+                220,
+                221,
+                222
+              ],
+              "alternate_cue_ids": [
+                221,
+                222,
+                223,
+                224,
+                225
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                224
+              ],
+              "alternate_cue_ids": [
+                227
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                235,
+                236,
+                237
+              ],
+              "alternate_cue_ids": [
+                238
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                241,
+                242
+              ],
+              "alternate_cue_ids": [
+                242
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                247
+              ],
+              "alternate_cue_ids": [
+                247
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                253
+              ],
+              "alternate_cue_ids": [
+                253
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                256
+              ],
+              "alternate_cue_ids": [
+                256
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                258,
+                259
+              ],
+              "alternate_cue_ids": [
+                258,
+                259
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                263
+              ],
+              "alternate_cue_ids": [
+                263
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                266,
+                267,
+                268,
+                269
+              ],
+              "alternate_cue_ids": [
+                266,
+                267,
+                268,
+                269
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                272
+              ],
+              "alternate_cue_ids": [
+                272
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                274
+              ],
+              "alternate_cue_ids": [
+                274
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                281
+              ],
+              "alternate_cue_ids": [
+                281
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                285
+              ],
+              "alternate_cue_ids": [
+                285
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                292
+              ],
+              "alternate_cue_ids": [
+                292
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                296,
+                297,
+                298,
+                299
+              ],
+              "alternate_cue_ids": [
+                296,
+                297,
+                298,
+                299
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                302,
+                303,
+                304,
+                305,
+                306,
+                307
+              ],
+              "alternate_cue_ids": [
+                302,
+                303,
+                304,
+                305,
+                306,
+                307,
+                308,
+                309
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                309
+              ],
+              "alternate_cue_ids": [
+                311,
+                312
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                312
+              ],
+              "alternate_cue_ids": [
+                315
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                315
+              ],
+              "alternate_cue_ids": [
+                318,
+                319
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                321,
+                322
+              ],
+              "alternate_cue_ids": [
+                325,
+                326
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                325,
+                326
+              ],
+              "alternate_cue_ids": [
+                329,
+                330
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                330
+              ],
+              "alternate_cue_ids": [
+                334
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                335,
+                336
+              ],
+              "alternate_cue_ids": [
+                339,
+                340,
+                341
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                338,
+                339
+              ],
+              "alternate_cue_ids": [
+                343,
+                344
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                344
+              ],
+              "alternate_cue_ids": [
+                349
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                346
+              ],
+              "alternate_cue_ids": [
+                351,
+                352
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                349,
+                350
+              ],
+              "alternate_cue_ids": [
+                355,
+                356,
+                357
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                353
+              ],
+              "alternate_cue_ids": [
+                360
+              ],
+              "operation": "replace"
+            }
+          ],
+          "matching_cue_start_offset_ms_range": [
+            -50648,
+            -317
+          ],
+          "single_constant_start_offset": false,
+          "concatenate_automatically": false
+        },
+        {
+          "reference_version_id": "S01E03_d2dad7950013",
+          "alternate_version_id": "S01E03_99e1ca9488eb",
+          "relationship": "overlapping_edited_version",
+          "matching_content_cues": 336,
+          "reference_content_cues": 354,
+          "alternate_content_cues": 355,
+          "text_sequence_similarity": 0.947814,
+          "changed_cue_groups": [
+            {
+              "reference_cue_ids": [
+                13
+              ],
+              "alternate_cue_ids": [
+                14
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                61
+              ],
+              "alternate_cue_ids": [
+                62
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                119
+              ],
+              "alternate_cue_ids": [
+                120
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                121
+              ],
+              "alternate_cue_ids": [
+                122
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                131,
+                132,
+                133,
+                134,
+                135
+              ],
+              "alternate_cue_ids": [
+                132,
+                133,
+                134,
+                135,
+                136
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                157
+              ],
+              "alternate_cue_ids": [
+                158
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                162
+              ],
+              "alternate_cue_ids": [
+                163
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                167
+              ],
+              "alternate_cue_ids": [
+                168
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                189
+              ],
+              "alternate_cue_ids": [
+                190,
+                191
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                199
+              ],
+              "alternate_cue_ids": [
+                201
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                304
+              ],
+              "alternate_cue_ids": [
+                306
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                307
+              ],
+              "alternate_cue_ids": [
+                309
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                312
+              ],
+              "alternate_cue_ids": [
+                314
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                329
+              ],
+              "alternate_cue_ids": [
+                331
+              ],
+              "operation": "replace"
+            }
+          ],
+          "matching_cue_start_offset_ms_range": [
+            -1171,
+            -86
+          ],
+          "single_constant_start_offset": false,
+          "concatenate_automatically": false
+        }
+      ]
+    },
+    {
+      "episode_id": "S01E04",
+      "language": "de",
+      "subtitle_available": true,
+      "audio_verified": false,
+      "timing_version_specific": true,
+      "canonical_version_id": "S01E04_0f1240cffe6e",
+      "canonical_selection_status": "provisional_lesson_reference",
+      "canonical_selection_reason": "Provisional lesson reference: prefer the explicitly named BluRay release for consistency with this batch, then a file without an editor-credit cue. All alternatives are retained; audio and playback synchronization are unverified. The selected source's episode identity was explicitly corrected after subtitle-content review; original archive/member episode labels remain in source_assignments.",
+      "versions": [
+        {
+          "version_id": "S01E04_0f1240cffe6e",
+          "subtitle_sha256": "0f1240cffe6ee012641f7bafedaf628dda327685d4136092008a40c8a527bb89",
+          "source_members": [
+            "Friends.S01E03.1080p.BluRay.x264_ger.srt"
+          ],
+          "source_archives": [
+            {
+              "archive_name": "friends.the.one.with.george.stephanopoulos.(1994).tv.s01.e04.ger.3cd.zip",
+              "archive_sha256": "57b6d811a73892da2464a79b57b9356d6c6e6c11471a1c6f2167c3b2067ac0f0"
+            }
+          ],
+          "source_assignments": [
+            {
+              "archive_name": "friends.the.one.with.george.stephanopoulos.(1994).tv.s01.e04.ger.3cd.zip",
+              "archive_sha256": "57b6d811a73892da2464a79b57b9356d6c6e6c11471a1c6f2167c3b2067ac0f0",
+              "archive_episode_id": "S01E04",
+              "member_name": "Friends.S01E03.1080p.BluRay.x264_ger.srt",
+              "member_episode_id": "S01E03",
+              "subtitle_sha256": "0f1240cffe6ee012641f7bafedaf628dda327685d4136092008a40c8a527bb89",
+              "episode_id": "S01E04",
+              "episode_assignment_method": "reviewed_content_resolution",
+              "reviewed_resolution": {
+                "archive_name": "friends.the.one.with.george.stephanopoulos.(1994).tv.s01.e04.ger.3cd.zip",
+                "archive_sha256": "57b6d811a73892da2464a79b57b9356d6c6e6c11471a1c6f2167c3b2067ac0f0",
+                "member_name": "Friends.S01E03.1080p.BluRay.x264_ger.srt",
+                "subtitle_sha256": "0f1240cffe6ee012641f7bafedaf628dda327685d4136092008a40c8a527bb89",
+                "resolved_episode_id": "S01E04",
+                "reviewed": true,
+                "reviewed_on": "2026-11-16",
+                "review_method": "subtitle_content_review",
+                "reason": "Content review: omnipotence opening, hockey tickets and George Stephanopoulos pizza identify S01E04 despite the member filename.",
+                "evidence_cue_ids": [
+                  3,
+                  41,
+                  264
+                ]
+              }
+            }
+          ],
+          "encoding": "utf-8-sig",
+          "byte_count": 30796,
+          "caption_type_hint": "not established",
+          "cue_count": 403,
+          "content_cue_count": 403,
+          "metadata_cue_ids": [],
+          "first_cue_start_ms": 2170,
+          "last_cue_end_ms": 1357399,
+          "last_content_cue_end_ms": 1357399,
+          "warnings": []
+        },
+        {
+          "version_id": "S01E04_3af6367c6102",
+          "subtitle_sha256": "3af6367c61020ae51699d1fcb7a293e422acd1aba6c62ad22a87972325dec39a",
+          "source_members": [
+            "01x04.The One With George Stephanopoulos.deu.srt"
+          ],
+          "source_archives": [
+            {
+              "archive_name": "friends.the.one.with.george.stephanopoulos.(1994).tv.s01.e04.ger.3cd.zip",
+              "archive_sha256": "57b6d811a73892da2464a79b57b9356d6c6e6c11471a1c6f2167c3b2067ac0f0"
+            }
+          ],
+          "source_assignments": [
+            {
+              "archive_name": "friends.the.one.with.george.stephanopoulos.(1994).tv.s01.e04.ger.3cd.zip",
+              "archive_sha256": "57b6d811a73892da2464a79b57b9356d6c6e6c11471a1c6f2167c3b2067ac0f0",
+              "archive_episode_id": "S01E04",
+              "member_name": "01x04.The One With George Stephanopoulos.deu.srt",
+              "member_episode_id": "S01E04",
+              "subtitle_sha256": "3af6367c61020ae51699d1fcb7a293e422acd1aba6c62ad22a87972325dec39a",
+              "episode_id": "S01E04",
+              "episode_assignment_method": "filename_agreement",
+              "reviewed_resolution": null
+            }
+          ],
+          "encoding": "cp1252",
+          "byte_count": 28995,
+          "caption_type_hint": "SDH indicated by subtitle file contents",
+          "cue_count": 386,
+          "content_cue_count": 385,
+          "metadata_cue_ids": [
+            19
+          ],
+          "first_cue_start_ms": 3480,
+          "last_cue_end_ms": 1302918,
+          "last_content_cue_end_ms": 1302918,
+          "warnings": []
+        }
+      ],
+      "version_comparisons": [
+        {
+          "reference_version_id": "S01E04_0f1240cffe6e",
+          "alternate_version_id": "S01E04_3af6367c6102",
+          "relationship": "different_content_review_required",
+          "matching_content_cues": 180,
+          "reference_content_cues": 403,
+          "alternate_content_cues": 385,
+          "text_sequence_similarity": 0.456853,
+          "changed_cue_groups": [
+            {
+              "reference_cue_ids": [
+                1,
+                2,
+                3,
+                4
+              ],
+              "alternate_cue_ids": [
+                1,
+                2,
+                3
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                8,
+                9,
+                10,
+                11,
+                12,
+                13
+              ],
+              "alternate_cue_ids": [
+                7,
+                8,
+                9,
+                10
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                20
+              ],
+              "alternate_cue_ids": [
+                17,
+                18
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                24,
+                25,
+                26,
+                27
+              ],
+              "alternate_cue_ids": [
+                23,
+                24,
+                25
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                30,
+                31
+              ],
+              "alternate_cue_ids": [
+                28,
+                29
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                34
+              ],
+              "alternate_cue_ids": [
+                32
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                37,
+                38
+              ],
+              "alternate_cue_ids": [
+                35,
+                36
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                41,
+                42,
+                43,
+                44,
+                45,
+                46,
+                47,
+                48
+              ],
+              "alternate_cue_ids": [
+                39,
+                40,
+                41,
+                42,
+                43,
+                44,
+                45,
+                46
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                52,
+                53
+              ],
+              "alternate_cue_ids": [
+                50,
+                51
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                55,
+                56,
+                57
+              ],
+              "alternate_cue_ids": [
+                53,
+                54,
+                55
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                59
+              ],
+              "alternate_cue_ids": [
+                57
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                61
+              ],
+              "alternate_cue_ids": [
+                59
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                63
+              ],
+              "alternate_cue_ids": [],
+              "operation": "delete"
+            },
+            {
+              "reference_cue_ids": [
+                67,
+                68
+              ],
+              "alternate_cue_ids": [
+                64,
+                65,
+                66
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                70
+              ],
+              "alternate_cue_ids": [
+                68
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                72
+              ],
+              "alternate_cue_ids": [
+                70
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                74
+              ],
+              "alternate_cue_ids": [
+                72
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                77,
+                78
+              ],
+              "alternate_cue_ids": [
+                75,
+                76
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                83
+              ],
+              "alternate_cue_ids": [
+                81,
+                82
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                85,
+                86,
+                87,
+                88,
+                89
+              ],
+              "alternate_cue_ids": [
+                84,
+                85,
+                86
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                91
+              ],
+              "alternate_cue_ids": [],
+              "operation": "delete"
+            },
+            {
+              "reference_cue_ids": [
+                93
+              ],
+              "alternate_cue_ids": [],
+              "operation": "delete"
+            },
+            {
+              "reference_cue_ids": [
+                96,
+                97,
+                98,
+                99,
+                100,
+                101
+              ],
+              "alternate_cue_ids": [
+                91,
+                92,
+                93,
+                94,
+                95,
+                96
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                103
+              ],
+              "alternate_cue_ids": [
+                98
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                105
+              ],
+              "alternate_cue_ids": [
+                100
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                107,
+                108,
+                109,
+                110
+              ],
+              "alternate_cue_ids": [
+                102,
+                103
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                112,
+                113,
+                114,
+                115,
+                116
+              ],
+              "alternate_cue_ids": [
+                105,
+                106,
+                107,
+                108,
+                109
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                118,
+                119,
+                120
+              ],
+              "alternate_cue_ids": [
+                111,
+                112,
+                113
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                122
+              ],
+              "alternate_cue_ids": [
+                115
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                125,
+                126,
+                127
+              ],
+              "alternate_cue_ids": [
+                118,
+                119,
+                120,
+                121
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                129
+              ],
+              "alternate_cue_ids": [
+                123
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                132,
+                133
+              ],
+              "alternate_cue_ids": [
+                126,
+                127
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                138
+              ],
+              "alternate_cue_ids": [
+                132
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                142
+              ],
+              "alternate_cue_ids": [],
+              "operation": "delete"
+            },
+            {
+              "reference_cue_ids": [
+                147
+              ],
+              "alternate_cue_ids": [],
+              "operation": "delete"
+            },
+            {
+              "reference_cue_ids": [
+                149,
+                150
+              ],
+              "alternate_cue_ids": [
+                141,
+                142
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                152
+              ],
+              "alternate_cue_ids": [
+                144
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                154
+              ],
+              "alternate_cue_ids": [
+                146,
+                147
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                156
+              ],
+              "alternate_cue_ids": [
+                149
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                158
+              ],
+              "alternate_cue_ids": [
+                151
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                169,
+                170,
+                171
+              ],
+              "alternate_cue_ids": [
+                162,
+                163,
+                164
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                175,
+                176,
+                177,
+                178,
+                179
+              ],
+              "alternate_cue_ids": [
+                168,
+                169,
+                170,
+                171,
+                172
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                182
+              ],
+              "alternate_cue_ids": [
+                175
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                185
+              ],
+              "alternate_cue_ids": [
+                178
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                188
+              ],
+              "alternate_cue_ids": [
+                181
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                192,
+                193,
+                194,
+                195,
+                196
+              ],
+              "alternate_cue_ids": [
+                185,
+                186,
+                187,
+                188,
+                189,
+                190
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                198
+              ],
+              "alternate_cue_ids": [
+                192
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                200
+              ],
+              "alternate_cue_ids": [
+                194
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                204
+              ],
+              "alternate_cue_ids": [
+                198
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                206,
+                207,
+                208
+              ],
+              "alternate_cue_ids": [
+                200,
+                201,
+                202
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                213,
+                214,
+                215
+              ],
+              "alternate_cue_ids": [
+                207,
+                208,
+                209,
+                210
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                217
+              ],
+              "alternate_cue_ids": [
+                212
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                219,
+                220,
+                221,
+                222,
+                223,
+                224
+              ],
+              "alternate_cue_ids": [
+                214,
+                215,
+                216,
+                217,
+                218,
+                219
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                226
+              ],
+              "alternate_cue_ids": [
+                221
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                230,
+                231,
+                232
+              ],
+              "alternate_cue_ids": [
+                225,
+                226,
+                227
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                237,
+                238,
+                239,
+                240,
+                241
+              ],
+              "alternate_cue_ids": [
+                232,
+                233,
+                234
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                244,
+                245,
+                246
+              ],
+              "alternate_cue_ids": [
+                237,
+                238,
+                239
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                249,
+                250,
+                251,
+                252,
+                253,
+                254,
+                255
+              ],
+              "alternate_cue_ids": [
+                242,
+                243,
+                244,
+                245,
+                246,
+                247,
+                248,
+                249,
+                250,
+                251
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                257
+              ],
+              "alternate_cue_ids": [
+                253
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                260
+              ],
+              "alternate_cue_ids": [
+                256
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                262,
+                263,
+                264,
+                265
+              ],
+              "alternate_cue_ids": [
+                258,
+                259,
+                260,
+                261
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                268,
+                269
+              ],
+              "alternate_cue_ids": [
+                264
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                273,
+                274,
+                275
+              ],
+              "alternate_cue_ids": [
+                268,
+                269,
+                270
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                277,
+                278
+              ],
+              "alternate_cue_ids": [
+                272,
+                273
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                280,
+                281,
+                282,
+                283,
+                284,
+                285
+              ],
+              "alternate_cue_ids": [
+                275,
+                276,
+                277
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                288,
+                289,
+                290
+              ],
+              "alternate_cue_ids": [
+                280,
+                281,
+                282
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                293
+              ],
+              "alternate_cue_ids": [
+                285
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                296
+              ],
+              "alternate_cue_ids": [
+                288
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                298,
+                299,
+                300,
+                301,
+                302,
+                303,
+                304
+              ],
+              "alternate_cue_ids": [
+                290,
+                291,
+                292,
+                293,
+                294,
+                295,
+                296
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                307,
+                308
+              ],
+              "alternate_cue_ids": [
+                299,
+                300
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                310
+              ],
+              "alternate_cue_ids": [
+                302
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                313,
+                314
+              ],
+              "alternate_cue_ids": [
+                305
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                317,
+                318
+              ],
+              "alternate_cue_ids": [
+                308
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                320,
+                321
+              ],
+              "alternate_cue_ids": [
+                310,
+                311
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                325
+              ],
+              "alternate_cue_ids": [],
+              "operation": "delete"
+            },
+            {
+              "reference_cue_ids": [
+                328,
+                329,
+                330,
+                331,
+                332
+              ],
+              "alternate_cue_ids": [
+                317,
+                318,
+                319
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                334,
+                335,
+                336,
+                337
+              ],
+              "alternate_cue_ids": [
+                321,
+                322,
+                323,
+                324,
+                325,
+                326
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                344,
+                345,
+                346,
+                347,
+                348
+              ],
+              "alternate_cue_ids": [
+                333,
+                334,
+                335,
+                336
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                351,
+                352,
+                353,
+                354
+              ],
+              "alternate_cue_ids": [
+                339,
+                340,
+                341
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                356,
+                357
+              ],
+              "alternate_cue_ids": [
+                343,
+                344,
+                345
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                359,
+                360,
+                361,
+                362
+              ],
+              "alternate_cue_ids": [
+                347,
+                348
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                364,
+                365
+              ],
+              "alternate_cue_ids": [
+                350
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                369
+              ],
+              "alternate_cue_ids": [
+                354
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                372,
+                373,
+                374,
+                375
+              ],
+              "alternate_cue_ids": [
+                357,
+                358,
+                359,
+                360
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                377
+              ],
+              "alternate_cue_ids": [
+                362
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                379,
+                380
+              ],
+              "alternate_cue_ids": [
+                364
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                382
+              ],
+              "alternate_cue_ids": [
+                366
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                387,
+                388
+              ],
+              "alternate_cue_ids": [
+                371,
+                372,
+                373
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                391,
+                392,
+                393
+              ],
+              "alternate_cue_ids": [
+                376,
+                377,
+                378
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                397,
+                398
+              ],
+              "alternate_cue_ids": [
+                382
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                401,
+                402
+              ],
+              "alternate_cue_ids": [
+                385
+              ],
+              "operation": "replace"
+            }
+          ],
+          "matching_cue_start_offset_ms_range": [
+            -53950,
+            -585
+          ],
+          "single_constant_start_offset": false,
+          "concatenate_automatically": false
+        }
+      ]
+    },
+    {
+      "episode_id": "S01E18",
+      "language": "de",
+      "subtitle_available": true,
+      "audio_verified": false,
+      "timing_version_specific": true,
+      "canonical_version_id": "S01E18_6b53201cc39e",
+      "canonical_selection_status": "provisional_lesson_reference",
+      "canonical_selection_reason": "Only unique subtitle version supplied for this episode; audio remains unverified. The selected source's episode identity was explicitly corrected after subtitle-content review; original archive/member episode labels remain in source_assignments.",
+      "versions": [
+        {
+          "version_id": "S01E18_6b53201cc39e",
+          "subtitle_sha256": "6b53201cc39e5ca8896f4761a15109d5d4c8578832edc5486d9b08eb07ffe921",
+          "source_members": [
+            "01x18.The One With All The Poker.deu.srt"
+          ],
+          "source_archives": [
+            {
+              "archive_name": "friends.the.one.where.monica.gets.a.roommate.(1994).tv.s01.e01.ger.4cd.zip",
+              "archive_sha256": "0f323b56f82d37d4ded2cc50847b78880bda8951a0ca14e28cf71a2d0dd8426c"
+            }
+          ],
+          "source_assignments": [
+            {
+              "archive_name": "friends.the.one.where.monica.gets.a.roommate.(1994).tv.s01.e01.ger.4cd.zip",
+              "archive_sha256": "0f323b56f82d37d4ded2cc50847b78880bda8951a0ca14e28cf71a2d0dd8426c",
+              "archive_episode_id": "S01E01",
+              "member_name": "01x18.The One With All The Poker.deu.srt",
+              "member_episode_id": "S01E18",
+              "subtitle_sha256": "6b53201cc39e5ca8896f4761a15109d5d4c8578832edc5486d9b08eb07ffe921",
+              "episode_id": "S01E18",
+              "episode_assignment_method": "reviewed_content_resolution",
+              "reviewed_resolution": {
+                "archive_name": "friends.the.one.where.monica.gets.a.roommate.(1994).tv.s01.e01.ger.4cd.zip",
+                "archive_sha256": "0f323b56f82d37d4ded2cc50847b78880bda8951a0ca14e28cf71a2d0dd8426c",
+                "member_name": "01x18.The One With All The Poker.deu.srt",
+                "subtitle_sha256": "6b53201cc39e5ca8896f4761a15109d5d4c8578832edc5486d9b08eb07ffe921",
+                "resolved_episode_id": "S01E18",
+                "reviewed": true,
+                "reviewed_on": "2026-11-16",
+                "review_method": "subtitle_content_review",
+                "reason": "Content review: poker episode title, Rachel job search and repeated poker games; this is an extra episode in the pilot archive.",
+                "evidence_cue_ids": [
+                  2,
+                  14,
+                  51,
+                  158,
+                  290
+                ]
+              }
+            }
+          ],
+          "encoding": "cp1252",
+          "byte_count": 27325,
+          "caption_type_hint": "SDH indicated by subtitle file contents",
+          "cue_count": 354,
+          "content_cue_count": 353,
+          "metadata_cue_ids": [
+            15
+          ],
+          "first_cue_start_ms": 3000,
+          "last_cue_end_ms": 1298956,
+          "last_content_cue_end_ms": 1298956,
+          "warnings": []
+        }
+      ],
+      "version_comparisons": []
+    },
+    {
+      "episode_id": "S04E18",
+      "language": "de",
+      "subtitle_available": true,
+      "audio_verified": false,
+      "timing_version_specific": true,
+      "canonical_version_id": "S04E18_68cdbb6adb77",
+      "canonical_selection_status": "provisional_lesson_reference",
+      "canonical_selection_reason": "Only unique subtitle version supplied for this episode; audio remains unverified.",
+      "versions": [
+        {
+          "version_id": "S04E18_68cdbb6adb77",
+          "subtitle_sha256": "68cdbb6adb777e656c4802479d86d813ad5efcf380a4d6cec3e1f75bd136126a",
+          "source_members": [
+            "S04E18.TOW.Rachel's.New.Dress.German.srt"
+          ],
+          "source_archives": [
+            {
+              "archive_name": "friends.the.one.with.rachels.new.dress.(1998).tv.s04.e18.ger.1cd.zip",
+              "archive_sha256": "0e85d9bb40bc11052485960dd002e4ba5ccdb26c57ce2eb14705befe0d4c4b73"
+            }
+          ],
+          "source_assignments": [
+            {
+              "archive_name": "friends.the.one.with.rachels.new.dress.(1998).tv.s04.e18.ger.1cd.zip",
+              "archive_sha256": "0e85d9bb40bc11052485960dd002e4ba5ccdb26c57ce2eb14705befe0d4c4b73",
+              "archive_episode_id": "S04E18",
+              "member_name": "S04E18.TOW.Rachel's.New.Dress.German.srt",
+              "member_episode_id": "S04E18",
+              "subtitle_sha256": "68cdbb6adb777e656c4802479d86d813ad5efcf380a4d6cec3e1f75bd136126a",
+              "episode_id": "S04E18",
+              "episode_assignment_method": "filename_agreement",
+              "reviewed_resolution": null
+            }
+          ],
+          "encoding": "utf-8-sig",
+          "byte_count": 28476,
+          "caption_type_hint": "not established",
+          "cue_count": 344,
+          "content_cue_count": 344,
+          "metadata_cue_ids": [],
+          "first_cue_start_ms": 3745,
+          "last_cue_end_ms": 1323272,
+          "last_content_cue_end_ms": 1323272,
+          "warnings": []
+        }
+      ],
+      "version_comparisons": []
+    },
+    {
+      "episode_id": "S05E01",
+      "language": "de",
+      "subtitle_available": true,
+      "audio_verified": false,
+      "timing_version_specific": true,
+      "canonical_version_id": "S05E01_a4ef041f1b07",
+      "canonical_selection_status": "provisional_lesson_reference",
+      "canonical_selection_reason": "Only unique subtitle version supplied for this episode; audio remains unverified.",
+      "versions": [
+        {
+          "version_id": "S05E01_a4ef041f1b07",
+          "subtitle_sha256": "a4ef041f1b074dbe027334307a810d0217dc53fb78e723e1ad33f38962f42f07",
+          "source_members": [
+            "Friends.S05E01.German.DL.720p.BluRay.x264-NoGRP_ger.srt"
+          ],
+          "source_archives": [
+            {
+              "archive_name": "friends.the.one.after.ross.says.rachel.(1998).tv.s05.e01.ger.1cd.zip",
+              "archive_sha256": "819b93e4a32845419d82725ec13329d139af54679f32013457ce5cf0576b0ee9"
+            }
+          ],
+          "source_assignments": [
+            {
+              "archive_name": "friends.the.one.after.ross.says.rachel.(1998).tv.s05.e01.ger.1cd.zip",
+              "archive_sha256": "819b93e4a32845419d82725ec13329d139af54679f32013457ce5cf0576b0ee9",
+              "archive_episode_id": "S05E01",
+              "member_name": "Friends.S05E01.German.DL.720p.BluRay.x264-NoGRP_ger.srt",
+              "member_episode_id": "S05E01",
+              "subtitle_sha256": "a4ef041f1b074dbe027334307a810d0217dc53fb78e723e1ad33f38962f42f07",
+              "episode_id": "S05E01",
+              "episode_assignment_method": "filename_agreement",
+              "reviewed_resolution": null
+            }
+          ],
+          "encoding": "utf-8-sig",
+          "byte_count": 27767,
+          "caption_type_hint": "SDH indicated by subtitle file contents",
+          "cue_count": 364,
+          "content_cue_count": 363,
+          "metadata_cue_ids": [
+            364
+          ],
+          "first_cue_start_ms": 2212,
+          "last_cue_end_ms": 1329538,
+          "last_content_cue_end_ms": 1324574,
+          "warnings": []
+        }
+      ],
+      "version_comparisons": []
+    },
+    {
+      "episode_id": "S05E02",
+      "language": "de",
+      "subtitle_available": true,
+      "audio_verified": false,
+      "timing_version_specific": true,
+      "canonical_version_id": "S05E02_6eed5d5f298a",
+      "canonical_selection_status": "provisional_lesson_reference",
+      "canonical_selection_reason": "Only unique subtitle version supplied for this episode; audio remains unverified.",
+      "versions": [
+        {
+          "version_id": "S05E02_6eed5d5f298a",
+          "subtitle_sha256": "6eed5d5f298a962687f236997a59c19f1511b679353f5a73e41b548e8afa510d",
+          "source_members": [
+            "Friends.S05E02.German.DL.720p.BluRay.x264-NoGRP_ger.srt"
+          ],
+          "source_archives": [
+            {
+              "archive_name": "friends.the.one.with.all.the.kissing.(1998).tv.s05.e02.ger.1cd.zip",
+              "archive_sha256": "3334394e4c81b0495fbef684b799ac38c4f2ce031de6b95bd946706b10ef2300"
+            }
+          ],
+          "source_assignments": [
+            {
+              "archive_name": "friends.the.one.with.all.the.kissing.(1998).tv.s05.e02.ger.1cd.zip",
+              "archive_sha256": "3334394e4c81b0495fbef684b799ac38c4f2ce031de6b95bd946706b10ef2300",
+              "archive_episode_id": "S05E02",
+              "member_name": "Friends.S05E02.German.DL.720p.BluRay.x264-NoGRP_ger.srt",
+              "member_episode_id": "S05E02",
+              "subtitle_sha256": "6eed5d5f298a962687f236997a59c19f1511b679353f5a73e41b548e8afa510d",
+              "episode_id": "S05E02",
+              "episode_assignment_method": "filename_agreement",
+              "reviewed_resolution": null
+            }
+          ],
+          "encoding": "utf-8-sig",
+          "byte_count": 26966,
+          "caption_type_hint": "SDH indicated by subtitle file contents",
+          "cue_count": 360,
+          "content_cue_count": 359,
+          "metadata_cue_ids": [
+            360
+          ],
+          "first_cue_start_ms": 7467,
+          "last_cue_end_ms": 1330330,
+          "last_content_cue_end_ms": 1323365,
+          "warnings": []
+        }
+      ],
+      "version_comparisons": []
+    },
+    {
+      "episode_id": "S05E03",
+      "language": "de",
+      "subtitle_available": true,
+      "audio_verified": false,
+      "timing_version_specific": true,
+      "canonical_version_id": "S05E03_effe1c44920b",
+      "canonical_selection_status": "provisional_lesson_reference",
+      "canonical_selection_reason": "Only unique subtitle version supplied for this episode; audio remains unverified.",
+      "versions": [
+        {
+          "version_id": "S05E03_effe1c44920b",
+          "subtitle_sha256": "effe1c44920beccab768530bd3239a9949daf6454b2636eb1ab3f01a59776d19",
+          "source_members": [
+            "Friends.S05E03.German.DL.720p.BluRay.x264-NoGRP_ger.srt"
+          ],
+          "source_archives": [
+            {
+              "archive_name": "friends.the.one.hundredth.(1998).tv.s05.e03.ger.1cd.zip",
+              "archive_sha256": "e8f633729e66ce431ef588728be4d3910b43979bccc6a9a23bf9860681760a2c"
+            }
+          ],
+          "source_assignments": [
+            {
+              "archive_name": "friends.the.one.hundredth.(1998).tv.s05.e03.ger.1cd.zip",
+              "archive_sha256": "e8f633729e66ce431ef588728be4d3910b43979bccc6a9a23bf9860681760a2c",
+              "archive_episode_id": "S05E03",
+              "member_name": "Friends.S05E03.German.DL.720p.BluRay.x264-NoGRP_ger.srt",
+              "member_episode_id": "S05E03",
+              "subtitle_sha256": "effe1c44920beccab768530bd3239a9949daf6454b2636eb1ab3f01a59776d19",
+              "episode_id": "S05E03",
+              "episode_assignment_method": "filename_agreement",
+              "reviewed_resolution": null
+            }
+          ],
+          "encoding": "utf-8-sig",
+          "byte_count": 26309,
+          "caption_type_hint": "SDH indicated by subtitle file contents",
+          "cue_count": 332,
+          "content_cue_count": 331,
+          "metadata_cue_ids": [
+            332
+          ],
+          "first_cue_start_ms": 3296,
+          "last_cue_end_ms": 1329162,
+          "last_content_cue_end_ms": 1320904,
+          "warnings": []
+        }
+      ],
+      "version_comparisons": []
+    },
+    {
+      "episode_id": "S05E04",
+      "language": "de",
+      "subtitle_available": true,
+      "audio_verified": false,
+      "timing_version_specific": true,
+      "canonical_version_id": "S05E04_e59c3e979404",
+      "canonical_selection_status": "provisional_lesson_reference",
+      "canonical_selection_reason": "Only unique subtitle version supplied for this episode; audio remains unverified.",
+      "versions": [
+        {
+          "version_id": "S05E04_e59c3e979404",
+          "subtitle_sha256": "e59c3e97940488f643c0e104db9f2c974a6a5f2db3d642273f7a886bc5e14338",
+          "source_members": [
+            "Friends.S05E04.German.DL.720p.BluRay.x264-NoGRP_ger.srt"
+          ],
+          "source_archives": [
+            {
+              "archive_name": "friends.the.one.where.phoebe.hates.pbs.(1998).tv.s05.e04.ger.1cd.zip",
+              "archive_sha256": "06f396c23b99043bc993d529675585c397a066aa124f04d166466bf596886948"
+            }
+          ],
+          "source_assignments": [
+            {
+              "archive_name": "friends.the.one.where.phoebe.hates.pbs.(1998).tv.s05.e04.ger.1cd.zip",
+              "archive_sha256": "06f396c23b99043bc993d529675585c397a066aa124f04d166466bf596886948",
+              "archive_episode_id": "S05E04",
+              "member_name": "Friends.S05E04.German.DL.720p.BluRay.x264-NoGRP_ger.srt",
+              "member_episode_id": "S05E04",
+              "subtitle_sha256": "e59c3e97940488f643c0e104db9f2c974a6a5f2db3d642273f7a886bc5e14338",
+              "episode_id": "S05E04",
+              "episode_assignment_method": "filename_agreement",
+              "reviewed_resolution": null
+            }
+          ],
+          "encoding": "utf-8-sig",
+          "byte_count": 28184,
+          "caption_type_hint": "SDH indicated by subtitle file contents",
+          "cue_count": 360,
+          "content_cue_count": 359,
+          "metadata_cue_ids": [
+            360
+          ],
+          "first_cue_start_ms": 8968,
+          "last_cue_end_ms": 1328703,
+          "last_content_cue_end_ms": 1322739,
+          "warnings": []
+        }
+      ],
+      "version_comparisons": []
+    },
+    {
+      "episode_id": "S05E05",
+      "language": "de",
+      "subtitle_available": true,
+      "audio_verified": false,
+      "timing_version_specific": true,
+      "canonical_version_id": "S05E05_ab583ef1943f",
+      "canonical_selection_status": "provisional_lesson_reference",
+      "canonical_selection_reason": "Only unique subtitle version supplied for this episode; audio remains unverified.",
+      "versions": [
+        {
+          "version_id": "S05E05_ab583ef1943f",
+          "subtitle_sha256": "ab583ef1943f48a98617ba7c7b351ed63b1a3f3104a62493f8868d3af49f483c",
+          "source_members": [
+            "Friends.S05E05.German.DL.720p.BluRay.x264-NoGRP_ger.srt"
+          ],
+          "source_archives": [
+            {
+              "archive_name": "friends.the.one.with.the.kips.(1998).tv.s05.e05.ger.1cd.zip",
+              "archive_sha256": "8b72dc96d6b68f7b87e3663d1e09e3dc184287c42d6b2743b19224809a422051"
+            }
+          ],
+          "source_assignments": [
+            {
+              "archive_name": "friends.the.one.with.the.kips.(1998).tv.s05.e05.ger.1cd.zip",
+              "archive_sha256": "8b72dc96d6b68f7b87e3663d1e09e3dc184287c42d6b2743b19224809a422051",
+              "archive_episode_id": "S05E05",
+              "member_name": "Friends.S05E05.German.DL.720p.BluRay.x264-NoGRP_ger.srt",
+              "member_episode_id": "S05E05",
+              "subtitle_sha256": "ab583ef1943f48a98617ba7c7b351ed63b1a3f3104a62493f8868d3af49f483c",
+              "episode_id": "S05E05",
+              "episode_assignment_method": "filename_agreement",
+              "reviewed_resolution": null
+            }
+          ],
+          "encoding": "utf-8-sig",
+          "byte_count": 26430,
+          "caption_type_hint": "SDH indicated by subtitle file contents",
+          "cue_count": 343,
+          "content_cue_count": 342,
+          "metadata_cue_ids": [
+            343
+          ],
+          "first_cue_start_ms": 7258,
+          "last_cue_end_ms": 1329329,
+          "last_content_cue_end_ms": 1324324,
+          "warnings": []
+        }
+      ],
+      "version_comparisons": []
+    }
+  ]
+}

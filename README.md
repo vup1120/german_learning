@@ -2,18 +2,25 @@
 
 建立日期：2026-11-16。此資料包可用作逐集德語學習與討論平台的內容起點。
 
-## 2026-11-16：已加入第一批字幕教材
+## 字幕教材進度（2026-11-16，已完成2批）
 
-已處理你提供的 **S05E08–S05E14** 德文字幕，共7集。10個ZIP內有11個SRT檔案出現次數，去除3個內容完全相同的重複項後，保留8個不同字幕版本。S05E13有兩個版本，並非上下兩部分。
+已依你提供的字幕完成 **18集詳細教材**，保存25個不同來源版本。原有236集概覽仍可使用；新增教材以 `episode_id` 與概覽連接。
 
-- [7集完整學習單](docs/season_05_subtitle_lessons.md)：每集6個詞彙、2個語法重點、3題討論、2個場景練習，附德中說明。
-- [字幕教材JSON](data/subtitle_lessons/season_05.json)：以 `episode_id` 連接原有236集資料。
-- [字幕涵蓋進度](data/subtitle_coverage.json)：已收到與仍缺少的集數、版本及教案狀態。
-- [跨對話接續紀錄](PROJECT_STATUS.md)與[後續匯入流程](docs/subtitle_workflow.md)。
+| 季別 | 已完成字幕教材 | 學習單 | JSON資料 |
+| --- | --- | --- | --- |
+| 第1季 | S01E01–S01E04、S01E18，共5集 | [閱讀第1季](docs/season_01_subtitle_lessons.md) | [season_01.json](data/subtitle_lessons/season_01.json) |
+| 第4季 | S04E18，共1集 | [閱讀第4季](docs/season_04_subtitle_lessons.md) | [season_04.json](data/subtitle_lessons/season_04.json) |
+| 第5季 | S05E01–S05E05、S05E08–S05E14，共12集 | [閱讀第5季](docs/season_05_subtitle_lessons.md) | [season_05.json](data/subtitle_lessons/season_05.json) |
 
-教材的字幕引用位置已按提供的檔案核對；例句、摘要與題目為原創。時間碼只對應所註明的字幕版本，尚未與影片或德語配音核對。完整來源字幕與逐條解析資料另存於處理後來源下載包；公開儲存庫包含教材及來源紀錄。
+這18份教案共108個詞彙項目、36個語法重點、54題討論與36個場景練習。字幕引用位置已按原檔核對；摘要、例句、題目與答案提示均為原創。時間碼只對應所註明的字幕版本，尚未與影片或德語配音核對。
 
-原有Excel、CSV與236集JSON繼續作為全劇概覽；本批較詳細的字幕教材存放於上列獨立檔案。
+第二批有3處配集修正：pilot ZIP內另含S01E18；第4集ZIP內的兩個BluRay檔案將S01E03與S01E04檔名互換。已依內容確認集數，保留原檔名、原始雜湊與[核對紀錄](data/subtitle_resolutions/batch_2026-11-16_02.json)。S05E13的兩個版本也保持分開，並非上下兩部分。
+
+- [字幕涵蓋進度](data/subtitle_coverage.json)：已收到、仍缺少的集數及教案狀態。
+- [跨對話接續紀錄](PROJECT_STATUS.md)：下一批上傳的接續位置。
+- [字幕匯入與配集流程](docs/subtitle_workflow.md)：編碼、去重、版本及錯誤標籤處理。
+
+完整來源字幕與逐條解析資料另存於合併來源下載包；公開儲存庫包含教材及來源紀錄。原有Excel、CSV與236集JSON作為全劇概覽，較詳細的字幕教材存放於上列獨立檔案。
 
 ## 已完成的內容
 

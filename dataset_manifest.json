@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "created_on": "2026-11-16",
   "title": "Friends 德語逐集學習內容庫",
   "episode_count": 236,
@@ -55,7 +55,19 @@
   },
   "subtitle_enrichment": {
     "updated_on": "2026-11-16",
+    "completed_batches": 2,
     "episode_ids": [
+      "S01E01",
+      "S01E02",
+      "S01E03",
+      "S01E04",
+      "S01E18",
+      "S04E18",
+      "S05E01",
+      "S05E02",
+      "S05E03",
+      "S05E04",
+      "S05E05",
       "S05E08",
       "S05E09",
       "S05E10",
@@ -65,8 +77,16 @@
       "S05E14"
     ],
     "coverage_path": "data/subtitle_coverage.json",
-    "lesson_path": "data/subtitle_lessons/season_05.json",
-    "import_record_path": "data/subtitle_imports/batch_2026-11-16_s05.json",
+    "lesson_paths": [
+      "data/subtitle_lessons/season_01.json",
+      "data/subtitle_lessons/season_04.json",
+      "data/subtitle_lessons/season_05.json"
+    ],
+    "import_record_paths": [
+      "data/subtitle_imports/batch_2026-11-16_02.json",
+      "data/subtitle_imports/batch_2026-11-16_s05.json"
+    ],
+    "source_version_count": 25,
     "full_subtitle_text_in_public_repository": false,
     "audio_verified": false
   }
