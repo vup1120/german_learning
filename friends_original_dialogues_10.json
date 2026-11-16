@@ -1,0 +1,432 @@
+[
+  {
+    "episode_id": "S01E01",
+    "title_zh": "借住兩晚，先說清楚",
+    "content_type": "original_exercise",
+    "notice_zh": "原創練習對話，非劇中台詞或字幕翻譯",
+    "level": "A2–B1",
+    "situation_zh": "Anna 家中的暖氣需要維修，想借住朋友 Ben 家兩晚；兩人先確認時間與生活安排。",
+    "turns": [
+      {
+        "speaker": "Anna",
+        "de": "Meine Heizung wird morgen repariert. Könnte ich deshalb heute und morgen bei dir übernachten?",
+        "zh": "我的暖氣明天要修理，所以我今晚和明晚可以住你家嗎？"
+      },
+      {
+        "speaker": "Ben",
+        "de": "Natürlich. Das Gästezimmer ist frei. Sag mir einfach, wann du nach der Arbeit ungefähr ankommst.",
+        "zh": "當然，客房空著。你下班後大概什麼時候到，跟我說一聲就好。"
+      },
+      {
+        "speaker": "Anna",
+        "de": "Wahrscheinlich gegen sieben. Soll ich etwas zum Abendessen mitbringen oder lieber für uns beide kochen?",
+        "zh": "大概七點左右。我該帶點晚餐，還是由我來煮我們兩人的份？"
+      },
+      {
+        "speaker": "Ben",
+        "de": "Zusammen kochen wäre schön. Ich habe Gemüse da, aber wir brauchen noch Brot und etwas Käse.",
+        "zh": "一起煮很不錯。我這裡有蔬菜，但還需要麵包和一些起司。"
+      },
+      {
+        "speaker": "Anna",
+        "de": "Das besorge ich. Gibt es sonst etwas, worauf ich während meines Besuchs achten soll?",
+        "zh": "這些我來買。我住你家期間，還有其他需要注意的事嗎？"
+      },
+      {
+        "speaker": "Ben",
+        "de": "Nur eine Sache: Ich stehe früh auf. Ab elf würde ich deshalb gern schlafen.",
+        "zh": "只有一件事：我很早起，所以十一點起我就想睡了。"
+      }
+    ],
+    "language_note_zh": "用 Könnte ich …? 禮貌提出請求；gegen sieben 表示「七點左右」，auf etwas achten 表示「留意某事」。",
+    "practice_prompt_de": "Ändere den Dialog: Du brauchst nur eine Nacht, musst aber schon um sechs Uhr morgens gehen.",
+    "practice_prompt_zh": "改寫對話：你只需要借住一晚，但早上六點就必須離開。"
+  },
+  {
+    "episode_id": "S02E05",
+    "title_zh": "點餐前談好怎麼付",
+    "content_type": "original_exercise",
+    "notice_zh": "原創練習對話，非劇中台詞或字幕翻譯",
+    "level": "A2–B1",
+    "situation_zh": "Anna 和 Ben 參觀博物館後準備吃午餐；Anna 希望先說明自己的餐費預算。",
+    "turns": [
+      {
+        "speaker": "Anna",
+        "de": "Bevor wir bestellen, möchte ich kurz über die Rechnung sprechen. Ich habe heute ein kleines Budget.",
+        "zh": "點餐前，我想先談一下怎麼付錢。我今天的預算比較少。"
+      },
+      {
+        "speaker": "Ben",
+        "de": "Danke, dass du es sagst. Möchtest du lieber in ein günstigeres Café gehen oder hier bleiben?",
+        "zh": "謝謝你說出來。你比較想去便宜一點的咖啡館，還是留在這裡？"
+      },
+      {
+        "speaker": "Anna",
+        "de": "Hier gibt es eine Suppe für acht Euro. Die würde ich gern nehmen, dazu nur Wasser.",
+        "zh": "這裡有八歐元的湯。我想點那個，再配水就好。"
+      },
+      {
+        "speaker": "Ben",
+        "de": "Gut, ich nehme wahrscheinlich ein Hauptgericht. Dann bezahlt einfach jeder das, was er selbst bestellt hat.",
+        "zh": "好，我大概會點一道主餐。那就各自付自己點的餐點。"
+      },
+      {
+        "speaker": "Anna",
+        "de": "Das passt für mich. Und wie machen wir es mit dem Brot, das wir zusammen essen?",
+        "zh": "這樣我可以。那我們一起吃的麵包要怎麼算？"
+      },
+      {
+        "speaker": "Ben",
+        "de": "Die Kosten dafür teilen wir durch zwei. Wenn du möchtest, sagen wir das gleich beim Bestellen.",
+        "zh": "那筆費用我們平分。如果你願意，我們點餐時就先說明。"
+      }
+    ],
+    "language_note_zh": "jeder bezahlt selbst 表示各自付款；die Kosten teilen 表示分攤費用。bevor 子句中的動詞放句尾。",
+    "practice_prompt_de": "Verhandle eine andere Lösung: Eine Person bezahlt das gemeinsame Brot. Alles andere bezahlt jeder selbst.",
+    "practice_prompt_zh": "協商另一種做法：其中一人想請共享的麵包，但其他餐點仍各自付費。"
+  },
+  {
+    "episode_id": "S03E02",
+    "title_zh": "趕上導覽的出門約定",
+    "content_type": "original_exercise",
+    "notice_zh": "原創練習對話，非劇中台詞或字幕翻譯",
+    "level": "A2–B1",
+    "situation_zh": "Anna 和 Ben 預約了展覽導覽，出門前還有幾件小事要完成。",
+    "turns": [
+      {
+        "speaker": "Anna",
+        "de": "Unsere Führung beginnt um drei. Wenn wir den Bus um halb drei nehmen, kommen wir rechtzeitig an.",
+        "zh": "我們的導覽三點開始。如果搭兩點半的公車，就能及時到。"
+      },
+      {
+        "speaker": "Ben",
+        "de": "Ich muss noch meine Kamera laden und die Eintrittskarten suchen. Wie viel Zeit haben wir noch?",
+        "zh": "我還得替相機充電、找門票。我們還有多少時間？"
+      },
+      {
+        "speaker": "Anna",
+        "de": "Bis zum Aufbruch bleiben zehn Minuten. Die Karten habe ich schon auf meinem Handy gespeichert.",
+        "zh": "距離出門還有十分鐘。我已經把票存到手機了。"
+      },
+      {
+        "speaker": "Ben",
+        "de": "Prima, dann brauche ich nur noch meine Jacke. Könntest du bitte inzwischen das Fenster schließen?",
+        "zh": "太好了，那我只差外套。你可以趁這個時候把窗戶關上嗎？"
+      },
+      {
+        "speaker": "Anna",
+        "de": "Ja. Treffen wir uns in fünf Minuten an der Tür? Dann müssen wir unterwegs nicht rennen.",
+        "zh": "可以。我們五分鐘後在門口集合好嗎？這樣路上就不用跑了。"
+      },
+      {
+        "speaker": "Ben",
+        "de": "Abgemacht. Die Kamera lasse ich heute hier und mache die Fotos einfach mit meinem Handy.",
+        "zh": "說好了。今天我把相機留在這裡，用手機拍照就好。"
+      }
+    ],
+    "language_note_zh": "halb drei 是兩點半；um 表示具體時刻，in fünf Minuten 表示五分鐘後。wenn 子句可用來說明準時出發的條件。",
+    "practice_prompt_de": "Ändere den Plan: Der Bus fällt aus. Findet gemeinsam eine Lösung und nennt eine neue Abfahrtszeit.",
+    "practice_prompt_zh": "更改計畫：公車停駛了。一起想出辦法，並訂下新的出發時間。"
+  },
+  {
+    "episode_id": "S04E12",
+    "title_zh": "公平的朋友問答夜",
+    "content_type": "original_exercise",
+    "notice_zh": "原創練習對話，非劇中台詞或字幕翻譯",
+    "level": "A2–B1",
+    "situation_zh": "Anna 和 Ben 為鄰居聚會設計輕鬆問答，想讓剛加入的新朋友也能參加。",
+    "turns": [
+      {
+        "speaker": "Anna",
+        "de": "Für unseren Spieleabend möchte ich ein kleines Quiz vorbereiten. Die Fragen sollen lustig, aber nicht zu persönlich sein.",
+        "zh": "我想為遊戲之夜準備一個小問答。題目要有趣，但不要太私密。"
+      },
+      {
+        "speaker": "Ben",
+        "de": "Gute Idee. Wir könnten nach Lieblingsessen, Hobbys und Urlaubswünschen fragen. Neue Gäste kennen uns allerdings noch kaum.",
+        "zh": "好主意。我們可以問喜歡的食物、興趣和旅行願望。不過新客人還不太認識我們。"
+      },
+      {
+        "speaker": "Anna",
+        "de": "Dann erzählen alle zuerst drei Dinge über sich. Danach bilden wir gemischte Teams und beginnen das Spiel.",
+        "zh": "那先讓每個人介紹自己的三件事。之後混合分隊，再開始遊戲。"
+      },
+      {
+        "speaker": "Ben",
+        "de": "Wie viele Punkte gibt es pro richtiger Antwort? Und dürfen die Teams sich vor der Antwort beraten?",
+        "zh": "每答對一題有幾分？隊員回答前可以討論嗎？"
+      },
+      {
+        "speaker": "Anna",
+        "de": "Eine richtige Antwort gibt einen Punkt. Jedes Team hat dreißig Sekunden Zeit, um sich zu einigen.",
+        "zh": "答對一題得一分。每隊有三十秒可以討論出一致答案。"
+      },
+      {
+        "speaker": "Ben",
+        "de": "Das klingt fair. Als Preis bekommt das Gewinnerteam das Recht, die Musik für die nächste Runde auszuwählen.",
+        "zh": "聽起來很公平。獲勝隊伍的獎品是選擇下一輪播放的音樂。"
+      }
+    ],
+    "language_note_zh": "pro 表示「每」；sich beraten 是互相商量，sich einigen 是達成一致。可用 dürfen 詢問遊戲規則。",
+    "practice_prompt_de": "Schreibe drei freundliche Quizfragen und erkläre eine zusätzliche Regel für neue Gäste.",
+    "practice_prompt_zh": "寫出三個友善的問答題，並說明一項讓新客人容易參與的規則。"
+  },
+  {
+    "episode_id": "S05E16",
+    "title_zh": "搬書桌前先分工",
+    "content_type": "original_exercise",
+    "notice_zh": "原創練習對話，非劇中台詞或字幕翻譯",
+    "level": "A2–B1",
+    "situation_zh": "Anna 和 Ben 要把一張書桌搬到隔壁工作室，先討論拆裝、路線與分工。",
+    "turns": [
+      {
+        "speaker": "Anna",
+        "de": "Der Schreibtisch soll ins Arbeitszimmer nebenan. Bevor wir anfangen, sollten wir die Schubladen herausnehmen und den Weg freimachen.",
+        "zh": "這張書桌要搬到隔壁工作室。開始前，我們應先抽出抽屜，把路清出來。"
+      },
+      {
+        "speaker": "Ben",
+        "de": "Einverstanden. Ich räume die Stühle weg. Weißt du, ob sich die Beine vom Tisch abschrauben lassen?",
+        "zh": "同意。我來把椅子移開。你知道桌腳能不能拆下來嗎？"
+      },
+      {
+        "speaker": "Anna",
+        "de": "Ja, das geht. Im Werkzeugkasten liegt der passende Schlüssel. Ohne die Beine ist die Platte viel leichter.",
+        "zh": "可以。工具箱裡有合適的扳手。拆掉桌腳後，桌板會輕很多。"
+      },
+      {
+        "speaker": "Ben",
+        "de": "Dann schraube ich sie ab. Könntest du die kleinen Teile bitte in eine Schüssel legen?",
+        "zh": "那我來拆。你可以把小零件放進一個碗裡嗎？"
+      },
+      {
+        "speaker": "Anna",
+        "de": "Mache ich. Danach tragen wir die Platte gemeinsam. Wenn jemand eine Pause braucht, sagen wir sofort Stopp.",
+        "zh": "沒問題。之後我們一起抬桌板。如果有人需要休息，就立刻喊停。"
+      },
+      {
+        "speaker": "Ben",
+        "de": "Gut. Lass uns vorher noch die Breite der Tür messen, damit wir den Transport besser planen können.",
+        "zh": "好。先再量一下門的寬度，這樣更容易規劃怎麼搬。"
+      }
+    ],
+    "language_note_zh": "herausnehmen、abschrauben、freimachen 都是可分動詞。用 bevor 說明先後順序，damit 說明準備工作的目的。",
+    "practice_prompt_de": "Erkläre in vier Schritten, wie ihr den Tisch im anderen Zimmer wieder zusammenbaut.",
+    "practice_prompt_zh": "用四個步驟說明，你們如何在另一個房間把桌子重新組裝。"
+  },
+  {
+    "episode_id": "S06E23",
+    "title_zh": "在預算內選生日禮物",
+    "content_type": "original_exercise",
+    "notice_zh": "原創練習對話，非劇中台詞或字幕翻譯",
+    "level": "A2–B1",
+    "situation_zh": "Anna 和 Ben 要一起買禮物給常帶午餐上班的朋友，總預算四十歐元。",
+    "turns": [
+      {
+        "speaker": "Anna",
+        "de": "Wir haben zusammen vierzig Euro für Leas Geburtstagsgeschenk. Hast du schon eine Idee, worüber sie sich freuen würde?",
+        "zh": "我們有四十歐元可以買 Lea 的生日禮物。你想到什麼會讓她開心了嗎？"
+      },
+      {
+        "speaker": "Ben",
+        "de": "Sie nimmt jeden Tag Essen zur Arbeit mit. Vielleicht wäre eine gute Brotdose mit mehreren Fächern praktisch.",
+        "zh": "她每天都帶飯去上班。或許一個有分隔、品質好的餐盒很實用。"
+      },
+      {
+        "speaker": "Anna",
+        "de": "Diese hier kostet fünfundzwanzig Euro. Sie sieht stabil aus, aber ich weiß nicht, ob sie in die Spülmaschine darf.",
+        "zh": "這個二十五歐元，看起來很耐用，但我不知道能不能放洗碗機。"
+      },
+      {
+        "speaker": "Ben",
+        "de": "Das steht auf der Verpackung. Ja, das geht. Dann bleiben noch fünfzehn Euro für eine kleine Ergänzung.",
+        "zh": "包裝上有寫。可以。那還剩十五歐元，可以加一點小東西。"
+      },
+      {
+        "speaker": "Anna",
+        "de": "Wie wäre es mit einer Karte und einem selbst gebackenen Kuchen? Wir müssen nicht noch ein Geschenk kaufen.",
+        "zh": "不如寫張卡片、自己烤蛋糕，如何？我們不一定要再買一份禮物。"
+      },
+      {
+        "speaker": "Ben",
+        "de": "Das gefällt mir. Es ist persönlich, passt zu unserem Budget und zeigt, dass wir an sie gedacht haben.",
+        "zh": "我喜歡。這很有心意，也符合預算，能讓她知道我們惦記著她。"
+      }
+    ],
+    "language_note_zh": "sich über etwas freuen 表示因某事開心；Wie wäre es mit …? 可用來提議。noch fünfzehn Euro übrig haben 表示還剩十五歐元。",
+    "practice_prompt_de": "Das Budget sinkt auf zwanzig Euro. Einigt euch auf ein anderes Geschenk und begründet eure Wahl.",
+    "practice_prompt_zh": "預算降到二十歐元。一起決定另一個禮物，並說明選擇理由。"
+  },
+  {
+    "episode_id": "S07E17",
+    "title_zh": "參加婚禮穿什麼",
+    "content_type": "original_exercise",
+    "notice_zh": "原創練習對話，非劇中台詞或字幕翻譯",
+    "level": "A2–B1",
+    "situation_zh": "Anna 和 Ben 受邀參加一場戶外婚禮，討論穿著、舒適度，以及是否需要買新衣。",
+    "turns": [
+      {
+        "speaker": "Anna",
+        "de": "Die Hochzeit findet im Garten statt. Ich bin unsicher, ob ich dafür wirklich ein neues Kleid kaufen muss.",
+        "zh": "婚禮在花園舉行。我不確定自己是不是一定要買件新洋裝。"
+      },
+      {
+        "speaker": "Ben",
+        "de": "Auf der Einladung steht nur festliche Kleidung. Dein blaues Kleid passt doch gut, und du fühlst dich darin wohl.",
+        "zh": "邀請函上只寫正式喜慶的服裝。你的藍色洋裝就很合適，而且穿起來舒服。"
+      },
+      {
+        "speaker": "Anna",
+        "de": "Stimmt. Mit einer hellen Jacke könnte ich es auch abends tragen. Neue Schuhe wären allerdings noch ziemlich teuer.",
+        "zh": "也是。配件淺色外套，晚上也能穿。不過如果再買新鞋，還是很貴。"
+      },
+      {
+        "speaker": "Ben",
+        "de": "Warum nimmst du nicht deine flachen Schuhe? Auf der Wiese sind sie wahrscheinlich bequemer als hohe Absätze.",
+        "zh": "為什麼不穿你的平底鞋？在草地上，應該比高跟鞋舒服。"
+      },
+      {
+        "speaker": "Anna",
+        "de": "Guter Punkt. Dann brauche ich nichts Neues und kann das Geld lieber für die gemeinsame Reise zurücklegen.",
+        "zh": "有道理。這樣我不用買新東西，可以把錢留給我們一起的旅行。"
+      },
+      {
+        "speaker": "Ben",
+        "de": "Genau. Wichtig ist doch, dass wir passend gekleidet sind und den Tag mit unseren Freunden genießen können.",
+        "zh": "沒錯。重要的是穿得合適，能和朋友一起享受那一天。"
+      }
+    ],
+    "language_note_zh": "sich wohlfühlen 表示感到自在；bequemer als … 是比較級。Warum … nicht? 可以提出替代方案。",
+    "practice_prompt_de": "Die Feier wird wegen Regen nach drinnen verlegt. Besprecht, ob ihr eure Kleidung ändern müsst.",
+    "practice_prompt_zh": "因為下雨，慶祝活動改到室內。討論是否需要調整穿著。"
+  },
+  {
+    "episode_id": "S08E21",
+    "title_zh": "把批評問得更具體",
+    "content_type": "original_exercise",
+    "notice_zh": "原創練習對話，非劇中台詞或字幕翻譯",
+    "level": "B1–B2",
+    "situation_zh": "Anna 的社區通訊文章被說成「不好懂」，她向 Ben 請教如何取得有幫助的回饋。",
+    "turns": [
+      {
+        "speaker": "Anna",
+        "de": "Jemand hat meinen Artikel als unübersichtlich bezeichnet. Das hat mich geärgert, weil ich viel Zeit in den Text investiert habe.",
+        "zh": "有人說我的文章條理不清。這讓我很生氣，因為我花了很多時間寫。"
+      },
+      {
+        "speaker": "Ben",
+        "de": "Das verstehe ich. Hat die Person auch erklärt, welche Stellen schwierig waren, oder blieb die Kritik eher allgemein?",
+        "zh": "我明白。那個人有說明哪些地方難懂，還是只是很籠統的批評？"
+      },
+      {
+        "speaker": "Anna",
+        "de": "Leider blieb sie allgemein. Ich würde gern nachfragen, möchte aber nicht so wirken, als könnte ich keine Kritik akzeptieren.",
+        "zh": "可惜很籠統。我想問清楚，但不希望讓人以為我不能接受批評。"
+      },
+      {
+        "speaker": "Ben",
+        "de": "Du könntest um ein konkretes Beispiel bitten. Dann kannst du prüfen, ob eine andere Reihenfolge den Text verständlicher macht.",
+        "zh": "你可以請對方舉一個具體例子，再看看調整順序能否讓文章更容易懂。"
+      },
+      {
+        "speaker": "Anna",
+        "de": "Also erst verstehen, dann entscheiden. Ich muss nicht jede Änderung übernehmen, sollte die Rückmeldung aber ernst nehmen.",
+        "zh": "也就是先理解，再決定。我不必接受每一項修改，但應認真看待回饋。"
+      },
+      {
+        "speaker": "Ben",
+        "de": "Genau. Frag doch, welcher Abschnitt bereits gut funktioniert. Das hilft dir, beim Überarbeiten deine Stärken zu behalten.",
+        "zh": "沒錯。也問問哪一段已經寫得不錯，這能幫你修改時保留優點。"
+      }
+    ],
+    "language_note_zh": "um ein Beispiel bitten 表示請求舉例；ob 引導間接的是非問句。erst … dann … 可清楚說明處理回饋的步驟。",
+    "practice_prompt_de": "Formuliere eine höfliche Nachricht, in der Anna um zwei konkrete Verbesserungsvorschläge bittet.",
+    "practice_prompt_zh": "寫一則有禮貌的訊息，讓 Anna 請對方提出兩項具體的改善建議。"
+  },
+  {
+    "episode_id": "S09E10",
+    "title_zh": "假期前安排好交接",
+    "content_type": "original_exercise",
+    "notice_zh": "原創練習對話，非劇中台詞或字幕翻譯",
+    "level": "B1–B2",
+    "situation_zh": "Anna 和 Ben 在社區活動中心工作，假期前需要協調一件尚未完成的預約工作。",
+    "turns": [
+      {
+        "speaker": "Anna",
+        "de": "Ich habe ab Freitag Urlaub. Die Raumreservierung ist noch nicht bestätigt. Können wir die Übergabe besprechen?",
+        "zh": "我星期五開始休假，場地預約還沒確認。我們可以談一下交接嗎？"
+      },
+      {
+        "speaker": "Ben",
+        "de": "Welche Informationen fehlen noch? Wer entscheidet, falls die gewünschte Zeit nicht verfügbar ist?",
+        "zh": "還缺哪些資訊？如果沒有想要的時段，誰來做決定？"
+      },
+      {
+        "speaker": "Anna",
+        "de": "Uns fehlt nur die Rückmeldung des Hausmeisters. Zwei mögliche Alternativen stehen bereits in der Liste, die ich dir gleich schicke.",
+        "zh": "只差管理員回覆。我等一下寄給你的清單裡，已經列了兩個替代方案。"
+      },
+      {
+        "speaker": "Ben",
+        "de": "Dann übernehme ich das. Bitte notiere noch die Telefonnummer und das vereinbarte Budget, damit ich nicht bei dir nachfragen muss.",
+        "zh": "那我來接手。請再註明電話和已約定的預算，這樣我就不用再問你。"
+      },
+      {
+        "speaker": "Anna",
+        "de": "Gern. Im Urlaub möchte ich meine Nachrichten nicht ständig prüfen. Wenn etwas wirklich dringend ist, hilft auch unsere Teamleitung weiter.",
+        "zh": "沒問題。休假時我不想一直看訊息。如果真的有急事，主管也能協助。"
+      },
+      {
+        "speaker": "Ben",
+        "de": "Das passt. Ich gebe dem Team Bescheid und dokumentiere die Entscheidung. Dann kannst du dich auf deine freie Zeit freuen.",
+        "zh": "這樣可以。我會通知團隊並記錄決定。你就可以安心期待假期了。"
+      }
+    ],
+    "language_note_zh": "die Übergabe 表示交接；falls 引導可能發生的條件。用 klare Zuständigkeiten（清楚分工）及可聯絡的人說明假期安排。",
+    "practice_prompt_de": "Ergänze eine kurze Übergabeliste mit Aufgabe, zuständiger Person, Termin und einer möglichen Alternative.",
+    "practice_prompt_zh": "補上一張簡短交接清單，列出任務、負責人、期限和一個替代方案。"
+  },
+  {
+    "episode_id": "S10E13",
+    "title_zh": "練習聽懂，再自己說",
+    "content_type": "original_exercise",
+    "notice_zh": "原創練習對話，非劇中台詞或字幕翻譯",
+    "level": "A2–B1",
+    "situation_zh": "Ben 想練習在德語麵包店點餐，Anna 協助他分段練習並理解意思。",
+    "turns": [
+      {
+        "speaker": "Ben",
+        "de": "Ich möchte morgen auf Deutsch beim Bäcker bestellen. Den Satz kenne ich, aber beim Sprechen werde ich schnell nervös.",
+        "zh": "我明天想在麵包店用德文點餐。我知道句子，但一開口就容易緊張。"
+      },
+      {
+        "speaker": "Anna",
+        "de": "Dann üben wir zuerst langsam. Was möchtest du kaufen? Sag es ruhig mit einfachen Wörtern und kurzen Sätzen.",
+        "zh": "那我們先慢慢練。你想買什麼？用簡單的詞和短句說就好。"
+      },
+      {
+        "speaker": "Ben",
+        "de": "Ich hätte gern zwei Brötchen und ein kleines Brot. Könnten Sie das Brot bitte für mich schneiden?",
+        "zh": "我想要兩個餐包和一條小尺寸的麵包。可以請您幫我把那條麵包切片嗎？"
+      },
+      {
+        "speaker": "Anna",
+        "de": "Das ist verständlich. Sprich Brötchen noch einmal etwas langsamer. Danach wiederholen wir den ganzen Satz mit einer kurzen Pause.",
+        "zh": "這樣聽得懂。把 Brötchen 再慢一點說一次，之後加上短暫停頓，重說整句。"
+      },
+      {
+        "speaker": "Ben",
+        "de": "Gut. Und wenn ich die Antwort nicht verstehe, frage ich einfach: Könnten Sie das bitte noch einmal sagen?",
+        "zh": "好。如果我聽不懂回答，就問：可以請您再說一次嗎？"
+      },
+      {
+        "speaker": "Anna",
+        "de": "Genau. Du musst nicht jedes Wort verstehen. Wichtig ist, dass du nachfragst und deine Bestellung am Ende überprüfst.",
+        "zh": "沒錯。你不用聽懂每個字。重要的是會追問，最後再確認點了什麼。"
+      }
+    ],
+    "language_note_zh": "Ich hätte gern … 是常用的禮貌點餐句。請對方重說可用 Könnten Sie das bitte noch einmal sagen?；先分段練習，再連成完整句。",
+    "practice_prompt_de": "Spielt die Situation erneut: Ein gewünschtes Brot ist ausverkauft. Frage nach einer Alternative und bestätige die neue Bestellung.",
+    "practice_prompt_zh": "再演練一次：想買的麵包售完了。詢問替代選擇，並確認新的訂購內容。"
+  }
+]

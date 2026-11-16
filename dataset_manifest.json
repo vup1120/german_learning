@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "created_on": "2026-11-16",
+  "title": "Friends 德語逐集學習內容庫",
+  "episode_count": 236,
+  "season_counts": {
+    "1": 24,
+    "2": 24,
+    "3": 25,
+    "4": 24,
+    "5": 24,
+    "6": 25,
+    "7": 24,
+    "8": 24,
+    "9": 24,
+    "10": 18
+  },
+  "vocabulary_entries": 708,
+  "discussion_questions": 236,
+  "original_dialogues": 10,
+  "dialogue_turns": 60,
+  "unique_episode_source_urls": 236,
+  "excludes": [
+    "reunion special",
+    "full or half-episode transcripts",
+    "subtitles",
+    "audio",
+    "video"
+  ],
+  "content_notes": [
+    "德文與繁中摘要為自行撰寫的短篇情節選摘，並非德語配音逐字稿或字幕翻譯。",
+    "摘要只選取本集的一至兩條情節線，可能涉及劇透，不是逐場完整劇情重建。",
+    "詞彙、語言重點、討論題和示範對話是原創教材；不表示這些字句一定出現在該集音軌。",
+    "A2–B1和B1–B2是練習難度建議，不是本劇的官方CEFR分級。",
+    "劇情參照逐集節目短介或搜尋索引提供的單集短介；少數以官方英文簡介核對。德語音軌尚未逐集比對。",
+    "未授予任何Friends影音、劇本、字幕或商標的使用權。"
+  ],
+  "official_reference_urls": [
+    "https://press.wbd.com/us/media-release/one-where-they-got-back-together",
+    "https://tv.apple.com/de/show/friends/umc.cmc.4dxfvjbc4rdww1dcp3kbgoaqm",
+    "https://www.primevideo.com/-/de/detail/0M62QKG5IWILV60MICRSLJVM4H?tr=pf",
+    "https://partnerhelp.netflixstudios.com/hc/en-us/articles/217351587-German-Timed-Text-Style-Guide"
+  ],
+  "edition_mapping_example": {
+    "provider": "Prime Video",
+    "provider_season": 10,
+    "provider_playback_unit": 17,
+    "episode_ids": [
+      "S10E17",
+      "S10E18"
+    ],
+    "source_url": "https://www.primevideo.com/-/de/detail/0M62QKG5IWILV60MICRSLJVM4H?tr=pf",
+    "note": "本次可讀官方商品頁將結局兩部合成第17個播放單元；不同帳號與地區需另行確認。",
+    "part_boundary_seconds": null
+  }
+}
