@@ -1,0 +1,712 @@
+{
+  "movie_id": "good-bye-lenin-2003",
+  "title": "Good Bye, Lenin!",
+  "year": 2003,
+  "level": "B1–B2",
+  "language": "de",
+  "summary_de": "Nach dem Erwachen seiner Mutter versucht Alex, ihr die gewaltigen Veränderungen nach dem Fall der Berliner Mauer zu verbergen. Dafür erfindet er mit Freunden eine eigene Version der DDR.",
+  "summary_zh": "母親醒來後，Alex試圖對她隱瞞柏林圍牆倒塌後的巨大變化，並和朋友共同編造一個屬於自己的東德版本。",
+  "subtitle_source": {
+    "filename": "Good.Bye.Lenin.2003.German.1080p.BluRay.x264-DETAiLS.srt",
+    "sha256": "a442d60bdf3b2f73e23805fa504296133b8b1b0aa67720b061c81c90383e8c79",
+    "cue_count": 1202,
+    "last_cue_start_ms": 6999000,
+    "format": "SRT",
+    "encoding": "UTF-8",
+    "audio_verified": false,
+    "video_sync_verified": false,
+    "caption_timing_version_specific": true,
+    "notice_zh": "教案依使用者提供的德文字幕製作。場景與提示時間僅對應這份字幕，未與影片或聲音逐一核對。德文例句、摘要與題目均為原創教學內容；原始字幕不公開。",
+    "subtitle_file_publicly_included": false
+  },
+  "chapters": [
+    {
+      "scene_id": "GBL-01",
+      "title_de": "Familie und Schweigen",
+      "title_zh": "家庭、離別與沉默",
+      "source_cue_start": 20,
+      "source_cue_end": 52,
+      "source_start_ms": 189648,
+      "source_end_ms": 366751,
+      "summary_de": "Alex erinnert sich an seine Kindheit. Nach der Ausreise seines Vaters zieht sich seine Mutter zurück. Später widmet sie sich ganz dem Leben in der DDR.",
+      "summary_zh": "Alex回憶童年。父親留在西方後，母親一度沉默，之後全心投入東德生活。",
+      "learning_goals_zh": [
+        "利用字幕定位場景並用德文概述主要事件",
+        "練習主題詞彙與一項核心文法",
+        "用德文表達自己的觀點，區分電影角色說法與歷史事實"
+      ],
+      "vocabulary": [
+        {
+          "de": "die Republikflucht",
+          "zh": "逃離東德",
+          "example_de": "Die Familie spricht über die Flucht aus dem Land.",
+          "example_zh": "這家人談論離開國家的事。",
+          "source_cue_id": 27,
+          "source_start_ms": 216466,
+          "source_form": "die Republikflucht"
+        },
+        {
+          "de": "der Zustand",
+          "zh": "狀態、情況",
+          "example_de": "Der Zustand der Familie hat sich verändert.",
+          "example_zh": "這個家庭的狀況已經改變。",
+          "source_cue_id": 26,
+          "source_start_ms": 210127,
+          "source_form": "der Zustand"
+        },
+        {
+          "de": "zurückkommen",
+          "zh": "回來",
+          "example_de": "Meine Schwester kommt am Abend zurück.",
+          "example_zh": "我妹妹晚上會回來。",
+          "source_cue_id": 37,
+          "source_start_ms": 269352,
+          "source_form": "zurückkommen"
+        },
+        {
+          "de": "sich anpassen",
+          "zh": "適應",
+          "example_de": "Ich muss mich an die neue Situation anpassen.",
+          "example_zh": "我必須適應新情況。",
+          "source_cue_id": 41,
+          "source_start_ms": 291416,
+          "source_form": "sich anpassen"
+        }
+      ],
+      "grammar": [
+        {
+          "focus_zh": "用 würde 表達委婉提問",
+          "explanation_zh": "würde + 不定詞可用於較委婉的假設提問；變位的 würde 在第二位。",
+          "example_de": "Wie würdest du die Situation beschreiben?",
+          "example_zh": "你會如何描述這種情況？"
+        }
+      ],
+      "discussion": [
+        {
+          "question_de": "Wie reagiert die Familie auf die Abwesenheit des Vaters?",
+          "question_zh": "家人如何面對父親的缺席？",
+          "level": "B1"
+        },
+        {
+          "question_de": "Warum kann Schweigen mehr als eine Bedeutung haben?",
+          "question_zh": "沉默為什麼可能有不只一種意思？",
+          "level": "B2"
+        }
+      ],
+      "practice": [
+        {
+          "task_de": "Erzähle die Szene „Familie und Schweigen“ in drei bis fünf eigenen Sätzen. Was passiert zuerst und welche Entscheidung oder Veränderung folgt?",
+          "task_zh": "用 3–5 句德文重述「家庭、離別與沉默」場景。先發生什麼事？接著有什麼決定或變化？",
+          "source_cue_start": 20,
+          "source_cue_end": 52,
+          "answer_hint_de": "Alex erinnert sich an seine Kindheit. Nach der Ausreise seines Vaters zieht sich seine Mutter zurück. Später widmet sie sich ganz dem Leben in der DDR.",
+          "answer_hint_zh": "Alex回憶童年。父親留在西方後，母親一度沉默，之後全心投入東德生活。",
+          "start_ms": 189648,
+          "end_ms": 366751
+        }
+      ]
+    },
+    {
+      "scene_id": "GBL-02",
+      "title_de": "Koma und Zeitenwende",
+      "title_zh": "昏迷與時代轉折",
+      "source_cue_start": 151,
+      "source_cue_end": 174,
+      "source_start_ms": 926592,
+      "source_end_ms": 1121625,
+      "summary_de": "Christiane erleidet einen Herzinfarkt und fällt ins Koma. Während sie schläft, verändern politische Ereignisse die DDR; schließlich fällt die Berliner Mauer.",
+      "summary_zh": "Christiane心臟病發後陷入昏迷。她沉睡期間，東德政局劇變，柏林圍牆倒塌。",
+      "learning_goals_zh": [
+        "利用字幕定位場景並用德文概述主要事件",
+        "練習主題詞彙與一項核心文法",
+        "用德文表達自己的觀點，區分電影角色說法與歷史事實"
+      ],
+      "vocabulary": [
+        {
+          "de": "der Herzinfarkt",
+          "zh": "心肌梗塞",
+          "example_de": "Nach dem Herzinfarkt braucht er viel Ruhe.",
+          "example_zh": "心肌梗塞後，他需要多休息。",
+          "source_cue_id": 155,
+          "source_start_ms": 1001125,
+          "source_form": "der Herzinfarkt"
+        },
+        {
+          "de": "im Koma liegen",
+          "zh": "陷入昏迷",
+          "example_de": "Der Patient liegt noch im Koma.",
+          "example_zh": "病患仍處於昏迷。",
+          "source_cue_id": 157,
+          "source_start_ms": 1007965,
+          "source_form": "im Koma liegen"
+        },
+        {
+          "de": "aufwachen",
+          "zh": "醒來",
+          "example_de": "Sie ist gestern wieder aufgewacht.",
+          "example_zh": "她昨天再度醒來。",
+          "source_cue_id": 159,
+          "source_start_ms": 1019268,
+          "source_form": "aufwachen"
+        },
+        {
+          "de": "die Mauer",
+          "zh": "圍牆；此處指柏林圍牆",
+          "example_de": "Die Mauer trennte lange zwei Teile der Stadt.",
+          "example_zh": "那道牆曾長期分隔城市兩側。",
+          "source_cue_id": 171,
+          "source_start_ms": 1102018,
+          "source_form": "die Mauer"
+        }
+      ],
+      "grammar": [
+        {
+          "focus_zh": "用 während 對比同時發生的事情",
+          "explanation_zh": "während 引導從句時，變位動詞放在句尾；可表示「當……期間」。",
+          "example_de": "Während sie schläft, ändert sich die Welt.",
+          "example_zh": "她睡著時，世界正在改變。"
+        }
+      ],
+      "discussion": [
+        {
+          "question_de": "Was verändert sich, während Christiane im Koma liegt?",
+          "question_zh": "Christiane昏迷期間發生了什麼改變？",
+          "level": "B1"
+        },
+        {
+          "question_de": "Wie würdest du einer Person eine große Nachricht schonend erklären?",
+          "question_zh": "你會如何溫和地告訴他人一件重大消息？",
+          "level": "B2"
+        }
+      ],
+      "practice": [
+        {
+          "task_de": "Erzähle die Szene „Koma und Zeitenwende“ in drei bis fünf eigenen Sätzen. Was passiert zuerst und welche Entscheidung oder Veränderung folgt?",
+          "task_zh": "用 3–5 句德文重述「昏迷與時代轉折」場景。先發生什麼事？接著有什麼決定或變化？",
+          "source_cue_start": 151,
+          "source_cue_end": 174,
+          "answer_hint_de": "Christiane erleidet einen Herzinfarkt und fällt ins Koma. Während sie schläft, verändern politische Ereignisse die DDR; schließlich fällt die Berliner Mauer.",
+          "answer_hint_zh": "Christiane心臟病發後陷入昏迷。她沉睡期間，東德政局劇變，柏林圍牆倒塌。",
+          "start_ms": 926592,
+          "end_ms": 1121625
+        }
+      ]
+    },
+    {
+      "scene_id": "GBL-03",
+      "title_de": "Erwachen und Vorsicht",
+      "title_zh": "甦醒與保護",
+      "source_cue_start": 290,
+      "source_cue_end": 316,
+      "source_start_ms": 1808307,
+      "source_end_ms": 1910041,
+      "summary_de": "Christiane erwacht unerwartet. Der Arzt warnt vor großen Aufregungen; Alex fragt, ob sie nach Hause kann. Die Familie muss zwischen Sicherheit und ihrem Wunsch abwägen.",
+      "summary_zh": "Christiane意外甦醒。醫生警告她不能受到刺激；Alex詢問能否帶她回家。家人必須在安全與願望間權衡。",
+      "learning_goals_zh": [
+        "利用字幕定位場景並用德文概述主要事件",
+        "練習主題詞彙與一項核心文法",
+        "用德文表達自己的觀點，區分電影角色說法與歷史事實"
+      ],
+      "vocabulary": [
+        {
+          "de": "das Erwachen",
+          "zh": "甦醒",
+          "example_de": "Ihr Erwachen überrascht die Ärzte.",
+          "example_zh": "她的甦醒讓醫生意外。",
+          "source_cue_id": 293,
+          "source_start_ms": 1824406,
+          "source_form": "das Erwachen"
+        },
+        {
+          "de": "der Gedächtnisverlust",
+          "zh": "失憶",
+          "example_de": "Nach dem Unfall hatte er Gedächtnisverlust.",
+          "example_zh": "事故後他有失憶現象。",
+          "source_cue_id": 297,
+          "source_start_ms": 1835292,
+          "source_form": "der Gedächtnisverlust"
+        },
+        {
+          "de": "gefährdet",
+          "zh": "處於危險中",
+          "example_de": "Die Gesundheit bleibt gefährdet.",
+          "example_zh": "健康狀況仍有風險。",
+          "source_cue_id": 304,
+          "source_start_ms": 1857481,
+          "source_form": "gefährdet"
+        },
+        {
+          "de": "die Aufregung",
+          "zh": "激動、刺激",
+          "example_de": "Bitte vermeiden Sie unnötige Aufregung.",
+          "example_zh": "請避免不必要的情緒刺激。",
+          "source_cue_id": 312,
+          "source_start_ms": 1891681,
+          "source_form": "die Aufregung"
+        }
+      ],
+      "grammar": [
+        {
+          "focus_zh": "用 müssen 表達必要性",
+          "explanation_zh": "müssen 表達強烈必要性，第二個動詞放在句尾原形。",
+          "example_de": "Wir müssen die Situation ruhig erklären.",
+          "example_zh": "我們必須冷靜地解釋情況。"
+        }
+      ],
+      "discussion": [
+        {
+          "question_de": "Welche Sorgen hat der Arzt nach dem Erwachen?",
+          "question_zh": "甦醒後醫生有哪些擔憂？",
+          "level": "B1"
+        },
+        {
+          "question_de": "Was ist wichtiger: Schutz oder Selbstbestimmung?",
+          "question_zh": "保護與自主決定哪個更重要？",
+          "level": "B2"
+        }
+      ],
+      "practice": [
+        {
+          "task_de": "Erzähle die Szene „Erwachen und Vorsicht“ in drei bis fünf eigenen Sätzen. Was passiert zuerst und welche Entscheidung oder Veränderung folgt?",
+          "task_zh": "用 3–5 句德文重述「甦醒與保護」場景。先發生什麼事？接著有什麼決定或變化？",
+          "source_cue_start": 290,
+          "source_cue_end": 316,
+          "answer_hint_de": "Christiane erwacht unerwartet. Der Arzt warnt vor großen Aufregungen; Alex fragt, ob sie nach Hause kann. Die Familie muss zwischen Sicherheit und ihrem Wunsch abwägen.",
+          "answer_hint_zh": "Christiane意外甦醒。醫生警告她不能受到刺激；Alex詢問能否帶她回家。家人必須在安全與願望間權衡。",
+          "start_ms": 1808307,
+          "end_ms": 1910041
+        }
+      ]
+    },
+    {
+      "scene_id": "GBL-04",
+      "title_de": "Gurken und D-Mark",
+      "title_zh": "醃黃瓜與新貨幣",
+      "source_cue_start": 419,
+      "source_cue_end": 440,
+      "source_start_ms": 2431638,
+      "source_end_ms": 2543001,
+      "summary_de": "Christiane wünscht sich vertraute Spreewaldgurken. Alex sucht nach alten Produkten, doch die Geschäfte und die Währung haben sich verändert. Alltägliche Einkäufe werden schwierig.",
+      "summary_zh": "Christiane想吃熟悉的施普雷森林醃黃瓜。Alex尋找舊商品，卻發現商店與貨幣已改變；日常採買也變得困難。",
+      "learning_goals_zh": [
+        "利用字幕定位場景並用德文概述主要事件",
+        "練習主題詞彙與一項核心文法",
+        "用德文表達自己的觀點，區分電影角色說法與歷史事實"
+      ],
+      "vocabulary": [
+        {
+          "de": "der Heißhunger",
+          "zh": "突然強烈想吃某物",
+          "example_de": "Heute habe ich Heißhunger auf etwas Salziges.",
+          "example_zh": "今天我突然很想吃鹹的。",
+          "source_cue_id": 420,
+          "source_start_ms": 2434349,
+          "source_form": "der Heißhunger"
+        },
+        {
+          "de": "das Sparbuch",
+          "zh": "存摺",
+          "example_de": "Sie sucht ihr altes Sparbuch.",
+          "example_zh": "她在找舊存摺。",
+          "source_cue_id": 427,
+          "source_start_ms": 2466420,
+          "source_form": "das Sparbuch"
+        },
+        {
+          "de": "die Schlange",
+          "zh": "排隊人龍",
+          "example_de": "Vor dem Laden steht eine lange Schlange.",
+          "example_zh": "商店前有長長的人龍。",
+          "source_cue_id": 427,
+          "source_start_ms": 2466420,
+          "source_form": "die Schlange"
+        },
+        {
+          "de": "im Angebot sein",
+          "zh": "有販售、供應",
+          "example_de": "Dieses Produkt ist leider nicht mehr im Angebot.",
+          "example_zh": "很抱歉，這個商品已不再販售。",
+          "source_cue_id": 437,
+          "source_start_ms": 2526733,
+          "source_form": "im Angebot sein"
+        }
+      ],
+      "grammar": [
+        {
+          "focus_zh": "用 nicht mehr 表達「不再」",
+          "explanation_zh": "nicht mehr 用於原本成立、現在不成立的情況。",
+          "example_de": "Das Geschäft verkauft dieses Produkt nicht mehr.",
+          "example_zh": "這間店已經不賣這個商品。"
+        }
+      ],
+      "discussion": [
+        {
+          "question_de": "Warum sind alte Produkte für Christiane wichtig?",
+          "question_zh": "舊商品為何對Christiane重要？",
+          "level": "B1"
+        },
+        {
+          "question_de": "Welche Produkte erinnern dich an deine Kindheit?",
+          "question_zh": "哪些商品會讓你想起童年？",
+          "level": "B2"
+        }
+      ],
+      "practice": [
+        {
+          "task_de": "Erzähle die Szene „Gurken und D-Mark“ in drei bis fünf eigenen Sätzen. Was passiert zuerst und welche Entscheidung oder Veränderung folgt?",
+          "task_zh": "用 3–5 句德文重述「醃黃瓜與新貨幣」場景。先發生什麼事？接著有什麼決定或變化？",
+          "source_cue_start": 419,
+          "source_cue_end": 440,
+          "answer_hint_de": "Christiane wünscht sich vertraute Spreewaldgurken. Alex sucht nach alten Produkten, doch die Geschäfte und die Währung haben sich verändert. Alltägliche Einkäufe werden schwierig.",
+          "answer_hint_zh": "Christiane想吃熟悉的施普雷森林醃黃瓜。Alex尋找舊商品，卻發現商店與貨幣已改變；日常採買也變得困難。",
+          "start_ms": 2431638,
+          "end_ms": 2543001
+        }
+      ]
+    },
+    {
+      "scene_id": "GBL-05",
+      "title_de": "Geburtstag und Medien",
+      "title_zh": "生日與媒體",
+      "source_cue_start": 545,
+      "source_cue_end": 563,
+      "source_start_ms": 3160199,
+      "source_end_ms": 3236154,
+      "summary_de": "Alex plant Christianes Geburtstag. Er sucht alte Fernsehsendungen und bittet Bekannte um Hilfe, damit seine Mutter von der politischen Wende nichts bemerkt.",
+      "summary_zh": "Alex準備母親生日，尋找舊新聞影片並請熟人幫忙，避免母親察覺政治變遷。",
+      "learning_goals_zh": [
+        "利用字幕定位場景並用德文概述主要事件",
+        "練習主題詞彙與一項核心文法",
+        "用德文表達自己的觀點，區分電影角色說法與歷史事實"
+      ],
+      "vocabulary": [
+        {
+          "de": "die Wende",
+          "zh": "政治轉折；常指兩德統一前後",
+          "example_de": "Die Wende veränderte viele Lebenswege.",
+          "example_zh": "這段政治轉折改變了很多人的人生。",
+          "source_cue_id": 558,
+          "source_start_ms": 3211041,
+          "source_form": "die Wende"
+        },
+        {
+          "de": "mitkriegen",
+          "zh": "察覺、得知（口語）",
+          "example_de": "Sie hat davon nichts mitgekriegt.",
+          "example_zh": "她完全沒有察覺這件事。",
+          "source_cue_id": 558,
+          "source_start_ms": 3211041,
+          "source_form": "mitkriegen"
+        },
+        {
+          "de": "einladen",
+          "zh": "邀請",
+          "example_de": "Wir laden unsere Nachbarn zum Essen ein.",
+          "example_zh": "我們邀請鄰居來吃飯。",
+          "source_cue_id": 563,
+          "source_start_ms": 3231353,
+          "source_form": "einladen"
+        },
+        {
+          "de": "sich freuen über",
+          "zh": "對……感到高興",
+          "example_de": "Sie freut sich über deinen Besuch.",
+          "example_zh": "她很高興你來拜訪。",
+          "source_cue_id": 560,
+          "source_start_ms": 3216130,
+          "source_form": "sich freuen über"
+        }
+      ],
+      "grammar": [
+        {
+          "focus_zh": "用 würde + sich freuen 委婉邀請",
+          "explanation_zh": "würde 在此可讓邀請與期待更禮貌。",
+          "example_de": "Sie würde sich über einen Besuch freuen.",
+          "example_zh": "若有人來拜訪，她會很高興。"
+        }
+      ],
+      "discussion": [
+        {
+          "question_de": "Wie organisiert Alex eine glaubwürdige Geburtstagsfeier?",
+          "question_zh": "Alex如何安排一個讓母親相信的生日聚會？",
+          "level": "B1"
+        },
+        {
+          "question_de": "Wann ist eine gut gemeinte Lüge trotzdem problematisch?",
+          "question_zh": "好意的謊言何時仍有問題？",
+          "level": "B2"
+        }
+      ],
+      "practice": [
+        {
+          "task_de": "Erzähle die Szene „Geburtstag und Medien“ in drei bis fünf eigenen Sätzen. Was passiert zuerst und welche Entscheidung oder Veränderung folgt?",
+          "task_zh": "用 3–5 句德文重述「生日與媒體」場景。先發生什麼事？接著有什麼決定或變化？",
+          "source_cue_start": 545,
+          "source_cue_end": 563,
+          "answer_hint_de": "Alex plant Christianes Geburtstag. Er sucht alte Fernsehsendungen und bittet Bekannte um Hilfe, damit seine Mutter von der politischen Wende nichts bemerkt.",
+          "answer_hint_zh": "Alex準備母親生日，尋找舊新聞影片並請熟人幫忙，避免母親察覺政治變遷。",
+          "start_ms": 3160199,
+          "end_ms": 3236154
+        }
+      ]
+    },
+    {
+      "scene_id": "GBL-06",
+      "title_de": "Erfundene Nachrichten",
+      "title_zh": "虛構新聞",
+      "source_cue_start": 705,
+      "source_cue_end": 733,
+      "source_start_ms": 3898311,
+      "source_end_ms": 4019732,
+      "summary_de": "Alex und Denis drehen eine erfundene Nachrichtensendung. Sie gestalten eine Erklärung für westliche Marken, die nicht zu Christianes Weltbild passen. Alex fragt sich, wie formbar Wahrheit ist.",
+      "summary_zh": "Alex與Denis拍攝虛構新聞，替與母親認知不符的西方品牌編造解釋。Alex也開始反思真相有多容易被塑造。",
+      "learning_goals_zh": [
+        "利用字幕定位場景並用德文概述主要事件",
+        "練習主題詞彙與一項核心文法",
+        "用德文表達自己的觀點，區分電影角色說法與歷史事實"
+      ],
+      "vocabulary": [
+        {
+          "de": "die Genehmigung",
+          "zh": "許可、批准",
+          "example_de": "Für den Dreh brauchen wir eine Genehmigung.",
+          "example_zh": "拍攝需要許可。",
+          "source_cue_id": 705,
+          "source_start_ms": 3898311,
+          "source_form": "die Genehmigung"
+        },
+        {
+          "de": "drehen",
+          "zh": "拍攝（影片）",
+          "example_de": "Wir drehen heute einen kurzen Film.",
+          "example_zh": "我們今天拍攝一部短片。",
+          "source_cue_id": 708,
+          "source_start_ms": 3911032,
+          "source_form": "drehen"
+        },
+        {
+          "de": "die Wahrheit",
+          "zh": "真相",
+          "example_de": "Nicht jede Erklärung zeigt die ganze Wahrheit.",
+          "example_zh": "不是每種說法都呈現完整真相。",
+          "source_cue_id": 715,
+          "source_start_ms": 3935932,
+          "source_form": "die Wahrheit"
+        },
+        {
+          "de": "das Handelsabkommen",
+          "zh": "貿易協定",
+          "example_de": "Die Firmen schließen ein neues Handelsabkommen.",
+          "example_zh": "這些公司簽訂新的貿易協定。",
+          "source_cue_id": 721,
+          "source_start_ms": 3965003,
+          "source_form": "das Handelsabkommen"
+        }
+      ],
+      "grammar": [
+        {
+          "focus_zh": "用 solange 表達時間條件",
+          "explanation_zh": "solange + 從句：在某段時間或某條件維持時，主句仍成立。",
+          "example_de": "Solange wir filmen, bleibt die Tür geschlossen.",
+          "example_zh": "只要我們還在拍攝，門就保持關閉。"
+        }
+      ],
+      "discussion": [
+        {
+          "question_de": "Wie erzeugen Alex und Denis glaubwürdige Nachrichten?",
+          "question_zh": "Alex和Denis如何製造可信的新聞？",
+          "level": "B1"
+        },
+        {
+          "question_de": "Wie kannst du eine Nachricht auf ihren Wahrheitsgehalt prüfen?",
+          "question_zh": "你如何查證一則新聞是否可信？",
+          "level": "B2"
+        }
+      ],
+      "practice": [
+        {
+          "task_de": "Erzähle die Szene „Erfundene Nachrichten“ in drei bis fünf eigenen Sätzen. Was passiert zuerst und welche Entscheidung oder Veränderung folgt?",
+          "task_zh": "用 3–5 句德文重述「虛構新聞」場景。先發生什麼事？接著有什麼決定或變化？",
+          "source_cue_start": 705,
+          "source_cue_end": 733,
+          "answer_hint_de": "Alex und Denis drehen eine erfundene Nachrichtensendung. Sie gestalten eine Erklärung für westliche Marken, die nicht zu Christianes Weltbild passen. Alex fragt sich, wie formbar Wahrheit ist.",
+          "answer_hint_zh": "Alex與Denis拍攝虛構新聞，替與母親認知不符的西方品牌編造解釋。Alex也開始反思真相有多容易被塑造。",
+          "start_ms": 3898311,
+          "end_ms": 4019732
+        }
+      ]
+    },
+    {
+      "scene_id": "GBL-07",
+      "title_de": "Streit und Geständnis",
+      "title_zh": "爭執與坦白",
+      "source_cue_start": 852,
+      "source_cue_end": 1006,
+      "source_start_ms": 4620407,
+      "source_end_ms": 5623619,
+      "summary_de": "Lara kritisiert Alex dafür, dass er Christiane die Wahrheit verschweigt. Später gesteht Christiane selbst, dass ihre frühere Geschichte über den Vater nicht stimmte. Die Familie entdeckt eine andere Vergangenheit.",
+      "summary_zh": "Lara批評Alex隱瞞真相。後來Christiane自己坦承，先前關於父親的故事並不真實；家人因此重新認識過去。",
+      "learning_goals_zh": [
+        "利用字幕定位場景並用德文概述主要事件",
+        "練習主題詞彙與一項核心文法",
+        "用德文表達自己的觀點，區分電影角色說法與歷史事實"
+      ],
+      "vocabulary": [
+        {
+          "de": "anstrengend",
+          "zh": "費力、令人疲憊",
+          "example_de": "Die Woche war wirklich anstrengend.",
+          "example_zh": "這星期真的很累。",
+          "source_cue_id": 857,
+          "source_start_ms": 4641262,
+          "source_form": "anstrengend"
+        },
+        {
+          "de": "beleidigt",
+          "zh": "被冒犯、鬧彆扭",
+          "example_de": "Sie ist beleidigt, weil ich nicht zugehört habe.",
+          "example_zh": "她因為我沒聽而不高興。",
+          "source_cue_id": 858,
+          "source_start_ms": 4645432,
+          "source_form": "beleidigt"
+        },
+        {
+          "de": "belügen",
+          "zh": "欺騙、說謊",
+          "example_de": "Ich möchte meine Freunde nicht belügen.",
+          "example_zh": "我不想欺騙朋友。",
+          "source_cue_id": 980,
+          "source_start_ms": 5478348,
+          "source_form": "belügen"
+        },
+        {
+          "de": "verzeihen",
+          "zh": "原諒",
+          "example_de": "Kannst du mir verzeihen?",
+          "example_zh": "你能原諒我嗎？",
+          "source_cue_id": 1006,
+          "source_start_ms": 5619864,
+          "source_form": "verzeihen"
+        }
+      ],
+      "grammar": [
+        {
+          "focus_zh": "用 dass 引述事實或觀點",
+          "explanation_zh": "dass 引導的內容從句中，變位動詞置於句尾。",
+          "example_de": "Sie sagt, dass die Geschichte anders war.",
+          "example_zh": "她說事情原來不是那樣。"
+        }
+      ],
+      "discussion": [
+        {
+          "question_de": "Warum kommt es zum Streit zwischen Lara und Alex?",
+          "question_zh": "Lara和Alex為何爭執？",
+          "level": "B1"
+        },
+        {
+          "question_de": "Wie verändert Christianes Geständnis deine Sicht auf die Familie?",
+          "question_zh": "Christiane的坦白如何改變你對這個家庭的看法？",
+          "level": "B2"
+        }
+      ],
+      "practice": [
+        {
+          "task_de": "Erzähle die Szene „Streit und Geständnis“ in drei bis fünf eigenen Sätzen. Was passiert zuerst und welche Entscheidung oder Veränderung folgt?",
+          "task_zh": "用 3–5 句德文重述「爭執與坦白」場景。先發生什麼事？接著有什麼決定或變化？",
+          "source_cue_start": 852,
+          "source_cue_end": 1006,
+          "answer_hint_de": "Lara kritisiert Alex dafür, dass er Christiane die Wahrheit verschweigt. Später gesteht Christiane selbst, dass ihre frühere Geschichte über den Vater nicht stimmte. Die Familie entdeckt eine andere Vergangenheit.",
+          "answer_hint_zh": "Lara批評Alex隱瞞真相。後來Christiane自己坦承，先前關於父親的故事並不真實；家人因此重新認識過去。",
+          "start_ms": 4620407,
+          "end_ms": 5623619
+        }
+      ]
+    },
+    {
+      "scene_id": "GBL-08",
+      "title_de": "Abschied und neue Geschichte",
+      "title_zh": "告別與新敘事",
+      "source_cue_start": 1099,
+      "source_cue_end": 1190,
+      "source_start_ms": 6353097,
+      "source_end_ms": 6913995,
+      "summary_de": "Die Familie versucht, die Wahrheit und ihre erfundene Welt zusammenzubringen. Denis produziert eine letzte Nachrichtensendung, die ein alternatives Ende der DDR zeigt. Alex verabschiedet sich von seiner eigenen Vorstellung dieses Landes.",
+      "summary_zh": "家人努力處理現實與虛構世界的衝突。Denis拍攝最後一則虛構新聞，呈現東德的另一種結局；Alex也向自己想像中的國家告別。",
+      "learning_goals_zh": [
+        "利用字幕定位場景並用德文概述主要事件",
+        "練習主題詞彙與一項核心文法",
+        "用德文表達自己的觀點，區分電影角色說法與歷史事實"
+      ],
+      "vocabulary": [
+        {
+          "de": "die Grenze",
+          "zh": "邊界、國界",
+          "example_de": "Die Grenze ist heute offen.",
+          "example_zh": "邊界今天開放。",
+          "source_cue_id": 1099,
+          "source_start_ms": 6353097,
+          "source_form": "die Grenze"
+        },
+        {
+          "de": "sich überwinden",
+          "zh": "鼓起勇氣克服心理障礙",
+          "example_de": "Ich muss mich überwinden und ehrlich sein.",
+          "example_zh": "我必須鼓起勇氣誠實說明。",
+          "source_cue_id": 1105,
+          "source_start_ms": 6380165,
+          "source_form": "sich überwinden"
+        },
+        {
+          "de": "sich entschließen",
+          "zh": "決定",
+          "example_de": "Sie hat sich zu einem Neuanfang entschlossen.",
+          "example_zh": "她決定重新開始。",
+          "source_cue_id": 1174,
+          "source_start_ms": 6768553,
+          "source_form": "sich entschließen"
+        },
+        {
+          "de": "verwirklichen",
+          "zh": "實現",
+          "example_de": "Wir wollen unsere Idee gemeinsam verwirklichen.",
+          "example_zh": "我們想共同實現這個想法。",
+          "source_cue_id": 1187,
+          "source_start_ms": 6827195,
+          "source_form": "verwirklichen"
+        }
+      ],
+      "grammar": [
+        {
+          "focus_zh": "用 sich dazu entschließen, zu … 說明決定",
+          "explanation_zh": "此結構可表達考慮後做出的決定，後接 zu 不定詞。",
+          "example_de": "Er entschließt sich dazu, eine neue Geschichte zu erzählen.",
+          "example_zh": "他決定講述一個新故事。"
+        }
+      ],
+      "discussion": [
+        {
+          "question_de": "Warum erfindet Denis ein alternatives Ende?",
+          "question_zh": "Denis為什麼編造另一個結局？",
+          "level": "B1"
+        },
+        {
+          "question_de": "Was bedeutet Heimat für dich, wenn ein Land sich verändert?",
+          "question_zh": "當國家改變時，家鄉對你意味著什麼？",
+          "level": "B2"
+        }
+      ],
+      "practice": [
+        {
+          "task_de": "Erzähle die Szene „Abschied und neue Geschichte“ in drei bis fünf eigenen Sätzen. Was passiert zuerst und welche Entscheidung oder Veränderung folgt?",
+          "task_zh": "用 3–5 句德文重述「告別與新敘事」場景。先發生什麼事？接著有什麼決定或變化？",
+          "source_cue_start": 1099,
+          "source_cue_end": 1190,
+          "answer_hint_de": "Die Familie versucht, die Wahrheit und ihre erfundene Welt zusammenzubringen. Denis produziert eine letzte Nachrichtensendung, die ein alternatives Ende der DDR zeigt. Alex verabschiedet sich von seiner eigenen Vorstellung dieses Landes.",
+          "answer_hint_zh": "家人努力處理現實與虛構世界的衝突。Denis拍攝最後一則虛構新聞，呈現東德的另一種結局；Alex也向自己想像中的國家告別。",
+          "start_ms": 6353097,
+          "end_ms": 6913995
+        }
+      ]
+    }
+  ]
+}

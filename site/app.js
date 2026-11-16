@@ -102,7 +102,7 @@
   }
 
   // ---------- data ----------
-  const DATA = { life: [], test: { questions: [], vocab: [] }, drive: { groups: [] }, cards: { episodes: {} }, friends: { episodes: [], lessons: {}, dialogues: {}, subtitled: [] }, news: { groups: [], updated: '' } };
+  const DATA = { movies: { movies: [] }, life: [], test: { questions: [], vocab: [] }, drive: { groups: [] }, cards: { episodes: {} }, friends: { episodes: [], lessons: {}, dialogues: {}, subtitled: [] }, news: { groups: [], updated: '' } };
   async function getJson(path, fallback) {
     try {
       const res = await fetch(path, { cache: 'no-cache' });
@@ -111,15 +111,16 @@
     } catch (err) { return fallback; }
   }
   async function loadData() {
-    const [life, test, drive, cards, friends, news] = await Promise.all([
+    const [life, test, drive, cards, friends, movies, news] = await Promise.all([
       getJson('content/life.json', DATA.life),
       getJson('content/einbuergerung.json', DATA.test),
       getJson('content/fahrpruefung.json', DATA.drive),
       getJson('content/friends_cards.json', DATA.cards),
       getJson('data/friends.json', DATA.friends),
+      getJson('data/movies.json', DATA.movies),
       getJson('data/news.json', DATA.news),
     ]);
-    Object.assign(DATA, { life, test, drive, cards, friends, news });
+    Object.assign(DATA, { life, test, drive, cards, friends, movies, news });
   }
 
   // ---------- per-render registry (keeps data out of HTML attributes) ----------
@@ -225,7 +226,7 @@
       const learned = z.phrases.filter((p) => S.cards[p[0]]).length;
       return zone(`#/zone/${z.id}`, ZONE_ICONS[z.id] || 'home', z.de, `${z.zh} · ${z.tagline}`, `${learned} / ${z.phrases.length}`);
     }).join('');
-    const watched = Object.keys(S.watched).length;
+    const watched = DATA.friends.episodes.filter((e) => S.watched[e.episode_id]).length;
     const nx = nextEpisode();
     return `<div class="row"><div class="grow"><h1 lang="de">Deutsch-Quest</h1><p class="muted small">等級 ${level} · 共 ${S.xp} XP</p></div>
         <span class="pill">連續 ${S.streak} 天</span></div>
@@ -236,6 +237,7 @@
       <h2>支線與考試</h2>
       <div class="stack">
         ${zone('#/friends', 'cup', 'Central Perk', `Friends 追劇 · 完整教案 ${Object.keys(DATA.friends.lessons || {}).length} 集`, `${watched} / ${DATA.friends.episodes.length || 236}`, 'night')}
+        ${zone('#/movies', 'cards', 'Filme · 電影學習', `電影字幕 · ${DATA.movies.movies.reduce((n, m) => n + m.chapters.length, 0)} 個場景教案`, `${DATA.movies.movies.length} 部電影`)}
         ${zone('#/news', 'news', 'Nachrichten', '德國與慕尼黑每日新聞', '每日更新')}
         ${zone('#/test', 'scale', 'Einbürgerungstest', '入籍考試 · 價值與憲政', S.best.test ? `最佳 ${S.best.test}` : `${DATA.test.questions.length} 題`)}
         ${zone('#/fahren', 'car', 'Fahrprüfung', '路考 · 聽懂考官指令', S.best.drive ? `最佳 ${S.best.drive}` : '聽力練習')}
@@ -348,7 +350,7 @@
         ${icon('next', 18)}
       </a>`;
     }).join('');
-    return `${header('Central Perk', `Friends 追劇夥伴 · 已看 ${Object.keys(S.watched).length} 集 · 完整教案 ${lessonEps.length} 集`, '#/')}
+    return `${header('Central Perk', `Friends 追劇夥伴 · 已看 ${eps.filter((e) => S.watched[e.episode_id]).length} 集 · 完整教案 ${lessonEps.length} 集`, '#/')}
       ${nextLesson ? `<a class="btn" href="#/friends/${nextLesson.episode_id}">下一集有完整教案：${nextLesson.episode_id}</a>` : ''}
       ${nx ? `<a class="btn ghost" href="#/friends/${nx.episode_id}">照順序接著看 ${nx.episode_id}</a>` : ''}
       <div class="segments" role="group" aria-label="選擇季數">
@@ -409,6 +411,83 @@
       ? `<button class="btn ghost" data-act="unwatch" data-id="${id}">已看完 · 點一下取消</button>`
       : `<button class="btn" data-act="watch" data-id="${id}">標記為已看完 · +15 XP</button>`);
     return parts.join('');
+  }
+
+
+  // ---------- movie lessons: original content tied to user-supplied subtitle cues ----------
+  function movieTime(ms) {
+    const x = Math.floor((ms || 0) / 1000);
+    return [Math.floor(x / 3600), Math.floor(x % 3600 / 60), x % 60].map(pad2).join(':');
+  }
+  function moviesView() {
+    const list = DATA.movies.movies || [];
+    return header('Filme · 電影學習', '德語電影 · 原創雙語教案', '#/') +
+      '<p class="muted small">請搭配你自己的合法影片觀看；課程只提供原創教材，不提供電影字幕全文。</p>' +
+      '<div class="stack">' + list.map((m) =>
+        '<a class="card ep" href="#/movies/' + encodeURIComponent(m.movie_id) + '">' +
+        '<span class="ep-code">' + esc(m.year) + '</span>' +
+        '<span class="grow"><strong lang="de">' + esc(m.title) + '</strong><br>' +
+        '<span class="muted small">' + esc(m.level) + ' · ' +
+        m.chapters.filter((ch) => S.watched[ch.scene_id]).length + ' / ' + m.chapters.length +
+        ' 場景完成</span></span>' + icon('next', 18) + '</a>').join('') + '</div>';
+  }
+  function movieView(id) {
+    const m = (DATA.movies.movies || []).find((o) => o.movie_id === id);
+    if (!m) return notFound();
+    const cards = m.chapters.map((ch, n) =>
+      '<a class="card ep" href="#/movies/' + encodeURIComponent(id) + '/' + encodeURIComponent(ch.scene_id) + '">' +
+      '<span class="ep-code">' + pad2(n + 1) + '</span><span class="grow">' +
+      '<strong lang="de">' + esc(ch.title_de) + '</strong><br><span class="muted small">' +
+      esc(ch.title_zh) + ' · ' + movieTime(ch.source_start_ms) + '–' + movieTime(ch.source_end_ms) + '</span>' +
+      (S.watched[ch.scene_id] ? '<span class="tag good">已完成</span>' : '') +
+      '</span>' + icon('next', 18) + '</a>').join('');
+    return header(m.title, esc(m.year) + ' · ' + esc(m.level), '#/movies') +
+      '<div class="card"><p lang="de">' + esc(m.summary_de) + '</p><p class="muted">' + esc(m.summary_zh) + '</p></div>' +
+      '<p class="muted small">' + esc(m.subtitle_source.notice_zh) + '</p><div class="stack">' + cards + '</div>';
+  }
+  function movieSceneView(id, sceneId) {
+    const m = (DATA.movies.movies || []).find((o) => o.movie_id === id);
+    const ch = m && m.chapters.find((c) => c.scene_id === sceneId);
+    if (!ch) return notFound();
+    const src = m.title + ' · ' + ch.scene_id;
+    const prompt = 'Du bist meine Deutschlehrerin. Wir sprechen über den Film ' + m.title +
+      ', Szene ' + ch.title_de + '. Bitte mich, die Szene in drei bis fünf eigenen Sätzen nachzuerzählen. ' +
+      'Stelle mir dann eine Frage nach der anderen:\n' +
+      ch.discussion.map((q, i) => (i + 1) + '. ' + q.question_de).join('\n') +
+      '\nHilf mir, diese Wörter zu benutzen:\n' + ch.vocabulary.map((v) => '- ' + v.de).join('\n') + '\n' + TEACHER;
+    const result = [];
+    result.push(header(ch.title_de, ch.title_zh + ' · ' + movieTime(ch.source_start_ms) + '–' + movieTime(ch.source_end_ms),
+      '#/movies/' + encodeURIComponent(id)));
+    result.push('<div class="card"><span class="tag">' + esc(m.title) + '</span>' +
+      '<p class="muted small">字幕 #'+ ch.source_cue_start + '–#' + ch.source_cue_end + ' · 僅限提供的字幕版本時間碼</p>' +
+      (ui.summary ? '<p lang="de">' + esc(ch.summary_de) + '</p><p class="muted">' + esc(ch.summary_zh) + '</p>' :
+      '<p class="muted small">劇情摘要有劇透，預設收起。</p>') +
+      '<button class="btn ghost" data-act="summary">' + (ui.summary ? '收起摘要' : '顯示劇情摘要') + '</button></div>');
+    result.push('<h2>學習目標</h2><div class="card">' +
+      ch.learning_goals_zh.map((g) => '<p class="small">· ' + esc(g) + '</p>').join('') + '</div>');
+    result.push('<h2>詞彙 · 點擊加入複習</h2><div class="stack">' +
+      ch.vocabulary.map((v) => phraseCard(v.de, v.zh,
+        v.example_de + '（' + v.example_zh + '） · 字幕 #' + v.source_cue_id, src)).join('') + '</div>');
+    result.push('<h2>文法重點</h2><div class="stack">' +
+      ch.grammar.map((g) => '<div class="card"><h3>' + esc(g.focus_zh) + '</h3><p class="small">' +
+        esc(g.explanation_zh) + '</p><p lang="de"><strong>' + esc(g.example_de) +
+        '</strong></p><p class="muted small">' + esc(g.example_zh) + '</p></div>').join('') + '</div>');
+    result.push('<h2>電影討論</h2><div class="stack">' +
+      ch.discussion.map((q, i) => '<div class="card"><span class="tag">Frage ' + (i + 1) + ' · ' +
+        esc(q.level) + '</span><p lang="de"><strong>' + esc(q.question_de) +
+        '</strong></p><p class="muted small">' + esc(q.question_zh) + '</p></div>').join('') + '</div>');
+    result.push('<h2>場景練習</h2><div class="stack">' +
+      ch.practice.map((p, i) => '<div class="card"><p lang="de"><strong>' + esc(p.task_de) +
+        '</strong></p><p class="muted small">' + esc(p.task_zh) + '</p>' +
+        (ui.hint && ui.hint[i] ? '<p lang="de">' + esc(p.answer_hint_de) +
+        '</p><p class="muted small">' + esc(p.answer_hint_zh) + '</p>' : '') +
+        '<button class="btn ghost" data-act="hint" data-n="' + i + '">' +
+        (ui.hint && ui.hint[i] ? '收起提示' : '看參考答案') + '</button></div>').join('') + '</div>');
+    result.push(promptCard('口說任務 · ChatGPT 語音模式', '複製提示詞後，和 ChatGPT 用德語討論這場戲。', prompt));
+    result.push('<button class="btn ' + (S.watched[sceneId] ? 'ghost' : '') +
+      '" data-act="' + (S.watched[sceneId] ? 'unwatch' : 'watch') + '" data-id="' + esc(sceneId) + '">' +
+      (S.watched[sceneId] ? '已完成 · 點一下取消' : '標記這場戲已完成 · +15 XP') + '</button>');
+    return result.join('');
   }
 
   function testView() {
@@ -493,6 +572,7 @@
     else if (seg[0] === 'zone') html = zoneView(seg[1]);
     else if (seg[0] === 'news') html = newsView();
     else if (seg[0] === 'friends') html = seg[1] ? episodeView(seg[1]) : friendsView();
+    else if (seg[0] === 'movies') html = seg[2] ? movieSceneView(seg[1], seg[2]) : seg[1] ? movieView(seg[1]) : moviesView();
     else if (seg[0] === 'test') html = testView();
     else if (seg[0] === 'fahren') html = driveView();
     else if (seg[0] === 'review') html = reviewView();

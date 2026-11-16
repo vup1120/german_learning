@@ -53,3 +53,7 @@ Attach the next batch and share this repository link. Read this file and the cov
 The combined `friends_subtitles_processed.zip` download contains all 25 source versions, full parsed cues and both manifests. Attach that file if a later conversation needs earlier full source text. This public repository stores metadata, original lesson material and import tools.
 
 Follow [the import workflow](docs/subtitle_workflow.md). After reviewed lesson edits, run the coverage builder and the guide renderer. The static web platform source is implemented under `site/`; `tools/build_site.py` prepares its data, and `.github/workflows/site.yml` defines GitHub Pages deployment. Deployment success is tracked in GitHub Actions. Accounts and cross-device progress are not implemented; progress stays in the browser.
+
+## Movie learning: Good Bye, Lenin! (2003)
+
+Original B1–B2 scene-based German/Traditional Chinese movie lessons based on the user-supplied German SRT have been added to `data/movie_lessons/good-bye-lenin-2003.json`. The source subtitle contains 1,202 cues, SHA-256 `a442d60bdf3b2f73e23805fa504296133b8b1b0aa67720b061c81c90383e8c79`. Eight scenes include 32 vocabulary items, 8 grammar topics, and 16 discussion questions, with source cue IDs and edition-specific timings. The subtitles are **not** redistributed in this public repository. `tools/build_site.py` publishes the authored lessons into `site/data/movies.json` on deployment. Video/audio synchronization has not been verified.

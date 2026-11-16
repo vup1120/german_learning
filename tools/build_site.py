@@ -108,6 +108,18 @@ def build_friends() -> dict:
     return {"episodes": len(slim), "lessons": len(lessons), "subtitled": len(subtitled), "dialogues": len(dialogues)}
 
 
+def build_movies() -> dict:
+    """Publish original lessons; never publish the copyrighted source subtitles."""
+    lessons = []
+    for path in sorted((ROOT / "data" / "movie_lessons").glob("*.json")):
+        movie = json.loads(path.read_text(encoding="utf-8"))
+        if not movie.get("movie_id") or not movie.get("chapters"):
+            raise ValueError(f"Invalid movie lesson: {path}")
+        lessons.append(movie)
+    write_json(SITE_DATA / "movies.json", {"movies": lessons})
+    return {"movies": len(lessons), "chapters": sum(len(x["chapters"]) for x in lessons)}
+
+
 def clean_text(value: str | None) -> str:
     if not value:
         return ""
@@ -207,6 +219,7 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     print("friends:", build_friends())
+    print("movies:", build_movies())
     if args.no_news:
         if not (SITE_DATA / "news.json").exists():
             write_json(SITE_DATA / "news.json", {"updated": "", "groups": [], "errors": []})
