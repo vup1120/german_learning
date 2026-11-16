@@ -1,0 +1,77 @@
+{
+  "notice_zh": "這些是路考中常見的說法，實際用詞會因考官而異。聽不清楚就請對方再說一次，這不會扣分。",
+  "groups": [
+    {
+      "id": "technik",
+      "de": "Vor der Fahrt",
+      "zh": "出發前：車輛檢查與技術問題",
+      "items": [
+        ["Stellen Sie bitte Sitz und Spiegel richtig ein.", "請把座椅和後視鏡調整好。"],
+        ["Bitte zeigen Sie mir, wie Sie das Abblendlicht einschalten.", "請示範怎麼開近光燈。"],
+        ["Schalten Sie bitte das Fernlicht ein.", "請開遠光燈。"],
+        ["Wo schalten Sie die Warnblinkanlage ein?", "警示燈（雙黃燈）在哪裡開？"],
+        ["Zeigen Sie mir bitte die Nebelschlussleuchte.", "請指出後霧燈的開關。"],
+        ["Bitte betätigen Sie die Scheibenwischer.", "請啟動雨刷。"],
+        ["Wie prüfen Sie die Profiltiefe der Reifen?", "您怎麼檢查輪胎胎紋深度？"],
+        ["Wie stellen Sie fest, ob die Bremslichter funktionieren?", "您怎麼確認煞車燈正常？"]
+      ]
+    },
+    {
+      "id": "anweisungen",
+      "de": "Fahranweisungen",
+      "zh": "行駛中：考官的方向指令",
+      "items": [
+        ["Bitte fahren Sie los, wenn Sie bereit sind.", "準備好就請出發。"],
+        ["Fahren Sie bitte geradeaus, bis ich etwas anderes sage.", "請一直直走，直到我另外指示。"],
+        ["An der nächsten Kreuzung biegen Sie bitte rechts ab.", "下一個路口請右轉。"],
+        ["Bei der nächsten Möglichkeit bitte links abbiegen.", "下一個可以左轉的地方請左轉。"],
+        ["An der Ampel fahren Sie bitte links.", "在紅綠燈那裡請左轉。"],
+        ["Im Kreisverkehr nehmen Sie bitte die zweite Ausfahrt.", "圓環請走第二個出口。"],
+        ["Ordnen Sie sich bitte links ein.", "請切到左側車道準備。"],
+        ["Bitte wechseln Sie auf den rechten Fahrstreifen.", "請換到右側車道。"],
+        ["Folgen Sie bitte der Beschilderung Richtung Autobahn.", "請跟著往高速公路的指標走。"],
+        ["Fahren Sie bitte auf die Autobahn auf.", "請上高速公路。"],
+        ["Nehmen Sie bitte die nächste Ausfahrt.", "請走下一個出口。"],
+        ["Halten Sie bitte bei der nächsten Gelegenheit am rechten Fahrbahnrand an.", "請在下一個合適的地方靠右邊停車。"]
+      ]
+    },
+    {
+      "id": "grundfahraufgaben",
+      "de": "Grundfahraufgaben",
+      "zh": "基本駕駛項目",
+      "items": [
+        ["Parken Sie bitte rückwärts in diese Parklücke ein.", "請倒車停進這個車位。"],
+        ["Bitte parken Sie hier längs am Fahrbahnrand ein.", "請在這裡路邊平行停車。"],
+        ["Bitte parken Sie quer ein, vorwärts oder rückwärts.", "請垂直停車，車頭進或倒車進都可以。"],
+        ["Wenden Sie bitte bei der nächsten Gelegenheit.", "請在下一個合適的地方迴轉。"],
+        ["Fahren Sie bitte rückwärts nach rechts in die Einmündung.", "請向右倒車進入岔路。"],
+        ["Führen Sie bitte eine Gefahrenbremsung durch.", "請做一次緊急煞車。"]
+      ]
+    },
+    {
+      "id": "antworten",
+      "de": "Das sage ich",
+      "zh": "我可以這樣回應",
+      "items": [
+        ["Könnten Sie das bitte wiederholen?", "可以請您再說一次嗎？"],
+        ["Ich habe Sie akustisch nicht verstanden.", "我剛剛沒聽清楚。"],
+        ["Meinen Sie hier vorne links?", "您是指前面這裡左轉嗎？"],
+        ["Hier darf ich nicht halten. Ich halte weiter vorne an.", "這裡不能停車，我到前面一點再停。"],
+        ["Darf ich mir die Parklücke selbst aussuchen?", "我可以自己選車位嗎？"]
+      ]
+    },
+    {
+      "id": "rueckmeldung",
+      "de": "Rückmeldung",
+      "zh": "考後講評常聽到的話",
+      "items": [
+        ["Sie haben die Prüfung bestanden. Herzlichen Glückwunsch!", "您通過考試了，恭喜！"],
+        ["Sie haben den Schulterblick vergessen.", "您忘了回頭確認死角。"],
+        ["Hier gilt rechts vor links.", "這裡是右方車優先。"],
+        ["Sie müssen Vorfahrt gewähren.", "您必須讓行。"],
+        ["Achten Sie auf die Geschwindigkeitsbegrenzung.", "請注意速限。"],
+        ["Sie sind zu dicht aufgefahren.", "您跟車跟得太近了。"]
+      ]
+    }
+  ]
+}

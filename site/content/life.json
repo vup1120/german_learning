@@ -1,0 +1,63 @@
+[
+  {
+    "id": "nachbarschaft",
+    "de": "Nachbarschaft",
+    "zh": "鄰里",
+    "tagline": "樓梯間寒暄、代收包裹、噪音溝通",
+    "role_de": "meine Nachbarin Frau Huber, die im selben Haus wohnt. Wir treffen uns im Treppenhaus und plaudern ein paar Minuten",
+    "phrases": [
+      ["Guten Morgen! Na, auch schon so früh unterwegs?", "早安！你也這麼早出門啊？", "Na 是口語開場，語氣親切。"],
+      ["Wohnen Sie schon lange hier im Haus?", "您住這棟樓很久了嗎？", "和不熟的鄰居閒聊的安全話題。"],
+      ["Könnten Sie vielleicht ein Paket für mich annehmen?", "可以請您幫我代收一個包裹嗎？", "ein Paket annehmen：代收包裹。"],
+      ["Entschuldigung, war es gestern Abend bei uns zu laut?", "不好意思，昨晚我們家會不會太吵？", "主動問比被抱怨好。"],
+      ["Sagen Sie einfach Bescheid, wenn Sie etwas brauchen.", "需要什麼儘管跟我說。", "Bescheid sagen：告知。"],
+      ["Schönen Tag noch und bis bald!", "祝您今天愉快，回頭見！", "道別的固定說法。"]
+    ]
+  },
+  {
+    "id": "schule",
+    "de": "Schule",
+    "zh": "學校",
+    "tagline": "和老師談孩子、請假、家長會",
+    "role_de": "die Klassenlehrerin meines Kindes. Wir führen ein kurzes Elterngespräch über mein Kind",
+    "phrases": [
+      ["Wie hat sich mein Kind in der Klasse eingelebt?", "我的孩子在班上適應得如何？", "sich einleben：適應新環境。"],
+      ["Gibt es etwas, worauf wir zu Hause achten sollten?", "有什麼是我們在家該注意的嗎？", "achten auf + Akk.：注意。"],
+      ["Mein Kind ist heute krank und kann leider nicht kommen.", "我的孩子今天生病，很抱歉不能來。", "打電話或寫訊息請假用。"],
+      ["Könnten wir einen Termin für ein Elterngespräch vereinbaren?", "我們可以約個時間做家長面談嗎？", "einen Termin vereinbaren：約時間。"],
+      ["Ich habe den Elternbrief nicht ganz verstanden. Könnten Sie mir das kurz erklären?", "家長通知信我沒有完全看懂，可以請您簡單解釋一下嗎？", "承認沒看懂完全沒問題。"],
+      ["Vielen Dank für Ihre Geduld und Ihre Unterstützung.", "非常感謝您的耐心與支持。", "面談結尾的禮貌收尾。"]
+    ]
+  },
+  {
+    "id": "eltern",
+    "de": "Eltern",
+    "zh": "家長圈",
+    "tagline": "約玩伴、接送、校門口閒聊",
+    "role_de": "eine andere Mutter aus der Klasse meines Kindes. Wir stehen nach dem Bringen vor der Schule und unterhalten uns locker, wir duzen uns",
+    "phrases": [
+      ["Habt ihr Lust, dass sich die Kinder mal zum Spielen verabreden?", "你們想不想讓孩子約個時間一起玩？", "sich verabreden：約好見面。"],
+      ["Wollen wir uns duzen?", "我們用「du」互稱好嗎？", "家長之間通常很快改用 du。"],
+      ["Ich kann sie gern nach der Schule mitnehmen.", "放學後我可以順便帶她一起走。", "jemanden mitnehmen：順道帶上。"],
+      ["Wie macht ihr das mit den Hausaufgaben?", "你們家功課是怎麼安排的？", "Wie macht ihr das mit …? 很好用的開話題句型。"],
+      ["Kommt ihr auch zum Schulfest?", "你們也會來學校園遊會嗎？", "auch 讓問句更自然。"],
+      ["Hast du noch Zeit für einen Kaffee?", "你還有時間喝杯咖啡嗎？", "從點頭之交變朋友的一句話。"]
+    ]
+  },
+  {
+    "id": "konflikt",
+    "de": "Konflikt",
+    "zh": "衝突",
+    "tagline": "被插隊、被指責時，冷靜地保護自己",
+    "role_de": "ein unfreundlicher Fremder, der mir auf der Straße laut vorwirft, ich hätte mich vorgedrängelt. Bleib zuerst unhöflich und werde ruhiger, wenn ich sachlich und bestimmt bleibe",
+    "phrases": [
+      ["Entschuldigung, ich war vor Ihnen dran.", "不好意思，我排在您前面。", "dran sein：輪到。"],
+      ["Bitte sprechen Sie nicht in diesem Ton mit mir.", "請不要用這種語氣跟我說話。", "劃界線的第一句，語氣平穩。"],
+      ["Das stimmt so nicht. Ich erkläre Ihnen gern, was passiert ist.", "事情不是這樣。我很樂意向您說明發生了什麼。", "先否認，再提供事實。"],
+      ["Ich möchte das sachlich klären.", "我想就事論事地把這件事講清楚。", "sachlich：客觀、不帶情緒。"],
+      ["Ich verstehe, dass Sie sich ärgern, aber ich habe nichts falsch gemacht.", "我理解您很生氣，但我沒有做錯任何事。", "承認對方情緒，不承認錯誤。"],
+      ["Bitte halten Sie Abstand.", "請保持距離。", "對方靠太近時使用。"],
+      ["Wenn Sie so weitermachen, rufe ich die Polizei.", "您再這樣下去，我就報警。", "最後手段，說了就要做到。"]
+    ]
+  }
+]

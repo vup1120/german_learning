@@ -15,6 +15,15 @@ The general catalogue covers all 236 episodes. Detailed subtitle-based lessons a
 
 [Structured coverage](data/subtitle_coverage.json) is the authoritative list of available versions, lesson paths and missing episodes. Every lesson retains its exact source hash, cue IDs and millisecond timings. Audio/video synchronization remains unverified.
 
+## Website source
+
+The supplied Deutsch-Quest site is integrated at the repository root. It includes life-situation learning, the Friends catalogue and subtitle lessons, news, citizenship practice, driving-test German, daily tasks and spaced review.
+
+- `python tools/build_site.py --no-news` builds the Friends data offline.
+- `python -m http.server 8000 --directory site` serves a local preview.
+- `.github/workflows/site.yml` builds and deploys the `site/` directory on pushes to `main`, manual runs and the supplied daily 04:30 UTC schedule.
+- All 18 current detailed lessons are loaded automatically from `data/subtitle_lessons/`; generated `site/data/` files are ignored by Git and rebuilt for deployment.
+
 ## Batch records
 
 - [Batch 01](data/subtitle_imports/batch_2026-11-16_s05.json): 10 ZIPs, 11 SRT occurrences, 8 unique versions, 7 episodes. Duplicate occurrences are S05E09, S05E10 and S05E11. S05E13 has two edited alternatives, not two parts.
@@ -43,4 +52,4 @@ Attach the next batch and share this repository link. Read this file and the cov
 
 The combined `friends_subtitles_processed.zip` download contains all 25 source versions, full parsed cues and both manifests. Attach that file if a later conversation needs earlier full source text. This public repository stores metadata, original lesson material and import tools.
 
-Follow [the import workflow](docs/subtitle_workflow.md). After reviewed lesson edits, run the coverage builder and the guide renderer. The web platform itself remains to be implemented.
+Follow [the import workflow](docs/subtitle_workflow.md). After reviewed lesson edits, run the coverage builder and the guide renderer. The static web platform source is implemented under `site/`; `tools/build_site.py` prepares its data, and `.github/workflows/site.yml` defines GitHub Pages deployment. Deployment success is tracked in GitHub Actions. Accounts and cross-device progress are not implemented; progress stays in the browser.

@@ -1,0 +1,70 @@
+{
+  "notice_zh": "依該集情境編寫的生活句與練習，不是劇中台詞。",
+  "episodes": {
+    "S01E01": {
+      "cards": [
+        ["Ich fange noch mal ganz von vorne an.", "我要整個重新開始。", "聊搬家、換工作、人生轉彎時用。"],
+        ["Ich hatte einfach das Gefühl, dass das nicht das Richtige für mich ist.", "我就是覺得這不適合我。", "解釋自己為什麼做了某個決定。"],
+        ["Willst du erst mal bei mir wohnen?", "你要不要先住我這裡？", "erst mal 是口語的「先…再說」。"],
+        ["Das ist mein erster richtiger Job.", "這是我第一份正式的工作。", "richtig 在這裡是「真正的、像樣的」。"]
+      ],
+      "drill": [
+        ["Ich fange noch mal ganz von", "an.", ["vorne", "Anfang", "vorher"], 0, "我要整個重新開始。"],
+        ["Ich hatte das Gefühl,", "das nicht das Richtige ist.", ["das", "dass", "weil"], 1, "我覺得這不適合。"],
+        ["Willst du erst mal bei", "wohnen?", ["mich", "ich", "mir"], 2, "你要不要先住我這裡？"]
+      ]
+    },
+    "S01E02": {
+      "cards": [
+        ["Ich muss dir etwas Wichtiges sagen.", "我有件重要的事要告訴你。", "對老師或家長說時改成 Ihnen。"],
+        ["Meine Eltern kommen heute Abend zum Essen.", "我爸媽今晚要來吃飯。", "zum Essen kommen：來吃飯。"],
+        ["Egal, was ich mache, es ist nie gut genug.", "不管我做什麼，都永遠不夠好。", "Egal, was … 是很常用的句型。"],
+        ["Ich wollte dir das hier zurückgeben.", "我想把這個還給你。", "還鄰居東西時直接可用。"]
+      ],
+      "drill": [
+        ["Ich muss", "etwas Wichtiges sagen.", ["dich", "dir", "du"], 1, "我有件重要的事要告訴你。"],
+        ["Egal, was ich mache, es ist nie gut", ".", ["genug", "viel", "sehr"], 0, "不管我做什麼都不夠好。"],
+        ["Ich wollte dir das hier", ".", ["zurückgegeben", "gebe zurück", "zurückgeben"], 2, "我想把這個還給你。"]
+      ]
+    },
+    "S01E03": {
+      "cards": [
+        ["Das Geld gehört mir nicht, ich will es nicht behalten.", "這筆錢不是我的，我不想留著。", "gehören 加 Dativ：gehört mir。"],
+        ["Ich habe wieder angefangen zu rauchen.", "我又開始抽菸了。", "anfangen zu + 動詞：開始做某事。"],
+        ["Wir mögen ihn alle sehr.", "我們大家都很喜歡他。", "稱讚別人的孩子或伴侶時用。"],
+        ["Es liegt nicht an dir, es liegt an mir.", "問題不在你，在我。", "liegen an：原因在於。"]
+      ],
+      "drill": [
+        ["Das Geld gehört", "nicht.", ["mich", "mein", "mir"], 2, "這筆錢不是我的。"],
+        ["Ich habe wieder angefangen", "rauchen.", ["zu", "um", "für"], 0, "我又開始抽菸了。"],
+        ["Es liegt nicht", "dir.", ["bei", "an", "von"], 1, "問題不在你。"]
+      ]
+    },
+    "S01E04": {
+      "cards": [
+        ["Heute ist kein guter Tag für mich.", "今天對我來說不是個好日子。", "婉轉表達今天狀態不好。"],
+        ["Ich habe mein erstes Gehalt bekommen!", "我拿到第一份薪水了！", "Gehalt：月薪。"],
+        ["Entschuldigung, das ist nicht unsere Bestellung.", "不好意思，這不是我們點的。", "送錯、上錯菜時的第一句話。"],
+        ["Ich glaube, wir müssen in die Notaufnahme.", "我想我們得去急診。", "孩子受傷時用得上。"]
+      ],
+      "drill": [
+        ["Das ist nicht", "Bestellung.", ["unser", "unsere", "unseren"], 1, "這不是我們點的。"],
+        ["Wir müssen in", "Notaufnahme.", ["der", "den", "die"], 2, "我們得去急診。"],
+        ["Ich habe mein erstes Gehalt", ".", ["bekommen", "bekommt", "bekam"], 0, "我拿到第一份薪水了。"]
+      ]
+    },
+    "S01E05": {
+      "cards": [
+        ["Entschuldigung, das war meine Maschine.", "不好意思，那臺是我的機器。", "先講事實，語氣平穩。"],
+        ["Ich war zuerst hier.", "我先來的。", "被插隊時最短、最清楚的一句。"],
+        ["Das lasse ich mir nicht gefallen.", "我不接受這樣被對待。", "sich etwas gefallen lassen：忍受某事。"],
+        ["Ich mache das zum ersten Mal. Können Sie mir kurz helfen?", "我第一次做這個，可以幫我一下嗎？", "向陌生人求助的禮貌說法。"]
+      ],
+      "drill": [
+        ["Ich war", "hier.", ["erste", "zuerst", "vorne"], 1, "我先來的。"],
+        ["Das lasse ich", "nicht gefallen.", ["mir", "mich", "ich"], 0, "我不接受這樣被對待。"],
+        ["Können Sie mir kurz", "?", ["hilfen", "geholfen", "helfen"], 2, "可以幫我一下嗎？"]
+      ]
+    }
+  }
+}

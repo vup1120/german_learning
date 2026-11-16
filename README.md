@@ -1,4 +1,35 @@
-# Friends 德語逐集學習內容庫
+# Deutsch-Quest 德文闖關網站 ＋ Friends 德語逐集學習內容庫
+
+## 網站（`site/`）
+
+手機優先的德文闖關網站，純 HTML／CSS／JavaScript，沒有建置工具。進度只存在使用者自己的瀏覽器。
+
+| 區域 | 內容 | 教材檔 |
+| --- | --- | --- |
+| 生活地圖 | 鄰里、學校、家長圈、衝突四區的句子卡、聽力小測驗、角色扮演提示詞 | `site/content/life.json` |
+| Central Perk | 236 集目錄、字幕教案、金句卡、填空、原創對話 | 根目錄的 Friends 資料 ＋ `site/content/friends_cards.json` |
+| Nachrichten | 每日德國與慕尼黑新聞標題、摘要、原文連結 | `tools/news_feeds.json` 設定來源 |
+| Einbürgerungstest | 入籍考試的價值與憲政練習題（自編，非官方題庫）、核心詞彙 | `site/content/einbuergerung.json` |
+| Fahrprüfung | 路考考官指令、聽指令測驗 | `site/content/fahrpruefung.json` |
+| 今天／複習 | 每日四步驟、XP 與連續天數、間隔複習卡 | 存在瀏覽器 |
+
+本機預覽：
+
+```bash
+python tools/build_site.py            # 產生 site/data/（加 --no-news 可離線執行）
+python -m http.server 8000 --directory site
+```
+
+部署：`.github/workflows/site.yml` 在每次推送到 `main` 以及每天 04:30 UTC 執行測試、抓新聞、發佈到 GitHub Pages。第一次使用前，到 repo 的 Settings → Pages，把 Source 設為 **GitHub Actions**。
+
+新增 Friends 教材不需要改網站：`data/subtitle_lessons/*.json` 與 `friends_episodes_236.json` 更新後，下一次部署會自動帶入。
+
+新聞只儲存標題、短摘要與連結，全文留在原網站。入籍考試題目為自編練習，正式準備請搭配 BAMF 官方題庫。
+
+
+---
+
+## Friends 德語逐集學習內容庫
 
 建立日期：2026-11-16。此資料包可用作逐集德語學習與討論平台的內容起點。
 
@@ -136,4 +167,4 @@ Prime Video上述第10季頁把最後兩部分列為第17個播放單元。資�
 
 匯入後應恰有236個不重複ID，各季集數一致；每個問題能連回自己的集數。每集起始詞彙有3筆，10則對話各有6個發言。所有原創教材顯示正確標籤，中文輔助可以展開，使用者能完成一則回答並回覆他人。
 
-現階段完成的是內容資料包與平台設計起點。登入、社群回覆、錄音、AI評語與跨裝置進度仍需在網站實作，不能將本試算表或JSON視為已部署的平台。
+目前已有靜態學習網站原始碼，並在部署時讀取236集概覽及18集字幕教案。學習進度儲存在使用者瀏覽器；登入、社群回覆、錄音、AI評語與跨裝置進度仍未實作。網站是否已成功上線，請以GitHub Actions部署結果為準。

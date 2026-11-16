@@ -1,0 +1,12 @@
+{
+  "name": "Deutsch-Quest 德文闖關",
+  "short_name": "Deutsch-Quest",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#F3F5FA",
+  "theme_color": "#161C36",
+  "lang": "zh-Hant",
+  "icons": [
+    {"src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any"}
+  ]
+}

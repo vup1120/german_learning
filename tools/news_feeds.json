@@ -1,0 +1,26 @@
+{
+  "max_items_per_group": 8,
+  "groups": [
+    {
+      "id": "deutschland",
+      "de": "Deutschland",
+      "zh": "德國重點新聞",
+      "fallback_url": "https://www.tagesschau.de/",
+      "feeds": [
+        {"source": "tagesschau", "url": "https://www.tagesschau.de/inland/index~rss2.xml"},
+        {"source": "Deutschlandfunk", "url": "https://www.deutschlandfunk.de/nachrichten-100.rss"}
+      ]
+    },
+    {
+      "id": "muenchen",
+      "de": "München",
+      "zh": "慕尼黑本地新聞",
+      "fallback_url": "https://www.sueddeutsche.de/muenchen",
+      "feeds": [
+        {"source": "Süddeutsche Zeitung", "url": "https://rss.sueddeutsche.de/rss/Muenchen"},
+        {"source": "Münchner Merkur", "url": "https://www.merkur.de/lokales/muenchen/rssfeed.rdf"},
+        {"source": "tz", "url": "https://www.tz.de/muenchen/rssfeed.rdf"}
+      ]
+    }
+  ]
+}
