@@ -1,0 +1,1003 @@
+[
+  {
+    "episode_id": "S05E08",
+    "summary_de": "Nach dem Thanksgiving-Essen vergleichen die Freunde ihre schlimmsten Erinnerungen an das Fest. Monica erzählt, wie Chandlers verletzende Bemerkung über ihr Gewicht sie getroffen hat. In einer späteren Rückblende will sie sich an ihm rächen; dabei verletzt sie versehentlich seinen Fuß. Als Chandler den Zusammenhang erfährt, ist er erneut gekränkt. Monica versucht, ihn aufzuheitern. Dabei spricht er seine Liebe zu ihr aus und nimmt die Worte gleich wieder zurück.",
+    "summary_zh": "感恩節晚餐後，朋友們比較各自最糟糕的節日回憶。Monica 說起 Chandler 當年對她體重的傷人評論。在時間較晚的一段回憶中，她原本想報復他，卻意外弄傷他的腳。Chandler 得知兩件事的關聯，再次感到受傷。Monica 試著逗他開心；他脫口說出愛她，隨即又想收回這句話。",
+    "learning_goals_zh": [
+      "用 als 與過去式敘述一件往事。",
+      "用 um … zu … 說明行動目的，區分意圖與結果。",
+      "表達歉意、受傷的感受及暫時需要獨處的界線。"
+    ],
+    "vocabulary": [
+      {
+        "de": "sich an etwas erinnern",
+        "zh": "記得／回想起某事",
+        "example_de": "Ich erinnere mich gern an unseren ersten Deutschkurs.",
+        "example_zh": "我很喜歡回想我們第一次上的德語課。",
+        "source_cue_id": 54,
+        "source_form": "erinnern",
+        "source_start_ms": 248875,
+        "source_end_ms": 251335
+      },
+      {
+        "de": "die Reste",
+        "zh": "剩下的食物；剩餘部分",
+        "example_de": "Aus den Resten koche ich morgen eine Suppe.",
+        "example_zh": "我明天會用剩下的食材煮一鍋湯。",
+        "source_cue_id": 187,
+        "source_form": "Reste",
+        "source_start_ms": 715591,
+        "source_end_ms": 717718
+      },
+      {
+        "de": "Es tut mir leid.",
+        "zh": "我很抱歉。／我感到很遺憾。",
+        "example_de": "Es tut mir leid, dass ich deine Nachricht erst heute beantworte.",
+        "example_zh": "很抱歉，我直到今天才回覆你的訊息。",
+        "source_cue_id": 194,
+        "source_form": "Es tut mir wirklich leid.",
+        "source_start_ms": 739073,
+        "source_end_ms": 742618
+      },
+      {
+        "de": "jemanden demütigen",
+        "zh": "羞辱某人",
+        "example_de": "Niemand sollte einen Kollegen vor dem ganzen Team demütigen.",
+        "example_zh": "任何人都不應該在全體團隊面前羞辱同事。",
+        "source_cue_id": 247,
+        "source_form": "demütigen",
+        "source_start_ms": 909076,
+        "source_end_ms": 911245
+      },
+      {
+        "de": "der Unfall",
+        "zh": "意外；事故",
+        "example_de": "Zum Glück wurde bei dem Unfall niemand verletzt.",
+        "example_zh": "幸好沒有人在這場事故中受傷。",
+        "source_cue_id": 312,
+        "source_form": "Unfall",
+        "source_start_ms": 1153737,
+        "source_end_ms": 1156281
+      },
+      {
+        "de": "jemanden in Ruhe lassen",
+        "zh": "讓某人安靜一下；不要打擾某人",
+        "example_de": "Bitte lass mich zehn Minuten in Ruhe, damit ich den Bericht fertig schreiben kann.",
+        "example_zh": "請讓我安靜十分鐘，好讓我把報告寫完。",
+        "source_cue_id": 327,
+        "source_form": "in Ruhe",
+        "source_start_ms": 1205831,
+        "source_end_ms": 1208792
+      }
+    ],
+    "grammar": [
+      {
+        "focus_zh": "als：過去發生一次的事件",
+        "explanation_zh": "敘述過去某一次發生的事，可用 als 引導時間子句；子句中的變位動詞放在句末。若子句在前，主句接著放變位動詞。",
+        "example_de": "Als ich gestern nach Hause kam, lag ein Brief vor der Tür.",
+        "example_zh": "昨天我回到家時，門前放著一封信。",
+        "source_cue_id": 14,
+        "source_start_ms": 50385,
+        "source_end_ms": 52512
+      },
+      {
+        "focus_zh": "um … zu …：說明行動目的",
+        "explanation_zh": "主要動作與目的由同一個人執行時，可用 um … zu 加不定詞，回答「為了做什麼」。",
+        "example_de": "Ich rufe dich an, um mich für deine Hilfe zu bedanken.",
+        "example_zh": "我打電話給你，是為了感謝你的幫忙。",
+        "source_cue_id": 72,
+        "source_start_ms": 310937,
+        "source_end_ms": 313439
+      }
+    ],
+    "discussion": [
+      {
+        "question_de": "Warum erinnert sich Monica so genau an Chandlers Bemerkung?",
+        "question_zh": "為什麼 Monica 對 Chandler 的那句評論記得這麼清楚？",
+        "level": "B1"
+      },
+      {
+        "question_de": "Was unterscheidet eine Entschuldigung von dem Versuch, jemanden nur zum Lachen zu bringen?",
+        "question_zh": "道歉和單純想逗一個人笑，有什麼不同？",
+        "level": "B2"
+      },
+      {
+        "question_de": "Wie kann man eine alte Verletzung ansprechen, ohne die andere Person bloßzustellen?",
+        "question_zh": "怎樣談起過去受到的傷害，同時避免讓對方難堪？",
+        "level": "B2"
+      }
+    ],
+    "practice": [
+      {
+        "task_de": "Lies die Untertitel dieses Abschnitts. Vergleiche Monicas Reaktion damals mit Chandlers Reaktion in der Gegenwart. Formuliere danach eine eigene Entschuldigung in zwei Sätzen.",
+        "task_zh": "閱讀這段字幕，比較 Monica 當年的反應與 Chandler 現在的反應，再自行寫出兩句道歉的話。",
+        "source_cue_start": 186,
+        "source_cue_end": 199,
+        "answer_hint_de": "Monica hört die verletzende Bemerkung und lehnt danach weiteres Essen ab. In der Gegenwart sagt Chandler, dass er sich nicht daran erinnert, und entschuldigt sich.",
+        "answer_hint_zh": "Monica 聽到傷人的評論，接著拒絕再吃東西。回到現在，Chandler 表示自己不記得這件事，並向她道歉。",
+        "start_ms": 707625,
+        "end_ms": 759343
+      },
+      {
+        "task_de": "Erkläre anhand der Untertitel, weshalb Chandler aufgebracht ist und was er am Ende des Abschnitts braucht. Formuliere eine respektvolle Antwort auf seinen Wunsch.",
+        "task_zh": "根據字幕說明 Chandler 為何不高興，以及這段最後他需要什麼，再寫出尊重他需求的回應。",
+        "source_cue_start": 311,
+        "source_cue_end": 327,
+        "answer_hint_de": "Chandler erfährt, dass Monicas damaliger Racheplan mit seiner Verletzung zusammenhing. Sie betont, dass es ein Unfall war. Er möchte zunächst eine Weile allein sein.",
+        "answer_hint_zh": "Chandler 得知 Monica 當年的報復計畫與自己的傷有關。她強調那是意外；他則希望先有一段不被打擾的時間。",
+        "start_ms": 1148607,
+        "end_ms": 1208792
+      }
+    ],
+    "title_en": "The One With All The Thanksgiving",
+    "title_de": "Fatales Geständnis",
+    "source_member": "Friends.S05E08.German.DL.720p.BluRay.x264-NoGRP_ger.srt",
+    "source_sha256": "3da0faa49a3ab228cb615b47397a21eea05dbd805481b24895e7f0a9e7691a69",
+    "source_type": "user_provided_subtitle",
+    "audio_verified": false,
+    "subtitle_reviewed": true,
+    "timing_version_specific": true,
+    "content_type": "original_lesson_based_on_user_subtitles",
+    "source_version_id": "S05E08_3da0faa49a3a",
+    "source_batch_id": "batch_2026-11-16_s05",
+    "source_caption_type_hint": "SDH indicated by subtitle file contents"
+  },
+  {
+    "episode_id": "S05E09",
+    "summary_de": "Ross reagiert heftig, als jemand sein besonderes Sandwich aus dem Bürokühlschrank nimmt. Später erfährt er, dass sein Vorgesetzter es gegessen und einen Teil weggeworfen hat. Nach seinem Wutausbruch soll Ross der Arbeit vorerst fernbleiben. Phoebe besucht inzwischen mit Rachel einen Literaturkurs. Rachel liest die Bücher nicht und übernimmt Phoebes Gedanken, was zum Streit führt. Außerdem muss Joey immer neue Ausreden finden, um die Beziehung von Monica und Chandler geheim zu halten.",
+    "summary_zh": "有人拿走 Ross 放在辦公室冰箱裡的特製三明治，讓他十分憤怒。後來他發現，吃掉三明治並把一部分丟掉的人竟是主管。發脾氣後，他被要求暫時停止工作。同時，Phoebe 和 Rachel 一起上文學課；Rachel 沒有讀書，卻把 Phoebe 的想法當成自己的回答，引發爭執。另一方面，Joey 不斷找藉口，替 Monica 與 Chandler 的秘密戀情掩護。",
+    "learning_goals_zh": [
+      "描述事件、情緒與反應，避免只用一句「我很生氣」。",
+      "用 weil 解釋理由，辨認 werden 加過去分詞的被動式。",
+      "討論課堂合作、朋友之間的界線及尊重他人物品。"
+    ],
+    "vocabulary": [
+      {
+        "de": "für jemanden den Kopf hinhalten",
+        "zh": "替某人承擔責任／背黑鍋",
+        "example_de": "Ich werde nicht für einen Fehler den Kopf hinhalten, den ich nicht gemacht habe.",
+        "example_zh": "我不會為了不是自己犯的錯背黑鍋。",
+        "source_cue_id": 22,
+        "source_form": "den Kopf hinhalten",
+        "source_start_ms": 76619,
+        "source_end_ms": 80915
+      },
+      {
+        "de": "eine Frist einhalten",
+        "zh": "遵守期限",
+        "example_de": "Wir können die Frist einhalten, wenn alle ihre Unterlagen heute schicken.",
+        "example_zh": "如果大家今天寄出資料，我們就能如期完成。",
+        "source_cue_id": 191,
+        "source_form": "Fristen einzuhalten",
+        "source_start_ms": 713047,
+        "source_end_ms": 714924
+      },
+      {
+        "de": "das Versehen",
+        "zh": "疏忽；無心之失",
+        "example_de": "Die Nachricht ging aus Versehen an die falsche Gruppe.",
+        "example_zh": "這則訊息不小心傳到了錯的群組。",
+        "source_cue_id": 207,
+        "source_form": "Versehen",
+        "source_start_ms": 765391,
+        "source_end_ms": 767601
+      },
+      {
+        "de": "sich beruhigen",
+        "zh": "冷靜下來",
+        "example_de": "Ich brauche einen kurzen Moment, um mich zu beruhigen.",
+        "example_zh": "我需要一點時間冷靜下來。",
+        "source_cue_id": 216,
+        "source_form": "beruhigen",
+        "source_start_ms": 793377,
+        "source_end_ms": 794878
+      },
+      {
+        "de": "sich beurlauben lassen",
+        "zh": "申請或接受一段暫時休假",
+        "example_de": "Für die längere Weiterbildung möchte sie sich beurlauben lassen.",
+        "example_zh": "為了參加較長期的進修，她想申請暫時休假。",
+        "source_cue_id": 268,
+        "source_form": "beurlauben lässt",
+        "source_start_ms": 969553,
+        "source_end_ms": 972347
+      },
+      {
+        "de": "sich amüsieren",
+        "zh": "玩得開心；得到樂趣",
+        "example_de": "Am freien Nachmittag haben wir uns beim Kartenspielen amüsiert.",
+        "example_zh": "空閒的那個下午，我們玩牌玩得很開心。",
+        "source_cue_id": 286,
+        "source_form": "amüsieren",
+        "source_start_ms": 1028570,
+        "source_end_ms": 1031532
+      }
+    ],
+    "grammar": [
+      {
+        "focus_zh": "weil：把理由說完整",
+        "explanation_zh": "weil 引導原因子句；變位動詞放在子句末。若有完成式，haben 或 sein 放在最後。",
+        "example_de": "Ich frage noch einmal nach, weil ich die Aufgabe nicht verstanden habe.",
+        "example_zh": "我再問一次，因為我沒有理解這個題目。",
+        "source_cue_id": 127,
+        "source_start_ms": 487071,
+        "source_end_ms": 489532
+      },
+      {
+        "focus_zh": "現在式被動：werden 加過去分詞",
+        "explanation_zh": "被動式把焦點放在某事被如何處理，執行者可以省略。主詞為複數時，werden 也使用複數形式。",
+        "example_de": "Die Termine werden morgen per E-Mail bestätigt.",
+        "example_zh": "這些預約時間會在明天透過電子郵件確認。",
+        "source_cue_id": 140,
+        "source_start_ms": 525276,
+        "source_end_ms": 527111
+      }
+    ],
+    "discussion": [
+      {
+        "question_de": "Warum hat das Sandwich für Ross eine größere Bedeutung als für seine Freunde?",
+        "question_zh": "為什麼這個三明治對 Ross 的意義，比朋友們想像的更大？",
+        "level": "B1"
+      },
+      {
+        "question_de": "Wo liegt für dich die Grenze zwischen gegenseitiger Hilfe im Unterricht und dem Übernehmen fremder Antworten?",
+        "question_zh": "對你而言，課堂上的互相幫忙與直接挪用別人的答案，界線在哪裡？",
+        "level": "B2"
+      },
+      {
+        "question_de": "Welche Grenze könnte Joey setzen, ohne das Vertrauen seiner Freunde sofort zu verletzen?",
+        "question_zh": "Joey 可以訂下什麼界線，同時不立即破壞朋友對他的信任？",
+        "level": "B2"
+      }
+    ],
+    "practice": [
+      {
+        "task_de": "Lies den Abschnitt und benenne den Fehler des Vorgesetzten sowie Ross’ Reaktion. Schreibe dann eine sachliche Beschwerde mit einer konkreten Bitte.",
+        "task_zh": "閱讀這段字幕，指出主管做錯了什麼以及 Ross 的反應，再寫一段冷靜的抱怨，並提出具體請求。",
+        "source_cue_start": 202,
+        "source_cue_end": 222,
+        "answer_hint_de": "Der Vorgesetzte hat das beschriftete Sandwich gegessen und einen Teil weggeworfen. Ross wird immer aufgebrachter. Eine ernsthafte Entschuldigung und ein Ersatz wären mögliche Reaktionen auf eine sachliche Beschwerde.",
+        "answer_hint_zh": "主管吃掉了貼有標示的三明治，還把一部分丟掉，Ross 因而越來越生氣。面對冷靜提出的抱怨，認真道歉並補償是一種可能的回應。",
+        "start_ms": 750000,
+        "end_ms": 816191
+      },
+      {
+        "task_de": "Fasse Phoebes und Rachels unterschiedliche Erwartungen an den Kurs zusammen. Vereinbare anschließend mit einer Lernpartnerin oder einem Lernpartner zwei Regeln für einen gemeinsamen Kurs.",
+        "task_zh": "概述 Phoebe 和 Rachel 對課程的不同期待，再與學習夥伴訂出兩項共同上課的約定。",
+        "source_cue_start": 273,
+        "source_cue_end": 286,
+        "answer_hint_de": "Rachel wollte vor allem gemeinsam Spaß haben. Phoebe wollte tatsächlich lernen und fühlte sich nicht ernst genommen. Gemeinsame Vorbereitung und ehrliche Antworten wären mögliche Vereinbarungen.",
+        "answer_hint_zh": "Rachel 主要想一起玩得開心；Phoebe 則確實想學習，並覺得自己的目標沒有被認真看待。共同預習及誠實回答，都可以是兩人訂下的約定。",
+        "start_ms": 985694,
+        "end_ms": 1031532
+      }
+    ],
+    "title_en": "The One With Ross’ Sandwich",
+    "title_de": "Wer mit wem?",
+    "source_member": "Friends.S05E09.German.DL.720p.BluRay.x264-NoGRP_ger.srt",
+    "source_sha256": "f7a4a582342442fe66cc4b09ef35fa280abb079cfbc8d41e01c175a279fd2473",
+    "source_type": "user_provided_subtitle",
+    "audio_verified": false,
+    "subtitle_reviewed": true,
+    "timing_version_specific": true,
+    "content_type": "original_lesson_based_on_user_subtitles",
+    "source_version_id": "S05E09_f7a4a5823424",
+    "source_batch_id": "batch_2026-11-16_s05",
+    "source_caption_type_hint": "SDH indicated by subtitle file contents"
+  },
+  {
+    "episode_id": "S05E10",
+    "summary_de": "Während seiner Arbeitspause versucht Ross, Joey beim Schreiben eines Theaterstücks mit einem festen Zeitplan zu helfen. Chandler lenkt Joey jedoch mit einem Spiel ab, und die beiden Freunde streiten darüber, was gute Unterstützung bedeutet. Joey verarbeitet ihren Konflikt schließlich in seinem Text. Rachel lernt Dannys Schwester kennen und fühlt sich mit der engen Beziehung der Geschwister unwohl. Phoebe sammelt Weihnachtsspenden, reagiert aber zunehmend gereizt auf respektlose Passanten und wird an einen anderen Ort versetzt.",
+    "summary_zh": "暫時休假的 Ross 想用固定的時間表幫助 Joey 寫劇本；Chandler 卻用遊戲讓 Joey 分心，兩人因此爭論怎樣才算好的支持。Joey 最後把他們的衝突寫進作品。Rachel 認識了 Danny 的姊妹，對兩人過於親密的互動感到不自在。Phoebe 則在街頭募集聖誕捐款，但面對不尊重她的路人越來越惱怒，最後被調到別的地點。",
+    "learning_goals_zh": [
+      "用具體詞彙討論工作計畫、分心及壓力。",
+      "用假設句提出不同做法，辨認 deren 表示所屬的關係子句。",
+      "用禮貌而明確的語句提出界線或取消約定。"
+    ],
+    "vocabulary": [
+      {
+        "de": "sich langweilen",
+        "zh": "感到無聊",
+        "example_de": "Wenn ich lange auf den Zug warte, langweile ich mich.",
+        "example_zh": "如果等火車等很久，我會感到無聊。",
+        "source_cue_id": 5,
+        "source_form": "langweile",
+        "source_start_ms": 21356,
+        "source_end_ms": 25026
+      },
+      {
+        "de": "die Spende",
+        "zh": "捐款；捐贈物",
+        "example_de": "Mit einer kleinen Spende unterstützen wir das Stadtteilzentrum.",
+        "example_zh": "我們用一筆小額捐款支持社區中心。",
+        "source_cue_id": 35,
+        "source_form": "Spenden",
+        "source_start_ms": 154322,
+        "source_end_ms": 158409
+      },
+      {
+        "de": "sich ins Zeug legen",
+        "zh": "全力以赴；努力表現",
+        "example_de": "Für die Abschlusspräsentation haben sich alle ins Zeug gelegt.",
+        "example_zh": "大家為了期末簡報都全力以赴。",
+        "source_cue_id": 70,
+        "source_form": "ins Zeug gelegt",
+        "source_start_ms": 265933,
+        "source_end_ms": 268770
+      },
+      {
+        "de": "der Zeitplan",
+        "zh": "時間表；進度安排",
+        "example_de": "Unser Zeitplan lässt jeden Nachmittag eine halbe Stunde für Wiederholungen frei.",
+        "example_zh": "我們的時間表每天下午都留了半小時複習。",
+        "source_cue_id": 106,
+        "source_form": "Zeitplan",
+        "source_start_ms": 388514,
+        "source_end_ms": 393895
+      },
+      {
+        "de": "jemanden unter Druck setzen",
+        "zh": "給某人壓力",
+        "example_de": "Ständige Nachfragen setzen mich unter Druck; ein fester Abgabetermin hilft mir mehr.",
+        "example_zh": "不斷追問會讓我有壓力；明確的繳交期限對我更有幫助。",
+        "source_cue_id": 242,
+        "source_form": "unter Druck",
+        "source_start_ms": 861945,
+        "source_end_ms": 864615
+      },
+      {
+        "de": "die Beschwerde",
+        "zh": "抱怨；申訴",
+        "example_de": "Wir nehmen jede Beschwerde ernst und suchen gemeinsam nach einer Lösung.",
+        "example_zh": "我們認真看待每一則申訴，並一起尋找解決方法。",
+        "source_cue_id": 285,
+        "source_form": "Beschwerden",
+        "source_start_ms": 1024983,
+        "source_end_ms": 1026735
+      }
+    ],
+    "grammar": [
+      {
+        "focus_zh": "wenn 加第二虛擬式：提出假設",
+        "explanation_zh": "談論與現況不同的假設時，可以在 wenn 子句使用 hätte 或 wäre，在主句使用 würde 加不定詞。",
+        "example_de": "Wenn ich mehr Zeit hätte, würde ich jeden Tag einen kurzen Text schreiben.",
+        "example_zh": "如果我有更多時間，我會每天寫一篇短文。",
+        "source_cue_id": 247,
+        "source_start_ms": 876210,
+        "source_end_ms": 879213
+      },
+      {
+        "focus_zh": "deren：關係子句中的所屬關係",
+        "explanation_zh": "deren 可表示前面陰性單數或複數名詞的「其……」。其後直接接所屬的名詞；此例的 deren Bücher 指那位女作家的書。",
+        "example_de": "Das ist die Autorin, deren Bücher wir im Kurs lesen.",
+        "example_zh": "這就是那位女作家，我們在課堂上讀的正是她的書。",
+        "source_cue_id": 4,
+        "source_start_ms": 16643,
+        "source_end_ms": 20480
+      }
+    ],
+    "discussion": [
+      {
+        "question_de": "Wann hilft ein fester Zeitplan, und wann wird er für eine lernende Person zum Druck?",
+        "question_zh": "固定的時間表什麼時候有幫助，什麼時候會變成學習者的壓力？",
+        "level": "B1"
+      },
+      {
+        "question_de": "Wie könnte Phoebe auf respektloses Verhalten reagieren und trotzdem freundlich zu anderen Passanten bleiben?",
+        "question_zh": "Phoebe 可以怎樣回應不尊重她的行為，同時仍然友善對待其他路人？",
+        "level": "B2"
+      },
+      {
+        "question_de": "Wie kann Rachel ihr Unbehagen ausdrücken, ohne behaupten zu müssen, dass ihre eigenen Familienregeln für alle gelten?",
+        "question_zh": "Rachel 可以怎樣表達自己的不自在，而不必認定自己的家庭相處規則適用於所有人？",
+        "level": "B2"
+      }
+    ],
+    "practice": [
+      {
+        "task_de": "Lies Ross’ Vorschlag für Joey. Welche erste Aufgabe vereinbaren sie? Entwirf dann einen eigenen Schreibplan mit drei kleinen Schritten.",
+        "task_zh": "閱讀 Ross 給 Joey 的建議。他們約定的第一項任務是什麼？再設計一個包含三個小步驟的寫作計畫。",
+        "source_cue_start": 95,
+        "source_cue_end": 113,
+        "answer_hint_de": "Ross bietet einen Zeitplan an. Zuerst soll Joey einen Namen für die Hauptfigur finden; Joey oder Joseph sind ausgeschlossen. Ein eigener Plan könnte Ideen sammeln, einen kurzen Entwurf schreiben und ihn überarbeiten umfassen.",
+        "answer_hint_zh": "Ross 提議安排時間表。第一步是替主角取名，但不能叫 Joey 或 Joseph。你自己的計畫可以包括蒐集點子、寫出短稿及修改。",
+        "start_ms": 348140,
+        "end_ms": 411203
+      },
+      {
+        "task_de": "Nenne anhand der Untertitel Rachels Unbehagen und Dannys Erklärung. Schreibe danach eine respektvolle Nachricht, mit der du eine Verabredung absagst.",
+        "task_zh": "根據字幕說明 Rachel 不自在的原因，以及 Danny 的解釋，再寫一封禮貌取消約會的訊息。",
+        "source_cue_start": 294,
+        "source_cue_end": 309,
+        "answer_hint_de": "Rachel spricht die besondere Nähe zwischen Danny und seiner Schwester an. Er beschreibt sie als ein gutes Verhältnis. Die Bemerkung seiner Schwester über das Badewasser verstärkt Rachels Unbehagen, und sie beendet das Gespräch.",
+        "answer_hint_zh": "Rachel 提到 Danny 與姊妹特別親密的關係；他解釋為彼此感情很好。他的姊妹提到洗澡水快冷掉，讓 Rachel 更加不自在，她便結束談話。",
+        "start_ms": 1061186,
+        "end_ms": 1119369
+      }
+    ],
+    "title_en": "The One With The Inappropriate Sister",
+    "title_de": "Feuerball",
+    "source_member": "Friends.S05E10.German.DL.720p.BluRay.x264-NoGRP_ger.srt",
+    "source_sha256": "a0f3e949dbb9688c92b17ca521b1622edf155b56727f163cf79d2fa3206343d9",
+    "source_type": "user_provided_subtitle",
+    "audio_verified": false,
+    "subtitle_reviewed": true,
+    "timing_version_specific": true,
+    "content_type": "original_lesson_based_on_user_subtitles",
+    "source_version_id": "S05E10_a0f3e949dbb9",
+    "source_batch_id": "batch_2026-11-16_s05",
+    "source_caption_type_hint": "SDH indicated by subtitle file contents"
+  },
+  {
+    "episode_id": "S05E11",
+    "summary_de": "Zum Jahreswechsel nehmen sich die Freunde neue Ziele vor. Ross möchte täglich etwas Neues ausprobieren und kauft eine Lederhose, die bei einer Verabredung zum Problem wird. Joey lernt bei Phoebe Gitarre, streitet jedoch mit ihr über ihre ungewöhnliche Unterrichtsmethode. Chandler versucht, auf spöttische Bemerkungen zu verzichten. Rachel will nicht mehr tratschen, hört aber ein vertrauliches Telefonat zwischen Monica und Chandler mit. Schließlich stellt sie fest, dass auch Joey von ihrer Beziehung weiß.",
+    "summary_zh": "跨年時，朋友們訂下新的目標。Ross 想每天嘗試新事物，買了皮褲，卻在約會時因此陷入窘境。Joey 跟 Phoebe 學吉他，但對她不尋常的教法提出質疑，引起爭執。Chandler 試著不再挖苦別人；Rachel 想戒掉說八卦的習慣，卻聽到 Monica 與 Chandler 私下的電話對話，最後發現 Joey 也早已知道兩人的戀情。",
+    "learning_goals_zh": [
+      "用 sich vornehmen 加不定詞訂立可執行的小目標。",
+      "描述一項問題、可能原因，以及具體的求助需求。",
+      "討論學習方式、保守秘密及用幽默回應他人的界線。"
+    ],
+    "vocabulary": [
+      {
+        "de": "sich etwas vornehmen",
+        "zh": "計畫／下決心做某事",
+        "example_de": "Für diese Woche nehme ich mir vor, jeden Morgen zehn Minuten zu lesen.",
+        "example_zh": "這一週，我打算每天早上讀十分鐘。",
+        "source_cue_id": 34,
+        "source_form": "vorgenommen",
+        "source_start_ms": 139974,
+        "source_end_ms": 144729
+      },
+      {
+        "de": "der Vorsatz",
+        "zh": "決心；打算實行的目標",
+        "example_de": "Ein kleiner, konkreter Vorsatz lässt sich leichter in den Alltag einbauen.",
+        "example_zh": "一個小而具體的目標，比較容易融入日常生活。",
+        "source_cue_id": 37,
+        "source_form": "Vorsatz",
+        "source_start_ms": 152487,
+        "source_end_ms": 154572
+      },
+      {
+        "de": "durchhalten",
+        "zh": "堅持下去；撐下去",
+        "example_de": "Mit kurzen Pausen kann ich beim Lernen länger durchhalten.",
+        "example_zh": "學習時安排短暫休息，我就能堅持得更久。",
+        "source_cue_id": 46,
+        "source_form": "durchhältst",
+        "source_start_ms": 182141,
+        "source_end_ms": 186062
+      },
+      {
+        "de": "sich über jemanden lustig machen",
+        "zh": "取笑某人",
+        "example_de": "Wir sollten uns nicht über Menschen lustig machen, die beim Sprechen Fehler machen.",
+        "example_zh": "我們不應該取笑說話時犯錯的人。",
+        "source_cue_id": 42,
+        "source_form": "lustig machen",
+        "source_start_ms": 167585,
+        "source_end_ms": 171589
+      },
+      {
+        "de": "etwas infrage stellen",
+        "zh": "質疑某事",
+        "example_de": "Du kannst einen Vorschlag infrage stellen und trotzdem respektvoll bleiben.",
+        "example_zh": "你可以質疑一個提議，同時保持尊重。",
+        "source_cue_id": 172,
+        "source_form": "stellst meine Methode infrage",
+        "source_start_ms": 680514,
+        "source_end_ms": 684435
+      },
+      {
+        "de": "etwas für sich behalten",
+        "zh": "把某事保留在心裡；不向別人透露",
+        "example_de": "Kannst du diese Nachricht noch bis morgen für dich behalten?",
+        "example_zh": "你能把這個消息保密到明天嗎？",
+        "source_cue_id": 240,
+        "source_form": "für mich behalten",
+        "source_start_ms": 939815,
+        "source_end_ms": 942484
+      }
+    ],
+    "grammar": [
+      {
+        "focus_zh": "sich vornehmen：與格反身代名詞及 zu 不定詞",
+        "explanation_zh": "表示下決心做某事時，可用 ich nehme mir vor、du nimmst dir vor 等形式，再接 zu 不定詞。完成式為 ich habe mir vorgenommen。",
+        "example_de": "Ich habe mir vorgenommen, jeden Abend fünf neue Wörter zu wiederholen.",
+        "example_zh": "我已經決定每天晚上複習五個新單字。",
+        "source_cue_id": 34,
+        "source_start_ms": 139974,
+        "source_end_ms": 144729
+      },
+      {
+        "focus_zh": "Hättest du etwas dagegen …?：禮貌詢問",
+        "explanation_zh": "以 hätte 的第二虛擬式先詢問對方是否介意，再用 wenn 子句說明行動，語氣比直接宣布柔和。",
+        "example_de": "Hättest du etwas dagegen, wenn ich das Fenster öffnen würde?",
+        "example_zh": "如果我把窗戶打開，你會介意嗎？",
+        "source_cue_id": 154,
+        "source_start_ms": 584293,
+        "source_end_ms": 587213
+      }
+    ],
+    "discussion": [
+      {
+        "question_de": "Welchen Vorsatz der Freunde hältst du für realistisch, und wie würdest du ihn in kleine Schritte aufteilen?",
+        "question_zh": "你認為哪一位朋友的目標比較實際？你會把它分成哪些小步驟？",
+        "level": "B1"
+      },
+      {
+        "question_de": "Wie könnte Joey Kritik an Phoebes Unterricht äußern, ohne sie persönlich anzugreifen?",
+        "question_zh": "Joey 可以怎樣對 Phoebe 的教法提出批評，而不變成人身攻擊？",
+        "level": "B2"
+      },
+      {
+        "question_de": "Woran erkennst du den Unterschied zwischen einem vertraulichen Gespräch und Tratsch?",
+        "question_zh": "你如何分辨一段私密談話與傳播八卦？",
+        "level": "B2"
+      }
+    ],
+    "practice": [
+      {
+        "task_de": "Ordne beim Lesen Ross, Phoebe und Joey ihre Vorhaben zu. Formuliere danach einen eigenen kleinen Wochenvorsatz mit „Ich nehme mir vor, …“.",
+        "task_zh": "閱讀時，把 Ross、Phoebe 和 Joey 各自的計畫配對好。接著用「Ich nehme mir vor, …」寫出自己一個小小的一週目標。",
+        "source_cue_start": 34,
+        "source_cue_end": 57,
+        "answer_hint_de": "Ross möchte jeden Tag etwas Neues tun, Phoebe möchte eine Linienmaschine fliegen und Joey möchte Gitarre spielen lernen. Der eigene Wochenvorsatz sollte eine konkrete, überschaubare Handlung nennen.",
+        "answer_hint_zh": "Ross 想每天嘗試新事物，Phoebe 想駕駛民航客機，Joey 想學吉他。你自己的一週目標應該描述一個具體、做得到的小行動。",
+        "start_ms": 139974,
+        "end_ms": 223015
+      },
+      {
+        "task_de": "Finde in den Untertiteln Ross’ Problem, seine Vermutungen über die Ursache und Joeys ersten Vorschlag. Schreibe anschließend eine sachliche Bitte um Hilfe bei einem eigenen Alltagsproblem.",
+        "task_zh": "在字幕中找出 Ross 的問題、他猜測的原因，以及 Joey 的第一個建議。再針對自己的日常問題，寫一段清楚而冷靜的求助訊息。",
+        "source_cue_start": 198,
+        "source_cue_end": 213,
+        "answer_hint_de": "Ross bekommt die ausgezogene Lederhose nicht mehr an. Er vermutet, dass sie durch Schweiß eingelaufen ist oder seine Beine durch die Hitze dicker geworden sind. Joey schlägt zuerst Puder vor, um Feuchtigkeit aufzunehmen.",
+        "answer_hint_zh": "Ross 脫下皮褲後就穿不回去。他猜想可能是汗水讓褲子縮水，或高溫讓腿變粗。Joey 第一個建議是用粉吸收水分。",
+        "start_ms": 772898,
+        "end_ms": 821613
+      }
+    ],
+    "title_en": "The One With All The Resolutions",
+    "title_de": "Die guten Vorsätze",
+    "source_member": "Friends.S05E11.German.DL.720p.BluRay.x264-NoGRP_ger.srt",
+    "source_sha256": "94e8372047827501b5efc52e3118e74ce976cdd9a7b0644f48760c2007ab354b",
+    "source_type": "user_provided_subtitle",
+    "audio_verified": false,
+    "subtitle_reviewed": true,
+    "timing_version_specific": true,
+    "content_type": "original_lesson_based_on_user_subtitles",
+    "source_version_id": "S05E11_94e837204782",
+    "source_batch_id": "batch_2026-11-16_s05",
+    "source_caption_type_hint": "SDH indicated by subtitle file contents"
+  },
+  {
+    "episode_id": "S05E12",
+    "summary_de": "Monica begleitet Chandler zu einer Feier mit seinen Kollegen und entdeckt sein künstliches Lachen im Umgang mit dem Chef. Beim gemeinsamen Tennisspiel geraten ihr Ehrgeiz und Chandlers Wunsch, beruflich gut anzukommen, aneinander. Rachel versucht unterdessen, Monica zu einem Gespräch über die heimliche Beziehung zu bewegen. Als sie erfährt, wie sehr Monica ihre vertrauten Gespräche vermisst, drängt sie nicht weiter. Ross sucht bei Janice Verständnis für seine Probleme, doch sein ständiges Klagen überfordert sie.",
+    "summary_zh": "Monica陪Chandler參加同事聚會，發現他面對上司時會刻意假笑。一起打網球時，她的好勝心又與Chandler希望在職場討人喜歡的想法衝突。另一方面，Rachel想讓Monica談談這段祕密戀情；得知Monica也十分想念兩人無話不談的相處後，她暫時不再追問。Ross向Janice傾訴煩惱、尋求理解，但他不斷抱怨讓她難以承受。",
+    "learning_goals_zh": [
+      "比較同一個人在工作與私人場合的表達方式。",
+      "用目的句與過去假設句解釋人物選擇。",
+      "練習表達不滿、理解朋友並設定談話界線。"
+    ],
+    "vocabulary": [
+      {
+        "de": "sich verhalten",
+        "zh": "表現；舉止",
+        "example_de": "Im Vorstellungsgespräch möchte ich mich ruhig und freundlich verhalten.",
+        "example_zh": "面試時，我想表現得沉著而友善。",
+        "source_cue_id": 33,
+        "source_start_ms": 159243,
+        "source_end_ms": 163956,
+        "source_form": "verhalten"
+      },
+      {
+        "de": "begeistert von + Dativ",
+        "zh": "對……感到很滿意／很熱衷",
+        "example_de": "Meine Kollegin ist von der neuen Bibliothek begeistert.",
+        "example_zh": "我的同事對新圖書館讚不絕口。",
+        "source_cue_id": 53,
+        "source_start_ms": 229939,
+        "source_end_ms": 232483,
+        "source_form": "begeistert von dir"
+      },
+      {
+        "de": "jemandem etwas leihen",
+        "zh": "把某物借給某人",
+        "example_de": "Kannst du mir für das Wochenende deinen Rucksack leihen?",
+        "example_zh": "你週末可以把背包借給我嗎？",
+        "source_cue_id": 63,
+        "source_start_ms": 265558,
+        "source_end_ms": 269312,
+        "source_form": "geliehen"
+      },
+      {
+        "de": "auf der Leitung stehen",
+        "zh": "一時反應不過來〔口語〕",
+        "example_de": "Entschuldige, ich stehe gerade auf der Leitung. Welche Datei meinst du?",
+        "example_zh": "抱歉，我現在有點轉不過來。你指的是哪個檔案？",
+        "source_cue_id": 120,
+        "source_start_ms": 443903,
+        "source_end_ms": 447823,
+        "source_form": "auf der Leitung"
+      },
+      {
+        "de": "sich an etwas gewöhnen",
+        "zh": "習慣某事",
+        "example_de": "Nach einigen Wochen habe ich mich an den frühen Unterricht gewöhnt.",
+        "example_zh": "幾週後，我習慣了這麼早上課。",
+        "source_cue_id": 244,
+        "source_start_ms": 881465,
+        "source_end_ms": 884426,
+        "source_form": "gewöhnt"
+      },
+      {
+        "de": "jemandem verzeihen",
+        "zh": "原諒某人",
+        "example_de": "Sie hat mir verziehen, weil ich meinen Fehler ehrlich zugegeben habe.",
+        "example_zh": "她原諒了我，因為我誠實承認了錯誤。",
+        "source_cue_id": 356,
+        "source_start_ms": 1288330,
+        "source_end_ms": 1290874,
+        "source_form": "verzeihen"
+      }
+    ],
+    "grammar": [
+      {
+        "focus_zh": "用 um … zu 表示目的",
+        "explanation_zh": "主句與目的不定詞片語通常由同一個人執行動作；um 引出目的，zu 放在不定詞前。先說明一項行動，再交代這麼做是為了什麼。",
+        "example_de": "Ich schreibe mir neue Wörter auf, um sie später zu wiederholen.",
+        "example_zh": "我把新單字記下來，為了之後複習。",
+        "source_cue_id": 49,
+        "source_start_ms": 212088,
+        "source_end_ms": 216008
+      },
+      {
+        "focus_zh": "用 hätte／wäre 談沒有發生的過去",
+        "explanation_zh": "過去的非真實條件可用 hätte／wäre 加過去分詞。省略 wenn 時，條件句可由 hätte／wäre 開頭；結果句同樣使用過去的第二虛擬式。",
+        "example_de": "Hätte ich früher gefragt, wäre das Missverständnis nicht entstanden.",
+        "example_zh": "如果我早點問，就不會產生這個誤會了。",
+        "source_cue_id": 140,
+        "source_start_ms": 519812,
+        "source_end_ms": 524150
+      }
+    ],
+    "discussion": [
+      {
+        "question_de": "Wann verhältst du dich bei der Arbeit oder im Unterricht anders als mit Freunden?",
+        "question_zh": "你在工作或課堂上，什麼時候會表現得和朋友相處時不一樣？",
+        "level": "B1"
+      },
+      {
+        "question_de": "Ist Chandlers Verhalten gegenüber seinem Chef verständlich? Wo würdest du eine Grenze ziehen?",
+        "question_zh": "Chandler對上司的表現可以理解嗎？你會在哪裡劃下界線？",
+        "level": "B2"
+      },
+      {
+        "question_de": "Wie kannst du einem Freund zuhören und trotzdem sagen, dass du gerade eine Pause brauchst?",
+        "question_zh": "你可以如何傾聽朋友，同時表達自己現在需要休息一下？",
+        "level": "B1"
+      }
+    ],
+    "practice": [
+      {
+        "task_de": "Erkläre in zwei bis drei Sätzen, warum Chandler auf der Feier anders lacht. Welche Wirkung hat Monicas Besuch auf seine Kollegen?",
+        "task_zh": "用兩到三句說明Chandler為何在聚會上用不同的方式笑。Monica參加聚會對他的同事有什麼影響？",
+        "source_cue_start": 45,
+        "source_cue_end": 54,
+        "start_ms": 201536,
+        "end_ms": 235945,
+        "answer_hint_de": "Chandler passt sein Lachen an die berufliche Situation an, um die Feier leichter zu überstehen. Seine Kollegen reagieren sehr positiv auf Monica; dadurch fühlt er sich selbst beliebter.",
+        "answer_hint_zh": "Chandler配合職場場合調整笑法，讓自己更容易應付聚會。同事很喜歡Monica，因此他覺得自己也變得更受歡迎。"
+      },
+      {
+        "task_de": "Fasse den Konflikt zwischen Rachel und Monica zusammen. Warum fällt Monica die Geheimhaltung schwer?",
+        "task_zh": "概述Rachel與Monica之間的衝突。為什麼保守這個祕密也讓Monica感到為難？",
+        "source_cue_start": 273,
+        "source_cue_end": 282,
+        "start_ms": 973765,
+        "end_ms": 1022022,
+        "answer_hint_de": "Rachel ist verletzt, weil Monica ihr weiterhin Ausreden erzählt. Monica möchte ihre Beziehung noch nicht offenlegen, vermisst aber die vertrauten Gespräche mit ihrer besten Freundin.",
+        "answer_hint_zh": "Rachel因Monica繼續用藉口瞞她而受傷。Monica還不想公開戀情，卻也想念與最好的朋友無話不談的相處。"
+      }
+    ],
+    "title_en": "The One With Chandler’s Work Laugh",
+    "title_de": "Das Arbeitslachen",
+    "source_member": "Friends.S05E12.German.DL.720p.BluRay.x264-NoGRP_ger.srt",
+    "source_sha256": "d184992de5336319e30c7168b39734db9afd67981c7f2f6d3378ad57b3457daa",
+    "source_type": "user_provided_subtitle",
+    "audio_verified": false,
+    "subtitle_reviewed": true,
+    "content_type": "original_lesson_based_on_user_subtitles",
+    "source_version_id": "S05E12_d184992de533",
+    "source_batch_id": "batch_2026-11-16_s05",
+    "timing_version_specific": true,
+    "source_caption_type_hint": "SDH indicated by subtitle file contents"
+  },
+  {
+    "episode_id": "S05E13",
+    "summary_de": "Rachel hilft Joey, sich für ein Vorsprechen neu einzukleiden. Seine neue Umhängetasche gefällt ihm so sehr, dass er sich auch durch die Kommentare seiner Freunde nicht davon abbringen lässt. Chandler verschweigt Monica zunächst, dass ihre Massagen ihm wehtun; schließlich müssen beide über ehrliche Kritik sprechen. Nach dem Tod ihrer Großmutter begegnet Phoebe ihrem lange abwesenden Vater. Sie verabredet ein weiteres Gespräch unter falschem Namen, stellt schwierige Fragen und gibt schließlich ihre Identität preis.",
+    "summary_zh": "Rachel幫Joey為試鏡挑選新服裝。他很喜歡新的肩背包，即使朋友取笑他，也不願放棄。Chandler起初不敢告訴Monica，她的按摩讓他疼痛；兩人最後必須面對如何誠實提出批評的問題。祖母過世後，Phoebe遇見長期缺席的父親。她先用假名約他再談，提出難以回答的問題，最後才表明自己的身分。",
+    "learning_goals_zh": [
+      "描述衣物的外觀與實用性，說明自己的喜好。",
+      "以禮貌而具體的方式提出請求與回饋。",
+      "練習談論告別、家庭關係與難以啟齒的感受。"
+    ],
+    "vocabulary": [
+      {
+        "de": "die Umhängetasche",
+        "zh": "肩背包；斜背包",
+        "example_de": "Für die Reise nehme ich eine leichte Umhängetasche mit.",
+        "example_zh": "這次旅行我會帶一個輕便的肩背包。",
+        "source_cue_id": 65,
+        "source_start_ms": 285286,
+        "source_end_ms": 288164,
+        "source_form": "Umhängetasche"
+      },
+      {
+        "de": "vorsprechen",
+        "zh": "試鏡；試演",
+        "example_de": "Am Freitag spreche ich für eine Nebenrolle vor.",
+        "example_zh": "星期五我要為一個配角試鏡。",
+        "source_cue_id": 27,
+        "source_start_ms": 143061,
+        "source_end_ms": 147106,
+        "source_form": "vorsprechen"
+      },
+      {
+        "de": "praktisch",
+        "zh": "實用的；方便的",
+        "example_de": "Eine kleine Lampe ist beim Lesen im Zug praktisch.",
+        "example_zh": "在火車上閱讀時，小燈很方便。",
+        "source_cue_id": 98,
+        "source_start_ms": 426093,
+        "source_end_ms": 429639,
+        "source_form": "praktisch"
+      },
+      {
+        "de": "Abschied nehmen",
+        "zh": "告別",
+        "example_de": "Vor dem Umzug nehmen wir von unseren Nachbarn Abschied.",
+        "example_zh": "搬家前，我們向鄰居道別。",
+        "source_cue_id": 150,
+        "source_start_ms": 608901,
+        "source_end_ms": 611779,
+        "source_form": "Abschied nehmen"
+      },
+      {
+        "de": "jemanden im Stich lassen",
+        "zh": "在某人需要時拋下對方；棄之不顧",
+        "example_de": "Als ich Hilfe brauchte, hat meine Kollegin mich nicht im Stich gelassen.",
+        "example_zh": "當我需要幫忙時，我的同事沒有丟下我不管。",
+        "source_cue_id": 165,
+        "source_start_ms": 665124,
+        "source_end_ms": 667084,
+        "source_form": "im Stich gelassen"
+      },
+      {
+        "de": "jemandes Gefühle verletzen",
+        "zh": "傷害某人的感情",
+        "example_de": "Ich möchte ehrlich sein, ohne deine Gefühle zu verletzen.",
+        "example_zh": "我想誠實表達，同時不傷害你的感情。",
+        "source_cue_id": 187,
+        "source_start_ms": 748332,
+        "source_end_ms": 750334,
+        "source_form": "Gefühle nicht verletzen"
+      }
+    ],
+    "grammar": [
+      {
+        "focus_zh": "用 nicht nur …, sondern auch … 補充優點",
+        "explanation_zh": "這組連接詞表示「不只……，而且……」。兩側應連接結構相配的成分；若連接兩個完整子句，第二句也須注意動詞位置。",
+        "example_de": "Der Kurs ist nicht nur günstig, sondern auch abwechslungsreich.",
+        "example_zh": "這門課不僅價格實惠，內容也很多樣。",
+        "source_cue_id": 98,
+        "source_start_ms": 426093,
+        "source_end_ms": 429639
+      },
+      {
+        "focus_zh": "用 könnten 禮貌提出請求",
+        "explanation_zh": "könnten 是 können 的第二虛擬式。Könnten Sie …? 比直接命令更客氣，適合試鏡、服務場合或向陌生人請教；主要動作以不定詞放在句尾。",
+        "example_de": "Könnten Sie mir bitte erklären, wie die Anmeldung funktioniert?",
+        "example_zh": "您能向我說明如何報名嗎？",
+        "source_cue_id": 193,
+        "source_start_ms": 771272,
+        "source_end_ms": 774441
+      }
+    ],
+    "discussion": [
+      {
+        "question_de": "Welche Tasche oder welches Kleidungsstück benutzt du besonders gern? Warum?",
+        "question_zh": "你特別喜歡使用哪一個包包或哪件衣服？為什麼？",
+        "level": "A2"
+      },
+      {
+        "question_de": "Wie sollte man reagieren, wenn Freunde den eigenen Kleidungsstil verspotten?",
+        "question_zh": "如果朋友取笑自己的穿著風格，應該如何回應？",
+        "level": "B1"
+      },
+      {
+        "question_de": "Was hilft dabei, in einem schwierigen Familiengespräch ehrlich zu bleiben, ohne die eigenen Grenzen aufzugeben?",
+        "question_zh": "在困難的家庭對話中，什麼做法有助於誠實表達，同時守住自己的界線？",
+        "level": "B2"
+      }
+    ],
+    "practice": [
+      {
+        "task_de": "Wie verändert sich Joeys Meinung über die Tasche? Beschreibe seine erste Reaktion und eine spätere Aussage in eigenen Worten.",
+        "task_zh": "Joey對包包的看法如何改變？用自己的話描述他最初的反應，以及後來的一個說法。",
+        "source_cue_start": 59,
+        "source_cue_end": 71,
+        "start_ms": 262680,
+        "end_ms": 318152,
+        "answer_hint_de": "Zuerst hält Joey die Tasche für ein Accessoire, das nicht zu ihm passt, weil er es mit Frauen verbindet. Später merkt er überrascht, dass ihm die Tasche gut steht.",
+        "answer_hint_zh": "Joey起初把這個包包與女性用品聯想在一起，認為不適合自己。之後他卻意外發現，背在自己身上很好看。"
+      },
+      {
+        "task_de": "Warum ist das Gespräch über die Massage schwierig? Formuliere anschließend eine höfliche, ehrliche Rückmeldung zu einer anderen Alltagssituation.",
+        "task_zh": "為什麼兩人難以談論按摩的問題？接著，針對另一個日常情境，說出一句禮貌而誠實的回饋。",
+        "source_cue_start": 213,
+        "source_cue_end": 223,
+        "start_ms": 838672,
+        "end_ms": 882800,
+        "answer_hint_de": "Monica wünscht sich Ehrlichkeit, ist aber verletzt, als Chandler seine Meinung ausspricht. Für eine eigene Rückmeldung kann man eine konkrete Wirkung beschreiben und zugleich Wertschätzung ausdrücken.",
+        "answer_hint_zh": "Monica希望彼此誠實，但Chandler真正說出想法時，她仍感到受傷。提出自己的回饋時，可以具體描述對方行為造成的影響，同時表達肯定。"
+      }
+    ],
+    "title_en": "The One With Joey’s Bag",
+    "title_de": "Die beste Massage der Welt",
+    "source_member": "Friends.S05E13.German.DL.720p.BluRay.x264-NoGRP_ger.srt",
+    "source_sha256": "723d47240e33e8efbbafa390d66990fce9c16017167f306a03c5f8d658a3df53",
+    "source_type": "user_provided_subtitle",
+    "audio_verified": false,
+    "subtitle_reviewed": true,
+    "content_type": "original_lesson_based_on_user_subtitles",
+    "source_version_id": "S05E13_723d47240e33",
+    "source_batch_id": "batch_2026-11-16_s05",
+    "timing_version_specific": true,
+    "source_caption_type_hint": "SDH indicated by subtitle file contents"
+  },
+  {
+    "episode_id": "S05E14",
+    "summary_de": "Bei der Besichtigung einer Wohnung entdeckt Phoebe die Beziehung zwischen Monica und Chandler. Gemeinsam mit Rachel beschließt sie, die beiden mit einem Flirt herauszufordern. Joey steht zwischen den Gruppen und möchte die Geheimnisse endlich loswerden. Monica und Chandler durchschauen den Plan und spielen mit, bis Chandler seine Liebe zu Monica offen ausspricht. Ross bemüht sich währenddessen um die Wohnung gegenüber und erfährt am Ende ebenfalls von der Beziehung.",
+    "summary_zh": "看公寓時，Phoebe發現Monica與Chandler的戀情。她與Rachel決定透過假裝調情，試探兩人的反應。Joey夾在兩邊，只希望祕密早點公開。Monica與Chandler識破計畫後也配合演戲，直到Chandler坦白自己愛著Monica，這場較量才結束。Ross同時努力爭取對面的公寓，並在本集最後也得知這段戀情。",
+    "learning_goals_zh": [
+      "用德文整理人物之間「誰知道什麼」的資訊。",
+      "辨識租屋、申請及保守祕密的常見表達。",
+      "練習使用巢狀 dass 子句與 je …, desto … 比較句。"
+    ],
+    "vocabulary": [
+      {
+        "de": "ausziehen",
+        "zh": "搬出去〔本集語境〕",
+        "example_de": "Unsere Nachbarn ziehen nächsten Monat aus.",
+        "example_zh": "我們的鄰居下個月要搬走。",
+        "source_cue_id": 3,
+        "source_start_ms": 9886,
+        "source_end_ms": 13598,
+        "source_form": "auszieht"
+      },
+      {
+        "de": "sich um etwas bewerben",
+        "zh": "申請；爭取某項機會",
+        "example_de": "Ich bewerbe mich um ein Zimmer in einer Wohngemeinschaft.",
+        "example_zh": "我正在申請合租公寓的一間房間。",
+        "source_cue_id": 19,
+        "source_start_ms": 107942,
+        "source_end_ms": 110903,
+        "source_form": "Bewirb dich"
+      },
+      {
+        "de": "das Geheimnis",
+        "zh": "祕密",
+        "example_de": "Dieses Geheimnis möchte ich vorerst für mich behalten.",
+        "example_zh": "這個祕密我目前想先留在心裡。",
+        "source_cue_id": 58,
+        "source_start_ms": 236863,
+        "source_end_ms": 239824,
+        "source_form": "Geheimnisse"
+      },
+      {
+        "de": "untervermieten",
+        "zh": "轉租；分租",
+        "example_de": "Sie möchte ihr Zimmer für zwei Monate untervermieten.",
+        "example_zh": "她想把自己的房間轉租兩個月。",
+        "source_cue_id": 126,
+        "source_start_ms": 484944,
+        "source_end_ms": 488531,
+        "source_form": "untervermieten"
+      },
+      {
+        "de": "Bescheid wissen",
+        "zh": "知情；知道情況",
+        "example_de": "Weißt du schon über die neue Kurszeit Bescheid?",
+        "example_zh": "你已經知道新的上課時間了嗎？",
+        "source_cue_id": 154,
+        "source_start_ms": 574450,
+        "source_end_ms": 577453,
+        "source_form": "weiß Bescheid"
+      },
+      {
+        "de": "einen Rückzieher machen",
+        "zh": "臨時退縮；打退堂鼓〔口語〕",
+        "example_de": "Kurz vor der Präsentation machte er einen Rückzieher.",
+        "example_zh": "簡報開始前，他臨時打了退堂鼓。",
+        "source_cue_id": 228,
+        "source_start_ms": 848640,
+        "source_end_ms": 852728,
+        "source_form": "einen Rückzieher"
+      }
+    ],
+    "grammar": [
+      {
+        "focus_zh": "巢狀 dass 子句：誰知道誰知道什麼",
+        "explanation_zh": "wissen、denken 或 glauben 後可接 dass 子句，該子句內也可以再放一個 dass 子句。每一層的變位動詞都放在該層句尾；先畫出人物與資訊的關係，再組句會更清楚。",
+        "example_de": "Nora glaubt, dass Tim weiß, dass der Kurs ausfällt.",
+        "example_zh": "Nora認為Tim知道課程取消了。",
+        "source_cue_id": 173,
+        "source_start_ms": 640099,
+        "source_end_ms": 643269
+      },
+      {
+        "focus_zh": "用 je …, desto … 表達「越……，越……」",
+        "explanation_zh": "兩邊使用比較級。je 子句的變位動詞置於句尾；desto 引出的主句中，「desto＋比較級」整組佔第一位置，接著放變位動詞。",
+        "example_de": "Je regelmäßiger ich übe, desto leichter fällt mir das Sprechen.",
+        "example_zh": "我練習得越規律，口說就越輕鬆。",
+        "source_cue_id": 287,
+        "source_start_ms": 1106940,
+        "source_end_ms": 1111486
+      }
+    ],
+    "discussion": [
+      {
+        "question_de": "Was wäre dir bei einer neuen Wohnung besonders wichtig?",
+        "question_zh": "如果要找新住處，什麼條件對你特別重要？",
+        "level": "B1"
+      },
+      {
+        "question_de": "Sollten Freunde ein Geheimnis respektieren oder die Beteiligten direkt darauf ansprechen? Begründe deine Meinung.",
+        "question_zh": "朋友應該尊重祕密，還是直接與當事人談清楚？請說明你的看法。",
+        "level": "B2"
+      },
+      {
+        "question_de": "Wie hätte Joey seine Grenzen klarer ausdrücken können, als beide Gruppen ihn unter Druck setzen?",
+        "question_zh": "當兩邊都給Joey壓力時，他可以怎樣更清楚地表達自己的界線？",
+        "level": "B2"
+      }
+    ],
+    "practice": [
+      {
+        "task_de": "Erstelle eine kleine Übersicht: Wer kennt die Beziehung bereits, und welche zwei Vorschläge gibt es für den Umgang mit dem Geheimnis?",
+        "task_zh": "整理一份簡短關係表：哪些朋友已經知道這段戀情？對於如何處理祕密，出現了哪兩種不同主張？",
+        "source_cue_start": 50,
+        "source_cue_end": 66,
+        "start_ms": 208626,
+        "end_ms": 268603,
+        "answer_hint_de": "Rachel, Phoebe und Joey kennen die Beziehung. Monica und Chandler wissen, dass Joey informiert ist. Joey möchte offen darüber sprechen; Rachel und Phoebe möchten zunächst mit dem Wissen spielen.",
+        "answer_hint_zh": "Rachel、Phoebe和Joey都知道這段戀情。Monica與Chandler知道Joey知情。Joey希望直接說開，Rachel與Phoebe則想先利用這個資訊逗弄兩人。"
+      },
+      {
+        "task_de": "Was beendet das Versteckspiel in diesem Ausschnitt? Erkläre auch, wer zu diesem Zeitpunkt noch nicht informiert ist.",
+        "task_zh": "這個片段中，什麼讓隱瞞與試探的遊戲結束？也請說明在這個時間點，還有誰尚未得知戀情。",
+        "source_cue_start": 308,
+        "source_cue_end": 322,
+        "start_ms": 1223014,
+        "end_ms": 1281907,
+        "answer_hint_de": "Chandler spricht offen aus, dass er Monica liebt, und sie erwidert seine Gefühle. Die Freunde verstehen, dass die Beziehung ernst ist. Ross weiß in diesem Ausschnitt noch nichts davon.",
+        "answer_hint_zh": "Chandler坦白自己愛Monica，而她也回應相同的感情。朋友們因此了解這段關係是認真的。在這個片段中，Ross仍尚未得知。"
+      }
+    ],
+    "title_en": "The One Where Everybody Finds Out",
+    "title_de": "Das kollektive Geheimnis",
+    "source_member": "Friends.S05E14.German.DL.720p.BluRay.x264-NoGRP_ger.srt",
+    "source_sha256": "11ba6504020f0fe8aeb82ce097b3ac6fca8cb15568ecaa3d1bc0fe9902135cd8",
+    "source_type": "user_provided_subtitle",
+    "audio_verified": false,
+    "subtitle_reviewed": true,
+    "content_type": "original_lesson_based_on_user_subtitles",
+    "source_version_id": "S05E14_11ba6504020f",
+    "source_batch_id": "batch_2026-11-16_s05",
+    "timing_version_specific": true,
+    "source_caption_type_hint": "SDH indicated by subtitle file contents"
+  }
+]

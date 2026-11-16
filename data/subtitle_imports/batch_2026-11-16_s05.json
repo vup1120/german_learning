@@ -1,0 +1,547 @@
+{
+  "schema_version": "1.0",
+  "batch_id": "batch_2026-11-16_s05",
+  "processed_on": "2026-11-16",
+  "source_type": "user_supplied_subtitle_archives",
+  "public_manifest_contains_subtitle_text": false,
+  "audio_verified": false,
+  "timing_version_specific": true,
+  "input_archive_count": 10,
+  "subtitle_occurrence_count": 11,
+  "unique_subtitle_version_count": 8,
+  "duplicate_subtitle_occurrence_count": 3,
+  "episode_count": 7,
+  "canonical_cue_count_total": 2438,
+  "archives": [
+    {
+      "archive_name": "friends.the.one.where.everybody.finds.out.(1999).tv.s05.e14.ger.1cd.zip",
+      "archive_sha256": "ceeb791eedf79355aa77c923044ab316f973d28bbb0282077d41ab7a54df00d4",
+      "subtitle_members": [
+        {
+          "member_name": "Friends.S05E14.German.DL.720p.BluRay.x264-NoGRP_ger.srt",
+          "subtitle_sha256": "11ba6504020f0fe8aeb82ce097b3ac6fca8cb15568ecaa3d1bc0fe9902135cd8",
+          "episode_id": "S05E14",
+          "duplicate_content": false
+        }
+      ]
+    },
+    {
+      "archive_name": "friends.the.one.with.all.the.resolutions.(1999).tv.s05.e11.ger.1cd (1).zip",
+      "archive_sha256": "0a66f9dd2b1c01c604839ad591c08679e4a068024ab097916f01df12e332a62e",
+      "subtitle_members": [
+        {
+          "member_name": "Friends.S05E11.German.DL.720p.BluRay.x264-NoGRP_ger.srt",
+          "subtitle_sha256": "94e8372047827501b5efc52e3118e74ce976cdd9a7b0644f48760c2007ab354b",
+          "episode_id": "S05E11",
+          "duplicate_content": false
+        }
+      ]
+    },
+    {
+      "archive_name": "friends.the.one.with.all.the.resolutions.(1999).tv.s05.e11.ger.1cd.zip",
+      "archive_sha256": "c9f0ad8f60a5ea0f90ddbb4d887958ad4e6cbab42c47e08a2a5af3b8abc28558",
+      "subtitle_members": [
+        {
+          "member_name": "Friends.S05E11.German.DL.720p.BluRay.x264-NoGRP_ger.srt",
+          "subtitle_sha256": "94e8372047827501b5efc52e3118e74ce976cdd9a7b0644f48760c2007ab354b",
+          "episode_id": "S05E11",
+          "duplicate_content": true
+        }
+      ]
+    },
+    {
+      "archive_name": "friends.the.one.with.all.the.thanksgivings.(1998).tv.s05.e08.ger.1cd.zip",
+      "archive_sha256": "5668c138fcb6abf43c587c951ab04353f5f91781a0f025c407c6e1175d2ecab0",
+      "subtitle_members": [
+        {
+          "member_name": "Friends.S05E08.German.DL.720p.BluRay.x264-NoGRP_ger.srt",
+          "subtitle_sha256": "3da0faa49a3ab228cb615b47397a21eea05dbd805481b24895e7f0a9e7691a69",
+          "episode_id": "S05E08",
+          "duplicate_content": false
+        }
+      ]
+    },
+    {
+      "archive_name": "friends.the.one.with.chandlers.work.laugh.(1999).tv.s05.e12.ger.1cd.zip",
+      "archive_sha256": "2bbdc6e40ecb8bbb582d6700e3a701a727e40886b4082ab177f164ee42a3527f",
+      "subtitle_members": [
+        {
+          "member_name": "Friends.S05E12.German.DL.720p.BluRay.x264-NoGRP_ger.srt",
+          "subtitle_sha256": "d184992de5336319e30c7168b39734db9afd67981c7f2f6d3378ad57b3457daa",
+          "episode_id": "S05E12",
+          "duplicate_content": false
+        }
+      ]
+    },
+    {
+      "archive_name": "friends.the.one.with.joeys.bag.(1999).tv.s05.e13.ger.2cd.zip",
+      "archive_sha256": "5157df3099608aa4d80176c1daaf76f94d84c7a5b90353a3429376bb5cddce35",
+      "subtitle_members": [
+        {
+          "member_name": "Friends.S05E13.German.DL.720p.BluRay.x264-NoGRP_ger.srt",
+          "subtitle_sha256": "723d47240e33e8efbbafa390d66990fce9c16017167f306a03c5f8d658a3df53",
+          "episode_id": "S05E13",
+          "duplicate_content": false
+        },
+        {
+          "member_name": "S05E13.srt",
+          "subtitle_sha256": "7d3acf500835142b44ed21cadc56747cf90b5936dccf49071cdf8c9c992ee98d",
+          "episode_id": "S05E13",
+          "duplicate_content": false
+        }
+      ]
+    },
+    {
+      "archive_name": "friends.the.one.with.rosss.sandwich.(1998).tv.s05.e09.ger.1cd (1).zip",
+      "archive_sha256": "684a82881886e3dbb3259036c03ab778f7fd3ea2cf928af5a0a10ded6a3396bc",
+      "subtitle_members": [
+        {
+          "member_name": "Friends.S05E09.German.DL.720p.BluRay.x264-NoGRP_ger.srt",
+          "subtitle_sha256": "f7a4a582342442fe66cc4b09ef35fa280abb079cfbc8d41e01c175a279fd2473",
+          "episode_id": "S05E09",
+          "duplicate_content": false
+        }
+      ]
+    },
+    {
+      "archive_name": "friends.the.one.with.rosss.sandwich.(1998).tv.s05.e09.ger.1cd.zip",
+      "archive_sha256": "6e0c81048703c2561a3868cbc7fd33da281d06f78359b0de505d72d3edd4095e",
+      "subtitle_members": [
+        {
+          "member_name": "Friends.S05E09.German.DL.720p.BluRay.x264-NoGRP_ger.srt",
+          "subtitle_sha256": "f7a4a582342442fe66cc4b09ef35fa280abb079cfbc8d41e01c175a279fd2473",
+          "episode_id": "S05E09",
+          "duplicate_content": true
+        }
+      ]
+    },
+    {
+      "archive_name": "friends.the.one.with.the.inappropriate.sister.(1998).tv.s05.e10.ger.1cd (1).zip",
+      "archive_sha256": "43d854436d9a3a9f4b84b3d47aca5e1b9b6fa859c09205467477069f01e1bdb5",
+      "subtitle_members": [
+        {
+          "member_name": "Friends.S05E10.German.DL.720p.BluRay.x264-NoGRP_ger.srt",
+          "subtitle_sha256": "a0f3e949dbb9688c92b17ca521b1622edf155b56727f163cf79d2fa3206343d9",
+          "episode_id": "S05E10",
+          "duplicate_content": false
+        }
+      ]
+    },
+    {
+      "archive_name": "friends.the.one.with.the.inappropriate.sister.(1998).tv.s05.e10.ger.1cd.zip",
+      "archive_sha256": "1c67f09c8f5a29e3e534745c36b660e4a335504d6e7def205a0f1cd72ef1471e",
+      "subtitle_members": [
+        {
+          "member_name": "Friends.S05E10.German.DL.720p.BluRay.x264-NoGRP_ger.srt",
+          "subtitle_sha256": "a0f3e949dbb9688c92b17ca521b1622edf155b56727f163cf79d2fa3206343d9",
+          "episode_id": "S05E10",
+          "duplicate_content": true
+        }
+      ]
+    }
+  ],
+  "episodes": [
+    {
+      "episode_id": "S05E08",
+      "language": "de",
+      "subtitle_available": true,
+      "audio_verified": false,
+      "timing_version_specific": true,
+      "canonical_version_id": "S05E08_3da0faa49a3a",
+      "canonical_selection_status": "provisional_lesson_reference",
+      "canonical_selection_reason": "Only unique subtitle version supplied for this episode; audio remains unverified.",
+      "versions": [
+        {
+          "version_id": "S05E08_3da0faa49a3a",
+          "subtitle_sha256": "3da0faa49a3ab228cb615b47397a21eea05dbd805481b24895e7f0a9e7691a69",
+          "source_members": [
+            "Friends.S05E08.German.DL.720p.BluRay.x264-NoGRP_ger.srt"
+          ],
+          "source_archives": [
+            {
+              "archive_name": "friends.the.one.with.all.the.thanksgivings.(1998).tv.s05.e08.ger.1cd.zip",
+              "archive_sha256": "5668c138fcb6abf43c587c951ab04353f5f91781a0f025c407c6e1175d2ecab0"
+            }
+          ],
+          "encoding": "utf-8-sig",
+          "byte_count": 27411,
+          "caption_type_hint": "SDH indicated by subtitle file contents",
+          "cue_count": 351,
+          "content_cue_count": 350,
+          "metadata_cue_ids": [
+            351
+          ],
+          "first_cue_start_ms": 2462,
+          "last_cue_end_ms": 1329496,
+          "last_content_cue_end_ms": 1321363,
+          "warnings": []
+        }
+      ],
+      "version_comparisons": []
+    },
+    {
+      "episode_id": "S05E09",
+      "language": "de",
+      "subtitle_available": true,
+      "audio_verified": false,
+      "timing_version_specific": true,
+      "canonical_version_id": "S05E09_f7a4a5823424",
+      "canonical_selection_status": "provisional_lesson_reference",
+      "canonical_selection_reason": "Only unique subtitle version supplied for this episode; audio remains unverified.",
+      "versions": [
+        {
+          "version_id": "S05E09_f7a4a5823424",
+          "subtitle_sha256": "f7a4a582342442fe66cc4b09ef35fa280abb079cfbc8d41e01c175a279fd2473",
+          "source_members": [
+            "Friends.S05E09.German.DL.720p.BluRay.x264-NoGRP_ger.srt"
+          ],
+          "source_archives": [
+            {
+              "archive_name": "friends.the.one.with.rosss.sandwich.(1998).tv.s05.e09.ger.1cd (1).zip",
+              "archive_sha256": "684a82881886e3dbb3259036c03ab778f7fd3ea2cf928af5a0a10ded6a3396bc"
+            },
+            {
+              "archive_name": "friends.the.one.with.rosss.sandwich.(1998).tv.s05.e09.ger.1cd.zip",
+              "archive_sha256": "6e0c81048703c2561a3868cbc7fd33da281d06f78359b0de505d72d3edd4095e"
+            }
+          ],
+          "encoding": "utf-8-sig",
+          "byte_count": 28625,
+          "caption_type_hint": "SDH indicated by subtitle file contents",
+          "cue_count": 369,
+          "content_cue_count": 368,
+          "metadata_cue_ids": [
+            369
+          ],
+          "first_cue_start_ms": 4589,
+          "last_cue_end_ms": 1329746,
+          "last_content_cue_end_ms": 1322739,
+          "warnings": []
+        }
+      ],
+      "version_comparisons": []
+    },
+    {
+      "episode_id": "S05E10",
+      "language": "de",
+      "subtitle_available": true,
+      "audio_verified": false,
+      "timing_version_specific": true,
+      "canonical_version_id": "S05E10_a0f3e949dbb9",
+      "canonical_selection_status": "provisional_lesson_reference",
+      "canonical_selection_reason": "Only unique subtitle version supplied for this episode; audio remains unverified.",
+      "versions": [
+        {
+          "version_id": "S05E10_a0f3e949dbb9",
+          "subtitle_sha256": "a0f3e949dbb9688c92b17ca521b1622edf155b56727f163cf79d2fa3206343d9",
+          "source_members": [
+            "Friends.S05E10.German.DL.720p.BluRay.x264-NoGRP_ger.srt"
+          ],
+          "source_archives": [
+            {
+              "archive_name": "friends.the.one.with.the.inappropriate.sister.(1998).tv.s05.e10.ger.1cd (1).zip",
+              "archive_sha256": "43d854436d9a3a9f4b84b3d47aca5e1b9b6fa859c09205467477069f01e1bdb5"
+            },
+            {
+              "archive_name": "friends.the.one.with.the.inappropriate.sister.(1998).tv.s05.e10.ger.1cd.zip",
+              "archive_sha256": "1c67f09c8f5a29e3e534745c36b660e4a335504d6e7def205a0f1cd72ef1471e"
+            }
+          ],
+          "encoding": "utf-8-sig",
+          "byte_count": 29694,
+          "caption_type_hint": "SDH indicated by subtitle file contents",
+          "cue_count": 356,
+          "content_cue_count": 355,
+          "metadata_cue_ids": [
+            356
+          ],
+          "first_cue_start_ms": 5381,
+          "last_cue_end_ms": 1329746,
+          "last_content_cue_end_ms": 1324491,
+          "warnings": []
+        }
+      ],
+      "version_comparisons": []
+    },
+    {
+      "episode_id": "S05E11",
+      "language": "de",
+      "subtitle_available": true,
+      "audio_verified": false,
+      "timing_version_specific": true,
+      "canonical_version_id": "S05E11_94e837204782",
+      "canonical_selection_status": "provisional_lesson_reference",
+      "canonical_selection_reason": "Only unique subtitle version supplied for this episode; audio remains unverified.",
+      "versions": [
+        {
+          "version_id": "S05E11_94e837204782",
+          "subtitle_sha256": "94e8372047827501b5efc52e3118e74ce976cdd9a7b0644f48760c2007ab354b",
+          "source_members": [
+            "Friends.S05E11.German.DL.720p.BluRay.x264-NoGRP_ger.srt"
+          ],
+          "source_archives": [
+            {
+              "archive_name": "friends.the.one.with.all.the.resolutions.(1999).tv.s05.e11.ger.1cd (1).zip",
+              "archive_sha256": "0a66f9dd2b1c01c604839ad591c08679e4a068024ab097916f01df12e332a62e"
+            },
+            {
+              "archive_name": "friends.the.one.with.all.the.resolutions.(1999).tv.s05.e11.ger.1cd.zip",
+              "archive_sha256": "c9f0ad8f60a5ea0f90ddbb4d887958ad4e6cbab42c47e08a2a5af3b8abc28558"
+            }
+          ],
+          "encoding": "utf-8-sig",
+          "byte_count": 25816,
+          "caption_type_hint": "SDH indicated by subtitle file contents",
+          "cue_count": 323,
+          "content_cue_count": 322,
+          "metadata_cue_ids": [
+            323
+          ],
+          "first_cue_start_ms": 2504,
+          "last_cue_end_ms": 1330330,
+          "last_content_cue_end_ms": 1323740,
+          "warnings": []
+        }
+      ],
+      "version_comparisons": []
+    },
+    {
+      "episode_id": "S05E12",
+      "language": "de",
+      "subtitle_available": true,
+      "audio_verified": false,
+      "timing_version_specific": true,
+      "canonical_version_id": "S05E12_d184992de533",
+      "canonical_selection_status": "provisional_lesson_reference",
+      "canonical_selection_reason": "Only unique subtitle version supplied for this episode; audio remains unverified.",
+      "versions": [
+        {
+          "version_id": "S05E12_d184992de533",
+          "subtitle_sha256": "d184992de5336319e30c7168b39734db9afd67981c7f2f6d3378ad57b3457daa",
+          "source_members": [
+            "Friends.S05E12.German.DL.720p.BluRay.x264-NoGRP_ger.srt"
+          ],
+          "source_archives": [
+            {
+              "archive_name": "friends.the.one.with.chandlers.work.laugh.(1999).tv.s05.e12.ger.1cd.zip",
+              "archive_sha256": "2bbdc6e40ecb8bbb582d6700e3a701a727e40886b4082ab177f164ee42a3527f"
+            }
+          ],
+          "encoding": "utf-8-sig",
+          "byte_count": 28255,
+          "caption_type_hint": "SDH indicated by subtitle file contents",
+          "cue_count": 367,
+          "content_cue_count": 366,
+          "metadata_cue_ids": [
+            367
+          ],
+          "first_cue_start_ms": 2378,
+          "last_cue_end_ms": 1330872,
+          "last_content_cue_end_ms": 1324699,
+          "warnings": []
+        }
+      ],
+      "version_comparisons": []
+    },
+    {
+      "episode_id": "S05E13",
+      "language": "de",
+      "subtitle_available": true,
+      "audio_verified": false,
+      "timing_version_specific": true,
+      "canonical_version_id": "S05E13_723d47240e33",
+      "canonical_selection_status": "provisional_lesson_reference",
+      "canonical_selection_reason": "Provisional lesson reference: prefer the explicitly named BluRay release for consistency with this batch, then a file without an editor-credit cue. All alternatives are retained; audio and playback synchronization are unverified.",
+      "versions": [
+        {
+          "version_id": "S05E13_723d47240e33",
+          "subtitle_sha256": "723d47240e33e8efbbafa390d66990fce9c16017167f306a03c5f8d658a3df53",
+          "source_members": [
+            "Friends.S05E13.German.DL.720p.BluRay.x264-NoGRP_ger.srt"
+          ],
+          "source_archives": [
+            {
+              "archive_name": "friends.the.one.with.joeys.bag.(1999).tv.s05.e13.ger.2cd.zip",
+              "archive_sha256": "5157df3099608aa4d80176c1daaf76f94d84c7a5b90353a3429376bb5cddce35"
+            }
+          ],
+          "encoding": "utf-8-sig",
+          "byte_count": 27497,
+          "caption_type_hint": "SDH indicated by subtitle file contents",
+          "cue_count": 339,
+          "content_cue_count": 338,
+          "metadata_cue_ids": [
+            339
+          ],
+          "first_cue_start_ms": 2462,
+          "last_cue_end_ms": 1329704,
+          "last_content_cue_end_ms": 1322989,
+          "warnings": []
+        },
+        {
+          "version_id": "S05E13_7d3acf500835",
+          "subtitle_sha256": "7d3acf500835142b44ed21cadc56747cf90b5936dccf49071cdf8c9c992ee98d",
+          "source_members": [
+            "S05E13.srt"
+          ],
+          "source_archives": [
+            {
+              "archive_name": "friends.the.one.with.joeys.bag.(1999).tv.s05.e13.ger.2cd.zip",
+              "archive_sha256": "5157df3099608aa4d80176c1daaf76f94d84c7a5b90353a3429376bb5cddce35"
+            }
+          ],
+          "encoding": "utf-8-sig",
+          "byte_count": 27571,
+          "caption_type_hint": "not established",
+          "cue_count": 339,
+          "content_cue_count": 338,
+          "metadata_cue_ids": [
+            1
+          ],
+          "first_cue_start_ms": 0,
+          "last_cue_end_ms": 1321485,
+          "last_content_cue_end_ms": 1321485,
+          "warnings": []
+        }
+      ],
+      "version_comparisons": [
+        {
+          "reference_version_id": "S05E13_723d47240e33",
+          "alternate_version_id": "S05E13_7d3acf500835",
+          "relationship": "overlapping_edited_version",
+          "matching_content_cues": 329,
+          "reference_content_cues": 338,
+          "alternate_content_cues": 338,
+          "text_sequence_similarity": 0.973373,
+          "changed_cue_groups": [
+            {
+              "reference_cue_ids": [
+                44
+              ],
+              "alternate_cue_ids": [
+                45
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                50
+              ],
+              "alternate_cue_ids": [
+                51
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                108
+              ],
+              "alternate_cue_ids": [
+                109
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                147
+              ],
+              "alternate_cue_ids": [
+                148
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                176
+              ],
+              "alternate_cue_ids": [
+                177
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                278
+              ],
+              "alternate_cue_ids": [
+                279
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                282
+              ],
+              "alternate_cue_ids": [
+                283
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                284
+              ],
+              "alternate_cue_ids": [
+                285
+              ],
+              "operation": "replace"
+            },
+            {
+              "reference_cue_ids": [
+                316
+              ],
+              "alternate_cue_ids": [
+                317
+              ],
+              "operation": "replace"
+            }
+          ],
+          "matching_cue_start_offset_ms_range": [
+            -1505,
+            -45
+          ],
+          "single_constant_start_offset": false,
+          "concatenate_automatically": false
+        }
+      ]
+    },
+    {
+      "episode_id": "S05E14",
+      "language": "de",
+      "subtitle_available": true,
+      "audio_verified": false,
+      "timing_version_specific": true,
+      "canonical_version_id": "S05E14_11ba6504020f",
+      "canonical_selection_status": "provisional_lesson_reference",
+      "canonical_selection_reason": "Only unique subtitle version supplied for this episode; audio remains unverified.",
+      "versions": [
+        {
+          "version_id": "S05E14_11ba6504020f",
+          "subtitle_sha256": "11ba6504020f0fe8aeb82ce097b3ac6fca8cb15568ecaa3d1bc0fe9902135cd8",
+          "source_members": [
+            "Friends.S05E14.German.DL.720p.BluRay.x264-NoGRP_ger.srt"
+          ],
+          "source_archives": [
+            {
+              "archive_name": "friends.the.one.where.everybody.finds.out.(1999).tv.s05.e14.ger.1cd.zip",
+              "archive_sha256": "ceeb791eedf79355aa77c923044ab316f973d28bbb0282077d41ab7a54df00d4"
+            }
+          ],
+          "encoding": "utf-8-sig",
+          "byte_count": 26255,
+          "caption_type_hint": "SDH indicated by subtitle file contents",
+          "cue_count": 333,
+          "content_cue_count": 332,
+          "metadata_cue_ids": [
+            333
+          ],
+          "first_cue_start_ms": 3630,
+          "last_cue_end_ms": 1330330,
+          "last_content_cue_end_ms": 1322864,
+          "warnings": []
+        }
+      ],
+      "version_comparisons": []
+    }
+  ]
+}

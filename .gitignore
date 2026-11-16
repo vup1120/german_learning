@@ -1,0 +1,14 @@
+# User-supplied subtitle source files and private working data
+incoming_subtitles/
+local_subtitles/
+private_subtitles/
+*.srt
+*.ass
+*.vtt
+
+# Local Python and editor output
+__pycache__/
+*.py[cod]
+.tmp/
+.DS_Store
+

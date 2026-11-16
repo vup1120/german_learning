@@ -52,5 +52,22 @@
     "source_url": "https://www.primevideo.com/-/de/detail/0M62QKG5IWILV60MICRSLJVM4H?tr=pf",
     "note": "本次可讀官方商品頁將結局兩部合成第17個播放單元；不同帳號與地區需另行確認。",
     "part_boundary_seconds": null
+  },
+  "subtitle_enrichment": {
+    "updated_on": "2026-11-16",
+    "episode_ids": [
+      "S05E08",
+      "S05E09",
+      "S05E10",
+      "S05E11",
+      "S05E12",
+      "S05E13",
+      "S05E14"
+    ],
+    "coverage_path": "data/subtitle_coverage.json",
+    "lesson_path": "data/subtitle_lessons/season_05.json",
+    "import_record_path": "data/subtitle_imports/batch_2026-11-16_s05.json",
+    "full_subtitle_text_in_public_repository": false,
+    "audio_verified": false
   }
 }
