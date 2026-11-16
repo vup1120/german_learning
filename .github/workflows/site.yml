@@ -30,6 +30,8 @@ jobs:
           python-version: "3.12"
       - name: Run tests
         run: python -m unittest discover -s tests -v
+      - name: Test speech engine (Node.js)
+        run: node --test tests/test_audio_engine.js
       - name: Build site data and fetch news
         run: python tools/build_site.py
       - uses: actions/configure-pages@v5

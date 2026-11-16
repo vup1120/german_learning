@@ -223,3 +223,72 @@ p { margin: 0; }
   .xp-fill { transition: width .4s ease; }
   .btn, .zone, .opt { transition: background-color .15s ease, border-color .15s ease; }
 }
+
+
+/* Listening-first controls shared by every German text block */
+.dq-audio-tools {
+  display: flex; flex-direction: column; gap: 6px;
+  background: #E9EFFE; border: 1px solid #BBC9F8; border-radius: 14px;
+  padding: 10px 12px; font-size: 12px;
+}
+.dq-audio-controls { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+.dq-audio-controls > button, .dq-audio-controls select {
+  min-height: 36px; border-radius: 9px; border: 1px solid #ACB9E0;
+  background: var(--surface); padding: 5px 7px; font-size: 12px; font-weight: 600;
+}
+.dq-audio-controls label { display: inline-flex; align-items: center; gap: 5px; }
+.dq-audio-status { font-size: 12px; line-height: 1.5; min-height: 18px; color: var(--muted); }
+.dq-audio-status.error { color: var(--bad); font-weight: 700; }
+.dq-audio-status.success { color: var(--good); }
+.dq-audio-help summary { cursor: pointer; text-decoration: underline dotted; }
+.dq-audio-help p { margin-top: 6px; line-height: 1.55; }
+.dq-speak {
+  width: 34px; height: 34px; min-width: 34px; margin-inline-start: 6px;
+  padding: 0; border: 1px solid #AFBEDC; color: var(--primary);
+  border-radius: 10px; background: #F6F9FF;
+  display: inline-flex; align-items: center; justify-content: center;
+  vertical-align: middle;
+}
+.dq-speak:hover, .dq-speak:focus-visible { background: #DAE7FF; }
+.dq-audio-link {
+  display: flex; align-items: center; gap: 6px; min-width: 0; width: 100%;
+}
+.dq-audio-link > a,
+.dq-audio-link > button:not(.dq-speak) { flex: 1 1 0; min-width: 0; width: auto; }
+.dq-audio-link > .dq-speak { margin: 0; flex: none; }
+.card.night .dq-speak { background: var(--night-2); border-color: #8394B9; color: #FFFFFF; }
+
+/* Expandable vocabulary: multi-context examples, listening and guided coaching */
+.phrase-extra {
+  display: flex; flex-direction: column; gap: 8px;
+  padding: 12px 14px 14px; border-top: 1px solid var(--line);
+  background: #F8FAFF;
+}
+.phrase-caption { justify-content: space-between; gap: 4px; flex-wrap: wrap; font-size: 13px; }
+.phrase-example-de { font-size: 16px; line-height: 1.5; font-weight: 600; }
+.phrase-tools { display: flex; flex-wrap: wrap; gap: 7px; }
+.phrase-tools .btn { flex: 1 1 auto; min-height: 44px; font-size: 13px; padding: 8px 9px; }
+.phrase-tools .btn:last-child { flex-basis: 100%; }
+.review-extra { display: flex; flex-direction: column; gap: 8px; width: 100%; border-top: 1px solid var(--line); padding-top: 12px; }
+.review-extra .btn { width: 100%; font-size: 14px; }
+
+/* A real multi-turn listening / shadowing / reply exercise */
+.coach-progress { padding: 12px; background: #EDF3FF; }
+.coach-progress .row { justify-content: space-between; flex-wrap: wrap; }
+.coach-choice { width: 100%; text-align: left; gap: 7px; align-items: flex-start; }
+.coach-choice strong { font-size: 16px; }
+.coach-choice span { font-size: 14px; }
+.coach-input-wrap {
+  background: var(--surface); padding: 14px; border: 1px solid var(--line);
+  border-radius: 16px; display: flex; flex-direction: column; gap: 9px;
+}
+.coach-input { border: 1px solid #9FABCE; border-radius: 12px; padding: 12px;
+  width: 100%; min-height: 88px; resize: vertical; background: #FFFFFF;
+  font-family: var(--body); font-size: 16px; }
+.coach-controls { display: flex; flex-direction: column; gap: 8px; }
+.coach-controls .btn { min-height: 46px; font-size: 14px; }
+.coach-playback { display: block; width: 100%; }
+.coach-warning {
+  border: 1px solid #E8B1A4; background: var(--bad-bg); color: var(--bad);
+  padding: 12px; border-radius: 12px; font-size: 14px;
+}

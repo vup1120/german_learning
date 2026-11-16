@@ -80,25 +80,27 @@
     if (STEPS.every((s) => d[s]) && !d.bonus) { d.bonus = true; addXp(20); }
     save();
   }
-  function addCard(de, zh, src) {
-    if (!de || S.cards[de]) return;
-    S.cards[de] = { zh: zh || '', src: src || '', box: 0, due: dayKey() };
+  function addCard(de, zh, src, examples) {
+    if (!de) return;
+    if (S.cards[de]) {
+      // Existing spaced-repetition progress is preserved.
+      if (examples && !S.cards[de].examples) {
+        S.cards[de].examples = examples;
+        save();
+      }
+      return;
+    }
+    S.cards[de] = { zh: zh || '', src: src || '', box: 0, due: dayKey(),
+      examples: examples || usageExamples(de, zh, '', null) };
     save();
   }
   const dueCards = () => Object.keys(S.cards).filter((de) => S.cards[de].due <= dayKey());
 
   // ---------- speech ----------
   function say(text) {
-    if (!('speechSynthesis' in window) || !text) return;
-    try {
-      window.speechSynthesis.cancel();
-      const u = new SpeechSynthesisUtterance(text);
-      u.lang = 'de-DE';
-      u.rate = 0.9;
-      const voice = window.speechSynthesis.getVoices().find((v) => v.lang && v.lang.toLowerCase().startsWith('de'));
-      if (voice) u.voice = voice;
-      window.speechSynthesis.speak(u);
-    } catch (err) { /* no voice available */ }
+    // The old implementation swallowed failures. The audio layer now reports
+    // audible playback status, missing voices and browser errors.
+    return window.DQAudio ? window.DQAudio.play(text) : false;
   }
 
   // ---------- data ----------
@@ -132,22 +134,58 @@
   function header(title, sub, backHref) {
     return `<div class="topbar">
       ${backHref ? `<a class="back" href="${backHref}" aria-label="返回">${icon('back', 20)}</a>` : ''}
-      <div class="grow"><h1>${esc(title)}</h1>${sub ? `<p class="muted small">${esc(sub)}</p>` : ''}</div>
+      <div class="grow"><h1${/^[0-9 A-Za-zÀ-ÿ.,!?:;’'()&\-·]+$/.test(title) && /[A-Za-zÀ-ÿ]/.test(title) ? ' lang="de"' : ''}>${esc(title)}</h1>${sub ? `<p class="muted small">${esc(sub)}</p>` : ''}</div>
     </div>`;
   }
-  function phraseCard(de, zh, note, src) {
+  function usageExamples(de, zh, note, original) {
+    // Prefer the curated, original example sentence in the lesson data.
+    const provided = original && original.de ? original : null;
+    const match = !provided ? String(note || '').match(/^(.+?)（(.+?)）/) : null;
+    const fullSentence = /[.!?。！？]$/.test(String(de).trim()) || /\s/.test(de) && /[.!?]/.test(de);
+    const base = provided ? provided.de : match ? match[1] :
+      fullSentence ? de : 'Kannst du mir erklären, was „' + de + '“ bedeutet?';
+    const baseZh = provided ? provided.zh || zh : match ? match[2] :
+      fullSentence ? zh : '你能跟我解釋「' + de + '」是什麼意思嗎？';
+    const fallback = !provided && !match && !fullSentence;
+    return [
+      { scene: fallback ? '用法詢問' : '原創例句', de: base, zh: baseZh },
+      { scene: '朋友聊天 · 兩人對話',
+        de: 'A: Wie war dein Tag? B: ' + base + ' A: Ach so! Erzähl mir mehr.',
+        zh: 'A：你今天過得如何？B：' + baseZh + ' A：原來如此！再多跟我說一些。' },
+      { scene: '日常交流 · 說明原因',
+        de: 'A: Kannst du mir die Situation erklären? B: ' + base +
+          ' A: Was bedeutet das für dich?',
+        zh: 'A：你能解釋一下目前的情況嗎？B：' + baseZh + ' A：這對你而言有什麼意義？' },
+    ];
+  }
+  function phraseCard(de, zh, note, src, originalExample) {
     const open = !!(ui.open && ui.open[de]);
-    const i = put({ de, zh, src });
-    return `<div class="card phrase"><div class="phrase-wrap">
-      <button class="phrase-main grow" data-act="reveal" data-i="${i}" aria-expanded="${open}">
-        <span class="grow">
-          <span class="phrase-de" lang="de">${esc(de)}</span>
-          ${open ? `<div class="phrase-zh">${esc(zh)}</div>${note ? `<div class="phrase-note">${esc(note)}</div>` : ''}`
-                 : '<div class="phrase-hint">點一下看中文，並加入複習</div>'}
-        </span>
-      </button>
-      <div class="phrase-side"><button class="icon-btn" data-act="say" data-i="${i}" aria-label="播放德文發音">${icon('sound', 20)}</button></div>
-    </div></div>`;
+    const examples = usageExamples(de, zh, note, originalExample);
+    const n = ((ui.exampleCycle || {})[de] || 0) % examples.length;
+    const selected = examples[n];
+    const i = put({ de, zh, src, examples });
+    return '<div class="card phrase"><div class="phrase-wrap">' +
+      '<button class="phrase-main grow" data-act="reveal" data-i="' + i + '" aria-expanded="' + open + '">' +
+        '<span class="grow"><span class="phrase-de" lang="de">' + esc(de) + '</span>' +
+        (open ? '<div class="phrase-zh">' + esc(zh) + '</div>' +
+          (note ? '<div class="phrase-note">' + esc(note) + '</div>' : '') :
+          '<div class="phrase-hint">點一下看中文，並加入複習</div>') +
+        '</span></button>' +
+      '<div class="phrase-side"><button class="icon-btn" data-act="say" data-i="' + i +
+        '" aria-label="播放德文發音" title="播放德文發音">' + icon('sound', 20) + '</button></div>' +
+      '</div>' +
+      (open ? '<div class="phrase-extra"><div class="row phrase-caption">' +
+          '<strong>可切換的情境例句</strong><span class="tag">' + esc(selected.scene) + ' · ' + (n + 1) +
+          ' / ' + examples.length + '</span></div>' +
+          '<p class="phrase-example-de" lang="de">' + esc(selected.de) + '</p>' +
+          '<p class="muted small">' + esc(selected.zh) + '</p>' +
+          '<div class="phrase-tools">' +
+            '<button class="btn ghost" data-act="example-say" data-i="' + i + '">' +
+            icon('sound', 18) + ' 聽例句</button>' +
+            '<button class="btn ghost" data-act="example-next" data-i="' + i + '">換一個情境</button>' +
+            '<button class="btn" data-act="coach" data-i="' + i + '">分步對話練習</button>' +
+          '</div></div>' : '') +
+      '</div>';
   }
   function promptCard(title, hint, text) {
     const i = put({ text });
@@ -383,7 +421,7 @@
     if (!lesson && (DATA.friends.subtitled || []).includes(id)) parts.push('<div class="card"><p class="small muted">這一集的字幕已匯入，完整教案整理好後會自動出現在這裡。目前先用基本詞彙與討論題。</p></div>');
     if (lesson && lesson.learning_goals_zh) parts.push(`<div class="card"><h3>這集的學習目標</h3>${lesson.learning_goals_zh.map((g) => `<p class="small">· ${esc(g)}</p>`).join('')}</div>`);
 
-    parts.push('<h2>詞彙</h2><div class="stack">' + vocab.map((v) => phraseCard(v.de, v.zh, v.example_de ? `${v.example_de}（${v.example_zh || ''}）` : '', src)).join('') + '</div>');
+    parts.push('<h2>詞彙</h2><div class="stack">' + vocab.map((v) => phraseCard(v.de, v.zh, v.example_de ? `${v.example_de}（${v.example_zh || ''}）` : '', src, v.example_de ? {de: v.example_de, zh: v.example_zh} : null)).join('') + '</div>');
     if (phrases.length) {
       parts.push(`<h2>金句卡</h2><p class="muted small">${esc(DATA.cards.notice_zh || '')}</p><div class="stack">${phrases.map((p) => phraseCard(p[0], p[1], p[2], src)).join('')}</div>`);
       parts.push(`<button class="btn ghost" data-act="drill" data-id="${id}">句子填空 · ${extra.drill.length} 題</button>`);
@@ -467,7 +505,7 @@
       ch.learning_goals_zh.map((g) => '<p class="small">· ' + esc(g) + '</p>').join('') + '</div>');
     result.push('<h2>詞彙 · 點擊加入複習</h2><div class="stack">' +
       ch.vocabulary.map((v) => phraseCard(v.de, v.zh,
-        v.example_de + '（' + v.example_zh + '） · 字幕 #' + v.source_cue_id, src)).join('') + '</div>');
+        v.example_de + '（' + v.example_zh + '） · 字幕 #' + v.source_cue_id, src, {de: v.example_de, zh: v.example_zh})).join('') + '</div>');
     result.push('<h2>文法重點</h2><div class="stack">' +
       ch.grammar.map((g) => '<div class="card"><h3>' + esc(g.focus_zh) + '</h3><p class="small">' +
         esc(g.explanation_zh) + '</p><p lang="de"><strong>' + esc(g.example_de) +
@@ -542,17 +580,147 @@
     }
     const de = ui.queue[0];
     const c = S.cards[de];
-    const i = put({ de });
+    const examples = c.examples || usageExamples(de, c.zh, '', null);
+    const i = put({ de, zh: c.zh, src: c.src, examples });
     return `${header('Wiederholen', `還剩 ${ui.queue.length} 張`)}
       <div class="card flash">
         ${c.src ? `<span class="tag" style="align-self:center">${esc(c.src)}</span>` : ''}
         <div class="flash-de" lang="de">${esc(de)}</div>
         <button class="icon-btn" style="align-self:center" data-act="say" data-i="${i}" aria-label="播放德文發音">${icon('sound', 20)}</button>
-        ${ui.shown ? `<p>${esc(c.zh)}</p>` : '<p class="muted small">先在心裡說出意思，再翻面。</p>'}
+        ${ui.shown ? `<p>${esc(c.zh)}</p><div class="review-extra">
+          <p class="muted small">情境例句</p><p lang="de">${esc(examples[0].de)}</p>
+          <button class="btn ghost" data-act="example-say" data-i="${i}">🔊 聽例句</button>
+          <button class="btn" data-act="coach" data-i="${i}">開始分步對話</button></div>` : '<p class="muted small">先在心裡說出意思，再翻面。</p>'}
       </div>
       ${ui.shown
         ? '<div class="btn-row"><button class="btn ghost" data-act="grade" data-ok="0">還不熟</button><button class="btn" data-act="grade" data-ok="1">記得</button></div>'
         : '<button class="btn" data-act="flip">顯示中文</button>'}`;
+  }
+
+  // ---------- guided listening, shadowing and two-turn conversation ----------
+  // No hidden language model: user responses determine a simple follow-up.
+  const COACH_SCENES = [
+    {
+      name: '朋友聊天', intro: 'Hallo! Schön, dass wir uns sehen. Hör mir bitte zu.',
+      question: 'Hallo! Was möchtest du mir heute erzählen?',
+      follow: 'Warum ist dir das wichtig? Kannst du ein Beispiel nennen?',
+      followReason: 'Und was ist danach passiert? Erzähl mir mehr.'
+    },
+    {
+      name: '日常生活', intro: 'Guten Tag! Ich habe eine kleine Frage an dich.',
+      question: 'Kannst du mir die Situation kurz beschreiben?',
+      follow: 'Was würdest du in dieser Situation machen?',
+      followReason: 'Wie würdest du das Problem lösen?'
+    },
+    {
+      name: '工作與學習', intro: 'Guten Morgen! Wir besprechen heute eine Alltagssituation.',
+      question: 'Was ist deiner Meinung nach der wichtigste Punkt?',
+      follow: 'Kannst du deinen Gedanken etwas genauer erklären?',
+      followReason: 'Welchen nächsten Schritt schlägst du vor?'
+    }
+  ];
+  function coachBack() {
+    return '<button type="button" class="btn ghost" data-act="coach-exit">返回單字卡</button>';
+  }
+  function coachInput(value) {
+    return '<div class="coach-input-wrap"><label class="small" for="coach-answer">你的德文回答（可用語音輸入或打字）</label>' +
+      '<textarea id="coach-answer" class="coach-input" rows="3" spellcheck="true" lang="de" ' +
+      'placeholder="Ich denke, dass …">' + esc(value || '') + '</textarea>' +
+      '<div class="coach-controls"><button class="btn ghost" type="button" data-act="coach-mic">' +
+      icon('sound', 18) + ' 語音轉文字</button>' +
+      '<button class="btn ghost" type="button" data-act="coach-record">' +
+      '🎙️ 錄下我的聲音</button>' +
+      '<button class="btn ghost" type="button" data-act="coach-record-stop">■ 停止錄音</button>' +
+      (ui.coach && ui.coach.recordingUrl ?
+        '<audio class="coach-playback" controls preload="none" src="' +
+        esc(ui.coach.recordingUrl) + '" aria-label="播放自己的跟讀錄音"></audio>' : '') +
+      '<p class="muted small">錄音不會上傳本站，僅保存在這個分頁供你比較發音；語音轉文字若不支援也可以直接打字。</p></div></div>';
+  }
+  function coachFollowup(c) {
+    const s = COACH_SCENES[c.scene || 0];
+    return /\b(weil|denn|deshalb|darum)\b/i.test(c.reply1 || '') ? s.followReason : s.follow;
+  }
+  function coachView() {
+    const c = ui.coach;
+    if (!c) return notFound();
+    const example = c.examples[c.exampleIndex || 0];
+    const scene = COACH_SCENES[c.scene || 0];
+    const step = c.stage || 0;
+    const blocks = [header('Sprechen · 分步對話', c.src + ' · ' + c.de)];
+    blocks.push('<div class="card coach-progress"><div class="row">' +
+      '<span class="tag">聽力 → 跟讀 → 回答 → 追問</span><span class="tag">' + (step ? Math.min(step, 5) : 0) +
+      ' / 5</span></div>' + (step ? '<p class="muted small">每一步都能先聽德語、跟讀，再自己回答。</p>' : '') + '</div>');
+    if (!step) {
+      blocks.push('<h2>先選一個對話場景</h2><div class="stack">' +
+        COACH_SCENES.map((s, n) => '<button class="card coach-choice" data-act="coach-scene" data-n="' +
+          n + '"><strong>' + esc(s.name) + '</strong><span lang="de">' +
+          esc(s.question) + '</span></button>').join('') + '</div>' +
+        '<div class="card"><p class="small">練習詞彙</p><p lang="de"><strong>' + esc(c.de) +
+        '</strong></p><p class="muted small">' + esc(c.zh) + '</p></div>');
+    }
+    if (step === 1) {
+      blocks.push('<h2>1. 先聽對話開場與情境例句</h2>' +
+        '<div class="card"><p class="muted small">' + esc(scene.name) + ' · ' +
+        esc(example.scene) + '</p><p lang="de">' + esc(scene.intro) +
+        '</p><p lang="de"><strong>' + esc(example.de) +
+        '</strong></p><p class="muted small">' + esc(example.zh) + '</p></div>' +
+        '<button class="btn" data-act="coach-play-intro">' + icon('sound', 20) +
+        ' 連續聽老師與例句</button>' +
+        '<button class="btn ghost" data-act="coach-next">已聽懂，下一步：跟讀</button>');
+    }
+    if (step === 2) {
+      blocks.push('<h2>2. 聽完再跟讀（Shadowing）</h2>' +
+        '<p class="muted small">先聽、跟著模仿重音和節奏，再試著不看文字。必要時可以重播多次。</p>' +
+        '<div class="card"><p lang="de"><strong>' + esc(example.de) + '</strong></p>' +
+        '<p class="muted small">' + esc(example.zh) + '</p></div>' +
+        '<button class="btn ghost" data-act="coach-play-example">' + icon('sound', 20) +
+        ' 重播例句（可調慢速）</button>' +
+        coachInput(c.draft || '') +
+        '<button class="btn" data-act="coach-next">下一步：自己回答</button>');
+    }
+    if (step === 3) {
+      const question = scene.question + ' Versuche dabei „' + c.de + '“ zu benutzen.';
+      blocks.push('<h2>3. 角色問你問題</h2><div class="card"><p lang="de"><strong>' +
+        esc(question) + '</strong></p><p class="muted small">請用德語說 1–3 句，試著自然地運用目標詞彙。</p></div>' +
+        '<button class="btn ghost" data-act="coach-play-question">' + icon('sound', 20) +
+        ' 先聽問題</button>' + coachInput(c.draft || '') +
+        (c.error ? '<p class="coach-warning" role="alert">' + esc(c.error) + '</p>' : '') +
+        '<button class="btn" data-act="coach-next">送出回答，聽追問</button>');
+    }
+    if (step === 4) {
+      blocks.push('<h2>4. 對方根據你前一句追問</h2>' +
+        '<div class="card"><p class="muted small">你剛才回答</p><p lang="de">' + esc(c.reply1) +
+        '</p><p class="muted small">追問</p><p lang="de"><strong>' +
+        esc(coachFollowup(c)) + '</strong></p></div>' +
+        '<button class="btn ghost" data-act="coach-play-question">' + icon('sound', 20) +
+        ' 聽追問</button>' + coachInput(c.draft || '') +
+        (c.error ? '<p class="coach-warning" role="alert">' + esc(c.error) + '</p>' : '') +
+        '<button class="btn" data-act="coach-next">完成這輪對話</button>');
+    }
+    if (step >= 5) {
+      const notes = [
+        c.reply1 && c.reply1.trim().split(/\s+/).length < 5 ?
+          '第一句稍短，可以試著補充人物、時間或原因。' : '已完成第一輪回答，可以多練幾次讓語句更流暢。',
+        /\bweil\b/i.test((c.reply1 || '') + ' ' + (c.reply2 || '')) ?
+          '你嘗試用 weil 說明原因，很好；也可以把理由說得更具體。' :
+          '下一輪可以試著加上 weil，補充原因，讓對話更自然。'
+      ];
+      const prompt = 'Wir üben Deutsch. Mein Wort ist: ' + c.de + '. Meine Antworten waren:\n1. ' +
+        (c.reply1 || '') + '\n2. ' + (c.reply2 || '') +
+        '\nBitte korrigiere meine Antworten, gib mir zwei natürlichere Formulierungen und führe das Gespräch weiter. ' +
+        TEACHER;
+      blocks.push('<h2>5. 完成！回顧對話</h2><div class="card"><p class="muted small">例句</p>' +
+        '<p lang="de">' + esc(example.de) + '</p><p class="muted small">你的第一句</p>' +
+        '<p lang="de">' + esc(c.reply1 || '') + '</p><p class="muted small">你的第二句</p>' +
+        '<p lang="de">' + esc(c.reply2 || '') + '</p></div>' +
+        '<div class="card"><h3>練習建議</h3>' +
+        notes.map((n) => '<p class="small">' + esc(n) + '</p>').join('') +
+        '<p class="muted small">這是練習提示，不是 AI 語法批改，也不是發音準確度評分。</p></div>' +
+        promptCard('進階自由對話 · ChatGPT', '需要真正即時變化、語法回饋時，可複製這段提示詞到 ChatGPT 語音模式。', prompt) +
+        '<button class="btn" data-act="coach-other">換個情境再練一次</button>');
+    }
+    blocks.push(coachBack());
+    return blocks.join('');
   }
 
   const notFound = () => `${header('找不到這一頁', '', '#/')}<a class="btn" href="#/">回到地圖</a>`;
@@ -566,7 +734,8 @@
     reg = [];
     const seg = r.split('/').filter(Boolean);
     let html;
-    if (ui.quiz) html = quizView();
+    if (ui.coach) html = coachView();
+    else if (ui.quiz) html = quizView();
     else if (!seg.length) html = homeView();
     else if (seg[0] === 'heute') html = heuteView();
     else if (seg[0] === 'zone') html = zoneView(seg[1]);
@@ -578,6 +747,7 @@
     else if (seg[0] === 'review') html = reviewView();
     else html = notFound();
     view.innerHTML = html;
+    if (window.DQAudio) window.DQAudio.enhance(view);
     renderTabs(seg[0] || '');
   }
   function renderTabs(top) {
@@ -592,10 +762,132 @@
       const item = reg[el.dataset.i];
       ui.open = ui.open || {};
       ui.open[item.de] = !ui.open[item.de];
-      if (ui.open[item.de]) { addCard(item.de, item.zh, item.src); markStep('scene'); }
+      if (ui.open[item.de]) { addCard(item.de, item.zh, item.src, item.examples); markStep('scene'); }
       render();
     },
     say(el) { say(reg[el.dataset.i].de); },
+    'example-say'(el) {
+      const v = reg[el.dataset.i];
+      const n = ((ui.exampleCycle || {})[v.de] || 0) % v.examples.length;
+      say(v.examples[n].de);
+    },
+    'example-next'(el) {
+      const v = reg[el.dataset.i];
+      ui.exampleCycle = ui.exampleCycle || {};
+      ui.exampleCycle[v.de] = ((ui.exampleCycle[v.de] || 0) + 1) % v.examples.length;
+      render();
+    },
+    coach(el) {
+      const v = reg[el.dataset.i];
+      ui.coach = { de: v.de, zh: v.zh, src: v.src, examples: v.examples,
+        exampleIndex: ((ui.exampleCycle || {})[v.de] || 0) % v.examples.length,
+        scene: 0, stage: 0, draft: '', error: '', reply1: '', reply2: '' };
+      render();
+      window.scrollTo(0, 0);
+    },
+    'coach-scene'(el) {
+      ui.coach.scene = Number(el.dataset.n);
+      ui.coach.stage = 1;
+      ui.coach.error = '';
+      render();
+      say(COACH_SCENES[ui.coach.scene].intro + ' ' + ui.coach.examples[ui.coach.exampleIndex].de);
+    },
+    'coach-play-intro'() {
+      const c = ui.coach;
+      say(COACH_SCENES[c.scene].intro + ' ' + c.examples[c.exampleIndex].de);
+    },
+    'coach-play-example'() {
+      const c = ui.coach;
+      say(c.examples[c.exampleIndex].de);
+    },
+    'coach-play-question'() {
+      const c = ui.coach;
+      const s = COACH_SCENES[c.scene];
+      say(c.stage === 4 ? coachFollowup(c) : s.question + ' Versuche dabei „' + c.de + '“ zu benutzen.');
+    },
+    'coach-mic'() {
+      const c = ui.coach;
+      if (!window.DQAudio) return;
+      window.DQAudio.listen({
+        onText(text) {
+          if (ui.coach !== c) return;
+          c.draft = text;
+          c.error = '';
+          render();
+        }
+      });
+    },
+    async 'coach-record'() {
+      const c = ui.coach;
+      if (!c || !window.DQAudio) return;
+      await window.DQAudio.startRecording((url) => {
+        if (ui.coach !== c) {
+          URL.revokeObjectURL(url);
+          return;
+        }
+        if (c.recordingUrl) URL.revokeObjectURL(c.recordingUrl);
+        c.recordingUrl = url;
+        render();
+      });
+    },
+    'coach-record-stop'() {
+      if (window.DQAudio) window.DQAudio.stopRecording();
+    },
+    'coach-next'() {
+      const c = ui.coach;
+      if (!c) return;
+      const field = view.querySelector('.coach-input');
+      if (field) c.draft = field.value.trim();
+      c.error = '';
+      if (c.stage === 1) {
+        c.stage = 2; c.draft = '';
+      } else if (c.stage === 2) {
+        // Shadowing is optional if this browser has no microphone recognition.
+        c.repeatText = c.draft;
+        c.stage = 3; c.draft = '';
+      } else if (c.stage === 3 || c.stage === 4) {
+        if (!c.draft) {
+          c.error = '先用德文說一句，或在文字框輸入回答。如果無法使用麥克風，可直接打字。';
+          render();
+          return;
+        }
+        if (c.stage === 3) {
+          c.reply1 = c.draft;
+          c.stage = 4;
+          c.draft = '';
+          render();
+          say(coachFollowup(c));
+          window.scrollTo(0, 0);
+          return;
+        }
+        c.reply2 = c.draft;
+        c.stage = 5;
+        c.draft = '';
+        markStep('speak');
+      }
+      render();
+      window.scrollTo(0, 0);
+    },
+    'coach-other'() {
+      const c = ui.coach;
+      c.scene = (c.scene + 1) % COACH_SCENES.length;
+      c.exampleIndex = (c.exampleIndex + 1) % c.examples.length;
+      c.stage = 1;
+      c.reply1 = ''; c.reply2 = ''; c.repeatText = ''; c.draft = ''; c.error = '';
+      render();
+      say(COACH_SCENES[c.scene].intro + ' ' + c.examples[c.exampleIndex].de);
+      window.scrollTo(0, 0);
+    },
+    'coach-exit'() {
+      if (window.DQAudio) {
+        window.DQAudio.stopRecording();
+        window.DQAudio.stop();
+      }
+      if (ui.coach && ui.coach.recordingUrl) URL.revokeObjectURL(ui.coach.recordingUrl);
+      ui.coach = null;
+      render();
+    },
+
     copy(el) {
       const i = Number(el.dataset.i);
       const text = reg[i].text;

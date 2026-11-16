@@ -57,3 +57,7 @@ Follow [the import workflow](docs/subtitle_workflow.md). After reviewed lesson e
 ## Movie learning: Good Bye, Lenin! (2003)
 
 Original B1–B2 scene-based German/Traditional Chinese movie lessons based on the user-supplied German SRT have been added to `data/movie_lessons/good-bye-lenin-2003.json`. The source subtitle contains 1,202 cues, SHA-256 `a442d60bdf3b2f73e23805fa504296133b8b1b0aa67720b061c81c90383e8c79`. Eight scenes include 32 vocabulary items, 8 grammar topics, and 16 discussion questions, with source cue IDs and edition-specific timings. The subtitles are **not** redistributed in this public repository. `tools/build_site.py` publishes the authored lessons into `site/data/movies.json` on deployment. Video/audio synchronization has not been verified.
+
+## Listening and speaking upgrade
+
+The site now uses a centralized Web Speech interface in `site/speech.js` with German voices, playback diagnostics, adjustable rate, stop/play, and audio controls for the main German text elements across pages. Vocabulary cards show rotating contexts and offer a guided five-stage practice exercise, including optional browser speech recognition, local recording/replay and typing fallback. Built-in dialogue choices are scripted, not generative AI or phonetic scoring. See [listening and speaking guide](docs/listening_speaking.md). Device-dependent voice availability must be checked on the actual phone/browser; no audio recording is uploaded to the repo.
