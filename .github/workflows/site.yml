@@ -34,9 +34,10 @@ jobs:
         run: node --test tests/test_audio_engine.js
       - name: Build site data and fetch news
         run: python tools/build_site.py
+      # Requires Settings → Pages → Source: "GitHub Actions". With "Deploy from a branch",
+      # GitHub publishes README.md through Jekyll instead of the app in site/.
+      # (The workflow token cannot switch that setting itself, so no `enablement` here.)
       - uses: actions/configure-pages@v5
-        with:
-          enablement: true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site
