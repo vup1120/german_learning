@@ -158,6 +158,30 @@
         zh: 'A：你能解釋一下目前的情況嗎？B：' + baseZh + ' A：這對你而言有什麼意義？' },
     ];
   }
+  const ARTIKEL = ['der', 'die', 'das'];
+  function splitArtikel(de) {
+    const s = String(de || '').trim();
+    if (!s || /[.!?]/.test(s)) return null;
+    for (const art of ARTIKEL) {
+      if (s.startsWith(art + ' ')) {
+        const rest = s.slice(art.length + 1).trim();
+        if (rest) return { art, rest };
+      }
+    }
+    return null;
+  }
+  const artikelBadge = (art) => `<span class="artikel-tag artikel-${art}">${art}</span>`;
+  function renderDeWithArtikel(de) {
+    const parsed = splitArtikel(de);
+    return parsed ? `${artikelBadge(parsed.art)} ${esc(parsed.rest)}` : esc(de);
+  }
+  function artikelQuizButton(pairs, title, backHref) {
+    const nouns = pairs.filter((p) => splitArtikel(p.de));
+    if (!nouns.length) return '';
+    const i = put({ title, nouns, backHref });
+    return `<button class="btn ghost" data-act="artikel-quiz" data-i="${i}">練冠詞（der / die / das）· ${nouns.length} 題</button>`;
+  }
+
   function phraseCard(de, zh, note, src, originalExample) {
     const open = !!(ui.open && ui.open[de]);
     const examples = usageExamples(de, zh, note, originalExample);
@@ -166,7 +190,7 @@
     const i = put({ de, zh, src, examples });
     return '<div class="card phrase"><div class="phrase-wrap">' +
       '<button class="phrase-main grow" data-act="reveal" data-i="' + i + '" aria-expanded="' + open + '">' +
-        '<span class="grow"><span class="phrase-de" lang="de">' + esc(de) + '</span>' +
+        '<span class="grow"><span class="phrase-de" lang="de">' + renderDeWithArtikel(de) + '</span>' +
         (open ? '<div class="phrase-zh">' + esc(zh) + '</div>' +
           (note ? '<div class="phrase-note">' + esc(note) + '</div>' : '') :
           '<div class="phrase-hint">點一下看中文，並加入複習</div>') +
@@ -220,7 +244,7 @@
       let cls = 'opt';
       if (answered && o.ok) cls += ' good';
       else if (answered && q.picked === k) cls += ' bad';
-      return `<button class="${cls}" data-act="quiz-pick" data-k="${k}" ${answered ? 'disabled' : ''} ${it.optLang ? `lang="${it.optLang}"` : ''}>${esc(o.t)}</button>`;
+      return `<button class="${cls}" data-act="quiz-pick" data-k="${k}" ${answered ? 'disabled' : ''} ${it.optLang ? `lang="${it.optLang}"` : ''} ${it.noAutoSpeech ? 'data-no-auto-speech' : ''}>${esc(o.t)}</button>`;
     }).join('');
     const right = answered && it.opts[q.picked].ok;
     return `${header(q.title, `第 ${q.i + 1} 題，共 ${q.items.length} 題`, q.backHref)}
@@ -422,6 +446,8 @@
     if (lesson && lesson.learning_goals_zh) parts.push(`<div class="card"><h3>這集的學習目標</h3>${lesson.learning_goals_zh.map((g) => `<p class="small">· ${esc(g)}</p>`).join('')}</div>`);
 
     parts.push('<h2>詞彙</h2><div class="stack">' + vocab.map((v) => phraseCard(v.de, v.zh, v.example_de ? `${v.example_de}（${v.example_zh || ''}）` : '', src, v.example_de ? {de: v.example_de, zh: v.example_zh} : null)).join('') + '</div>');
+    const epArtBtn = artikelQuizButton(vocab, `${id} · 冠詞練習`, `#/friends/${id}`);
+    if (epArtBtn) parts.push(epArtBtn);
     if (phrases.length) {
       parts.push(`<h2>金句卡</h2><p class="muted small">${esc(DATA.cards.notice_zh || '')}</p><div class="stack">${phrases.map((p) => phraseCard(p[0], p[1], p[2], src)).join('')}</div>`);
       parts.push(`<button class="btn ghost" data-act="drill" data-id="${id}">句子填空 · ${extra.drill.length} 題</button>`);
@@ -506,6 +532,8 @@
     result.push('<h2>詞彙 · 點擊加入複習</h2><div class="stack">' +
       ch.vocabulary.map((v) => phraseCard(v.de, v.zh,
         v.example_de + '（' + v.example_zh + '） · 字幕 #' + v.source_cue_id, src, {de: v.example_de, zh: v.example_zh})).join('') + '</div>');
+    const mvArtBtn = artikelQuizButton(ch.vocabulary, `${ch.title_de} · 冠詞練習`, `#/movies/${encodeURIComponent(id)}/${encodeURIComponent(sceneId)}`);
+    if (mvArtBtn) result.push(mvArtBtn);
     result.push('<h2>文法重點</h2><div class="stack">' +
       ch.grammar.map((g) => '<div class="card"><h3>' + esc(g.focus_zh) + '</h3><p class="small">' +
         esc(g.explanation_zh) + '</p><p lang="de"><strong>' + esc(g.example_de) +
@@ -542,6 +570,7 @@
       <button class="btn ghost" data-act="test" data-mode="all">全部 ${t.questions.length} 題</button>
       <h2>核心詞彙</h2>
       <div class="stack">${(t.vocab || []).map((v) => phraseCard(v[0], v[1], '', '入籍考試')).join('')}</div>
+      ${artikelQuizButton((t.vocab || []).map((v) => ({ de: v[0], zh: v[1] })), 'Einbürgerungstest · 冠詞練習', '#/test')}
       ${promptCard('口說任務 · 用自己的話說明價值', '面談時可能要用自己的話解釋這些概念。複製提示詞到 ChatGPT 語音模式練習。', prompt)}`;
   }
   function testItems(mode) {
@@ -582,15 +611,30 @@
     const c = S.cards[de];
     const examples = c.examples || usageExamples(de, c.zh, '', null);
     const i = put({ de, zh: c.zh, src: c.src, examples });
+    const parsed = splitArtikel(de);
+    const artAnswered = !!ui.artikelPicked;
+    const artVisible = ui.shown || artAnswered;
+    const flashDeHtml = parsed
+      ? (artVisible ? `${artikelBadge(parsed.art)} ${esc(parsed.rest)}` : `<span class="artikel-blank" aria-label="冠詞空格">____</span> ${esc(parsed.rest)}`)
+      : esc(de);
+    const artikelControls = parsed ? `<div class="artikel-choices" role="group" aria-label="選擇冠詞 Artikel" data-no-auto-speech>${
+      ARTIKEL.map((art) => {
+        let cls = 'opt artikel-btn';
+        if (artAnswered && art === parsed.art) cls += ' good';
+        else if (artAnswered && ui.artikelPicked === art) cls += ' bad';
+        return `<button type="button" class="${cls}" data-act="review-artikel" data-art="${art}" lang="de" ${artAnswered ? 'disabled' : ''}>${art}</button>`;
+      }).join('')
+    }</div>${artAnswered ? `<p class="artikel-feedback ${ui.artikelPicked === parsed.art ? 'good' : 'bad'}">${ui.artikelPicked === parsed.art ? '冠詞答對了' : `正確冠詞是 ${parsed.art}`}</p>` : ''}` : '';
     return `${header('Wiederholen', `還剩 ${ui.queue.length} 張`)}
       <div class="card flash">
         ${c.src ? `<span class="tag" style="align-self:center">${esc(c.src)}</span>` : ''}
-        <div class="flash-de" lang="de">${esc(de)}</div>
+        <div class="flash-de" lang="de">${flashDeHtml}</div>
         <button class="icon-btn" style="align-self:center" data-act="say" data-i="${i}" aria-label="播放德文發音">${icon('sound', 20)}</button>
+        ${artikelControls}
         ${ui.shown ? `<p>${esc(c.zh)}</p><div class="review-extra">
           <p class="muted small">情境例句</p><p lang="de">${esc(examples[0].de)}</p>
           <button class="btn ghost" data-act="example-say" data-i="${i}">🔊 聽例句</button>
-          <button class="btn" data-act="coach" data-i="${i}">開始分步對話</button></div>` : '<p class="muted small">先在心裡說出意思，再翻面。</p>'}
+          <button class="btn" data-act="coach" data-i="${i}">開始分步對話</button></div>` : `<p class="muted small">${parsed && !artAnswered ? '先選冠詞（der / die / das），再翻面看中文。' : '先在心裡說出意思，再翻面。'}</p>`}
       </div>
       ${ui.shown
         ? '<div class="btn-row"><button class="btn ghost" data-act="grade" data-ok="0">還不熟</button><button class="btn" data-act="grade" data-ok="1">記得</button></div>'
@@ -655,7 +699,7 @@
         COACH_SCENES.map((s, n) => '<button class="card coach-choice" data-act="coach-scene" data-n="' +
           n + '"><strong>' + esc(s.name) + '</strong><span lang="de">' +
           esc(s.question) + '</span></button>').join('') + '</div>' +
-        '<div class="card"><p class="small">練習詞彙</p><p lang="de"><strong>' + esc(c.de) +
+        '<div class="card"><p class="small">練習詞彙</p><p lang="de"><strong>' + renderDeWithArtikel(c.de) +
         '</strong></p><p class="muted small">' + esc(c.zh) + '</p></div>');
     }
     if (step === 1) {
@@ -914,6 +958,20 @@
       });
       startQuiz(`${id} · 句子填空`, items, `#/friends/${id}`);
     },
+    'artikel-quiz'(el) {
+      const data = reg[el.dataset.i];
+      if (!data) return;
+      const items = shuffle(data.nouns).map((v) => {
+        const parsed = splitArtikel(v.de);
+        return {
+          q: `____ ${parsed.rest}`, qLang: 'de', sub: v.zh, optLang: 'de', noAutoSpeech: true,
+          reveal: `${parsed.art} ${parsed.rest}`, sayOnPick: true,
+          why: v.example_de ? `${v.example_de}${v.example_zh ? `（${v.example_zh}）` : ''}` : '',
+          opts: ARTIKEL.map((t) => ({ t, ok: t === parsed.art })),
+        };
+      });
+      startQuiz(data.title, items, data.backHref);
+    },
     'zone-quiz'(el) {
       const z = DATA.life.find((x) => x.id === el.dataset.id);
       startQuiz(`${z.de} · 聽力`, listenItems(z.phrases, 5), `#/zone/${z.id}`);
@@ -932,8 +990,10 @@
       const q = ui.quiz;
       if (q.picked !== null) return;
       q.picked = Number(el.dataset.k);
-      if (q.items[q.i].opts[q.picked].ok) { q.score += 1; addXp(2); }
+      const item = q.items[q.i];
+      if (item.opts[q.picked].ok) { q.score += 1; addXp(2); }
       render();
+      if (item.sayOnPick && item.reveal) say(item.reveal);
     },
     'quiz-next'() {
       const q = ui.quiz;
@@ -951,6 +1011,13 @@
       }
     },
     'quiz-exit'() { ui.quiz = null; render(); },
+    'review-artikel'(el) {
+      if (!ui.queue || !ui.queue.length || ui.artikelPicked) return;
+      const de = ui.queue[0];
+      ui.artikelPicked = el.dataset.art;
+      render();
+      say(de);
+    },
     flip() { ui.shown = true; render(); },
     grade(el) {
       const de = ui.queue.shift();
@@ -963,7 +1030,7 @@
         c.box = 0; c.due = dayKey();
         if (!ui.again[de]) { ui.again[de] = true; ui.queue.push(de); } // one more try this session
       }
-      ui.reviewed += 1; ui.shown = false; save(); render();
+      ui.reviewed += 1; ui.shown = false; ui.artikelPicked = null; save(); render();
     },
   };
   document.addEventListener('click', (ev) => {

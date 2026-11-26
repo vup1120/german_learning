@@ -48,7 +48,7 @@ test('test click starts German speech with the right voice and pace', () => {
   assert.equal(api.play('Guten Tag. Wie geht es dir?'), true);
   assert.ok(spoken.length);
   assert.equal(spoken[0].lang, 'de-DE');
-  assert.equal(spoken[0].rate, 0.85);
+  assert.equal(spoken[0].rate, 1);
   assert.equal(spoken[0].voice.name, 'German Voice');
 });
 

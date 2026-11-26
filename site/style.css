@@ -201,6 +201,28 @@ p { margin: 0; }
 .flash { min-height: 220px; justify-content: center; text-align: center; gap: 14px; padding: 24px 18px; }
 .flash-de { font-family: var(--display); font-weight: 700; font-size: 22px; line-height: 1.35; }
 
+/* Artikel badges & selection */
+.artikel-tag {
+  display: inline-block; padding: 1px 8px; border-radius: 999px;
+  font-family: var(--display); font-weight: 700; font-size: 0.85em;
+  vertical-align: baseline; margin-right: 2px;
+}
+.artikel-der { background: #E0E9FF; color: #1E35AD; }
+.artikel-die { background: #FCE4EC; color: #9C1F4D; }
+.artikel-das { background: #DDF3E8; color: #0B5C43; }
+.artikel-blank {
+  display: inline-block; min-width: 48px; border-bottom: 2px solid var(--primary);
+  color: var(--primary); font-weight: 700; text-align: center;
+}
+.artikel-choices { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; width: 100%; }
+.artikel-btn {
+  text-align: center; font-family: var(--display); font-weight: 700;
+  min-height: 46px; padding: 8px 10px;
+}
+.artikel-feedback { font-size: 14px; font-weight: 600; }
+.artikel-feedback.good { color: var(--good); }
+.artikel-feedback.bad { color: var(--bad); }
+
 /* Tab bar */
 .tabbar {
   position: fixed; left: 0; right: 0; bottom: 0; z-index: 10;

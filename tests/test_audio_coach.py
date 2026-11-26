@@ -28,6 +28,17 @@ class AudioCoachContractTests(unittest.TestCase):
         self.assertIn("utter.lang = 'de-DE'", engine)
         self.assertIn("function startRecording(", engine)
 
+    def test_artikel_display_and_selection_wired(self):
+        app = (ROOT / "site/app.js").read_text(encoding="utf-8")
+        css = (ROOT / "site/style.css").read_text(encoding="utf-8")
+        self.assertIn("function splitArtikel(", app)
+        self.assertIn("function renderDeWithArtikel(", app)
+        self.assertIn("'artikel-quiz'", app)
+        self.assertIn("'review-artikel'", app)
+        self.assertIn(".artikel-der", css)
+        self.assertIn(".artikel-die", css)
+        self.assertIn(".artikel-das", css)
+
     @unittest.skipUnless(shutil.which("node"), "Node.js not installed")
     def test_scripts_are_valid_javascript(self):
         for script in ["site/speech.js", "site/app.js"]:

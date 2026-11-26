@@ -11,12 +11,44 @@
   let sequence = 0;
   let recording = null;
   let state = { message: '', kind: '' };
-  const RATE_KEY = 'deutschquest.audio.rate.v1';
-  let rate = 0.85;
+  const RATE_KEY = 'deutschquest.audio.rate.v2';
+  const VOICE_KEY = 'deutschquest.audio.voice.v1';
+  const PREFERRED_VOICE_RE = /google deutsch|conrad|amala|katja|hedda|petra|yannick|markus|helena|martin|vicki|natural|neural|online/i;
+  let rate = 1;
+  let preferredVoiceName = '';
+  let activeAudio = null;
+  let localTtsOk = false;
+  let localTtsLabel = '本機德語音檔';
+  let localTtsVoices = [];
+  let localTtsVoice = '';
+  let staticAudioMap = {};
+  let staticAudioVoice = '';
   try {
     const saved = Number(localStorage.getItem(RATE_KEY));
     if ([0.65, 0.85, 1, 1.15].includes(saved)) rate = saved;
+    preferredVoiceName = localStorage.getItem(VOICE_KEY) || '';
   } catch (_) { /* private browsing can disable storage */ }
+
+  if (typeof window.fetch === 'function' && typeof window.Audio === 'function') {
+    window.fetch('audio/manifest.json').then((r) => (r.ok ? r.json() : null)).then((data) => {
+      if (data && data.files) {
+        staticAudioMap = data.files;
+        staticAudioVoice = data.voice || 'de-DE-ConradNeural';
+        refreshVoiceSelect();
+        if (!localTtsOk) status('已載入德語母語音檔 · ' + staticAudioVoice, 'success');
+      }
+    }).catch(() => {});
+    window.fetch('/api/tts?ping=1').then((r) => (r.ok ? r.json() : null)).then((info) => {
+      if (info && info.ok) {
+        localTtsOk = true;
+        localTtsVoices = Array.isArray(info.voices) && info.voices.length ? info.voices : (info.voice ? [info.voice] : []);
+        localTtsVoice = localTtsVoices.includes(preferredVoiceName) ? preferredVoiceName : (info.voice || localTtsVoices[0] || '');
+        localTtsLabel = localTtsVoice ? '母語音檔 · ' + localTtsVoice : '本機德語音檔';
+        refreshVoiceSelect();
+        status('已連線：' + localTtsLabel, 'success');
+      }
+    }).catch(() => {});
+  }
 
   function status(message, kind = '') {
     state = { message, kind };
@@ -30,10 +62,26 @@
     if (!synth || typeof synth.getVoices !== 'function') return [];
     try { return synth.getVoices() || []; } catch (_) { return []; }
   }
+  function germanVoices() {
+    return voices().filter((voice) => /^de([-_]|$)/i.test(voice.lang || '') && !/^anna\b/i.test(voice.name || '')).sort((a, b) => {
+      const score = (v) => {
+        let s = /^de[-_]DE$/i.test(v.lang || '') ? 10 : 0;
+        if (PREFERRED_VOICE_RE.test(v.name || '')) s += 5;
+        if (!v.localService && PREFERRED_VOICE_RE.test(v.name || '')) s += 3;
+        else if (v.localService) s += 1;
+        return s;
+      };
+      return score(b) - score(a);
+    });
+  }
   function germanVoice() {
-    const list = voices().filter((voice) => /^de([-_]|$)/i.test(voice.lang || ''));
-    return list.find((v) => /^de[-_]DE$/i.test(v.lang || '') && v.localService) ||
-           list.find((v) => /^de[-_]DE$/i.test(v.lang || '')) || list[0] || null;
+    const list = germanVoices();
+    if (!list.length) return null;
+    if (preferredVoiceName) {
+      const chosen = list.find((v) => v.name === preferredVoiceName);
+      if (chosen) return chosen;
+    }
+    return list[0];
   }
   function chop(text) {
     const parts = String(text || '').replace(/\s+/g, ' ').trim().match(/[^.!?;:]+[.!?;:]?/g) || [];
@@ -61,23 +109,76 @@
     push();
     return result;
   }
+  function clearActiveAudio() {
+    if (!activeAudio) return;
+    const prev = activeAudio;
+    activeAudio = null;
+    prev.onplay = null;
+    prev.onended = null;
+    prev.onerror = null;
+    try { prev.pause(); prev.removeAttribute('src'); prev.load(); } catch (_) { /* ignored */ }
+  }
   function stop() {
     sequence += 1;
+    clearActiveAudio();
     if (synth) {
       try { synth.cancel(); } catch (_) { /* ignored */ }
     }
     status('已停止朗讀');
   }
+  function playAudioUrl(url, id) {
+    if (typeof window.Audio !== 'function') return false;
+    try {
+      const audio = new window.Audio(url);
+      audio.playbackRate = rate;
+      activeAudio = audio;
+      audio.onplay = () => {
+        if (id !== sequence || activeAudio !== audio) return;
+        status('正在播放德文母語音檔 · ' + rate + '×', 'success');
+      };
+      audio.onended = () => {
+        if (activeAudio === audio) activeAudio = null;
+        if (id === sequence) status('朗讀完成', 'success');
+      };
+      audio.onerror = () => {
+        if (activeAudio !== audio || id !== sequence) return;
+        activeAudio = null;
+        status('德文音檔暫時無法載入，請再試一次。', 'error');
+      };
+      const p = audio.play();
+      if (p && typeof p.catch === 'function') {
+        p.catch(() => { if (activeAudio === audio) activeAudio = null; });
+      }
+      return true;
+    } catch (_) {
+      return false;
+    }
+  }
+  function playLocalAudio(text, id) {
+    const clean = String(text || '').replace(/\s+/g, ' ').trim();
+    const staticFile = staticAudioMap[clean];
+    if (staticFile && playAudioUrl('audio/' + staticFile, id)) return true;
+    if (!localTtsOk) return false;
+    const vParam = localTtsVoice ? '&voice=' + encodeURIComponent(localTtsVoice) : '';
+    return playAudioUrl('/api/tts?text=' + encodeURIComponent(clean) + vParam, id);
+  }
   function play(text) {
     const chunks = chop(text);
     if (!chunks.length) { status('這裡沒有可朗讀的德文。', 'error'); return false; }
+    sequence += 1;
+    const id = sequence;
+    clearActiveAudio();
+    if (synth) {
+      try { synth.cancel(); } catch (_) { /* ignored */ }
+    }
+    if (playLocalAudio(chunks.join(' '), id)) {
+      status('正在載入德文母語音檔…');
+      return true;
+    }
     if (!synth || typeof Utterance !== 'function') {
       status('瀏覽器不支援語音朗讀。請使用支援 Web Speech 的瀏覽器並檢查裝置語音設定。', 'error');
       return false;
     }
-    sequence += 1;
-    const id = sequence;
-    try { synth.cancel(); } catch (_) { /* continue */ }
     const voice = germanVoice();
     let index = 0;
     let started = false;
@@ -92,7 +193,7 @@
       utter.onstart = () => {
         if (id !== sequence) return;
         started = true;
-        status('正在播放德文 · ' + rate + '×' + (voice ? ' · ' + voice.name : ' · 系統語音'), 'success');
+        status('正在播放德文 · ' + rate + '×' + (voice ? ' · ' + voice.name : ' · 系統預設語音（未偵測到德語聲）'), voice ? 'success' : 'error');
       };
       utter.onend = () => { if (id === sequence) next(); };
       utter.onerror = (event) => {
@@ -278,16 +379,43 @@
       '<label>速度 <select id="dq-audio-rate" aria-label="德文語音速度">' +
       '<option value="0.65">0.65×</option><option value="0.85">0.85×</option>' +
       '<option value="1">1×</option><option value="1.15">1.15×</option>' +
-      '</select></label></div>' +
+      '</select></label>' +
+      '<label>語音 <select id="dq-audio-voice" aria-label="德文語音選擇"></select></label></div>' +
       '<p id="dq-audio-status" class="dq-audio-status" role="status" aria-live="polite"></p>' +
       '<details class="dq-audio-help"><summary>聽不到德文？</summary>' +
       '<p>先按「測試德語」並調高媒體音量。若沒有聲音，請確認瀏覽器支援語音朗讀，並在裝置的語音／語言設定安裝德語聲音。' +
       '部分手機瀏覽器不支援德語聲音或麥克風辨識；可改用桌面 Chrome／Edge。本站不提供外部音訊檔。</p></details>';
     root.prepend(bar);
     bar.querySelector('#dq-audio-rate').value = String(rate);
+    refreshVoiceSelect();
     status(state.message || (synth ? '點小喇叭或「測試德語」開始；速度可調。' :
       '此瀏覽器不支援 Web Speech 朗讀。'), state.kind);
     addSpeakers(root);
+  }
+  function refreshVoiceSelect() {
+    const sel = document.getElementById('dq-audio-voice');
+    if (!sel) return;
+    if (localTtsOk) {
+      const opts = localTtsVoices.length ? localTtsVoices : [localTtsVoice || 'local'];
+      sel.innerHTML = opts.map((v) => '<option value="' + v.replace(/"/g, '&quot;') + '">母語音檔 · ' + v + '</option>').join('');
+      if (localTtsVoice) sel.value = localTtsVoice;
+      return;
+    }
+    if (staticAudioVoice) {
+      sel.innerHTML = '<option value="__local__">母語音檔 · ' + staticAudioVoice + '</option>';
+      return;
+    }
+    const list = germanVoices();
+    if (!list.length) {
+      sel.innerHTML = '<option value="">未偵測到德語聲</option>';
+      return;
+    }
+    const current = germanVoice();
+    sel.innerHTML = list.map((v) => '<option value="' + v.name.replace(/"/g, '&quot;') + '">' + v.name + '</option>').join('');
+    if (current) sel.value = current.name;
+  }
+  if (synth && typeof synth.addEventListener === 'function') {
+    synth.addEventListener('voiceschanged', refreshVoiceSelect);
   }
   document.addEventListener('click', (event) => {
     const speakerButton = event.target.closest('.dq-speak');
@@ -305,6 +433,16 @@
     if (tool.dataset.dqAudio === 'page') play(pageGerman(document.getElementById('view')));
   });
   document.addEventListener('change', (event) => {
+    if (event.target.id === 'dq-audio-voice') {
+      preferredVoiceName = event.target.value || '';
+      if (localTtsOk && localTtsVoices.includes(preferredVoiceName)) {
+        localTtsVoice = preferredVoiceName;
+        localTtsLabel = '母語音檔 · ' + localTtsVoice;
+        status('已切換：' + localTtsLabel, 'success');
+      }
+      try { localStorage.setItem(VOICE_KEY, preferredVoiceName); } catch (_) { /* ignored */ }
+      return;
+    }
     if (event.target.id !== 'dq-audio-rate') return;
     const next = Number(event.target.value);
     if (![0.65, 0.85, 1, 1.15].includes(next)) return;
