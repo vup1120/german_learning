@@ -248,11 +248,23 @@ p { margin: 0; }
 
 
 /* Listening-first controls shared by every German text block */
+/* Folded to one quiet line at the end of each screen, so pages open like the design; expands on tap or on an audio error. */
 .dq-audio-tools {
-  display: flex; flex-direction: column; gap: 6px;
-  background: #E9EFFE; border: 1px solid #BBC9F8; border-radius: 14px;
-  padding: 10px 12px; font-size: 12px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+  padding: 0 12px; font-size: 12px;
 }
+.dq-audio-tools[open] { padding-bottom: 10px; }
+.dq-audio-tools[open] > :not(summary) { margin-top: 6px; }
+.dq-audio-summary {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  min-height: 44px; cursor: pointer; list-style: none;
+  font-size: 13px; font-weight: 600; color: var(--muted);
+}
+.dq-audio-summary::-webkit-details-marker { display: none; }
+.dq-audio-summary::after { content: "▾"; font-size: 12px; margin-left: 4px; }
+.dq-audio-tools[open] .dq-audio-summary::after { content: "▴"; }
+.dq-audio-summary-label { flex: 1 1 auto; }
+.dq-audio-summary-rate { font-weight: 500; }
 .dq-audio-controls { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
 .dq-audio-controls > button, .dq-audio-controls select {
   min-height: 36px; border-radius: 9px; border: 1px solid #ACB9E0;
@@ -272,13 +284,15 @@ p { margin: 0; }
   vertical-align: middle;
 }
 .dq-speak:hover, .dq-speak:focus-visible { background: #DAE7FF; }
-.dq-audio-link {
-  display: flex; align-items: center; gap: 6px; min-width: 0; width: 100%;
-}
+/* Speaker sits inside the card's right edge, so cards keep the full width of the design. */
+.dq-audio-link { position: relative; display: block; min-width: 0; width: 100%; }
 .dq-audio-link > a,
-.dq-audio-link > button:not(.dq-speak) { flex: 1 1 0; min-width: 0; width: auto; }
-.dq-audio-link > .dq-speak { margin: 0; flex: none; }
-.card.night .dq-speak { background: var(--night-2); border-color: #8394B9; color: #FFFFFF; }
+.dq-audio-link > button:not(.dq-speak) { width: 100%; padding-right: 58px; }
+.dq-audio-link > .dq-speak {
+  position: absolute; right: 12px; top: 50%; transform: translateY(-50%); margin: 0;
+}
+.card.night .dq-speak,
+.zone.night ~ .dq-speak { background: var(--night-2); border-color: #8394B9; color: #FFFFFF; }
 
 /* Expandable vocabulary: multi-context examples, listening and guided coaching */
 .phrase-extra {

@@ -50,6 +50,7 @@
     }).catch(() => {});
   }
 
+  let toolsOpen = false;
   function status(message, kind = '') {
     state = { message, kind };
     const el = document.getElementById('dq-audio-status');
@@ -57,6 +58,15 @@
       el.textContent = message;
       el.className = 'dq-audio-status' + (kind ? ' ' + kind : '');
     }
+    // The toolbar stays folded to one line; open it when something needs attention.
+    if (kind === 'error') {
+      toolsOpen = true;
+      const tools = document.getElementById('dq-audio-tools');
+      if (tools) tools.open = true;
+    }
+  }
+  function summaryText() {
+    return '速度 ' + rate + '×';
   }
   function voices() {
     if (!synth || typeof synth.getVoices !== 'function') return [];
@@ -369,10 +379,16 @@
   }
   function enhance(root) {
     if (!root) return;
-    const bar = document.createElement('div');
+    const bar = document.createElement('details');
     bar.className = 'dq-audio-tools';
+    bar.id = 'dq-audio-tools';
     bar.setAttribute('aria-label', '聽力控制');
-    bar.innerHTML = '<div class="dq-audio-controls">' +
+    bar.open = toolsOpen;
+    bar.addEventListener('toggle', () => { toolsOpen = bar.open; });
+    bar.innerHTML = '<summary class="dq-audio-summary">' +
+      '<span class="dq-audio-summary-label">🔊 語音設定</span>' +
+      '<span class="dq-audio-summary-rate" id="dq-audio-summary-rate">' + summaryText() + '</span></summary>' +
+      '<div class="dq-audio-controls">' +
       '<button type="button" data-dq-audio="test">🔊 測試德語</button>' +
       '<button type="button" data-dq-audio="page">朗讀本頁</button>' +
       '<button type="button" data-dq-audio="stop">停止</button>' +
@@ -385,7 +401,7 @@
       '<details class="dq-audio-help"><summary>聽不到德文？</summary>' +
       '<p>先按「測試德語」並調高媒體音量。若沒有聲音，請確認瀏覽器支援語音朗讀，並在裝置的語音／語言設定安裝德語聲音。' +
       '部分手機瀏覽器不支援德語聲音或麥克風辨識；可改用桌面 Chrome／Edge。本站不提供外部音訊檔。</p></details>';
-    root.prepend(bar);
+    root.append(bar);
     bar.querySelector('#dq-audio-rate').value = String(rate);
     refreshVoiceSelect();
     status(state.message || (synth ? '點小喇叭或「測試德語」開始；速度可調。' :
@@ -447,6 +463,8 @@
     const next = Number(event.target.value);
     if (![0.65, 0.85, 1, 1.15].includes(next)) return;
     rate = next;
+    const summaryRate = document.getElementById('dq-audio-summary-rate');
+    if (summaryRate) summaryRate.textContent = summaryText();
     try { localStorage.setItem(RATE_KEY, String(rate)); } catch (_) { /* optional */ }
     status('速度已設為 ' + rate + '×；請再點小喇叭播放。');
   });
