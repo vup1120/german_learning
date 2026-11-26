@@ -11,13 +11,26 @@
 | Nachrichten | 每日德國與慕尼黑新聞標題、摘要、原文連結 | `tools/news_feeds.json` 設定來源 |
 | Einbürgerungstest | 入籍考試的價值與憲政練習題（自編，非官方題庫）、核心詞彙 | `site/content/einbuergerung.json` |
 | Fahrprüfung | 路考考官指令、聽指令測驗 | `site/content/fahrpruefung.json` |
-| 今天／複習 | 每日四步驟、XP 與連續天數、間隔複習卡 | 存在瀏覽器 |
+| 今天／複習 | 每日四步驟、XP 與連續天數、間隔複習卡（名詞先選 `der` / `die` / `das` 冠詞再翻面） | 存在瀏覽器 |
 
-本機預覽：
+### 單字冠詞（Artikel）與母語語音功能
+
+- **冠詞標示與練習**：以 `der` / `die` / `das` 開頭的名詞單字卡會顯示分色冠詞標籤；在複習卡（`Wiederholen`）翻面前會先隱藏冠詞並提供 `der` / `die` / `das` 選擇按鈕，且在 Friends 單集教案、電影場景與入籍考試的核心詞彙區提供「練冠詞（der / die / das）」三選一測驗。
+- **德國母語靜態音檔（`site/audio/`）**：已使用 `edge-tts`（`de-DE-ConradNeural`）預先產生 551 個靜態 `.mp3` 音檔與 `site/audio/manifest.json`，預設以 `1×` 原速播放；GitHub Pages 與下載本 repo 的使用者皆可直接播放相同音檔，無需額外設定。
+
+本機預覽與音檔工具：
 
 ```bash
 python tools/build_site.py            # 產生 site/data/（加 --no-news 可離線執行）
 python -m http.server 8000 --directory site
+```
+
+若本機要即時合成尚未收錄於靜態音檔的句子（例如每日新聞）或切換試聽 `de-DE-ConradNeural`／`de-DE-AmalaNeural`：
+
+```bash
+pip install edge-tts
+python3 tools/dev_server.py --port 8001   # 含 /api/tts 端點
+python3 tools/build_audio.py              # 重新批次產生 site/audio/ 靜態 .mp3
 ```
 
 部署：`.github/workflows/site.yml` 在每次推送到 `main` 以及每天 04:30 UTC 執行測試、抓新聞、發佈到 GitHub Pages。第一次使用前，到 repo 的 Settings → Pages，把 Source 設為 **GitHub Actions**。
