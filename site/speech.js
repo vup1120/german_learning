@@ -30,14 +30,18 @@
   } catch (_) { /* private browsing can disable storage */ }
 
   if (typeof window.fetch === 'function' && typeof window.Audio === 'function') {
-    window.fetch('audio/manifest.json').then((r) => (r.ok ? r.json() : null)).then((data) => {
-      if (data && data.files) {
-        staticAudioMap = data.files;
-        staticAudioVoice = data.voice || 'de-DE-ConradNeural';
-        refreshVoiceSelect();
-        if (!localTtsOk) status('已載入德語母語音檔 · ' + staticAudioVoice, 'success');
-      }
-    }).catch(() => {});
+    // audio/manifest.json: lesson sentences; audio/dw/manifest.json: the daily DW
+    // "Kurz und leicht" episodes (generated in GitHub Actions). Both are merged.
+    ['audio/manifest.json', 'audio/dw/manifest.json'].forEach((path) => {
+      window.fetch(path).then((r) => (r.ok ? r.json() : null)).then((data) => {
+        if (data && data.files) {
+          staticAudioMap = Object.assign({}, staticAudioMap, data.files);
+          staticAudioVoice = staticAudioVoice || data.voice || 'de-DE-ConradNeural';
+          refreshVoiceSelect();
+          if (!localTtsOk) status('已載入德語母語音檔 · ' + staticAudioVoice, 'success');
+        }
+      }).catch(() => {});
+    });
     window.fetch('/api/tts?ping=1').then((r) => (r.ok ? r.json() : null)).then((info) => {
       if (info && info.ok) {
         localTtsOk = true;
@@ -477,6 +481,7 @@
     });
   }
   window.DQAudio = { play, stop, listen, startRecording, stopRecording, enhance, chop, getRate: () => rate,
+    hasNativeAudio: (text) => !!staticAudioMap[chop(text).join(' ').replace(/\s+/g, ' ').trim()],
     getGermanVoice: germanVoice, isSpeechAvailable: () => !!(synth && Utterance),
     isRecognitionAvailable: () => !!Rec };
 })();

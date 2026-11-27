@@ -8,6 +8,7 @@
 | --- | --- | --- |
 | 生活地圖 | 鄰里、學校、家長圈、衝突四區的句子卡、聽力小測驗、角色扮演提示詞 | `site/content/life.json` |
 | Central Perk | 236 集目錄、字幕教案、金句卡、填空、原創對話 | 根目錄的 Friends 資料 ＋ `site/content/friends_cards.json` |
+| Kurz und leicht | DW 每日 A2 影片新聞：影片、可點字查詢的逐字稿、Glossar 單字卡、四種複習遊戲、每集進度與連續天數 | `data/dw_kurz/`（GitHub Actions 每天自動抓取） |
 | Nachrichten | 每日德國與慕尼黑新聞標題、摘要、原文連結 | `tools/news_feeds.json` 設定來源 |
 | Einbürgerungstest | 入籍考試的價值與憲政練習題（自編，非官方題庫）、核心詞彙 | `site/content/einbuergerung.json` |
 | Fahrprüfung | 路考考官指令、聽指令測驗 | `site/content/fahrpruefung.json` |
@@ -33,7 +34,34 @@ python3 tools/dev_server.py --port 8001   # 含 /api/tts 端點
 python3 tools/build_audio.py              # 重新批次產生 site/audio/ 靜態 .mp3
 ```
 
-部署：`.github/workflows/site.yml` 在每次推送到 `main` 以及每天 04:30 UTC 執行測試、抓新聞、發佈到 GitHub Pages。第一次使用前，到 repo 的 Settings → Pages，把 Source 設為 **GitHub Actions**。
+部署：`.github/workflows/site.yml` 在每次推送到 `main`、每天 04:30 UTC（新聞）以及 11:40、16:40 UTC（DW 新集數）執行測試、抓資料、發佈到 GitHub Pages。第一次使用前，到 repo 的 Settings → Pages，把 Source 設為 **GitHub Actions**。
+
+### DW《Kurz und leicht》每日影片新聞
+
+網址 `#/dw`（下方分頁「DW」）。每一集分三個區塊：
+
+- **影片＋逐字稿**：`youtube-nocookie.com` 內嵌影片；逐字稿每個字都能點，Glossar 單字有 DW 的德文解釋，名詞會顯示 `der` / `die` / `das`（來自網站其他教材的單字卡，或句中的 `das`），可加入間隔複習、查 DWDS、翻譯整句。點字時影片不會中斷。每句右邊的喇叭播放 `de-DE-ConradNeural` 母語音檔（GitHub Actions 為最新 5 集產生；較舊的集數改用瀏覽器語音）。
+- **Glossar**：沿用網站的單字卡（點開看解釋、加入複習、情境例句是新聞原句、分步對話練習），加上冠詞練習。
+- **遊戲**：從當天的逐字稿和 Glossar 自動產生，一整天題目不變：Glossar 配對、Lückentext（選擇或打字；空格是 Glossar 單字、名詞或冠詞）、Satz-Puzzle、Richtig oder falsch?。
+
+每集三項任務：看影片、讀逐字稿、完成 3 個遊戲。三項都完成 +20 XP，並記一天「連續天數」；週末沒有新集數時，做一集舊的也算。看影片或讀完逐字稿也會完成「今天」的新聞步驟。進度存在瀏覽器 `localStorage`（`deutschquest.v1` 的 `dw` 與 `dwDays`）。
+
+資料流程：
+
+1. `tools/fetch_dw_kurz.py` 讀「Deutsch lernen mit der DW」的 YouTube RSS，找標題含「Kurz und leicht」的影片（日期取自標題「vom 26.11.2026」）。
+2. 從影片說明的連結、DW 的 Kurz und leicht 總覽頁（`dw.com/kurzundleicht`）或選填的 DW RSS 找到該集頁面，解析 Manuskript 與 Glossar。
+3. 每天一個檔案存進 `data/dw_kurz/episodes/`，`data/dw_kurz/index.json` 列出全部集數；workflow 把變更 commit 回 `main`，所以舊集數會保留（預設 365 天）。
+4. 沒有新集數（週末、假日）、網路或解析失敗時不會讓建置失敗，只在 Actions 的摘要寫出原因；內容沒變就不會 commit。
+
+所有網址與設定在 `tools/dw_kurz.json`，DW 或 YouTube 改版時改這裡即可。除錯：
+
+```bash
+python tools/fetch_dw_kurz.py --dump-html .tmp/dw          # 保存抓到的原始頁面
+python tools/fetch_dw_kurz.py --from-html 某頁.html --date 2026-11-26   # 離線測試解析結果
+python tools/fetch_dw_kurz.py --refetch 2026-11-26          # 重抓某一天
+```
+
+GitHub 上也可以在 Actions → Build and deploy learning site → Run workflow 填入日期重抓。影片、逐字稿與 Glossar 的著作權屬於 Deutsche Welle；每一集頁面都標示來源並連回 DW 原頁，僅供個人學習。
 
 新增 Friends 教材不需要改網站：`data/subtitle_lessons/*.json` 與 `friends_episodes_236.json` 更新後，下一次部署會自動帶入。
 

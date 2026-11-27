@@ -6,10 +6,18 @@ on:
   schedule:
     # Every day at 04:30 UTC (early morning in Munich): refresh the news.
     - cron: "30 4 * * *"
+    # DW publishes "Kurz und leicht" during the (Munich) day: look again at midday and in the evening.
+    - cron: "40 11 * * *"
+    - cron: "40 16 * * *"
   workflow_dispatch:
+    inputs:
+      refetch:
+        description: "Fetch this DW Kurz und leicht day again (YYYY-MM-DD, optional)"
+        required: false
+        default: ""
 
 permissions:
-  contents: read
+  contents: write   # commit the daily DW "Kurz und leicht" archive in data/dw_kurz/
   pages: write
   id-token: write
 
@@ -25,13 +33,60 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 20
+      - name: Use the newest DW archive from main
+        # A push build can start before the bot's latest data commit lands; always deploy the newest archive.
+        run: |
+          git fetch --depth=20 origin main
+          git checkout origin/main -- data/dw_kurz 2>/dev/null || echo "No DW archive on main yet."
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - name: Run tests
         run: python -m unittest discover -s tests -v
-      - name: Test speech engine (Node.js)
-        run: node --test tests/test_audio_engine.js
+      - name: Test speech engine and DW games (Node.js)
+        run: node --test tests/test_audio_engine.js tests/test_dw_games.js
+
+      # ---- DW "Kurz und leicht": fetch, keep, and give it native audio. Never blocks the deploy.
+      - name: Fetch DW Kurz und leicht
+        if: github.event_name != 'push'
+        continue-on-error: true
+        timeout-minutes: 5
+        env:
+          REFETCH: ${{ github.event.inputs.refetch }}
+        run: |
+          args=""
+          if [[ "$REFETCH" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then args="--refetch $REFETCH"; fi
+          python tools/fetch_dw_kurz.py $args
+      - name: Commit DW archive
+        if: github.event_name != 'push'
+        continue-on-error: true
+        run: |
+          git add data/dw_kurz
+          if git diff --cached --quiet; then echo "DW archive unchanged."; exit 0; fi
+          git -c user.name="github-actions[bot]" \
+              -c user.email="41898283+github-actions[bot]@users.noreply.github.com" \
+              commit -m "DW Kurz und leicht: archive update $(date -u +%F)"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then exit 0; fi
+            git fetch --depth=50 origin main
+            git rebase origin/main || { git rebase --abort; break; }
+          done
+          echo "::warning::Could not push the DW archive; this deploy still includes it."
+      - name: Restore DW audio cache
+        uses: actions/cache@v4
+        with:
+          path: site/audio/dw
+          key: dw-audio-${{ hashFiles('data/dw_kurz/index.json') }}
+          restore-keys: dw-audio-
+      - name: Native German audio for DW episodes (de-DE-ConradNeural)
+        continue-on-error: true
+        timeout-minutes: 8
+        run: |
+          pip install --quiet edge-tts
+          python tools/build_dw_audio.py --episodes 5
+
       - name: Build site data and fetch news
         run: python tools/build_site.py
       # Requires Settings → Pages → Source: "GitHub Actions". With "Deploy from a branch",

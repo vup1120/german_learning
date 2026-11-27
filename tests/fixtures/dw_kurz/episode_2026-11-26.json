@@ -1,0 +1,127 @@
+{
+ "schema": 1,
+ "id": "2026-11-26",
+ "date": "2026-11-26",
+ "title": "Kurz und leicht vom 26.11.2026",
+ "level": "A2",
+ "status": "ok",
+ "video": {
+  "youtube_id": "qbtwkT0ul6o",
+  "title": "Deutsch lernen mit Videos | Kurz und leicht vom 26.11.2026 | mit deutschen Untertiteln",
+  "published": "2026-11-26T10:05:00+00:00",
+  "url": "https://www.youtube.com/watch?v=qbtwkT0ul6o"
+ },
+ "source": {
+  "provider": "Deutsche Welle",
+  "copyright": "© Deutsche Welle",
+  "program_url": "https://www.dw.com/kurzundleicht",
+  "url": "https://learngerman.dw.com/de/kurz-und-leicht-vom-26112026/l-70000001",
+  "fetched_at": "2026-11-27T00:05:57+00:00"
+ },
+ "headlines": [
+  "Waffenruhe im Nahen Osten verlängert",
+  "Bahnstreik in Bayern",
+  "Rekordschnee in den Alpen"
+ ],
+ "stories": [
+  {
+   "heading": "Waffenruhe im Nahen Osten verlängert",
+   "sentences": [
+    {
+     "id": "s1",
+     "de": "Die Waffenruhe im Nahen Osten wird um zwei Wochen verlängert."
+    },
+    {
+     "id": "s2",
+     "de": "Das haben beide Seiten am Mittwoch mitgeteilt."
+    },
+    {
+     "id": "s3",
+     "de": "Die Vereinten Nationen begrüßen die Entscheidung."
+    },
+    {
+     "id": "s4",
+     "de": "Hilfsorganisationen wollen jetzt mehr Lebensmittel in das Gebiet bringen."
+    }
+   ]
+  },
+  {
+   "heading": "Bahnstreik in Bayern",
+   "sentences": [
+    {
+     "id": "s5",
+     "de": "In Bayern streiken seit dem frühen Morgen die Lokführer."
+    },
+    {
+     "id": "s6",
+     "de": "Viele Züge fallen aus, z. B. zwischen München und Augsburg."
+    },
+    {
+     "id": "s7",
+     "de": "Die Gewerkschaft fordert mehr Geld."
+    },
+    {
+     "id": "s8",
+     "de": "Der Streik soll bis zum 28. November dauern."
+    }
+   ]
+  },
+  {
+   "heading": "Rekordschnee in den Alpen",
+   "sentences": [
+    {
+     "id": "s9",
+     "de": "In den Alpen hat es so viel geschneit wie seit 50 Jahren nicht mehr."
+    },
+    {
+     "id": "s10",
+     "de": "Einige Straßen sind gesperrt."
+    }
+   ]
+  }
+ ],
+ "glossary": [
+  {
+   "id": "g1",
+   "term": "die Waffenruhe",
+   "say": "die Waffenruhe",
+   "definition": "die Zeit, in der in einem Krieg nicht gekämpft wird",
+   "story": 0
+  },
+  {
+   "id": "g2",
+   "term": "etwas verlängern",
+   "say": "etwas verlängern",
+   "definition": "etwas länger dauern lassen",
+   "story": 0
+  },
+  {
+   "id": "g3",
+   "term": "streiken",
+   "say": "streiken",
+   "definition": "aus Protest nicht arbeiten",
+   "story": 1
+  },
+  {
+   "id": "g4",
+   "term": "die Gewerkschaft, -en",
+   "say": "die Gewerkschaft",
+   "definition": "eine Organisation, die die Interessen von Arbeitnehmern vertritt",
+   "story": 1
+  },
+  {
+   "id": "g5",
+   "term": "aus|fallen",
+   "say": "ausfallen",
+   "definition": "hier: nicht stattfinden",
+   "story": 1
+  },
+  {
+   "id": "g6",
+   "term": "gesperrt",
+   "say": "gesperrt",
+   "definition": "geschlossen; man darf dort nicht fahren",
+   "story": 2
+  }
+ ]
+}

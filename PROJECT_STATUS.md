@@ -61,3 +61,11 @@ Original B1–B2 scene-based German/Traditional Chinese movie lessons based on t
 ## Listening and speaking upgrade
 
 The site now uses a centralized Web Speech interface in `site/speech.js` with German voices, playback diagnostics, adjustable rate, stop/play, and audio controls for the main German text elements across pages. Vocabulary cards show rotating contexts and offer a guided five-stage practice exercise, including optional browser speech recognition, local recording/replay and typing fallback. Built-in dialogue choices are scripted, not generative AI or phonetic scoring. See [listening and speaking guide](docs/listening_speaking.md). Device-dependent voice availability must be checked on the actual phone/browser; no audio recording is uploaded to the repo.
+
+## DW "Kurz und leicht" daily video news (added 2026-11-27)
+
+- `tools/fetch_dw_kurz.py` (stdlib only, settings in `tools/dw_kurz.json`) reads the YouTube RSS feed of "Deutsch lernen mit der DW" (channel `UCxUWIEL-USsiPak0Qy6_vVg`), keeps "Kurz und leicht" episodes, finds the matching DW page (video description links, `dw.com/kurzundleicht` overview, optional DW feeds) and parses Manuskript + Glossar from embedded JSON or HTML headings.
+- Archive: `data/dw_kurz/episodes/YYYY-MM-DD.json` and `data/dw_kurz/index.json`, committed by the workflow (`contents: write`) only when content changes. Weekends, holidays and network errors leave it untouched and never fail the build.
+- `tools/build_dw_audio.py` makes `de-DE-ConradNeural` MP3s for the newest 5 episodes into `site/audio/dw/` (Git-ignored, cached by `actions/cache`); `site/speech.js` merges `audio/dw/manifest.json`.
+- `tools/build_site.py` publishes the archive to `site/data/dw/`. UI: `#/dw` in `site/app.js`; game generation is pure and tested in `site/dw_games.js` (`tests/test_dw_games.js`). Fetcher, publishing and audio keys: `tests/test_fetch_dw_kurz.py`.
+- **Not yet verified against live DW pages**: the parser was written and tested against invented sample pages in `tests/fixtures/dw_kurz/` because the development environment could not reach dw.com or youtube.com. Check the first scheduled run's step summary; if the transcript or Glossar is empty, save the page with `--dump-html`, add it as a fixture and adjust `extract_from_blocks`.

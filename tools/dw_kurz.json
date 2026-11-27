@@ -1,0 +1,19 @@
+{
+  "_notes": "Settings for tools/fetch_dw_kurz.py. Edit these when DW or YouTube move things; no code change needed.",
+  "youtube_feeds": [
+    "https://www.youtube.com/feeds/videos.xml?channel_id=UCxUWIEL-USsiPak0Qy6_vVg",
+    "https://www.youtube.com/feeds/videos.xml?user=dwlearngerman"
+  ],
+  "title_keywords": ["Kurz und leicht"],
+  "program_pages": [
+    "https://www.dw.com/kurzundleicht"
+  ],
+  "_dw_feeds_note": "Optional RSS/Atom feeds from DW whose items link to (or contain) the episode. Leave empty if unknown.",
+  "dw_feeds": [],
+  "dw_hosts": ["dw.com"],
+  "lookback_days": 7,
+  "retry_partial_days": 3,
+  "keep_days": 365,
+  "max_page_fetches": 6,
+  "level": "A2"
+}
