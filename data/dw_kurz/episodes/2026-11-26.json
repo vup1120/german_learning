@@ -1,0 +1,844 @@
+{
+ "schema": 1,
+ "id": "2026-11-26",
+ "date": "2026-11-26",
+ "title": "Kurz und leicht vom 26.11.2026",
+ "level": "A2",
+ "status": "partial",
+ "video": {
+  "youtube_id": "U4nJtXdVkkE",
+  "title": "Deutsch lernen mit Videos | Kurz und leicht vom 26.11.2026 | mit deutschen Untertiteln",
+  "published": "2026-11-26T14:41:05+00:00",
+  "url": "https://www.youtube.com/watch?v=U4nJtXdVkkE"
+ },
+ "source": {
+  "provider": "Deutsche Welle",
+  "copyright": "© Deutsche Welle",
+  "program_url": "https://www.dw.com/kurzundleicht",
+  "url": "https://learngerman.dw.com/de/kurz-und-leicht/s-69137519",
+  "fetched_at": "2026-11-27T14:08:15+00:00"
+ },
+ "headlines": [],
+ "stories": [],
+ "glossary": [
+  {
+   "id": "g1",
+   "term": "Feuer fangen",
+   "say": "Feuer fangen",
+   "definition": "anfangen zu brennen; so sein, dass es plötzlich Feuer gibt",
+   "story": null
+  },
+  {
+   "id": "g2",
+   "term": "laut ... Behörden",
+   "say": "laut ... Behörden",
+   "definition": "wie z. B. die Regierung, die Polizei oder eine andere offizielle Institution sagt",
+   "story": null
+  },
+  {
+   "id": "g3",
+   "term": "brennend",
+   "say": "brennend",
+   "definition": "so, dass an einem Ort ein Feuer ist",
+   "story": null
+  },
+  {
+   "id": "g4",
+   "term": "jemanden identifizieren",
+   "say": "jemanden identifizieren",
+   "definition": "jemanden erkennen und sagen, wer die Person ist",
+   "story": null
+  },
+  {
+   "id": "g5",
+   "term": "mehrere",
+   "say": "mehrere",
+   "definition": "einige; viele",
+   "story": null
+  },
+  {
+   "id": "g6",
+   "term": "(auf etwas) fällig werden",
+   "say": "(auf etwas) fällig werden",
+   "definition": "so sein, dass jemand etwas bezahlen muss",
+   "story": null
+  },
+  {
+   "id": "g7",
+   "term": "etwas exportieren",
+   "say": "etwas exportieren",
+   "definition": "etwas an ein anderes Land verkaufen",
+   "story": null
+  },
+  {
+   "id": "g8",
+   "term": "frühestens",
+   "say": "frühestens",
+   "definition": "auf jeden Fall erst dann; nicht früher und vielleicht später",
+   "story": null
+  },
+  {
+   "id": "g9",
+   "term": "zu|stimmen",
+   "say": "zustimmen",
+   "definition": "sagen, dass man mit etwas einverstanden ist",
+   "story": null
+  },
+  {
+   "id": "g10",
+   "term": "etwas vor etwas schützen",
+   "say": "etwas vor etwas schützen",
+   "definition": "dafür sorgen, dass etwas sicher ist und nicht in Gefahr durch etwas ist",
+   "story": null
+  },
+  {
+   "id": "g11",
+   "term": "Taikonaut, -en/Taikonautin, -nen",
+   "say": "Taikonaut, -en/Taikonautin",
+   "definition": "der Raumfahrer/die Raumfahrerin (nur in China, sonst auch: Astronaut, Astronautin)",
+   "story": null
+  },
+  {
+   "id": "g12",
+   "term": "an Bord",
+   "say": "an Bord",
+   "definition": "hier: in einem Raumschiff",
+   "story": null
+  },
+  {
+   "id": "g13",
+   "term": "etwas verbessern",
+   "say": "etwas verbessern",
+   "definition": "etwas besser machen",
+   "story": null
+  },
+  {
+   "id": "g14",
+   "term": "jemanden verurteilen",
+   "say": "jemanden verurteilen",
+   "definition": "hier: offiziell entscheiden, dass jemand etwas Verbotenes getan hat und dass es Konsequenzen (eine Strafe) gibt",
+   "story": null
+  },
+  {
+   "id": "g15",
+   "term": "jemandem etwas vor|werfen",
+   "say": "jemandem etwas vorwerfen",
+   "definition": "sagen, dass jemand etwas Schlechtes oder Verbotenes getan hat; man weiß aber nicht, ob das stimmt (Substantiv: der Vorwurf)",
+   "story": null
+  },
+  {
+   "id": "g16",
+   "term": "gegen ein Urteil Berufung ein|legen",
+   "say": "gegen ein Urteil Berufung einlegen",
+   "definition": "mit der Entscheidung eines Richters nicht einverstanden sein; man will, dass ein anderes Gericht noch mal über den Fall entscheidet",
+   "story": null
+  },
+  {
+   "id": "g17",
+   "term": "Herzog, -e/Herzogin, -nen",
+   "say": "Herzog, -e/Herzogin",
+   "definition": "der/die Adelige; hier: ein Mitglied der britischen Königsfamilie",
+   "story": null
+  },
+  {
+   "id": "g18",
+   "term": "vor Gericht stehen",
+   "say": "vor Gericht stehen",
+   "definition": "jemand muss zu einer Institution: dort entscheidet ein Richter/eine Richterin, ob er/sie eine Strafe bekommt",
+   "story": null
+  },
+  {
+   "id": "g19",
+   "term": "jemanden an|klagen",
+   "say": "jemanden anklagen",
+   "definition": "sagen, dass jemand etwas Verbotenes getan hat und versuchen, dass er dafür eine Strafe bekommt",
+   "story": null
+  },
+  {
+   "id": "g20",
+   "term": "jemanden fest|nehmen",
+   "say": "jemanden festnehmen",
+   "definition": "(als Polizei) jemanden verhaften; jemanden mitnehmen und z. B. ins Gefängnis bringen",
+   "story": null
+  },
+  {
+   "id": "g21",
+   "term": "Spion, -e/Spionin, -nen",
+   "say": "Spion, -e/Spionin",
+   "definition": "eine Person: sie sammelt heimlich Informationen über jemanden/etwas und gibt diese an andere (z. B. an andere Staaten) weiter",
+   "story": null
+  },
+  {
+   "id": "g22",
+   "term": "etwas regeln",
+   "say": "etwas regeln",
+   "definition": "hier: ein Problem lösen; sich um etwas kümmern",
+   "story": null
+  },
+  {
+   "id": "g23",
+   "term": "steigen",
+   "say": "steigen",
+   "definition": "hier: mehr Wert sein; teurer werden",
+   "story": null
+  },
+  {
+   "id": "g24",
+   "term": "etwas ins Weltall schicken",
+   "say": "etwas ins Weltall schicken",
+   "definition": "etwas in den Weltraum (das Universum) bringen",
+   "story": null
+  },
+  {
+   "id": "g25",
+   "term": "laut",
+   "say": "laut",
+   "definition": "hier: so, wie jemand gesagt hat",
+   "story": null
+  },
+  {
+   "id": "g26",
+   "term": "startklar",
+   "say": "startklar",
+   "definition": "so, dass ein Fahrzeug oder Flugzeug seine Fahrt oder seinen Flug beginnen kann",
+   "story": null
+  },
+  {
+   "id": "g27",
+   "term": "zu etwas gehören",
+   "say": "zu etwas gehören",
+   "definition": "ein Teil von etwas (z. B. von einem Land) sein",
+   "story": null
+  },
+  {
+   "id": "g28",
+   "term": "jemanden retten",
+   "say": "jemanden retten",
+   "definition": "eine Person aus einer Gefahrensituation herausholen und an einen sicheren Ort bringen",
+   "story": null
+  },
+  {
+   "id": "g29",
+   "term": "in der ersten Novemberhälfte",
+   "say": "in der ersten Novemberhälfte",
+   "definition": "in der Zeit vom 1. bis zum 15. November",
+   "story": null
+  },
+  {
+   "id": "g30",
+   "term": "sich auf etwas einigen",
+   "say": "sich auf etwas einigen",
+   "definition": "so lange diskutieren, bis alle mit einem Vorschlag einverstanden sind",
+   "story": null
+  },
+  {
+   "id": "g31",
+   "term": "Generalsekretär, -e/Generalsekretärin, -nen",
+   "say": "Generalsekretär, -e/Generalsekretärin",
+   "definition": "die wichtigste Person in einer internationalen Organisation",
+   "story": null
+  },
+  {
+   "id": "g32",
+   "term": "sinken",
+   "say": "sinken",
+   "definition": "hier: im Wasser untergehen; vollständig unter Wasser sein",
+   "story": null
+  },
+  {
+   "id": "g33",
+   "term": "etwas an|greifen",
+   "say": "etwas angreifen",
+   "definition": "hier: etwas mit Gewalt und Waffen kaputt machen (Substantiv: der Angriff)",
+   "story": null
+  },
+  {
+   "id": "g34",
+   "term": "etwas treffen",
+   "say": "etwas treffen",
+   "definition": "hier: etwas mit einer Waffe erreichen, beschädigen oder kaputt machen",
+   "story": null
+  },
+  {
+   "id": "g35",
+   "term": "jemanden identifizieren",
+   "say": "jemanden identifizieren",
+   "definition": "jemanden erkennen und sagen, wer die Person ist",
+   "story": null
+  },
+  {
+   "id": "g36",
+   "term": "zerstört",
+   "say": "zerstört",
+   "definition": "kaputt",
+   "story": null
+  },
+  {
+   "id": "g37",
+   "term": "entscheidend",
+   "say": "entscheidend",
+   "definition": "sehr wichtig",
+   "story": null
+  },
+  {
+   "id": "g38",
+   "term": "Einfluss auf jemanden/etwas aus|üben",
+   "say": "Einfluss auf jemanden/etwas ausüben",
+   "definition": "eine Wirkung auf jemanden/etwas haben; versuchen, dass jemand etwas Bestimmtes tut",
+   "story": null
+  },
+  {
+   "id": "g39",
+   "term": "muslimisch",
+   "say": "muslimisch",
+   "definition": "so, dass die Religion von einer Person der Islam ist",
+   "story": null
+  },
+  {
+   "id": "g40",
+   "term": "fliehen",
+   "say": "fliehen",
+   "definition": "von einem Ort weglaufen oder weggehen, weil es gefährlich ist",
+   "story": null
+  },
+  {
+   "id": "g41",
+   "term": "Ermittlungen ein|leiten",
+   "say": "Ermittlungen einleiten",
+   "definition": "eine Untersuchung beginnen: man will wissen, ob jemand etwas Verbotenes getan hat",
+   "story": null
+  },
+  {
+   "id": "g42",
+   "term": "Staatschef, -s/ Staatschefin, -nen",
+   "say": "Staatschef, -s/ Staatschefin",
+   "definition": "die wichtigste politische Person in einem Land",
+   "story": null
+  },
+  {
+   "id": "g43",
+   "term": "am Rand(e)",
+   "say": "am Rand(e)",
+   "definition": "hier: neben oder zusätzlich von etwas (z. B. einer Veranstaltung)",
+   "story": null
+  },
+  {
+   "id": "g44",
+   "term": "einen Dialog (über etwas) führen",
+   "say": "einen Dialog (über etwas) führen",
+   "definition": "(über etwas) miteinander sprechen",
+   "story": null
+  },
+  {
+   "id": "g45",
+   "term": "am Rande",
+   "say": "am Rande",
+   "definition": "hier: zusätzlich zu etwas: eine große Veranstaltung findet statt und daneben gibt es noch kleinere Treffen",
+   "story": null
+  },
+  {
+   "id": "g46",
+   "term": "überhaupt",
+   "say": "überhaupt",
+   "definition": "hier: jemals; in der ganzen Geschichte",
+   "story": null
+  },
+  {
+   "id": "g47",
+   "term": "laut Behörden",
+   "say": "laut Behörden",
+   "definition": "wie z. B. die Regierung, die Polizei oder eine andere offizielle Institution sagt",
+   "story": null
+  },
+  {
+   "id": "g48",
+   "term": "etwas beschädigen",
+   "say": "etwas beschädigen",
+   "definition": "etwas teilweise kaputt machen",
+   "story": null
+  },
+  {
+   "id": "g49",
+   "term": "bereits",
+   "say": "bereits",
+   "definition": "schon",
+   "story": null
+  },
+  {
+   "id": "g50",
+   "term": "vor Ort",
+   "say": "vor Ort",
+   "definition": "am Ort; an dieser Stelle",
+   "story": null
+  },
+  {
+   "id": "g51",
+   "term": "EU-Kommissionspräsident, -en/EU-Kommissionspräsidentin, -nen",
+   "say": "EU-Kommissionspräsident, -en/EU-Kommissionspräsidentin",
+   "definition": "der Chef/die Chefin der Regierung der Europäischen Union; der höchste Politiker/die höchste Politikerin in der Europäischen Union",
+   "story": null
+  },
+  {
+   "id": "g52",
+   "term": "Staatschef, -s/ Staatschefin, -nen",
+   "say": "Staatschef, -s/ Staatschefin",
+   "definition": "die wichtigste politische Person in einem Land",
+   "story": null
+  },
+  {
+   "id": "g53",
+   "term": "westlich",
+   "say": "westlich",
+   "definition": "hier: so, dass ein Land zu einer Gruppe von demokratischen Ländern vor allem in Europa, Amerika und Australien gehört",
+   "story": null
+  },
+  {
+   "id": "g54",
+   "term": "strategisch",
+   "say": "strategisch",
+   "definition": "mit einem oder für einen besonderen Plan (Substantiv: die Strategie, -n)",
+   "story": null
+  },
+  {
+   "id": "g55",
+   "term": "etwas treffen",
+   "say": "etwas treffen",
+   "definition": "hier: mit Waffen oder z. B. Raketen oder Bomben auf etwas schießen",
+   "story": null
+  },
+  {
+   "id": "g56",
+   "term": "jemanden einsetzen",
+   "say": "jemanden einsetzen",
+   "definition": "hier: jemanden in ein Amt oder eine Position bringen",
+   "story": null
+  },
+  {
+   "id": "g57",
+   "term": "Gouverneur, -e/Gouverneurin, -nen",
+   "say": "Gouverneur, -e/Gouverneurin",
+   "definition": "hier: der höchste Politiker/die höchste Politikerin in einer Region oder in einem Teil von einem Land",
+   "story": null
+  },
+  {
+   "id": "g58",
+   "term": "etwas bekämpfen",
+   "say": "etwas bekämpfen",
+   "definition": "etwas gegen etwas machen; gegen etwas kämpfen",
+   "story": null
+  },
+  {
+   "id": "g59",
+   "term": "jemanden ab|lehnen",
+   "say": "jemanden ablehnen",
+   "definition": "hier: entscheiden, dass jemand nicht im Land bleiben darf",
+   "story": null
+  },
+  {
+   "id": "g60",
+   "term": "Asylbewerber, -/Asylbewerberin, -nen",
+   "say": "Asylbewerber, -/Asylbewerberin",
+   "definition": "eine Person: sie kann nicht in ihrem Land bleiben, weil es dort sehr gefährlich ist; sie geht in ein anderes Land und will dort bleiben",
+   "story": null
+  },
+  {
+   "id": "g61",
+   "term": "Innenminister, -/Innenministerin, -nen",
+   "say": "Innenminister, -/Innenministerin",
+   "definition": "ein Politiker/eine Politikerin: er/sie kümmert sich um die Sicherheit im Land",
+   "story": null
+  },
+  {
+   "id": "g62",
+   "term": "autoritär",
+   "say": "autoritär",
+   "definition": "nicht demokratisch; so, dass eine Regierung keine anderen Meinungen akzeptiert und Gewalt benutzt",
+   "story": null
+  },
+  {
+   "id": "g63",
+   "term": "etwas/jemanden unterstützen",
+   "say": "etwas/jemanden unterstützen",
+   "definition": "etwas/jemandem bei etwas helfen",
+   "story": null
+  },
+  {
+   "id": "g64",
+   "term": "etwas erobern",
+   "say": "etwas erobern",
+   "definition": "hier: sich etwas (z. B. Länder, Städte oder Gebiete) mit Gewalt nehmen",
+   "story": null
+  },
+  {
+   "id": "g65",
+   "term": "provisorisch",
+   "say": "provisorisch",
+   "definition": "vorläufig; nicht endgültig; nur im Moment",
+   "story": null
+  },
+  {
+   "id": "g66",
+   "term": "sich zurück|ziehen",
+   "say": "sich zurückziehen",
+   "definition": "hier: von einem Ort weggehen (oft in einem Krieg oder einem Konflikt)",
+   "story": null
+  },
+  {
+   "id": "g67",
+   "term": "etwas schützen",
+   "say": "etwas schützen",
+   "definition": "dafür sorgen, dass etwas sicher und nicht in Gefahr ist",
+   "story": null
+  },
+  {
+   "id": "g68",
+   "term": "Darsteller, -/Darstellerin, -nen",
+   "say": "Darsteller, -/Darstellerin",
+   "definition": "eine Person: sie spielt im Film oder im Theater eine bestimmte Person",
+   "story": null
+  },
+  {
+   "id": "g69",
+   "term": "Spion, -e/Spionin, -nen",
+   "say": "Spion, -e/Spionin",
+   "definition": "eine Person: sie sammelt heimlich Informationen über jemanden/etwas und gibt diese an andere (z. B. an andere Staaten) weiter",
+   "story": null
+  },
+  {
+   "id": "g70",
+   "term": "Verkehrsminister, -/Verkehrsministerin, -nen",
+   "say": "Verkehrsminister, -/Verkehrsministerin",
+   "definition": "ein Politiker oder eine Politikerin in der Regierung: er/sie kümmert sich um Verkehrsthemen des Landes",
+   "story": null
+  },
+  {
+   "id": "g71",
+   "term": "laufen",
+   "say": "laufen",
+   "definition": "hier: funktionieren",
+   "story": null
+  },
+  {
+   "id": "g72",
+   "term": "jemandem die Schuld für etwas geben",
+   "say": "jemandem die Schuld für etwas geben",
+   "definition": "sagen, dass jemand der Grund dafür ist, dass etwas Schlechtes passiert ist",
+   "story": null
+  },
+  {
+   "id": "g73",
+   "term": "zusätzlich",
+   "say": "zusätzlich",
+   "definition": "extra; mehr als geplant",
+   "story": null
+  },
+  {
+   "id": "g74",
+   "term": "etwas verbessern",
+   "say": "etwas verbessern",
+   "definition": "etwas besser machen",
+   "story": null
+  },
+  {
+   "id": "g75",
+   "term": "Migrant, -en/Migrantin, -nen",
+   "say": "Migrant, -en/Migrantin",
+   "definition": "eine Person: sie geht in ein anderes Land und möchte dort leben",
+   "story": null
+  },
+  {
+   "id": "g76",
+   "term": "laut Behörden",
+   "say": "laut Behörden",
+   "definition": "wie z. B. die Regierung, die Polizei oder eine andere offizielle Institution sagt",
+   "story": null
+  },
+  {
+   "id": "g77",
+   "term": "etwas nutzen",
+   "say": "etwas nutzen",
+   "definition": "hier: etwas für ein bestimmtes Ziel benutzen",
+   "story": null
+  },
+  {
+   "id": "g78",
+   "term": "tödlich",
+   "say": "tödlich",
+   "definition": "sehr gefährlich; so, dass Menschen sterben",
+   "story": null
+  },
+  {
+   "id": "g79",
+   "term": "Vertreter, -/Vertreterin, -nen",
+   "say": "Vertreter, -/Vertreterin",
+   "definition": "eine Person: sie spricht oder handelt für eine andere Person, Gruppe oder für ein Land",
+   "story": null
+  },
+  {
+   "id": "g80",
+   "term": "nach Angaben von jemandem",
+   "say": "nach Angaben von jemandem",
+   "definition": "so, wie jemand sagt",
+   "story": null
+  },
+  {
+   "id": "g81",
+   "term": "über etwas nach|denken",
+   "say": "über etwas nachdenken",
+   "definition": "überlegen, ob man etwas machen soll",
+   "story": null
+  },
+  {
+   "id": "g82",
+   "term": "sinken",
+   "say": "sinken",
+   "definition": "hier: weniger werden; kleiner werden",
+   "story": null
+  },
+  {
+   "id": "g83",
+   "term": "zu etwas führen",
+   "say": "zu etwas führen",
+   "definition": "die Folge von etwas sein: etwas passiert, weil vorher etwas anderes passiert ist",
+   "story": null
+  },
+  {
+   "id": "g84",
+   "term": "Demonstrant, -en/Demonstrantin, -nen",
+   "say": "Demonstrant, -en/Demonstrantin",
+   "definition": "eine Person: sie ist gegen oder für etwas und geht dafür auf die Straße, sie nimmt an einer öffentlichen Veranstaltung teil",
+   "story": null
+  },
+  {
+   "id": "g85",
+   "term": "steigend",
+   "say": "steigend",
+   "definition": "hier: so, dass etwas teurer wird",
+   "story": null
+  },
+  {
+   "id": "g86",
+   "term": "an Wert verlieren",
+   "say": "an Wert verlieren",
+   "definition": "hier: billiger werden; nicht mehr so viel kosten",
+   "story": null
+  },
+  {
+   "id": "g87",
+   "term": "Spion, -e/Spionin, -nen",
+   "say": "Spion, -e/Spionin",
+   "definition": "eine Person: sie sammelt heimlich Informationen über jemanden/etwas und gibt diese an ihren Arbeitgeber weiter",
+   "story": null
+  },
+  {
+   "id": "g88",
+   "term": "ein|stürzen",
+   "say": "einstürzen",
+   "definition": "zusammenbrechen; kaputtgehen",
+   "story": null
+  },
+  {
+   "id": "g89",
+   "term": "jemanden aus etwas bergen",
+   "say": "jemanden aus etwas bergen",
+   "definition": "eine verletzte oder tote Person aus einer gefährlichen Situation oder von einem gefährlichen Ort retten",
+   "story": null
+  },
+  {
+   "id": "g90",
+   "term": "der Zustand ist kritisch",
+   "say": "der Zustand ist kritisch",
+   "definition": "eine Person ist so schwer krank oder verletzt, dass sie bald sterben könnte; es ist nicht sicher, dass sie wieder gesund wird",
+   "story": null
+  },
+  {
+   "id": "g91",
+   "term": "Verteidigungsminister, -/Verteidigungsministerin, -nen",
+   "say": "Verteidigungsminister, -/Verteidigungsministerin",
+   "definition": "ein Politiker/eine Politikerin in der Regierung: er/sie kümmert sich um den Schutz des Landes und das Militär",
+   "story": null
+  },
+  {
+   "id": "g92",
+   "term": "republikanisch",
+   "say": "republikanisch",
+   "definition": "hier: zur politischen Partei der Republikaner in den USA gehörend",
+   "story": null
+  },
+  {
+   "id": "g93",
+   "term": "etwas ein|leiten",
+   "say": "etwas einleiten",
+   "definition": "hier: etwas beginnen; etwas auf den Weg bringen",
+   "story": null
+  },
+  {
+   "id": "g94",
+   "term": "unter Führung (von jemandem)",
+   "say": "unter Führung (von jemandem)",
+   "definition": "so, dass jemand die Leitung über etwas hat und sagt, wie etwas passieren soll",
+   "story": null
+  },
+  {
+   "id": "g95",
+   "term": "trilateral",
+   "say": "trilateral",
+   "definition": "zwischen drei Seiten (z. B. drei Staaten)",
+   "story": null
+  },
+  {
+   "id": "g96",
+   "term": "jemanden/etwas vereidigen",
+   "say": "jemanden/etwas vereidigen",
+   "definition": "hier: eine Aktion: jemand/etwas bekommt offiziell eine staatliche Aufgabe (z. B. ein Amt)",
+   "story": null
+  },
+  {
+   "id": "g97",
+   "term": "Ministerpräsident, -en/Ministerpräsdentin, -nen",
+   "say": "Ministerpräsident, -en/Ministerpräsdentin",
+   "definition": "der Regierungschef/die Regierungschefin",
+   "story": null
+  },
+  {
+   "id": "g98",
+   "term": "Oppositionsführer, -/Oppositionsführerin, -nen",
+   "say": "Oppositionsführer, -/Oppositionsführerin",
+   "definition": "eine Person: sie leitet eine Gruppe von Politikerinnen/Politikern oder Parteien; sie sind nicht Teil der Regierung",
+   "story": null
+  },
+  {
+   "id": "g99",
+   "term": "eine Regierung bilden",
+   "say": "eine Regierung bilden",
+   "definition": "mehrere politische Gruppen zusammenbringen und so das Land leiten",
+   "story": null
+  },
+  {
+   "id": "g100",
+   "term": "etwas unterstützen",
+   "say": "etwas unterstützen",
+   "definition": "für etwas sein und helfen, damit es passiert",
+   "story": null
+  },
+  {
+   "id": "g101",
+   "term": "umfassend",
+   "say": "umfassend",
+   "definition": "hier: groß; stark; so, dass etwas viele Bereiche betrifft",
+   "story": null
+  },
+  {
+   "id": "g102",
+   "term": "republikanisch",
+   "say": "republikanisch",
+   "definition": "hier: zur politischen Partei der Republikaner in den USA gehörend",
+   "story": null
+  },
+  {
+   "id": "g103",
+   "term": "etwas ein|leiten",
+   "say": "etwas einleiten",
+   "definition": "hier: etwas beginnen; etwas auf den Weg bringen",
+   "story": null
+  },
+  {
+   "id": "g104",
+   "term": "Krieg führen",
+   "say": "Krieg führen",
+   "definition": "mit Militär / mit der Armee gegen andere Staaten oder Gruppen kämpfen",
+   "story": null
+  },
+  {
+   "id": "g105",
+   "term": "illegal",
+   "say": "illegal",
+   "definition": "nicht legal; nicht erlaubt; verboten",
+   "story": null
+  },
+  {
+   "id": "g106",
+   "term": "Demokrat, -en/Demokratin, -nen",
+   "say": "Demokrat, -en/Demokratin",
+   "definition": "hier eine Person: sie ist Mitglied in der Demokratischen Partei der USA",
+   "story": null
+  },
+  {
+   "id": "g107",
+   "term": "etwas unterstützen",
+   "say": "etwas unterstützen",
+   "definition": "für etwas sein und helfen, damit es passiert",
+   "story": null
+  },
+  {
+   "id": "g108",
+   "term": "gegen jemanden ermitteln",
+   "say": "gegen jemanden ermitteln",
+   "definition": "Informationen sammeln und untersuchen, ob jemand etwas Verbotenes getan hat",
+   "story": null
+  },
+  {
+   "id": "g109",
+   "term": "Spion, -e/Spionin, -nen",
+   "say": "Spion, -e/Spionin",
+   "definition": "eine Person: sie arbeitet für eine Firma oder einen Staat und sammelt heimlich Informationen über jemanden/etwas",
+   "story": null
+  },
+  {
+   "id": "g110",
+   "term": "an Wert verlieren",
+   "say": "an Wert verlieren",
+   "definition": "hier: billiger werden; weniger Geld wert sein",
+   "story": null
+  },
+  {
+   "id": "g111",
+   "term": "mutmaßlich",
+   "say": "mutmaßlich",
+   "definition": "vermutlich; so, dass es wahrscheinlich so ist",
+   "story": null
+  },
+  {
+   "id": "g112",
+   "term": "Schütze, -n/Schützin, -nen",
+   "say": "Schütze, -n/Schützin",
+   "definition": "eine Person: sie schießt mit einer Schusswaffe",
+   "story": null
+  },
+  {
+   "id": "g113",
+   "term": "rechtsextrem",
+   "say": "rechtsextrem",
+   "definition": "politisch sehr weit rechts: sehr nationalistisch, gegen bestimmte Gruppen von Menschen und gegen die Demokratie",
+   "story": null
+  },
+  {
+   "id": "g114",
+   "term": "Oppositionsführer, -/Oppositionsführerin, -nen",
+   "say": "Oppositionsführer, -/Oppositionsführerin",
+   "definition": "eine Person: sie leitet eine Gruppe von Politikerinnen und Politikern oder Parteien; diese sind nicht Teil der Regierung",
+   "story": null
+  },
+  {
+   "id": "g115",
+   "term": "eine breite Koalition bilden",
+   "say": "eine breite Koalition bilden",
+   "definition": "mit mehreren Parteien in einem Parlament zusammenarbeiten",
+   "story": null
+  },
+  {
+   "id": "g116",
+   "term": "entgleisen",
+   "say": "entgleisen",
+   "definition": "aus dem Gleis springen: ein Zug fährt nicht mehr auf den Schienen",
+   "story": null
+  },
+  {
+   "id": "g117",
+   "term": "etwas an|ordnen",
+   "say": "etwas anordnen",
+   "definition": "offiziell sagen, dass man etwas machen muss; befehlen",
+   "story": null
+  }
+ ]
+}

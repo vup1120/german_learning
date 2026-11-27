@@ -1,0 +1,57 @@
+{
+ "schema": 1,
+ "updated": "2026-11-27T14:08:15+00:00",
+ "latest": "2026-11-26",
+ "episodes": [
+  {
+   "id": "2026-11-26",
+   "date": "2026-11-26",
+   "title": "Kurz und leicht vom 26.11.2026",
+   "status": "partial",
+   "youtube_id": "U4nJtXdVkkE",
+   "sentences": 0,
+   "glossary": 117,
+   "headlines": []
+  },
+  {
+   "id": "2026-11-25",
+   "date": "2026-11-25",
+   "title": "Kurz und leicht vom 25.11.2026",
+   "status": "partial",
+   "youtube_id": "gQDIqOem3FI",
+   "sentences": 0,
+   "glossary": 117,
+   "headlines": []
+  },
+  {
+   "id": "2026-11-24",
+   "date": "2026-11-24",
+   "title": "Kurz und leicht vom 24.11.2026",
+   "status": "partial",
+   "youtube_id": "MCutgjBLabA",
+   "sentences": 0,
+   "glossary": 117,
+   "headlines": []
+  },
+  {
+   "id": "2026-11-23",
+   "date": "2026-11-23",
+   "title": "Kurz und leicht vom 23.11.2026",
+   "status": "partial",
+   "youtube_id": "RJB32IUBJ7w",
+   "sentences": 0,
+   "glossary": 117,
+   "headlines": []
+  },
+  {
+   "id": "2026-11-20",
+   "date": "2026-11-20",
+   "title": "Kurz und leicht vom 20.11.2026",
+   "status": "partial",
+   "youtube_id": "NXLdIywZ3pY",
+   "sentences": 0,
+   "glossary": 117,
+   "headlines": []
+  }
+ ]
+}
