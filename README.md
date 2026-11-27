@@ -6,7 +6,8 @@
 
 | 區域 | 內容 | 教材檔 |
 | --- | --- | --- |
-| 生活地圖 | 鄰里、學校、家長圈、衝突四區的句子卡、聽力小測驗、角色扮演提示詞 | `site/content/life.json` |
+| 生活地圖 | 鄰里、學校、家長圈、衝突四區的句子卡、聽力小測驗、和 AI 老師角色扮演 | `site/content/life.json` |
+| Sprechen（AI 老師） | 在網站裡用麥克風和 AI 老師說德文（Gemini Live 即時語音），每個主題頁都有對應的對話任務 | `site/teacher.js`，key 只存在瀏覽器 |
 | Central Perk | 236 集目錄、字幕教案、金句卡、填空、原創對話 | 根目錄的 Friends 資料 ＋ `site/content/friends_cards.json` |
 | Kurz und leicht | DW 每日 A2 影片新聞：影片、可點字查詢的逐字稿、Glossar 單字卡、四種複習遊戲、每集進度與連續天數 | `data/dw_kurz/`（GitHub Actions 每天自動抓取） |
 | Nachrichten | 每日德國與慕尼黑新聞標題、摘要、原文連結 | `tools/news_feeds.json` 設定來源 |
@@ -40,7 +41,7 @@ python3 tools/build_audio.py              # 重新批次產生 site/audio/ 靜�
 
 網址 `#/dw`（下方分頁「DW」）。每一集分三個區塊：
 
-- **影片＋逐字稿**：`youtube-nocookie.com` 內嵌影片；逐字稿每個字都能點，Glossar 單字有 DW 的德文解釋，名詞會顯示 `der` / `die` / `das`（來自網站其他教材的單字卡，或句中的 `das`），可加入間隔複習、查 DWDS、翻譯整句。點字時影片不會中斷。每句右邊的喇叭播放 `de-DE-ConradNeural` 母語音檔（GitHub Actions 為最新 5 集產生；較舊的集數改用瀏覽器語音）。
+- **影片＋逐字稿**：`youtube-nocookie.com` 內嵌影片；逐字稿每個字都能點，Glossar 單字有 DW 的德文解釋，名詞會顯示 `der` / `die` / `das`（來自網站其他教材的單字卡，或句中的 `das`），也會顯示中文意思、原形和整句中文翻譯（每天由 GitHub Actions 用 Gemini 準備；還沒準備好時可在頁面上用 AI 即時翻譯），可加入間隔複習或「問 AI 老師」。點字時影片不會中斷。頁面上沒有任何外部連結。每句右邊的喇叭播放 `de-DE-ConradNeural` 母語音檔（GitHub Actions 為最新 5 集產生；較舊的集數改用瀏覽器語音）。
 - **Glossar**：沿用網站的單字卡（點開看解釋、加入複習、情境例句是新聞原句、分步對話練習），加上冠詞練習。
 - **遊戲**：從當天的逐字稿和 Glossar 自動產生，一整天題目不變：Glossar 配對、Lückentext（選擇或打字；空格是 Glossar 單字、名詞或冠詞）、Satz-Puzzle、Richtig oder falsch?。
 
@@ -51,7 +52,8 @@ python3 tools/build_audio.py              # 重新批次產生 site/audio/ 靜�
 1. `tools/fetch_dw_kurz.py` 讀「Deutsch lernen mit der DW」的 YouTube RSS，找標題含「Kurz und leicht」的影片（日期取自標題「vom 26.11.2026」）。
 2. 從影片說明的連結、DW 的 Kurz und leicht 總覽頁（`dw.com/kurzundleicht`）或選填的 DW RSS 找到該集頁面，解析 Manuskript 與 Glossar。
 3. 每天一個檔案存進 `data/dw_kurz/episodes/`，`data/dw_kurz/index.json` 列出全部集數；workflow 把變更 commit 回 `main`，所以舊集數會保留（預設 365 天）。
-4. 沒有新集數（週末、假日）、網路或解析失敗時不會讓建置失敗，只在 Actions 的摘要寫出原因；內容沒變就不會 commit。
+4. `tools/translate_dw.py` 用 Gemini 為最新集數準備繁體中文：每句翻譯、每個字的原形與意思、Glossar 與標題的中文，存在 `data/dw_kurz/translations/`。需要 repo secret `GEMINI_API_KEY`（Settings → Secrets and variables → Actions）；沒有 secret 時就跳過。
+5. 沒有新集數（週末、假日）、網路或解析失敗時不會讓建置失敗，只在 Actions 的摘要寫出原因；內容沒變就不會 commit。
 
 所有網址與設定在 `tools/dw_kurz.json`，DW 或 YouTube 改版時改這裡即可。除錯：
 
@@ -61,7 +63,13 @@ python tools/fetch_dw_kurz.py --from-html 某頁.html --date 2026-11-26   # 離�
 python tools/fetch_dw_kurz.py --refetch 2026-11-26          # 重抓某一天
 ```
 
-GitHub 上也可以在 Actions → Build and deploy learning site → Run workflow 填入日期重抓。影片、逐字稿與 Glossar 的著作權屬於 Deutsche Welle；每一集頁面都標示來源並連回 DW 原頁，僅供個人學習。
+GitHub 上也可以在 Actions → Build and deploy learning site → Run workflow 填入日期重抓。影片、逐字稿與 Glossar 的著作權屬於 Deutsche Welle；每一集頁面都以文字標示來源，僅供個人學習。
+
+### AI 老師（在網站裡直接說德文）
+
+所有「口說任務」卡片（生活地圖、Friends、電影、入籍考試、路考、新聞、DW、分步對話的最後一步）都會開啟網站裡的 AI 老師；地圖上的「Sprechen」是自由聊天。按麥克風就能用德文對話：老師用 Gemini Live 即時語音回答，對話同時轉成文字，可以打字、打斷老師、請老師給回饋（一個文法錯誤、一個更自然的說法、一個發音提醒）。和老師對答兩輪以上會完成「今天」的口說步驟。
+
+第一次使用：到 Google AI Studio 建立免費的 Gemini API key，貼到網站的「AI 設定」（地圖右上角的設定鈕）。key 只存在那台裝置的瀏覽器，不會進 GitHub 或網站；手機和電腦各設定一次。設定頁可以換老師的聲音、調整停頓多久才算說完，以及喇叭／耳機模式（喇叭模式在老師說話時暫停收音以免回音）。網站會從 key 可用的模型中自動選最新的 Live 模型。免費方案有使用量限制，而且 Google 可能用對話內容改進產品。每次對話最長約 15 分鐘。
 
 新增 Friends 教材不需要改網站：`data/subtitle_lessons/*.json` 與 `friends_episodes_236.json` 更新後，下一次部署會自動帶入。
 

@@ -140,11 +140,15 @@ def build_dw(source: Path | None = None) -> dict:
             episodes[episode["id"]] = episode
     sys.path.insert(0, str(Path(__file__).resolve().parent))
     from fetch_dw_kurz import build_index  # same index the fetcher writes
+    from translate_dw import load_json, merge_translation  # Chinese from tools/translate_dw.py
     index = build_index(episodes)
+    translated = 0
     for key, episode in episodes.items():
-        write_json(out / f"{key}.json", episode)
+        merged = merge_translation(episode, load_json(source / "translations" / f"{key}.json"))
+        translated += bool(merged.get("translated"))
+        write_json(out / f"{key}.json", merged)
     write_json(out / "index.json", index)
-    return {"episodes": len(episodes), "latest": index["latest"]}
+    return {"episodes": len(episodes), "translated": translated, "latest": index["latest"]}
 
 
 def clean_text(value: str | None) -> str:

@@ -407,3 +407,46 @@ a.seg[aria-pressed="true"], a.seg[aria-pressed="true"]:hover { color: #FFFFFF; }
   font-size: 17px; font-family: var(--body); background: #FFFFFF;
 }
 .tf-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+
+/* DW: Chinese meanings inside the site */
+.dw-tools { flex-wrap: wrap; gap: 8px; }
+.dw-zh { font-size: 18px; font-weight: 700; color: var(--ink); }
+.dw-zh-line { font-size: 14px; line-height: 1.5; color: var(--muted); margin-top: 2px; }
+.dw-head-zh { margin: -4px 0 4px 12px; }
+
+/* AI teacher (Gemini Live) */
+.teacher-task summary { cursor: pointer; font-size: 13px; color: var(--night-text); }
+.teacher-task .prompt { margin-top: 8px; }
+.tv-stage { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 6px 0; }
+.tv-mic {
+  width: 120px; height: 120px; border-radius: 999px; border: 0; background: var(--primary); color: #FFFFFF;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; font-weight: 700;
+}
+.tv-mic.connecting { background: var(--night-2); }
+.tv-mic.listening { background: var(--good); }
+.tv-mic.speaking { background: var(--accent); color: var(--ink); }
+.tv-mic.error { background: var(--bad); }
+.tv-mic-label { font-size: 14px; }
+@media (prefers-reduced-motion: no-preference) {
+  .tv-mic.listening { animation: tv-pulse 1.6s infinite; }
+  @keyframes tv-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(11, 92, 67, .45); }
+    70% { box-shadow: 0 0 0 18px rgba(11, 92, 67, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(11, 92, 67, 0); }
+  }
+}
+.tv-status { text-align: center; font-weight: 600; min-height: 24px; }
+.tv-log { display: flex; flex-direction: column; gap: 8px; max-height: 55vh; overflow-y: auto; padding: 2px; }
+.tv-msg { max-width: 86%; padding: 10px 12px; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); }
+.tv-msg.teacher { align-self: flex-start; border-bottom-left-radius: 4px; }
+.tv-msg.me { align-self: flex-end; background: #E0E9FF; border-color: #C5D3FA; border-bottom-right-radius: 4px; }
+.tv-msg.note { align-self: center; background: none; border: 0; color: var(--muted); font-size: 12px; padding: 0; }
+.tv-msg p { font-size: 16px; line-height: 1.5; }
+.tv-who { display: block; font-size: 11px; font-weight: 700; color: var(--muted); margin-bottom: 2px; }
+.tv-empty { text-align: center; }
+.tv-type { display: flex; gap: 8px; }
+.tv-type .dw-input { flex: 1 1 auto; min-width: 0; }
+.tv-type .btn { flex: none; }
+.ai-steps { margin: 0; padding-left: 20px; }
+.setting-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 14px; }
+.setting-row select { max-width: 60%; }

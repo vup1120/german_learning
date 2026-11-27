@@ -130,6 +130,9 @@ test('tokenize keeps every character so the transcript renders unchanged', () =>
   const tokens = DW.tokenize(text);
   assert.equal(tokens.map((t) => t.t).join(''), text);
   assert.equal(tokens.filter((t) => t.w).length, DW.words(text).length);
+  // Same literal as tests/test_translate_dw.py: translated word numbers must match the site's words.
+  assert.deepEqual(DW.words('Die USA-Regierung hat’s am 3. Mai gesagt: „Wir kommen!“'),
+    ['Die', 'USA-Regierung', 'hat’s', 'am', '3', 'Mai', 'gesagt', 'Wir', 'kommen']);
 });
 
 test('audio lookup keys agree with tools/build_dw_audio.py', () => {

@@ -49,6 +49,8 @@
     sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v3"/><path d="M12 19v3"/><path d="M2 12h3"/><path d="M19 12h3"/><path d="M5 5l2 2"/><path d="M17 17l2 2"/><path d="M5 19l2-2"/><path d="M17 7l2-2"/>',
     cards: '<rect x="3" y="7" width="14" height="13" rx="2"/><path d="M7 4h12a2 2 0 0 1 2 2v11"/>',
     play: '<rect x="2" y="5" width="20" height="14" rx="3"/><path d="M10 9l5 3-5 3z"/>',
+    mic: '<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/>',
+    sliders: '<path d="M4 6h10"/><circle cx="16" cy="6" r="2"/><path d="M4 12h4"/><path d="M12 12h8"/><circle cx="10" cy="12" r="2"/><path d="M4 18h12"/><circle cx="18" cy="18" r="2"/>',
   };
   const icon = (name, size = 24) => `<svg aria-hidden="true" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${ICONS[name] || ''}</svg>`;
 
@@ -58,7 +60,7 @@
   const STEPS = ['review', 'news', 'scene', 'speak'];
   function load() {
     const blank = { xp: 0, streak: 0, lastDay: '', days: {}, cards: {}, watched: {}, best: {},
-      dw: {}, dwDays: {}, dwArtikel: false }; // dw: per-episode progress, dwDays: day -> episode completed
+      dw: {}, dwDays: {}, dwArtikel: false, dwZh: false }; // dw: per-episode progress, dwDays: day -> episode completed
     try {
       const raw = localStorage.getItem(STORE_KEY);
       return raw ? Object.assign(blank, JSON.parse(raw)) : blank;
@@ -215,15 +217,14 @@
           '</div></div>' : '') +
       '</div>';
   }
+  // Speaking tasks open the in-site AI teacher (Gemini Live, site/teacher.js) with this topic as its plan.
   function promptCard(title, hint, text) {
-    const i = put({ text });
-    const state = ui.copied === i ? ui.copyState : '';
-    const label = state === 'ok' ? '已複製，到 ChatGPT 貼上' : state === 'fail' ? '無法自動複製，請長按上方文字' : '複製提示詞';
-    return `<div class="card night">
+    const i = put({ title, text });
+    return `<div class="card night teacher-card">
       <h3>${esc(title)}</h3>
       <p class="muted small">${esc(hint)}</p>
-      <div class="prompt" lang="de">${esc(text)}</div>
-      <button class="btn warm" data-act="copy" data-i="${i}">${label}</button>
+      <details class="teacher-task"><summary>老師會怎麼帶這段對話（德文）</summary><div class="prompt" lang="de">${esc(text)}</div></details>
+      <button class="btn warm" data-act="teacher" data-i="${i}">${icon('mic', 20)} 和 AI 老師說德文</button>
     </div>`;
   }
   const TEACHER = 'Sprich nur Deutsch, in natürlichem Tempo, und unterbrich mich nicht mitten im Satz. Mein Niveau ist B1. Korrigiere mich erst am Ende: Nenne mir dann einen Grammatikfehler, eine natürlichere Formulierung und einen Tipp zur Aussprache.';
@@ -295,6 +296,7 @@
     const watched = DATA.friends.episodes.filter((e) => S.watched[e.episode_id]).length;
     const nx = nextEpisode();
     return `<div class="row"><div class="grow"><h1 lang="de">Deutsch-Quest</h1><p class="muted small">等級 ${level} · 共 ${S.xp} XP</p></div>
+        <a class="icon-btn" href="#/settings" aria-label="AI 設定" title="AI 設定">${icon('sliders', 20)}</a>
         <span class="pill">連續 ${S.streak} 天</span></div>
       <div class="xp"><div class="xp-track"><div class="xp-fill" style="width:${Math.max(4, inLevel)}%"></div></div><span class="muted small">${inLevel} / 100</span></div>
       <a class="btn" href="#/heute">開始今天的任務 · 約 15 分鐘</a>
@@ -302,6 +304,7 @@
       <div class="stack">${life}</div>
       <h2>支線與考試</h2>
       <div class="stack">
+        ${zone('#/talk', 'mic', 'Sprechen', 'AI 老師 · 用德文自由聊天（語音）', '隨時')}
         ${zone('#/dw', 'play', 'Kurz und leicht', `DW 每日 A2 影片新聞 · 逐字稿 · 複習遊戲${dwStreak() ? ` · 連續 ${dwStreak()} 天` : ''}`, dwHomeCount(), 'night')}
         ${zone('#/friends', 'cup', 'Central Perk', `Friends 追劇 · 完整教案 ${Object.keys(DATA.friends.lessons || {}).length} 集`, `${watched} / ${DATA.friends.episodes.length || 236}`, 'night')}
         ${zone('#/movies', 'cards', 'Filme · 電影學習', `電影字幕 · ${DATA.movies.movies.reduce((n, m) => n + m.chapters.length, 0)} 個場景教案`, `${DATA.movies.movies.length} 部電影`)}
@@ -327,7 +330,7 @@
       ['review', '#/review', 'Wiederholen', due ? `複習 ${due} 張到期的卡片` : '今天沒有到期的卡片，進去確認即可'],
       ['news', '#/news', 'Nachrichten', '讀一則德國或慕尼黑新聞'],
       ['scene', scene, 'Neue Szene', `今日主題：${labels[scene] || ''}`],
-      ['speak', scene, 'Sprechen', '在今日主題頁複製提示詞，到 ChatGPT 語音模式練 5 分鐘'],
+      ['speak', scene, 'Sprechen', '在今日主題頁和 AI 老師用德文聊 5 分鐘'],
     ];
     let foundNext = false;
     const html = steps.map(([key, href, de, zh], n) => {
@@ -361,7 +364,7 @@
     return `${header(z.de, `${z.zh} · ${z.tagline}`, '#/')}
       <button class="btn ghost" data-act="zone-quiz" data-id="${esc(z.id)}">聽力小測驗 · ${Math.min(5, z.phrases.length)} 題</button>
       <div class="stack">${z.phrases.map((p) => phraseCard(p[0], p[1], p[2], z.zh)).join('')}</div>
-      ${promptCard('魔王關 · 角色扮演', '複製提示詞，貼進 ChatGPT 後切到語音模式。', prompt)}`;
+      ${promptCard('魔王關 · 角色扮演', 'AI 老師扮演對方，製造情境讓你用上這一區的句子。', prompt)}`;
   }
   function listenItems(pairs, count, rand = Math.random) {
     const chosen = shuffle(pairs, rand).slice(0, count);
@@ -382,9 +385,8 @@
       const items = g.items.map((it) => {
         const s = put({ de: it.title });
         const prompt = `Ich habe heute diese Nachricht gelesen: „${it.title}“${it.teaser ? ` – ${it.teaser}` : ''} (Quelle: ${it.source}).\n\nErkläre mir die Nachricht zuerst kurz in einfachem Deutsch und nenne fünf wichtige Wörter daraus. Frage mich danach nach meiner Meinung und stelle zwei Nachfragen.\n\n${TEACHER}`;
-        const p = put({ text: prompt });
+        const p = put({ title: it.title, text: prompt });
         const when = it.published ? new Date(it.published).toLocaleDateString('zh-TW', { month: 'numeric', day: 'numeric' }) : '';
-        const copied = ui.copied === p;
         return `<div class="card">
           <div class="row"><span class="tag">${esc(it.source)}</span><span class="muted small">${esc(when)}</span></div>
           <p class="news-title" lang="de">${esc(it.title)}</p>
@@ -392,7 +394,7 @@
           <div class="row">
             <button class="icon-btn" data-act="say" data-i="${s}" aria-label="播放標題發音">${icon('sound', 20)}</button>
             <a class="btn ghost grow" href="${esc(it.url)}" target="_blank" rel="noopener" data-act="news-open">閱讀原文</a>
-            <button class="btn warm grow" data-act="copy" data-i="${p}">${copied ? (ui.copyState === 'ok' ? '已複製' : '請手動複製') : '和 ChatGPT 聊'}</button>
+            <button class="btn warm grow" data-act="teacher" data-i="${p}">${icon('mic', 18)} 和 AI 老師聊</button>
           </div>
         </div>`;
       }).join('');
@@ -407,7 +409,7 @@
         <span class="grow"><h3 lang="de">Kurz und leicht</h3><span class="muted small">DW ${esc(dwDayLabel(dwLatest.id))}的 A2 影片新聞，附逐字稿和複習遊戲</span></span>${icon('next', 18)}</a>` : '';
     return `${header('Nachrichten', updated ? `更新於 ${updated} · 共 ${total} 則` : '德國與慕尼黑每日新聞')}
       ${dwLink}
-      <p class="muted small">這裡只顯示標題和摘要，全文請到原網站閱讀。「和 ChatGPT 聊」會複製一段提示詞，讓它用簡單德語解釋並問你看法。</p>
+      <p class="muted small">這裡只顯示標題和摘要。「和 AI 老師聊」會在網站裡開啟語音對話：老師先用簡單德語說明這則新聞，再問你的看法。</p>
       ${groups.length ? body : none}`;
   }
 
@@ -493,7 +495,7 @@
       parts.push(`<h2>原創對話 · ${esc(dialogue.title_zh)}</h2><p class="muted small">${esc(dialogue.notice_zh || '')} ${esc(dialogue.situation_zh || '')}</p>
         <div class="card">${dialogue.turns.map((t) => { const i = put({ de: t.de }); return `<div class="turn"><span class="speaker">${esc(t.speaker)}</span><span class="grow"><span lang="de">${esc(t.de)}</span><br><span class="muted small">${esc(t.zh)}</span></span><button class="icon-btn" data-act="say" data-i="${i}" aria-label="播放這句">${icon('sound', 18)}</button></div>`; }).join('')}</div>`);
     }
-    parts.push(promptCard('口說任務 · ChatGPT 語音模式', '複製提示詞，貼進 ChatGPT 後切到語音模式開始對話。', prompt));
+    parts.push(promptCard('口說任務 · 和 AI 老師聊這一集', '先用三到五句重述劇情，再一題一題回答討論題。', prompt));
     parts.push(S.watched[id]
       ? `<button class="btn ghost" data-act="unwatch" data-id="${id}">已看完 · 點一下取消</button>`
       : `<button class="btn" data-act="watch" data-id="${id}">標記為已看完 · +15 XP</button>`);
@@ -572,7 +574,7 @@
         '</p><p class="muted small">' + esc(p.answer_hint_zh) + '</p>' : '') +
         '<button class="btn ghost" data-act="hint" data-n="' + i + '">' +
         (ui.hint && ui.hint[i] ? '收起提示' : '看參考答案') + '</button></div>').join('') + '</div>');
-    result.push(promptCard('口說任務 · ChatGPT 語音模式', '複製提示詞後，和 ChatGPT 用德語討論這場戲。', prompt));
+    result.push(promptCard('口說任務 · 和 AI 老師聊這場戲', '先重述這場戲，再一題一題討論。', prompt));
     result.push('<button class="btn ' + (S.watched[sceneId] ? 'ghost' : '') +
       '" data-act="' + (S.watched[sceneId] ? 'unwatch' : 'watch') + '" data-id="' + esc(sceneId) + '">' +
       (S.watched[sceneId] ? '已完成 · 點一下取消' : '標記這場戲已完成 · +15 XP') + '</button>');
@@ -594,7 +596,7 @@
       <h2>核心詞彙</h2>
       <div class="stack">${(t.vocab || []).map((v) => phraseCard(v[0], v[1], '', '入籍考試')).join('')}</div>
       ${artikelQuizButton((t.vocab || []).map((v) => ({ de: v[0], zh: v[1] })), 'Einbürgerungstest · 冠詞練習', '#/test')}
-      ${promptCard('口說任務 · 用自己的話說明價值', '面談時可能要用自己的話解釋這些概念。複製提示詞到 ChatGPT 語音模式練習。', prompt)}`;
+      ${promptCard('口說任務 · 用自己的話說明價值', '面談時可能要用自己的話解釋這些概念。AI 老師扮演承辦人員問你。', prompt)}`;
   }
   function testItems(mode) {
     const all = DATA.test.questions;
@@ -616,7 +618,7 @@
         <button class="btn ghost" data-act="drive-quiz" data-n="15">聽指令 15 題</button>
       </div>
       ${d.groups.map((g) => `<h2 lang="de">${esc(g.de)}</h2><p class="muted small">${esc(g.zh)}</p><div class="stack">${g.items.map((it) => phraseCard(it[0], it[1], '', '路考')).join('')}</div>`).join('')}
-      ${promptCard('口說任務 · 模擬路考', '複製提示詞到 ChatGPT 語音模式，它會扮演考官下指令。', prompt)}`;
+      ${promptCard('口說任務 · 模擬路考', 'AI 老師扮演考官，一次給你一個指令。', prompt)}`;
   }
 
   function reviewView() {
@@ -783,7 +785,7 @@
         '<div class="card"><h3>練習建議</h3>' +
         notes.map((n) => '<p class="small">' + esc(n) + '</p>').join('') +
         '<p class="muted small">這是練習提示，不是 AI 語法批改，也不是發音準確度評分。</p></div>' +
-        promptCard('進階自由對話 · ChatGPT', '需要真正即時變化、語法回饋時，可複製這段提示詞到 ChatGPT 語音模式。', prompt) +
+        promptCard('進階自由對話 · AI 老師', '想要真正的對話和語法回饋，就和 AI 老師用剛才的詞繼續聊。', prompt) +
         '<button class="btn" data-act="coach-other">換個情境再練一次</button>');
     }
     blocks.push(coachBack());
@@ -794,7 +796,6 @@
   const DW = window.DQDW;
   const DW_CACHE = {};
   const DW_LOADING = {};
-  const DW_PROGRAM_URL = 'https://www.dw.com/kurzundleicht';
   const DW_GAMES = {
     match: { de: 'Glossar-Zuordnung', zh: '把德文詞和德文解釋配對' },
     cloze: { de: 'Lückentext', zh: '新聞原句填空：Glossar 單字、名詞或冠詞' },
@@ -888,12 +889,27 @@
     return s ? s.de : '';
   }
   function dwGlossExamples(ep, g) {
-    const sentence = dwExampleSentence(ep, g);
+    const link = dwLinks(ep).byGloss[g.id];
+    let sentence = null;
+    (ep.stories || []).forEach((story) => (story.sentences || []).forEach((x) => { if (link && x.id === link.sid) sentence = x; }));
     const list = [];
-    if (sentence) list.push({ scene: 'DW 新聞原句', de: sentence, zh: g.definition });
-    list.push({ scene: 'Glossar 解釋', de: g.definition, zh: dwCleanTerm(g.term) });
+    if (sentence) list.push({ scene: 'DW 新聞原句', de: sentence.de, zh: dwSentenceZh(sentence) || g.definition });
+    list.push({ scene: 'Glossar 解釋', de: g.definition, zh: g.zh ? `${dwCleanTerm(g.term)}：${g.zh}` : dwCleanTerm(g.term) });
     return list;
   }
+  // Chinese for transcript sentences: prepared daily in GitHub Actions (sentence.zh / sentence.words),
+  // or translated on demand with the key in this browser and remembered here.
+  const DWZH_KEY = 'deutschquest.dwzh.v1';
+  let DWZH = {};
+  try { DWZH = JSON.parse(localStorage.getItem(DWZH_KEY) || '{}') || {}; } catch (err) { DWZH = {}; }
+  function dwSaveZh(de, value) {
+    DWZH[de] = value;
+    const keys = Object.keys(DWZH);
+    if (keys.length > 400) keys.slice(0, keys.length - 400).forEach((k) => { delete DWZH[k]; });
+    try { localStorage.setItem(DWZH_KEY, JSON.stringify(DWZH)); } catch (err) { /* storage full or disabled */ }
+  }
+  const dwSentenceZh = (s) => s.zh || (DWZH[s.de] && DWZH[s.de].zh) || '';
+  const dwWordInfo = (s, k) => ((s.words || (DWZH[s.de] && DWZH[s.de].words) || {})[k]) || null;
 
   function dwView(idArg) {
     if (!DW) return `${header('Kurz und leicht', 'DW 每日影片新聞', '#/')}<div class="card"><p>遊戲模組沒有載入，請重新整理頁面。</p></div>`;
@@ -901,8 +917,7 @@
     if (!index.length) {
       return `${header('Kurz und leicht', 'DW 每日 A2 影片新聞', '#/')}
         <div class="card"><p>還沒有 DW 集數。GitHub Actions 每天中午與傍晚會自動抓取 DW《Kurz und leicht》：影片、逐字稿（Manuskript）和單字表（Glossar）。</p>
-        <p class="muted small">第一次部署後就會出現。也可以到 GitHub 的 Actions 頁面手動執行「Build and deploy learning site」。</p>
-        <a class="btn ghost" href="${DW_PROGRAM_URL}" target="_blank" rel="noopener">開啟 DW Kurz und leicht</a></div>`;
+        <p class="muted small">第一次部署後就會出現。也可以到 GitHub 的 Actions 頁面手動執行「Build and deploy learning site」。</p></div>`;
     }
     const id = idArg && index.some((e) => e.id === idArg) ? idArg : index[0].id;
     ui.dwId = id;
@@ -914,7 +929,7 @@
       return parts.join('');
     }
     if (ep.error) {
-      parts.push(`<div class="card"><p>這一集的資料無法載入。</p><a class="btn ghost" href="${DW_PROGRAM_URL}" target="_blank" rel="noopener">到 DW 網站觀看</a></div>`);
+      parts.push('<div class="card"><p>這一集的資料無法載入，請稍後重新整理。</p></div>');
       return parts.join('');
     }
     const p = dwProgress(ep);
@@ -928,9 +943,7 @@
     else if (tab === 'glossar') parts.push(dwGlossarHtml(ep));
     else parts.push(ui.dwGame ? dwGameHtml(ep) : dwGamesListHtml(ep, p));
     const src = ep.source || {};
-    parts.push(`<p class="muted small dw-source">影片、逐字稿與 Glossar：${esc(src.copyright || '© Deutsche Welle')} ·
-      <a href="${esc(src.url || src.program_url || DW_PROGRAM_URL)}" target="_blank" rel="noopener">DW 原始頁面</a>
-      ${ep.video ? ` · <a href="${esc(ep.video.url)}" target="_blank" rel="noopener">YouTube</a>` : ''} · 僅供個人學習。</p>`);
+    parts.push(`<p class="muted small dw-source">影片、逐字稿與 Glossar：${esc(src.copyright || '© Deutsche Welle')} · 中文翻譯由 Gemini 自動產生，僅供個人學習。</p>`);
     return parts.join('');
   }
 
@@ -973,10 +986,11 @@
         ? '<button class="btn ghost" data-act="dw-unmark" data-key="video">✓ 影片已看完 · 點一下取消</button>'
         : '<button class="btn" data-act="dw-mark" data-key="video">影片看完了 · +10 XP</button>');
     } else {
-      out.push(`<div class="card"><p>這一集沒有找到 YouTube 影片。</p><a class="btn ghost" href="${esc((ep.source && ep.source.url) || DW_PROGRAM_URL)}" target="_blank" rel="noopener">到 DW 網站觀看</a></div>`);
+      out.push('<div class="card"><p>這一集沒有找到影片，下面的逐字稿和遊戲一樣可以練習。</p></div>');
     }
     if (ep.headlines && ep.headlines.length) {
-      out.push(`<div class="card"><h3>今日新聞</h3>${ep.headlines.map((h) => `<p lang="de">· ${esc(h)}</p>`).join('')}</div>`);
+      const hz = ep.headlines_zh || [];
+      out.push(`<div class="card"><h3>今日新聞</h3>${ep.headlines.map((h, n) => `<p lang="de">· ${esc(h)}</p>${hz[n] ? `<p class="muted small dw-head-zh">${esc(hz[n])}</p>` : ''}`).join('')}</div>`);
     }
     if (!p.hasText) {
       out.push('<div class="card"><p class="muted">這一集還沒有逐字稿。DW 頁面整理好後，下一次自動更新會補上。</p></div>');
@@ -986,9 +1000,10 @@
     const idx = S.dwArtikel ? dwArtikelIndex() : null;
     const glossById = {};
     ep.glossary.forEach((g) => { glossById[g.id] = g; });
-    out.push(`<div class="row"><h2 class="grow">Manuskript</h2>
-      <button class="btn ghost dw-small" data-act="dw-artikel" aria-pressed="${!!S.dwArtikel}">${S.dwArtikel ? '隱藏冠詞顏色' : '顯示冠詞顏色'}</button></div>
-      <p class="muted small">點任何一個字查看：<span class="dw-w term">Glossar 單字</span>有 DW 的德文解釋，名詞會顯示 der / die / das。每句右邊的喇叭播放母語發音。</p>`);
+    out.push(`<div class="row dw-tools"><h2 class="grow">Manuskript</h2>
+      <button class="btn ghost dw-small" data-act="dw-zh" aria-pressed="${!!S.dwZh}">${S.dwZh ? '隱藏中文' : '顯示中文'}</button>
+      <button class="btn ghost dw-small" data-act="dw-artikel" aria-pressed="${!!S.dwArtikel}">${S.dwArtikel ? '隱藏冠詞' : '冠詞顏色'}</button></div>
+      <p class="muted small">點任何一個字：看中文意思、原形和 der / die / das；<span class="dw-w term">Glossar 單字</span>另有 DW 的德文解釋。每句右邊的喇叭播放母語發音。</p>`);
     const stories = ep.stories.map((story) => {
       const lines = story.sentences.map((s) => {
         const marks = links.bySentence[s.id] || {};
@@ -1002,7 +1017,8 @@
           return `<button type="button" class="${cls}" data-act="dw-word" data-s="${esc(s.id)}" data-k="${t.i}">${esc(t.t)}</button>`;
         }).join('');
         const lookup = sel >= 0 ? dwLookupHtml(ep, s, marks[sel] ? glossById[marks[sel]] : null) : '';
-        return `<div class="dw-sent"><p class="dw-line" lang="de">${html}</p>
+        const zh = S.dwZh ? dwSentenceZh(s) : '';
+        return `<div class="dw-sent"><div class="grow"><p class="dw-line" lang="de">${html}</p>${zh ? `<p class="dw-zh-line">${esc(zh)}</p>` : ''}</div>
           <button class="icon-btn dw-say" data-act="dw-say" data-s="${esc(s.id)}" aria-label="播放這句">${icon('sound', 18)}</button></div>${lookup}`;
       }).join('');
       return `<div class="card dw-story">${story.heading ? `<h3 lang="de">${esc(story.heading)}</h3>` : ''}${lines}</div>`;
@@ -1013,33 +1029,51 @@
       : '<button class="btn" data-act="dw-mark" data-key="text">逐字稿讀完了 · +10 XP</button>');
     out.push('<button class="btn warm" data-act="dw-tab" data-tab="games">去玩今天的複習遊戲</button>');
     const prompt = `Ich habe heute die DW-Videonachrichten „Kurz und leicht“ vom ${ep.date.split('-').reverse().join('.')} gesehen.${ep.headlines.length ? ` Die Themen waren:\n${ep.headlines.map((h) => `- ${h}`).join('\n')}` : ''}\n\nBitte frage mich zuerst, was ich verstanden habe, und lass mich jede Nachricht in zwei, drei Sätzen nacherzählen. Stelle danach zu jedem Thema eine Meinungsfrage. Ich möchte diese Wörter benutzen:\n${ep.glossary.map((g) => `- ${dwCleanTerm(g.term)}`).join('\n')}\n\n${TEACHER}`;
-    out.push(promptCard('口說任務 · 和 ChatGPT 聊今天的新聞', '複製提示詞，貼進 ChatGPT 後切到語音模式。', prompt));
+    out.push(promptCard('口說任務 · 和 AI 老師聊今天的新聞', '先說說你聽懂了什麼，再聊你對每則新聞的看法。', prompt));
     return out;
   }
 
   function dwLookupHtml(ep, s, g) {
     const sentenceWords = DW.words(s.de);
-    const word = sentenceWords[ui.dwLookup.k] || '';
-    let art = g ? (splitArtikel(dwCleanTerm(g.term)) || {}).art || '' : DW.artikelFor(word, dwArtikelIndex());
+    const k = ui.dwLookup.k;
+    const word = sentenceWords[k] || '';
+    const info = dwWordInfo(s, k); // {l: base form, zh: meaning in this sentence}
+    const lemma = info ? info.l : '';
+    const lemmaArt = splitArtikel(lemma.replace(/\|/g, ''));
+    let art = g ? (splitArtikel(dwCleanTerm(g.term)) || {}).art || '' : lemmaArt ? lemmaArt.art : DW.artikelFor(word, dwArtikelIndex());
     // "das Gebiet": a capitalised word right after "das" is a neuter noun (der/die are ambiguous by case).
-    const inferred = !art && /^[A-ZÄÖÜ]/.test(word) && ui.dwLookup.k > 0 && sentenceWords[ui.dwLookup.k - 1].toLowerCase() === 'das';
+    const inferred = !art && !info && /^[A-ZÄÖÜ]/.test(word) && k > 0 && sentenceWords[k - 1].toLowerCase() === 'das';
     if (inferred) art = 'das';
-    const cardDe = g ? (g.say || dwCleanTerm(g.term)) : (art ? `${art} ${word}` : word);
-    const examples = g ? dwGlossExamples(ep, g) : [{ scene: 'DW 新聞原句', de: s.de, zh: '' }];
-    const i = put({ de: cardDe, zh: g ? g.definition : `例句：${s.de}`, src: `DW ${dwDayLabel(ep.id)}`, examples, say: g ? g.say : word });
+    const display = g ? dwCleanTerm(g.term) : lemma || (art ? `${art} ${word}` : word);
+    const cardDe = g ? (g.say || dwCleanTerm(g.term)) : display.replace(/\|/g, '');
+    const meaningZh = (g && g.zh) || (info && info.zh) || '';
+    const sentZh = dwSentenceZh(s);
+    const cardZh = g ? (meaningZh ? `${meaningZh}（${g.definition}）` : g.definition) : (meaningZh || `例句：${s.de}`);
+    const examples = g ? dwGlossExamples(ep, g) : [{ scene: 'DW 新聞原句', de: s.de, zh: sentZh }];
+    const i = put({ de: cardDe, zh: cardZh, src: `DW ${dwDayLabel(ep.id)}`, examples, say: cardDe });
+    const ask = put({ title: `單字：${display}`, text: `Die lernende Person hat in den DW-Nachrichten „Kurz und leicht“ diesen Satz gelesen: „${s.de}“\nErkläre kurz und einfach, was „${display.replace(/\|/g, '')}“ in diesem Satz bedeutet, gib zwei kurze Beispiele aus dem Alltag und bitte sie dann, selbst zwei Sätze damit zu bilden. Korrigiere freundlich und benutze das Wort im Gespräch noch ein-, zweimal.\n\n${TEACHER}` });
     const added = !!S.cards[cardDe];
-    const head = g ? renderDeWithArtikel(dwCleanTerm(g.term)) : (art ? `${artikelBadge(art)} ${esc(word)}` : esc(word));
-    const dict = encodeURIComponent(g ? (g.say || '').replace(/^(der|die|das|etwas|sich)\s+/, '') : word);
-    const translate = `https://translate.google.com/?sl=de&tl=zh-TW&text=${encodeURIComponent(s.de)}&op=translate`;
+    const head = splitArtikel(display.replace(/\|/g, '')) ? renderDeWithArtikel(display) : (art ? `${artikelBadge(art)} ${esc(display)}` : esc(display));
+    const needAi = !sentZh || (!info && !(g && g.zh));
+    const hasKey = !!(T && T.loadSettings().key);
+    let aiPart = '';
+    if (needAi) {
+      if (ui.dwTranslating === s.id) aiPart = '<p class="muted small">AI 翻譯中…</p>';
+      else if (hasKey) aiPart = `<button class="btn ghost" data-act="dw-ai-zh" data-s="${esc(s.id)}">用 AI 翻譯這一句</button>${ui.dwZhError === s.id ? `<p class="coach-warning">${esc(ui.dwZhErrorMsg || '翻譯失敗，請再試一次。')}</p>` : ''}`;
+      else aiPart = '<p class="muted small">這一集的中文還沒準備好。到 <a href="#/settings">AI 設定</a> 連接 Gemini，就能在這裡即時翻譯。</p>';
+    }
+    const formNote = lemma && lemma.replace(/\|/g, '').replace(/^(der|die|das)\s+/, '').toLowerCase() !== word.toLowerCase()
+      ? `<p class="muted small">句子裡寫作 <span lang="de">${esc(word)}</span></p>` : '';
+    const artNote = !g && !lemmaArt && art ? `<p class="muted small">${inferred ? '冠詞由句中的 das 推斷。' : '冠詞來自網站上其他教材的單字卡。'}</p>` : '';
     return `<div class="card dw-lookup" data-no-auto-speech>
       <div class="row"><span class="grow dw-lookup-word" lang="de">${head}</span>
         <button class="icon-btn" data-act="dw-say-reg" data-i="${i}" aria-label="播放這個字">${icon('sound', 18)}</button></div>
-      ${g ? `<span class="tag">Glossar</span><p lang="de">${esc(g.definition)}</p>${g.term !== dwCleanTerm(g.term) || g.term.includes('|') ? `<p class="muted small" lang="de">${esc(g.term)}</p>` : ''}`
-        : `<p class="muted small">${inferred ? '冠詞由句中的 das 推斷。' : art ? '冠詞來自網站上其他教材的單字卡。' : ''}這個字不在今天的 Glossar 裡，可以查字典或翻譯整句。</p>`}
+      ${meaningZh ? `<p class="dw-zh">${esc(meaningZh)}</p>` : ''}${formNote}${artNote}
+      ${g ? `<span class="tag">Glossar</span><p lang="de">${esc(g.definition)}</p>${g.term !== dwCleanTerm(g.term) ? `<p class="muted small" lang="de">${esc(g.term)}</p>` : ''}` : ''}
+      ${sentZh ? `<p class="muted small">整句：${esc(sentZh)}</p>` : ''}${aiPart}
       <div class="phrase-tools">
         <button class="btn${added ? ' ghost' : ''}" data-act="dw-add" data-i="${i}" ${added ? 'disabled' : ''}>${added ? '已在複習卡裡' : '加入複習卡'}</button>
-        <a class="btn ghost" href="https://www.dwds.de/wb/${dict}" target="_blank" rel="noopener">DWDS 字典</a>
-        <a class="btn ghost" href="${translate}" target="_blank" rel="noopener">翻譯整句</a>
+        <button class="btn ghost" data-act="teacher" data-i="${ask}">${icon('mic', 18)} 問 AI 老師</button>
       </div></div>`;
   }
 
@@ -1050,7 +1084,7 @@
       const de = g.say || dwCleanTerm(g.term);
       const sentence = dwExampleSentence(ep, g);
       const extra = g.term !== de ? `寫法：${g.term}` : '';
-      const note = [extra, sentence ? `新聞原句：${sentence}` : ''].filter(Boolean).join(' · ');
+      const note = [g.zh ? `中文：${g.zh}` : '', extra, sentence ? `新聞原句：${sentence}` : ''].filter(Boolean).join(' · ');
       return phraseCard(de, g.definition, note, src, null, { examples: dwGlossExamples(ep, g), meaningLang: 'de' });
     }).join('');
     const nouns = ep.glossary.map((g) => ({ de: dwCleanTerm(g.term), zh: g.definition, example_de: dwExampleSentence(ep, g) }));
@@ -1211,6 +1245,105 @@
     if (el && el.scrollIntoView) el.scrollIntoView({ block: 'start' });
   }
 
+  // ---------- AI teacher: spoken conversation inside the site (site/teacher.js, Gemini Live) ----------
+  const T = window.DQTeacher;
+  let teacherSession = null;
+  const FREE_TALK = `Freies Alltagsgespräch. Frage zuerst, wie der Tag war, und schlage dann ein Thema aus dem Alltag in München vor: Nachbarn, Kita und Schule des Kindes, andere Eltern, Einkaufen, Arzt, Ämter oder das Wochenende. Lass die lernende Person auch selbst ein Thema wählen.\n\n${TEACHER}`;
+  const TEACHER_STATE = { idle: '按麥克風開始。第一次會請你允許使用麥克風。', connecting: '連線中…', listening: '換你說了。',
+    speaking: '老師正在說…', closed: '對話結束。', error: '出了點問題。' };
+  function newTeacher(title, text) { return { title, text, log: [], state: 'idle', message: '', turns: 0, credited: false }; }
+  function stopTeacher() {
+    if (teacherSession) { teacherSession.stop(true); teacherSession = null; }
+  }
+  const teacherActive = () => !!(teacherSession && !teacherSession.closed);
+  function teacherLogHtml(log) {
+    if (!log || !log.length) return '<p class="muted small tv-empty">對話會即時顯示在這裡（老師說的是德文，你說的也會轉成文字）。</p>';
+    return log.filter((m) => T.tidy(m.text)).map((m) => m.role === 'note'
+      ? `<p class="tv-msg note">${esc(m.text)}</p>`
+      : `<div class="tv-msg ${m.role === 'teacher' ? 'teacher' : 'me'}"><span class="tv-who">${m.role === 'teacher' ? '老師' : m.typed ? '我（打字）' : '我'}</span>
+        <p${m.role === 'teacher' ? ' lang="de"' : ''}>${esc(T.tidy(m.text))}</p></div>`).join('');
+  }
+  /** Live updates without a full render, so typing and scrolling are not disturbed. */
+  function teacherPaint() {
+    const t = ui.teacher;
+    if (!t) return;
+    const status = document.getElementById('tv-status');
+    if (status) status.textContent = t.message || TEACHER_STATE[t.state] || '';
+    const mic = document.getElementById('tv-mic');
+    if (mic) {
+      mic.className = `tv-mic ${teacherActive() ? t.state : 'idle'}`;
+      mic.setAttribute('aria-label', teacherActive() ? '結束對話' : '開始對話');
+      const label = mic.querySelector('.tv-mic-label');
+      if (label) label.textContent = teacherActive() ? '結束' : '開始';
+    }
+    const log = document.getElementById('tv-log');
+    if (log) {
+      const nearBottom = log.scrollHeight - log.scrollTop - log.clientHeight < 80;
+      log.innerHTML = teacherLogHtml(t.log);
+      if (nearBottom) log.scrollTop = log.scrollHeight;
+    }
+  }
+  function teacherEvent(session, ev) {
+    const t = ui.teacher;
+    if (!t || session !== teacherSession) return;
+    if (ev.type === 'status') { t.state = ev.state; t.message = ev.message; }
+    if (ev.type === 'connected') t.model = ev.model;
+    if (ev.type === 'userTurn' && ev.count >= 2 && !t.credited) { t.credited = true; markStep('speak'); }
+    teacherPaint();
+  }
+  function aiKeySetupHtml(intro) {
+    return `<div class="card">
+      <h3>連接 Gemini</h3>
+      <p class="small">${esc(intro)}</p>
+      <ol class="small ai-steps"><li>用你的 Google 帳號開啟 Google AI Studio，按「Create API key」。</li><li>複製 key，貼到下面，按「儲存並測試」。</li></ol>
+      <a class="btn ghost" href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">開啟 Google AI Studio（建立 key）</a>
+      <form class="stack" data-ai-key><input id="ai-key" class="dw-input" type="password" autocomplete="off" spellcheck="false" placeholder="貼上 API key（AIza…）" aria-label="Gemini API key">
+        <button class="btn" type="submit">儲存並測試</button></form>
+      <p id="ai-key-status" class="small" role="status">${esc(ui.aiKeyMsg || '')}</p>
+      <p class="muted small">key 只存在這個瀏覽器（手機和電腦各設定一次），不會上傳到 GitHub，也不會出現在網站上。用免費方案時，Google 可能會用對話內容改進產品。</p>
+    </div>`;
+  }
+  function teacherView() {
+    const t = ui.teacher;
+    const top = `<div class="topbar"><button class="back" data-act="teacher-exit" aria-label="離開對話">${icon('back', 20)}</button>
+      <div class="grow"><h1>AI 老師</h1><p class="muted small">${esc(t.title)}</p></div></div>`;
+    if (!T) return `${top}<div class="card"><p>AI 模組沒有載入，請重新整理頁面。</p></div>`;
+    const st = T.loadSettings();
+    if (!st.key) return top + aiKeySetupHtml('要和老師說話，先連接 Gemini（只需要設定一次）。');
+    const active = teacherActive();
+    return `${top}
+      <div class="card night"><h3>${esc(t.title)}</h3>
+        <details class="teacher-task"><summary>老師會怎麼帶這段對話（德文）</summary><div class="prompt" lang="de">${esc(t.text)}</div></details></div>
+      <div class="tv-stage">
+        <button id="tv-mic" class="tv-mic ${active ? esc(t.state) : 'idle'}" data-act="teacher-toggle" aria-label="${active ? '結束對話' : '開始對話'}">${icon('mic', 40)}<span class="tv-mic-label">${active ? '結束' : '開始'}</span></button>
+        <p id="tv-status" class="tv-status" role="status" aria-live="polite">${esc(t.message || TEACHER_STATE[t.state] || '')}</p>
+      </div>
+      <div class="btn-row"><button class="btn ghost" data-act="teacher-interrupt">打斷老師</button><button class="btn ghost" data-act="teacher-feedback">請老師給回饋</button></div>
+      <div id="tv-log" class="tv-log" data-no-auto-speech>${teacherLogHtml(t.log)}</div>
+      <form class="tv-type" data-teacher-text><input id="tv-text" class="dw-input" lang="de" autocomplete="off" placeholder="也可以打字回答（德文）" aria-label="打字回答"><button class="btn" type="submit">送出</button></form>
+      <p class="muted small">${st.speakerMode ? '喇叭模式：老師說話時暫停收音，避免回音；想隨時插話請戴耳機，並在設定改成耳機模式。' : '耳機模式：可以隨時開口打斷老師。'}每次最多約 15 分鐘。<a href="#/settings">AI 設定</a></p>`;
+  }
+  function settingsView() {
+    const head = header('AI 設定', 'AI 老師與 DW 即時翻譯', '#/');
+    if (!T) return `${head}<div class="card"><p>AI 模組沒有載入，請重新整理頁面。</p></div>`;
+    const st = T.loadSettings();
+    if (!st.key) return head + aiKeySetupHtml('AI 老師（語音對話）和 DW 逐字稿的即時翻譯都用這把 key。');
+    const opt = (value, label, current) => `<option value="${esc(value)}"${String(value) === String(current) ? ' selected' : ''}>${esc(label)}</option>`;
+    return `${head}
+      <div class="card"><h3>已連接 Gemini ✓</h3>
+        <p class="small">對話模型：${esc(st.liveModel || '自動')}<br>翻譯模型：${esc(st.textModel || '自動')}</p>
+        <p id="ai-key-status" class="small" role="status">${esc(ui.aiKeyMsg || '')}</p>
+        <div class="btn-row"><button class="btn ghost" data-act="ai-retest">重新測試</button><button class="btn ghost" data-act="ai-forget">刪除這把 key</button></div></div>
+      <div class="card stack">
+        <label class="setting-row"><span>老師的聲音</span><select class="dw-older" data-ai-setting="voice">${T.VOICES.map(([v, l]) => opt(v, `${v} · ${l}`, st.voice)).join('')}</select></label>
+        <label class="setting-row"><span>我停頓多久才算說完</span><select class="dw-older" data-ai-setting="pauseMs">${[[1000, '1 秒（快）'], [1500, '1.5 秒'], [2500, '2.5 秒（慢慢想）']].map(([v, l]) => opt(v, l, st.pauseMs)).join('')}</select></label>
+        <label class="setting-row"><span>聲音從哪裡出來</span><select class="dw-older" data-ai-setting="speakerMode">${opt('true', '喇叭（老師說話時暫停收音）', st.speakerMode)}${opt('false', '耳機（可以隨時插話）', st.speakerMode)}</select></label>
+      </div>
+      <div class="card"><h3>每日預先翻譯（DW 逐字稿）</h3>
+        <p class="small">想讓每天的 DW 逐字稿自動附上中文：到 GitHub 的 repo → Settings → Secrets and variables → Actions → New repository secret，名稱填 <code>GEMINI_API_KEY</code>，內容貼上同一把 key。之後每天自動更新時就會翻譯。</p></div>
+      <a class="btn" href="#/talk">${icon('mic', 20)} 和 AI 老師自由聊天</a>`;
+  }
+
   const notFound = () => `${header('找不到這一頁', '', '#/')}<a class="btn" href="#/">回到地圖</a>`;
 
   // ---------- routing ----------
@@ -1236,11 +1369,13 @@
   function route() { return (location.hash || '#/').replace(/^#/, '') || '/'; }
   function render() {
     const r = route();
-    if (r !== currentRoute) { ui = {}; currentRoute = r; window.scrollTo(0, 0); }
+    if (r !== currentRoute) { stopTeacher(); ui = {}; currentRoute = r; window.scrollTo(0, 0); }
     reg = [];
     const seg = r.split('/').filter(Boolean);
     let html;
+    if (seg[0] === 'talk' && !ui.teacher) ui.teacher = newTeacher('自由對話', FREE_TALK);
     if (ui.coach) html = coachView();
+    else if (ui.teacher) html = teacherView();
     else if (ui.quiz) html = quizView();
     else if (!seg.length) html = homeView();
     else if (seg[0] === 'heute') html = heuteView();
@@ -1252,6 +1387,7 @@
     else if (seg[0] === 'fahren') html = driveView();
     else if (seg[0] === 'review') html = reviewView();
     else if (seg[0] === 'dw') html = dwView(seg[1]);
+    else if (seg[0] === 'settings') html = settingsView();
     else html = notFound();
     swapView(html);
     if (window.DQAudio) window.DQAudio.enhance(view);
@@ -1396,13 +1532,62 @@
       render();
     },
 
-    copy(el) {
-      const i = Number(el.dataset.i);
-      const text = reg[i].text;
-      const done = (state) => { ui.copied = i; ui.copyState = state; if (state === 'ok') markStep('speak'); render(); };
+    teacher(el) {
+      const item = reg[el.dataset.i];
+      if (!item) return;
+      stopTeacher();
+      if (window.DQAudio) window.DQAudio.stop();
+      ui.teacher = newTeacher(item.title || '和 AI 老師說德文', item.text);
+      render();
+      window.scrollTo(0, 0);
+    },
+    'teacher-toggle'() {
+      const t = ui.teacher;
+      if (!t || !T) return;
+      if (teacherActive()) { teacherSession.stop(); return; }
+      if (window.DQAudio) window.DQAudio.stop();
+      if (t.log.length) t.log.push({ role: 'note', text: '— 新的一輪 —', done: true });
+      const session = new T.Session({ instruction: T.instruction(t.text), onEvent: (ev) => teacherEvent(session, ev) });
+      session.log = t.log;
+      teacherSession = session;
+      session.start(); // inside the click: browsers only allow microphone and audio after a tap
+    },
+    'teacher-interrupt'() { if (teacherActive()) teacherSession.interrupt(); },
+    'teacher-feedback'() {
+      if (teacherActive()) { teacherSession.askFeedback(); return; }
+      if (ui.teacher) { ui.teacher.message = '先按麥克風開始對話，再請老師給回饋。'; teacherPaint(); }
+    },
+    'teacher-exit'() {
+      stopTeacher();
+      ui.teacher = null;
+      if (route() === '/talk') location.hash = '#/';
+      else render();
+    },
+    'ai-forget'() { stopTeacher(); T.forgetKey(); ui.aiKeyMsg = 'key 已從這個瀏覽器刪除。'; render(); },
+    async 'ai-retest'() {
+      ui.aiKeyMsg = '測試中…';
+      render();
+      const st = T.loadSettings();
+      const res = await T.testKey(st.key);
+      if (res.ok) T.saveSettings({ liveModel: res.liveModel, textModel: res.textModel, shape: '' });
+      ui.aiKeyMsg = res.message;
+      render();
+    },
+    'dw-zh'() { S.dwZh = !S.dwZh; save(); render(); },
+    async 'dw-ai-zh'(el) {
+      const ep = dwCurrent();
+      const s = ep && dwSentences(ep).find((x) => x.id === el.dataset.s);
+      if (!s || !T) return;
+      ui.dwTranslating = s.id; ui.dwZhError = null;
+      render();
       try {
-        navigator.clipboard.writeText(text).then(() => done('ok'), () => done('fail'));
-      } catch (err) { done('fail'); }
+        dwSaveZh(s.de, await T.translateSentence(s.de, DW.words(s.de)));
+      } catch (err) {
+        ui.dwZhError = s.id;
+        ui.dwZhErrorMsg = `翻譯失敗：${err.message || err}`;
+      }
+      ui.dwTranslating = null;
+      if (route().startsWith('/dw')) render();
     },
     'news-open'() { markStep('news'); renderTabs('news'); },
     season(el) { ui.season = Number(el.dataset.s); render(); },
@@ -1638,6 +1823,41 @@
     if (g.correct) { g.score += 1; addXp(2); }
     render();
     say(it.before + it.answer + it.after);
+  });
+  // AI key form (teacher view and settings) and typed answers to the AI teacher.
+  document.addEventListener('submit', (ev) => {
+    const keyForm = ev.target.closest('[data-ai-key]');
+    if (keyForm && T) {
+      ev.preventDefault();
+      const value = (keyForm.querySelector('#ai-key') || {}).value || '';
+      const status = document.getElementById('ai-key-status');
+      if (status) status.textContent = '測試中…';
+      T.testKey(value).then((res) => {
+        if (res.ok) T.saveSettings({ key: value.trim(), liveModel: res.liveModel, textModel: res.textModel, shape: '' });
+        ui.aiKeyMsg = res.message;
+        render();
+      });
+      return;
+    }
+    const textForm = ev.target.closest('[data-teacher-text]');
+    if (textForm) {
+      ev.preventDefault();
+      const field = textForm.querySelector('#tv-text');
+      if (!field || !field.value.trim()) return;
+      if (!teacherActive()) { if (ui.teacher) { ui.teacher.message = '先按麥克風開始對話，再打字。'; teacherPaint(); } return; }
+      teacherSession.sendText(field.value);
+      field.value = '';
+    }
+  });
+  document.addEventListener('change', (ev) => {
+    const el = ev.target;
+    if (!el.matches || !el.matches('[data-ai-setting]') || !T) return;
+    const name = el.dataset.aiSetting;
+    const value = name === 'pauseMs' ? Number(el.value) : name === 'speakerMode' ? el.value === 'true' : el.value;
+    T.saveSettings({ [name]: value });
+    ui.aiKeyMsg = '已儲存。';
+    const status = document.getElementById('ai-key-status');
+    if (status) status.textContent = ui.aiKeyMsg;
   });
   // "Older episodes" picker on the DW page.
   document.addEventListener('change', (ev) => {

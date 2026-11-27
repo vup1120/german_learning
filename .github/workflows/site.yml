@@ -46,7 +46,7 @@ jobs:
       - name: Run tests
         run: python -m unittest discover -s tests -v
       - name: Test speech engine and DW games (Node.js)
-        run: node --test tests/test_audio_engine.js tests/test_dw_games.js
+        run: node --test tests/test_audio_engine.js tests/test_dw_games.js tests/test_teacher.js
 
       # ---- DW "Kurz und leicht": fetch, keep, and give it native audio. Never blocks the deploy.
       - name: Fetch DW Kurz und leicht
@@ -59,6 +59,14 @@ jobs:
           args=""
           if [[ "$REFETCH" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then args="--refetch $REFETCH"; fi
           python tools/fetch_dw_kurz.py $args
+      - name: Chinese translations for DW episodes (Gemini)
+        # Needs the repository secret GEMINI_API_KEY; without it this step just reports "skipped".
+        if: github.event_name != 'push'
+        continue-on-error: true
+        timeout-minutes: 6
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python tools/translate_dw.py
       - name: Commit DW archive
         if: github.event_name != 'push'
         continue-on-error: true

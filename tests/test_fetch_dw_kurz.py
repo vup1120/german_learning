@@ -243,7 +243,7 @@ class PublishTest(unittest.TestCase):
                 published = sorted(p.name for p in (site.SITE_DATA / "dw").glob("*.json"))
             finally:
                 site.SITE_DATA = original
-        self.assertEqual(result, {"episodes": 3, "latest": "2026-11-26"})
+        self.assertEqual(result, {"episodes": 3, "translated": 0, "latest": "2026-11-26"})
         self.assertEqual(published, ["2026-11-24.json", "2026-11-25.json", "2026-11-26.json", "index.json"])
 
     def test_build_dw_without_archive(self):
