@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """Prepare the data files the learning site reads.
 
-Copies the Friends catalogue, subtitle lessons and practice dialogues into
-``site/data/`` and, unless ``--no-news`` is given, fetches today's headlines
-from the RSS feeds listed in ``tools/news_feeds.json``.
+Copies the Friends catalogue, subtitle lessons, practice dialogues and the
+DW "Kurz und leicht" archive (``data/dw_kurz/``, filled by
+``tools/fetch_dw_kurz.py``) into ``site/data/`` and, unless ``--no-news`` is
+given, fetches today's headlines from the RSS feeds listed in
+``tools/news_feeds.json``.
 
 Only the headline, a short teaser and the link are stored for each news item;
 the article itself stays on the publisher's site.
@@ -120,6 +122,31 @@ def build_movies() -> dict:
     return {"movies": len(lessons), "chapters": sum(len(x["chapters"]) for x in lessons)}
 
 
+def build_dw(source: Path | None = None) -> dict:
+    """Publish the DW "Kurz und leicht" archive: site/data/dw/index.json + one file per day."""
+    source = source or ROOT / "data" / "dw_kurz"
+    out = SITE_DATA / "dw"
+    if out.exists():
+        for stale in out.glob("*.json"):
+            stale.unlink()
+    episodes = {}
+    for path in sorted((source / "episodes").glob("*.json")):
+        try:
+            episode = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, ValueError) as exc:
+            print(f"  skipped {path.name}: {exc}", file=sys.stderr)
+            continue
+        if isinstance(episode, dict) and re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(episode.get("id", ""))):
+            episodes[episode["id"]] = episode
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from fetch_dw_kurz import build_index  # same index the fetcher writes
+    index = build_index(episodes)
+    for key, episode in episodes.items():
+        write_json(out / f"{key}.json", episode)
+    write_json(out / "index.json", index)
+    return {"episodes": len(episodes), "latest": index["latest"]}
+
+
 def clean_text(value: str | None) -> str:
     if not value:
         return ""
@@ -220,6 +247,7 @@ def main(argv: list[str] | None = None) -> int:
 
     print("friends:", build_friends())
     print("movies:", build_movies())
+    print("dw kurz und leicht:", build_dw())
     if args.no_news:
         if not (SITE_DATA / "news.json").exists():
             write_json(SITE_DATA / "news.json", {"updated": "", "groups": [], "errors": []})

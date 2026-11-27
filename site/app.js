@@ -48,6 +48,7 @@
     map: '<path d="M9 4l-6 2v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14"/><path d="M15 6v14"/>',
     sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v3"/><path d="M12 19v3"/><path d="M2 12h3"/><path d="M19 12h3"/><path d="M5 5l2 2"/><path d="M17 17l2 2"/><path d="M5 19l2-2"/><path d="M17 7l2-2"/>',
     cards: '<rect x="3" y="7" width="14" height="13" rx="2"/><path d="M7 4h12a2 2 0 0 1 2 2v11"/>',
+    play: '<rect x="2" y="5" width="20" height="14" rx="3"/><path d="M10 9l5 3-5 3z"/>',
   };
   const icon = (name, size = 24) => `<svg aria-hidden="true" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${ICONS[name] || ''}</svg>`;
 
@@ -56,7 +57,8 @@
   const INTERVALS = [0, 1, 3, 7, 14, 30]; // days until a card comes back, by box
   const STEPS = ['review', 'news', 'scene', 'speak'];
   function load() {
-    const blank = { xp: 0, streak: 0, lastDay: '', days: {}, cards: {}, watched: {}, best: {} };
+    const blank = { xp: 0, streak: 0, lastDay: '', days: {}, cards: {}, watched: {}, best: {},
+      dw: {}, dwDays: {}, dwArtikel: false }; // dw: per-episode progress, dwDays: day -> episode completed
     try {
       const raw = localStorage.getItem(STORE_KEY);
       return raw ? Object.assign(blank, JSON.parse(raw)) : blank;
@@ -104,7 +106,7 @@
   }
 
   // ---------- data ----------
-  const DATA = { movies: { movies: [] }, life: [], test: { questions: [], vocab: [] }, drive: { groups: [] }, cards: { episodes: {} }, friends: { episodes: [], lessons: {}, dialogues: {}, subtitled: [] }, news: { groups: [], updated: '' } };
+  const DATA = { movies: { movies: [] }, life: [], test: { questions: [], vocab: [] }, drive: { groups: [] }, cards: { episodes: {} }, friends: { episodes: [], lessons: {}, dialogues: {}, subtitled: [] }, news: { groups: [], updated: '' }, dw: { episodes: [], latest: '' } };
   async function getJson(path, fallback) {
     try {
       const res = await fetch(path, { cache: 'no-cache' });
@@ -113,7 +115,7 @@
     } catch (err) { return fallback; }
   }
   async function loadData() {
-    const [life, test, drive, cards, friends, movies, news] = await Promise.all([
+    const [life, test, drive, cards, friends, movies, news, dw] = await Promise.all([
       getJson('content/life.json', DATA.life),
       getJson('content/einbuergerung.json', DATA.test),
       getJson('content/fahrpruefung.json', DATA.drive),
@@ -121,8 +123,9 @@
       getJson('data/friends.json', DATA.friends),
       getJson('data/movies.json', DATA.movies),
       getJson('data/news.json', DATA.news),
+      getJson('data/dw/index.json', DATA.dw),
     ]);
-    Object.assign(DATA, { life, test, drive, cards, friends, movies, news });
+    Object.assign(DATA, { life, test, drive, cards, friends, movies, news, dw });
   }
 
   // ---------- per-render registry (keeps data out of HTML attributes) ----------
@@ -182,16 +185,17 @@
     return `<button class="btn ghost" data-act="artikel-quiz" data-i="${i}">練冠詞（der / die / das）· ${nouns.length} 題</button>`;
   }
 
-  function phraseCard(de, zh, note, src, originalExample) {
+  function phraseCard(de, zh, note, src, originalExample, opts = {}) {
+    // opts.examples: ready-made example list; opts.meaningLang: language of `zh` (DW Glossar explains in German).
     const open = !!(ui.open && ui.open[de]);
-    const examples = usageExamples(de, zh, note, originalExample);
+    const examples = opts.examples || usageExamples(de, zh, note, originalExample);
     const n = ((ui.exampleCycle || {})[de] || 0) % examples.length;
     const selected = examples[n];
     const i = put({ de, zh, src, examples });
     return '<div class="card phrase"><div class="phrase-wrap">' +
       '<button class="phrase-main grow" data-act="reveal" data-i="' + i + '" aria-expanded="' + open + '">' +
         '<span class="grow"><span class="phrase-de" lang="de">' + renderDeWithArtikel(de) + '</span>' +
-        (open ? '<div class="phrase-zh">' + esc(zh) + '</div>' +
+        (open ? '<div class="phrase-zh"' + (opts.meaningLang ? ' lang="' + opts.meaningLang + '"' : '') + '>' + esc(zh) + '</div>' +
           (note ? '<div class="phrase-note">' + esc(note) + '</div>' : '') :
           '<div class="phrase-hint">點一下看中文，並加入複習</div>') +
         '</span></button>' +
@@ -298,6 +302,7 @@
       <div class="stack">${life}</div>
       <h2>支線與考試</h2>
       <div class="stack">
+        ${zone('#/dw', 'play', 'Kurz und leicht', `DW 每日 A2 影片新聞 · 逐字稿 · 複習遊戲${dwStreak() ? ` · 連續 ${dwStreak()} 天` : ''}`, dwHomeCount(), 'night')}
         ${zone('#/friends', 'cup', 'Central Perk', `Friends 追劇 · 完整教案 ${Object.keys(DATA.friends.lessons || {}).length} 集`, `${watched} / ${DATA.friends.episodes.length || 236}`, 'night')}
         ${zone('#/movies', 'cards', 'Filme · 電影學習', `電影字幕 · ${DATA.movies.movies.reduce((n, m) => n + m.chapters.length, 0)} 個場景教案`, `${DATA.movies.movies.length} 部電影`)}
         ${zone('#/news', 'news', 'Nachrichten', '德國與慕尼黑每日新聞', '每日更新')}
@@ -306,6 +311,13 @@
       </div>`;
   }
 
+  function dwHomeCount() {
+    const latest = (DATA.dw.episodes || [])[0];
+    if (!latest) return '每日更新';
+    const st = S.dw[latest.id];
+    if (st && st.done) return `${dwDayLabel(latest.id)} ✓`;
+    return latest.id === dayKey() ? '今天新集數' : dwDayLabel(latest.id);
+  }
   function heuteView() {
     const d = todayState();
     const scene = sceneRotation();
@@ -329,8 +341,15 @@
       </a>`;
     }).join('');
     const all = STEPS.every((s) => d[s]);
+    const latest = (DATA.dw.episodes || [])[0];
+    const dwDone = latest && S.dw[latest.id] && S.dw[latest.id].done;
+    const dwCard = latest ? `<a class="card step ${dwDone ? 'done' : ''}" href="#/dw/${esc(latest.id)}">
+        <span class="step-n">${dwDone ? icon('check', 20) : icon('play', 20)}</span>
+        <span class="grow"><h3 lang="de">Kurz und leicht</h3><span class="muted small">DW ${esc(dwDayLabel(latest.id))}的影片新聞：看影片、讀逐字稿、玩複習遊戲（也算「新聞」這一步）${dwStreak() ? ` · 連續 ${dwStreak()} 天` : ''}</span></span>
+        ${dwDone ? '<span class="tag good">完成</span>' : ''}</a>` : '';
     return `${header('Heute', '四步驟，約 15 分鐘，做完就結束')}
       <div class="stack">${html}</div>
+      ${dwCard ? `<h2>每日影片新聞</h2><div class="stack">${dwCard}</div>` : ''}
       <div class="card night"><h3>${all ? '今天完成了' : '每步 10 XP，四步全完成再加 20 XP'}</h3>
       <p class="muted small">${all ? '明天見。地圖上的其他區域隨時可以再逛。' : '完成的步驟會打勾，進度只存在這支手機的瀏覽器裡。'}</p></div>`;
   }
@@ -383,7 +402,11 @@
     const none = `<div class="card"><p>新聞每天清晨由 GitHub 自動更新。現在還沒有資料，網站部署後第一次更新就會出現。</p>
       <a class="btn ghost" href="https://www.tagesschau.de/" target="_blank" rel="noopener" data-act="news-open">tagesschau</a>
       <a class="btn ghost" href="https://www.nachrichtenleicht.de/" target="_blank" rel="noopener" data-act="news-open">nachrichtenleicht（簡易德語）</a></div>`;
+    const dwLatest = (DATA.dw.episodes || [])[0];
+    const dwLink = dwLatest ? `<a class="card step" href="#/dw/${esc(dwLatest.id)}"><span class="step-n">${icon('play', 20)}</span>
+        <span class="grow"><h3 lang="de">Kurz und leicht</h3><span class="muted small">DW ${esc(dwDayLabel(dwLatest.id))}的 A2 影片新聞，附逐字稿和複習遊戲</span></span>${icon('next', 18)}</a>` : '';
     return `${header('Nachrichten', updated ? `更新於 ${updated} · 共 ${total} 則` : '德國與慕尼黑每日新聞')}
+      ${dwLink}
       <p class="muted small">這裡只顯示標題和摘要，全文請到原網站閱讀。「和 ChatGPT 聊」會複製一段提示詞，讓它用簡單德語解釋並問你看法。</p>
       ${groups.length ? body : none}`;
   }
@@ -767,9 +790,448 @@
     return blocks.join('');
   }
 
+  // ---------- DW "Kurz und leicht": daily video news, transcript, Glossar and review games ----------
+  const DW = window.DQDW;
+  const DW_CACHE = {};
+  const DW_LOADING = {};
+  const DW_PROGRAM_URL = 'https://www.dw.com/kurzundleicht';
+  const DW_GAMES = {
+    match: { de: 'Glossar-Zuordnung', zh: '把德文詞和德文解釋配對' },
+    cloze: { de: 'Lückentext', zh: '新聞原句填空：Glossar 單字、名詞或冠詞' },
+    puzzle: { de: 'Satz-Puzzle', zh: '把打亂的字排回新聞原句' },
+    truefalse: { de: 'Richtig oder falsch?', zh: '這句話和影片內容一樣嗎？' },
+  };
+  const CLOZE_KIND = { glossar: 'Glossar 單字', nomen: '名詞', artikel: '冠詞 Artikel' };
+
+  function loadDwEpisode(id) {
+    if (DW_CACHE[id] || DW_LOADING[id] || !/^\d{4}-\d{2}-\d{2}$/.test(id)) return;
+    DW_LOADING[id] = true;
+    getJson(`data/dw/${id}.json`, null).then((ep) => {
+      DW_CACHE[id] = ep && ep.id ? ep : { id, error: true };
+      delete DW_LOADING[id];
+      if (route().startsWith('/dw')) render();
+    });
+  }
+  const dwCurrent = () => DW_CACHE[ui.dwId] && !DW_CACHE[ui.dwId].error ? DW_CACHE[ui.dwId] : null;
+  function dwState(id) {
+    if (!S.dw[id]) S.dw[id] = { games: {} };
+    if (!S.dw[id].games) S.dw[id].games = {};
+    return S.dw[id];
+  }
+  const dwSentences = (ep) => (DW ? DW.sentences(ep) : []);
+  function dwLinks(ep) {
+    if (!ep._links) Object.defineProperty(ep, '_links', { value: DW.linkGlossary(ep), enumerable: false });
+    return ep._links;
+  }
+  function dwGamesFor(ep) {
+    if (!ep._games) Object.defineProperty(ep, '_games', { value: DW.buildGames(ep, ep.id), enumerable: false, writable: true });
+    return ep._games;
+  }
+  function dwProgress(ep) {
+    const st = dwState(ep.id);
+    const games = dwGamesFor(ep);
+    const avail = DW.availableGames(games);
+    const need = DW.gamesNeeded(avail);
+    const gamesDone = Math.min(avail.filter((g) => st.games[g]).length, need);
+    const hasVideo = !!(ep.video && ep.video.youtube_id);
+    const hasText = dwSentences(ep).length > 0;
+    const video = !hasVideo || !!st.video;
+    const text = !hasText || !!st.text;
+    const gamesOk = gamesDone >= need;
+    return { st, avail, need, gamesDone, hasVideo, hasText, video, text, gamesOk, complete: video && text && gamesOk };
+  }
+  function dwCheckComplete(ep) {
+    const p = dwProgress(ep);
+    if (p.complete && !p.st.done) {
+      p.st.done = dayKey();
+      S.dwDays[dayKey()] = ep.id;
+      addXp(20);
+    }
+    save();
+  }
+  function dwMark(ep, key) {
+    const st = dwState(ep.id);
+    if (st[key]) return;
+    st[key] = dayKey();
+    addXp(10);
+    markStep('news'); // a DW news video counts as today's news step
+    dwCheckComplete(ep);
+  }
+  const dwStreak = () => (DW ? DW.streak(S.dwDays || {}, dayKey()) : 0);
+  function dwTodayOpen() {
+    const latest = (DATA.dw.episodes || [])[0];
+    return !!latest && latest.id === dayKey() && !(S.dw[latest.id] && S.dw[latest.id].done);
+  }
+  function dwDayLabel(id) {
+    if (id === dayKey()) return '今天';
+    if (id === addDays(-1)) return '昨天';
+    const d = new Date(`${id}T12:00:00`);
+    return `${d.getMonth() + 1}/${d.getDate()}`;
+  }
+  function dwLongDate(id) {
+    return new Date(`${id}T12:00:00`).toLocaleDateString('zh-TW', { month: 'long', day: 'numeric', weekday: 'short' });
+  }
+  const dwCleanTerm = (term) => String(term || '').split(',')[0].trim();
+  function dwArtikelIndex() {
+    const list = [];
+    Object.values(DATA.friends.lessons || {}).forEach((l) => (l.vocabulary || []).forEach((v) => list.push(v.de)));
+    (DATA.friends.episodes || []).forEach((e) => (e.vocabulary || []).forEach((v) => list.push(v.de)));
+    (DATA.movies.movies || []).forEach((m) => m.chapters.forEach((ch) => (ch.vocabulary || []).forEach((v) => list.push(v.de))));
+    (DATA.test.vocab || []).forEach((v) => list.push(v[0]));
+    Object.keys(S.cards).forEach((k) => list.push(k));
+    Object.values(DW_CACHE).forEach((ep) => (ep.glossary || []).forEach((g) => list.push(g.term)));
+    return DW.buildArtikelIndex(list);
+  }
+  function dwExampleSentence(ep, g) {
+    const link = dwLinks(ep).byGloss[g.id];
+    const s = link && dwSentences(ep).find((x) => x.id === link.sid);
+    return s ? s.de : '';
+  }
+  function dwGlossExamples(ep, g) {
+    const sentence = dwExampleSentence(ep, g);
+    const list = [];
+    if (sentence) list.push({ scene: 'DW 新聞原句', de: sentence, zh: g.definition });
+    list.push({ scene: 'Glossar 解釋', de: g.definition, zh: dwCleanTerm(g.term) });
+    return list;
+  }
+
+  function dwView(idArg) {
+    if (!DW) return `${header('Kurz und leicht', 'DW 每日影片新聞', '#/')}<div class="card"><p>遊戲模組沒有載入，請重新整理頁面。</p></div>`;
+    const index = DATA.dw.episodes || [];
+    if (!index.length) {
+      return `${header('Kurz und leicht', 'DW 每日 A2 影片新聞', '#/')}
+        <div class="card"><p>還沒有 DW 集數。GitHub Actions 每天中午與傍晚會自動抓取 DW《Kurz und leicht》：影片、逐字稿（Manuskript）和單字表（Glossar）。</p>
+        <p class="muted small">第一次部署後就會出現。也可以到 GitHub 的 Actions 頁面手動執行「Build and deploy learning site」。</p>
+        <a class="btn ghost" href="${DW_PROGRAM_URL}" target="_blank" rel="noopener">開啟 DW Kurz und leicht</a></div>`;
+    }
+    const id = idArg && index.some((e) => e.id === idArg) ? idArg : index[0].id;
+    ui.dwId = id;
+    const parts = [header('Kurz und leicht', `DW 影片新聞 · ${dwLongDate(id)}`, '#/'), dwDayStrip(index, id)];
+    const ep = DW_CACHE[id];
+    if (!ep) {
+      loadDwEpisode(id);
+      parts.push('<div class="card"><p class="muted">載入這一集…</p></div>');
+      return parts.join('');
+    }
+    if (ep.error) {
+      parts.push(`<div class="card"><p>這一集的資料無法載入。</p><a class="btn ghost" href="${DW_PROGRAM_URL}" target="_blank" rel="noopener">到 DW 網站觀看</a></div>`);
+      return parts.join('');
+    }
+    const p = dwProgress(ep);
+    const tab = ui.dwTab || 'watch';
+    parts.push(dwTracker(ep, p));
+    parts.push(`<div class="segments" role="tablist" aria-label="DW 內容">
+      <button class="seg" data-act="dw-tab" data-tab="watch" aria-pressed="${tab === 'watch'}">影片＋逐字稿</button>
+      <button class="seg" data-act="dw-tab" data-tab="glossar" aria-pressed="${tab === 'glossar'}">Glossar · ${ep.glossary.length}</button>
+      <button class="seg" data-act="dw-tab" data-tab="games" aria-pressed="${tab === 'games'}">遊戲 · ${p.gamesDone}/${p.need}</button></div>`);
+    if (tab === 'watch') parts.push(...dwWatchParts(ep, p));
+    else if (tab === 'glossar') parts.push(dwGlossarHtml(ep));
+    else parts.push(ui.dwGame ? dwGameHtml(ep) : dwGamesListHtml(ep, p));
+    const src = ep.source || {};
+    parts.push(`<p class="muted small dw-source">影片、逐字稿與 Glossar：${esc(src.copyright || '© Deutsche Welle')} ·
+      <a href="${esc(src.url || src.program_url || DW_PROGRAM_URL)}" target="_blank" rel="noopener">DW 原始頁面</a>
+      ${ep.video ? ` · <a href="${esc(ep.video.url)}" target="_blank" rel="noopener">YouTube</a>` : ''} · 僅供個人學習。</p>`);
+    return parts.join('');
+  }
+
+  function dwDayStrip(index, id) {
+    const shown = index.slice(0, 21);
+    const chips = shown.map((e) => {
+      const done = S.dw[e.id] && S.dw[e.id].done;
+      return `<a class="seg${done ? ' done' : ''}" href="#/dw/${esc(e.id)}" aria-pressed="${e.id === id}">${esc(dwDayLabel(e.id))}</a>`;
+    }).join('');
+    const older = index.length > shown.length
+      ? `<select class="dw-older" data-dw-pick aria-label="更早的集數"><option value="">更早…</option>${index.slice(shown.length).map((e) => `<option value="${esc(e.id)}"${e.id === id ? ' selected' : ''}>${esc(e.id)}</option>`).join('')}</select>`
+      : '';
+    return `<div class="segments dw-days" role="group" aria-label="選擇日期">${chips}${older}</div>`;
+  }
+
+  function dwTracker(ep, p) {
+    const check = (ok, na, label, sub) => `<span class="dw-check${ok ? ' done' : ''}">
+      <span class="n">${ok ? icon('check', 20) : esc(sub)}</span><span>${esc(label)}</span>${na ? '<span class="small">（本集無）</span>' : ''}</span>`;
+    const streak = dwStreak();
+    return `<div class="card night dw-tracker">
+      <div class="row"><h3 class="grow">${p.complete ? '這一集完成了！' : '這一集的任務'}</h3><span class="pill">連續 ${streak} 天</span></div>
+      <div class="dw-checks">
+        ${check(p.video, !p.hasVideo, '看影片', '1')}
+        ${check(p.text, !p.hasText, '讀逐字稿', '2')}
+        ${check(p.gamesOk, !p.avail.length, `遊戲 ${p.gamesDone}/${p.need}`, '3')}
+      </div>
+      <p class="muted small">${p.complete ? `+20 XP 已入帳。${ep.id === dayKey() ? '明天見！' : ''}` : '三項都完成 +20 XP，算一天的連續紀錄。週末沒有新集數時，做一集舊的也算。'}</p>
+    </div>`;
+  }
+
+  function dwWatchParts(ep, p) {
+    const out = [];
+    if (p.hasVideo) {
+      const vid = encodeURIComponent(ep.video.youtube_id);
+      out.push(`<div class="dw-video" data-keep="dw-video-${esc(ep.video.youtube_id)}">
+        <iframe src="https://www.youtube-nocookie.com/embed/${vid}?rel=0&amp;playsinline=1&amp;cc_load_policy=1&amp;cc_lang_pref=de&amp;hl=de"
+          title="${esc(ep.video.title || ep.title)}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>`);
+      out.push(p.st.video
+        ? '<button class="btn ghost" data-act="dw-unmark" data-key="video">✓ 影片已看完 · 點一下取消</button>'
+        : '<button class="btn" data-act="dw-mark" data-key="video">影片看完了 · +10 XP</button>');
+    } else {
+      out.push(`<div class="card"><p>這一集沒有找到 YouTube 影片。</p><a class="btn ghost" href="${esc((ep.source && ep.source.url) || DW_PROGRAM_URL)}" target="_blank" rel="noopener">到 DW 網站觀看</a></div>`);
+    }
+    if (ep.headlines && ep.headlines.length) {
+      out.push(`<div class="card"><h3>今日新聞</h3>${ep.headlines.map((h) => `<p lang="de">· ${esc(h)}</p>`).join('')}</div>`);
+    }
+    if (!p.hasText) {
+      out.push('<div class="card"><p class="muted">這一集還沒有逐字稿。DW 頁面整理好後，下一次自動更新會補上。</p></div>');
+      return out;
+    }
+    const links = dwLinks(ep);
+    const idx = S.dwArtikel ? dwArtikelIndex() : null;
+    const glossById = {};
+    ep.glossary.forEach((g) => { glossById[g.id] = g; });
+    out.push(`<div class="row"><h2 class="grow">Manuskript</h2>
+      <button class="btn ghost dw-small" data-act="dw-artikel" aria-pressed="${!!S.dwArtikel}">${S.dwArtikel ? '隱藏冠詞顏色' : '顯示冠詞顏色'}</button></div>
+      <p class="muted small">點任何一個字查看：<span class="dw-w term">Glossar 單字</span>有 DW 的德文解釋，名詞會顯示 der / die / das。每句右邊的喇叭播放母語發音。</p>`);
+    const stories = ep.stories.map((story) => {
+      const lines = story.sentences.map((s) => {
+        const marks = links.bySentence[s.id] || {};
+        const sel = ui.dwLookup && ui.dwLookup.sid === s.id ? ui.dwLookup.k : -1;
+        const html = DW.tokenize(s.de).map((t) => {
+          if (!t.w) return esc(t.t);
+          let cls = 'dw-w';
+          if (marks[t.i]) cls += ' term';
+          if (t.i === sel) cls += ' sel';
+          if (idx) { const art = DW.artikelFor(t.t, idx); if (art) cls += ` a-${art}`; }
+          return `<button type="button" class="${cls}" data-act="dw-word" data-s="${esc(s.id)}" data-k="${t.i}">${esc(t.t)}</button>`;
+        }).join('');
+        const lookup = sel >= 0 ? dwLookupHtml(ep, s, marks[sel] ? glossById[marks[sel]] : null) : '';
+        return `<div class="dw-sent"><p class="dw-line" lang="de">${html}</p>
+          <button class="icon-btn dw-say" data-act="dw-say" data-s="${esc(s.id)}" aria-label="播放這句">${icon('sound', 18)}</button></div>${lookup}`;
+      }).join('');
+      return `<div class="card dw-story">${story.heading ? `<h3 lang="de">${esc(story.heading)}</h3>` : ''}${lines}</div>`;
+    }).join('');
+    out.push(`<div class="stack dw-transcript${idx ? ' dw-art' : ''}" data-no-auto-speech>${stories}</div>`);
+    out.push(p.st.text
+      ? '<button class="btn ghost" data-act="dw-unmark" data-key="text">✓ 逐字稿已讀 · 點一下取消</button>'
+      : '<button class="btn" data-act="dw-mark" data-key="text">逐字稿讀完了 · +10 XP</button>');
+    out.push('<button class="btn warm" data-act="dw-tab" data-tab="games">去玩今天的複習遊戲</button>');
+    const prompt = `Ich habe heute die DW-Videonachrichten „Kurz und leicht“ vom ${ep.date.split('-').reverse().join('.')} gesehen.${ep.headlines.length ? ` Die Themen waren:\n${ep.headlines.map((h) => `- ${h}`).join('\n')}` : ''}\n\nBitte frage mich zuerst, was ich verstanden habe, und lass mich jede Nachricht in zwei, drei Sätzen nacherzählen. Stelle danach zu jedem Thema eine Meinungsfrage. Ich möchte diese Wörter benutzen:\n${ep.glossary.map((g) => `- ${dwCleanTerm(g.term)}`).join('\n')}\n\n${TEACHER}`;
+    out.push(promptCard('口說任務 · 和 ChatGPT 聊今天的新聞', '複製提示詞，貼進 ChatGPT 後切到語音模式。', prompt));
+    return out;
+  }
+
+  function dwLookupHtml(ep, s, g) {
+    const sentenceWords = DW.words(s.de);
+    const word = sentenceWords[ui.dwLookup.k] || '';
+    let art = g ? (splitArtikel(dwCleanTerm(g.term)) || {}).art || '' : DW.artikelFor(word, dwArtikelIndex());
+    // "das Gebiet": a capitalised word right after "das" is a neuter noun (der/die are ambiguous by case).
+    const inferred = !art && /^[A-ZÄÖÜ]/.test(word) && ui.dwLookup.k > 0 && sentenceWords[ui.dwLookup.k - 1].toLowerCase() === 'das';
+    if (inferred) art = 'das';
+    const cardDe = g ? (g.say || dwCleanTerm(g.term)) : (art ? `${art} ${word}` : word);
+    const examples = g ? dwGlossExamples(ep, g) : [{ scene: 'DW 新聞原句', de: s.de, zh: '' }];
+    const i = put({ de: cardDe, zh: g ? g.definition : `例句：${s.de}`, src: `DW ${dwDayLabel(ep.id)}`, examples, say: g ? g.say : word });
+    const added = !!S.cards[cardDe];
+    const head = g ? renderDeWithArtikel(dwCleanTerm(g.term)) : (art ? `${artikelBadge(art)} ${esc(word)}` : esc(word));
+    const dict = encodeURIComponent(g ? (g.say || '').replace(/^(der|die|das|etwas|sich)\s+/, '') : word);
+    const translate = `https://translate.google.com/?sl=de&tl=zh-TW&text=${encodeURIComponent(s.de)}&op=translate`;
+    return `<div class="card dw-lookup" data-no-auto-speech>
+      <div class="row"><span class="grow dw-lookup-word" lang="de">${head}</span>
+        <button class="icon-btn" data-act="dw-say-reg" data-i="${i}" aria-label="播放這個字">${icon('sound', 18)}</button></div>
+      ${g ? `<span class="tag">Glossar</span><p lang="de">${esc(g.definition)}</p>${g.term !== dwCleanTerm(g.term) || g.term.includes('|') ? `<p class="muted small" lang="de">${esc(g.term)}</p>` : ''}`
+        : `<p class="muted small">${inferred ? '冠詞由句中的 das 推斷。' : art ? '冠詞來自網站上其他教材的單字卡。' : ''}這個字不在今天的 Glossar 裡，可以查字典或翻譯整句。</p>`}
+      <div class="phrase-tools">
+        <button class="btn${added ? ' ghost' : ''}" data-act="dw-add" data-i="${i}" ${added ? 'disabled' : ''}>${added ? '已在複習卡裡' : '加入複習卡'}</button>
+        <a class="btn ghost" href="https://www.dwds.de/wb/${dict}" target="_blank" rel="noopener">DWDS 字典</a>
+        <a class="btn ghost" href="${translate}" target="_blank" rel="noopener">翻譯整句</a>
+      </div></div>`;
+  }
+
+  function dwGlossarHtml(ep) {
+    if (!ep.glossary.length) return '<div class="card"><p class="muted">這一集沒有 Glossar。</p></div>';
+    const src = `DW ${dwDayLabel(ep.id)}`;
+    const cards = ep.glossary.map((g) => {
+      const de = g.say || dwCleanTerm(g.term);
+      const sentence = dwExampleSentence(ep, g);
+      const extra = g.term !== de ? `寫法：${g.term}` : '';
+      const note = [extra, sentence ? `新聞原句：${sentence}` : ''].filter(Boolean).join(' · ');
+      return phraseCard(de, g.definition, note, src, null, { examples: dwGlossExamples(ep, g), meaningLang: 'de' });
+    }).join('');
+    const nouns = ep.glossary.map((g) => ({ de: dwCleanTerm(g.term), zh: g.definition, example_de: dwExampleSentence(ep, g) }));
+    return `<p class="muted small">DW 的 Glossar 用簡單的德文解釋單字。點卡片看解釋，同時加入間隔複習；「分步對話練習」會用新聞原句帶你跟讀和回答。</p>
+      <div class="stack">${cards}</div>
+      ${artikelQuizButton(nouns, `${ep.title} · 冠詞練習`, `#/dw/${ep.id}`)}
+      <button class="btn warm" data-act="dw-game" data-g="match">玩 Glossar 配對遊戲</button>`;
+  }
+
+  function dwGamesListHtml(ep, p) {
+    const st = p.st;
+    const cards = DW.GAME_IDS.map((gid, n) => {
+      const items = dwGamesFor(ep)[gid] || [];
+      const count = gid === 'match' ? items.reduce((k, r) => k + r.pairs.length, 0) : items.length;
+      const info = DW_GAMES[gid];
+      if (!count) {
+        return `<div class="card step dw-game-card off"><span class="step-n">${n + 1}</span><span class="grow"><h3>${esc(info.de)}</h3>
+          <span class="muted small">這一集的內容不夠產生這個遊戲</span></span></div>`;
+      }
+      const done = st.games[gid];
+      return `<button class="card step dw-game-card${done ? ' done' : ''}" data-act="dw-game" data-g="${gid}">
+        <span class="step-n">${done ? icon('check', 20) : n + 1}</span>
+        <span class="grow"><h3>${esc(info.de)}</h3><span class="muted small">${esc(info.zh)} · ${count} ${gid === 'match' ? '組' : '題'}</span></span>
+        ${done ? `<span class="tag good">${esc(done)}</span>` : ''}</button>`;
+    }).join('');
+    return `<p class="muted small">遊戲從今天的逐字稿和 Glossar 自動產生，題目一整天不變。完成 ${p.need} 個就算達成；每答對一題 +2 XP，第一次完成一個遊戲再 +5 XP。</p>
+      <div class="stack dw-games" data-no-auto-speech>${cards}</div>`;
+  }
+
+  function dwNewGame(gid, items) {
+    const base = { gid, items, i: 0, score: 0, done: false };
+    if (gid === 'match') return Object.assign(base, { r: 0, sel: null, matched: {}, wrong: 0, flash: null, total: items.reduce((n, r) => n + r.pairs.length, 0) });
+    if (gid === 'cloze') return Object.assign(base, { picked: null, typed: '', mode: ui.dwClozeMode || 'choice', total: items.length });
+    if (gid === 'puzzle') return Object.assign(base, { picked: [], state: '', firstTry: true, total: items.length });
+    return Object.assign(base, { picked: null, total: items.length });
+  }
+  function dwFinishGame(g) {
+    const ep = dwCurrent();
+    if (!ep || g.done) return;
+    g.done = true;
+    const st = dwState(ep.id);
+    const first = !st.games[g.gid];
+    const result = `${Math.max(0, g.score)}/${g.total}`;
+    if (first || parseInt(result, 10) >= parseInt(st.games[g.gid], 10)) st.games[g.gid] = result;
+    if (first) addXp(5);
+    markStep('scene');
+    dwCheckComplete(ep);
+  }
+  function dwGameHtml(ep) {
+    const g = ui.dwGame;
+    const info = DW_GAMES[g.gid];
+    const top = `<div class="row" id="dw-game"><button class="back" data-act="dw-game-exit" aria-label="回到遊戲列表">${icon('back', 20)}</button>
+      <div class="grow"><h2>${esc(info.de)}</h2><p class="muted small">${esc(info.zh)}</p></div></div>`;
+    if (g.done) {
+      const p = dwProgress(ep);
+      return `${top}<div class="card flash"><div class="flash-de">${g.score} / ${g.total}</div>
+        <p class="muted">${p.complete ? '這一集全部完成，+20 XP！' : `遊戲進度 ${p.gamesDone}/${p.need}`}</p></div>
+        <div class="btn-row"><button class="btn ghost" data-act="dw-game-again">再玩一次（新題目）</button><button class="btn" data-act="dw-game-exit">回到遊戲列表</button></div>`;
+    }
+    if (g.gid === 'match') return top + dwMatchHtml(g);
+    if (g.gid === 'cloze') return top + dwClozeHtml(g);
+    if (g.gid === 'puzzle') return top + dwPuzzleHtml(g);
+    return top + dwTrueFalseHtml(g);
+  }
+  function dwMatchHtml(g) {
+    const round = g.items[g.r];
+    const pairOf = (id) => round.pairs.find((x) => x.id === id);
+    const chips = round.pairs.map((x) => {
+      const cls = g.matched[x.id] ? 'dw-chip good used' : g.sel === x.id ? 'dw-chip sel' : 'dw-chip';
+      return `<button class="${cls}" data-act="dw-match-term" data-id="${esc(x.id)}" lang="de" ${g.matched[x.id] ? 'disabled' : ''}>${esc(x.say || x.term)}</button>`;
+    }).join('');
+    const defs = round.defs.map((id) => {
+      const x = pairOf(id);
+      if (g.matched[id]) return `<div class="opt good"><strong lang="de">${esc(x.say || x.term)}</strong><br><span lang="de">${esc(x.definition)}</span></div>`;
+      const bad = g.flash && g.flash.def === id;
+      return `<button class="opt${bad ? ' bad' : ''}" data-act="dw-match-def" data-id="${esc(id)}" lang="de">${esc(x.definition)}</button>`;
+    }).join('');
+    const roundDone = round.pairs.every((x) => g.matched[x.id]);
+    const hint = g.flash && g.flash.hint ? '<p class="coach-warning" role="alert">先點上面的一個德文詞，再選它的解釋。</p>' : '';
+    return `<p class="muted small">第 ${g.r + 1} / ${g.items.length} 輪 · 點德文詞（會念出來），再點對應的解釋 · 錯 ${g.wrong} 次</p>
+      <div class="dw-chips" data-no-auto-speech>${chips}</div>${hint}
+      <div class="stack" data-no-auto-speech>${defs}</div>
+      ${roundDone ? `<button class="btn" data-act="dw-match-next">${g.r + 1 < g.items.length ? '下一輪' : '看結果'}</button>` : ''}`;
+  }
+  function dwClozeHtml(g) {
+    const it = g.items[g.i];
+    const answered = g.picked !== null;
+    const right = answered && g.correct;
+    const blank = answered ? `<span class="dw-blank ${right ? 'good' : 'bad'}">${esc(it.answer)}</span>` : '<span class="dw-blank">____</span>';
+    const parts = [`<p class="muted small">第 ${g.i + 1} 題，共 ${g.total} 題 · <span class="tag">${esc(CLOZE_KIND[it.kind] || '')}</span></p>`,
+      `<p class="quiz-q" lang="de" data-no-auto-speech>${esc(it.before)}${blank}${esc(it.after)}</p>`];
+    if (it.hint) parts.push(`<p class="muted small"${it.kind === 'glossar' ? ' lang="de" data-no-auto-speech' : ''}>提示：${esc(it.hint)}</p>`);
+    if (!answered) {
+      parts.push(`<div class="segments" role="group" aria-label="作答方式">
+        <button class="seg" data-act="dw-cloze-mode" data-mode="choice" aria-pressed="${g.mode === 'choice'}">選擇</button>
+        <button class="seg" data-act="dw-cloze-mode" data-mode="type" aria-pressed="${g.mode === 'type'}">打字</button></div>`);
+      if (g.mode === 'choice') {
+        parts.push(`<div class="stack" data-no-auto-speech>${it.options.map((o, k) => `<button class="opt" data-act="dw-cloze-pick" data-k="${k}" lang="de">${esc(o)}</button>`).join('')}</div>`);
+      } else {
+        parts.push(`<form class="stack" data-dw-submit="cloze"><input id="dw-type" class="dw-input" lang="de" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="輸入缺少的字（ä 可打 ae）" aria-label="缺少的字">
+          <div class="btn-row"><button class="btn" type="submit">檢查</button><button class="btn ghost" type="button" data-act="dw-cloze-reveal">看答案</button></div></form>`);
+      }
+    } else {
+      const full = it.before + it.answer + it.after;
+      const i = put({ de: full });
+      const wrongText = g.picked === '' ? '答案是' : `答錯了：你${g.typed ? '寫' : '選'}的是「${esc(g.picked)}」`;
+      parts.push(`<div class="card"><p class="verdict ${right ? 'good' : 'bad'}">${right ? '答對了' : wrongText}</p>
+        <div class="row"><p class="grow" lang="de" data-no-auto-speech><strong>${esc(full)}</strong></p>
+        <button class="icon-btn" data-act="say" data-i="${i}" aria-label="播放整句">${icon('sound', 18)}</button></div></div>
+        <button class="btn" data-act="dw-next">${g.i + 1 < g.total ? '下一題' : '看結果'}</button>`);
+    }
+    return parts.join('');
+  }
+  function dwPuzzleHtml(g) {
+    const it = g.items[g.i];
+    const built = g.picked.map((k, n) => `<button class="dw-chip" data-act="dw-puz-remove" data-n="${n}" lang="de" ${g.state ? 'disabled' : ''}>${esc(it.shuffled[k])}</button>`).join('');
+    const pool = it.shuffled.map((w, k) => {
+      const used = g.picked.includes(k);
+      return `<button class="dw-chip${used ? ' used' : ''}" data-act="dw-puz-add" data-k="${k}" lang="de" ${used || g.state ? 'disabled' : ''}>${esc(w)}</button>`;
+    }).join('');
+    const i = put({ de: it.words.join(' ') });
+    let after = '';
+    if (g.state === 'good') {
+      after = `<div class="card"><p class="verdict good">${g.firstTry ? '完全正確！' : '排好了！'}</p>
+        <div class="row"><p class="grow" lang="de" data-no-auto-speech>${esc(it.words.join(' '))}</p><button class="icon-btn" data-act="say" data-i="${i}" aria-label="播放整句">${icon('sound', 18)}</button></div></div>
+        <button class="btn" data-act="dw-next">${g.i + 1 < g.total ? '下一句' : '看結果'}</button>`;
+    } else if (g.state === 'bad') {
+      after = `<div class="card"><p class="verdict bad">順序還不對</p><p class="muted small">再試一次，或看正確句子後繼續。</p></div>
+        <div class="btn-row"><button class="btn ghost" data-act="dw-puz-retry">再試一次</button><button class="btn" data-act="dw-puz-show">看答案</button></div>`;
+    } else if (g.state === 'shown') {
+      after = `<div class="card"><p class="verdict bad">正確句子</p>
+        <div class="row"><p class="grow" lang="de" data-no-auto-speech><strong>${esc(it.words.join(' '))}</strong></p><button class="icon-btn" data-act="say" data-i="${i}" aria-label="播放整句">${icon('sound', 18)}</button></div></div>
+        <button class="btn" data-act="dw-next">${g.i + 1 < g.total ? '下一句' : '看結果'}</button>`;
+    }
+    return `<p class="muted small">第 ${g.i + 1} 句，共 ${g.total} 句 · 依序點字，排成新聞裡的原句；點上面的字可以拿回來。</p>
+      <div class="dw-build${g.state === 'good' ? ' good' : g.state === 'bad' ? ' bad' : ''}" data-no-auto-speech>${built || '<span class="muted small">從下面選第一個字</span>'}</div>
+      <div class="dw-chips" data-no-auto-speech>${pool}</div>${after}`;
+  }
+  function dwTrueFalseHtml(g) {
+    const it = g.items[g.i];
+    const answered = g.picked !== null;
+    const right = answered && g.picked === it.truth;
+    const i = put({ de: it.statement });
+    let after = '';
+    if (answered) {
+      after = `<div class="card"><p class="verdict ${right ? 'good' : 'bad'}">${right ? '答對了' : '答錯了'} · 這句是${it.truth ? 'richtig（和影片一樣）' : 'falsch（被改過）'}</p>
+        ${it.truth ? '' : `<p class="muted small">${esc(it.why)}</p><p class="muted small">影片原句：</p><p lang="de"><strong>${esc(it.original)}</strong></p>`}</div>
+        <button class="btn" data-act="dw-next">${g.i + 1 < g.total ? '下一題' : '看結果'}</button>`;
+    }
+    return `<p class="muted small">第 ${g.i + 1} 題，共 ${g.total} 題 · 回想影片內容：這句話對嗎？</p>
+      <div class="card"><div class="row"><p class="quiz-q grow" lang="de" data-no-auto-speech>${esc(it.statement)}</p>
+        <button class="icon-btn" data-act="say" data-i="${i}" aria-label="播放這句">${icon('sound', 18)}</button></div></div>
+      ${answered ? '' : `<div class="tf-row"><button class="btn" data-act="dw-tf" data-v="1">Richtig ✓</button><button class="btn warm" data-act="dw-tf" data-v="0">Falsch ✗</button></div>`}
+      ${after}`;
+  }
+  function dwScrollToGame() {
+    const el = document.getElementById('dw-game');
+    if (el && el.scrollIntoView) el.scrollIntoView({ block: 'start' });
+  }
+
   const notFound = () => `${header('找不到這一頁', '', '#/')}<a class="btn" href="#/">回到地圖</a>`;
 
   // ---------- routing ----------
+  // A direct child of #view marked data-keep="key" survives a re-render when the new HTML has the same key.
+  // The DW video iframe uses this, so tapping words in the transcript does not restart the video.
+  function swapView(html) {
+    const keepOld = view.querySelector(':scope > [data-keep]');
+    if (keepOld) {
+      const tpl = document.createElement('template');
+      tpl.innerHTML = html;
+      const keepNew = [...tpl.content.children].find((el) => el.dataset.keep === keepOld.dataset.keep);
+      if (keepNew) {
+        [...view.childNodes].forEach((node) => { if (node !== keepOld) node.remove(); });
+        while (tpl.content.firstChild && tpl.content.firstChild !== keepNew) view.insertBefore(tpl.content.firstChild, keepOld);
+        keepNew.remove();
+        view.append(tpl.content);
+        return;
+      }
+    }
+    view.innerHTML = html;
+  }
   let currentRoute = null;
   function route() { return (location.hash || '#/').replace(/^#/, '') || '/'; }
   function render() {
@@ -789,15 +1251,17 @@
     else if (seg[0] === 'test') html = testView();
     else if (seg[0] === 'fahren') html = driveView();
     else if (seg[0] === 'review') html = reviewView();
+    else if (seg[0] === 'dw') html = dwView(seg[1]);
     else html = notFound();
-    view.innerHTML = html;
+    swapView(html);
     if (window.DQAudio) window.DQAudio.enhance(view);
     renderTabs(seg[0] || '');
   }
   function renderTabs(top) {
     const due = dueCards().length;
-    const tabs = [['', '#/', 'map', '地圖'], ['heute', '#/heute', 'sun', '今天'], ['news', '#/news', 'news', '新聞'], ['review', '#/review', 'cards', '複習']];
-    tabbar.innerHTML = tabs.map(([key, href, ic, label]) => `<a class="tab" href="${href}" ${top === key ? 'aria-current="page"' : ''}>${icon(ic, 22)}<span>${label}</span>${key === 'review' && due ? `<span class="badge" aria-label="${due} 張到期">${due}</span>` : ''}</a>`).join('');
+    const tabs = [['', '#/', 'map', '地圖'], ['heute', '#/heute', 'sun', '今天'], ['dw', '#/dw', 'play', 'DW'], ['news', '#/news', 'news', '新聞'], ['review', '#/review', 'cards', '複習']];
+    const dwNew = dwTodayOpen();
+    tabbar.innerHTML = tabs.map(([key, href, ic, label]) => `<a class="tab" href="${href}" ${top === key ? 'aria-current="page"' : ''}>${icon(ic, 22)}<span>${label}</span>${key === 'review' && due ? `<span class="badge" aria-label="${due} 張到期">${due}</span>` : ''}${key === 'dw' && dwNew ? '<span class="badge" aria-label="今天的 DW 新集數還沒完成">新</span>' : ''}</a>`).join('');
   }
 
   // ---------- actions ----------
@@ -1032,7 +1496,153 @@
       }
       ui.reviewed += 1; ui.shown = false; ui.artikelPicked = null; save(); render();
     },
+
+    // ---- DW Kurz und leicht
+    'dw-tab'(el) {
+      ui.dwTab = el.dataset.tab; ui.dwGame = null; ui.dwLookup = null; render();
+      const tabs = view.querySelector('[role="tablist"]');
+      if (tabs && tabs.scrollIntoView && el.dataset.tab !== 'watch') tabs.scrollIntoView({ block: 'start' });
+    },
+    'dw-mark'(el) { const ep = dwCurrent(); if (ep) { dwMark(ep, el.dataset.key); render(); } },
+    'dw-unmark'(el) {
+      const ep = dwCurrent();
+      if (!ep) return;
+      const st = dwState(ep.id);
+      delete st[el.dataset.key];
+      if (st.done && !dwProgress(ep).complete) {
+        if (S.dwDays[st.done] === ep.id) delete S.dwDays[st.done];
+        delete st.done;
+      }
+      save(); render();
+    },
+    'dw-artikel'() { S.dwArtikel = !S.dwArtikel; save(); render(); },
+    'dw-word'(el) {
+      const k = Number(el.dataset.k);
+      const same = ui.dwLookup && ui.dwLookup.sid === el.dataset.s && ui.dwLookup.k === k;
+      ui.dwLookup = same ? null : { sid: el.dataset.s, k };
+      render();
+    },
+    'dw-say'(el) {
+      const ep = dwCurrent();
+      const s = ep && dwSentences(ep).find((x) => x.id === el.dataset.s);
+      if (s) say(s.de);
+    },
+    'dw-say-reg'(el) { const item = reg[el.dataset.i]; if (item) say(item.say || item.de); },
+    'dw-add'(el) {
+      const item = reg[el.dataset.i];
+      if (!item) return;
+      addCard(item.de, item.zh, item.src, item.examples);
+      markStep('scene');
+      render();
+    },
+    'dw-game'(el) {
+      const ep = dwCurrent();
+      if (!ep) return;
+      const items = dwGamesFor(ep)[el.dataset.g] || [];
+      if (!items.length) return;
+      ui.dwTab = 'games';
+      ui.dwGame = dwNewGame(el.dataset.g, items);
+      render(); dwScrollToGame();
+    },
+    'dw-game-exit'() { ui.dwGame = null; render(); },
+    'dw-game-again'() {
+      const ep = dwCurrent();
+      if (!ep || !ui.dwGame) return;
+      const gid = ui.dwGame.gid;
+      const fresh = DW.buildGames(ep, `${ep.id}:${Date.now()}`)[gid];
+      ui.dwGame = dwNewGame(gid, fresh && fresh.length ? fresh : ui.dwGame.items);
+      render(); dwScrollToGame();
+    },
+    'dw-match-term'(el) {
+      const g = ui.dwGame;
+      g.sel = el.dataset.id; g.flash = null;
+      const pair = g.items[g.r].pairs.find((x) => x.id === g.sel);
+      render();
+      if (pair) say(pair.say || pair.term);
+    },
+    'dw-match-def'(el) {
+      const g = ui.dwGame;
+      if (!g.sel) { g.flash = { hint: true }; render(); return; }
+      if (g.sel === el.dataset.id) { g.matched[g.sel] = true; g.score += 1; addXp(2); g.flash = null; }
+      else { g.wrong += 1; g.flash = { def: el.dataset.id }; }
+      g.sel = null;
+      render();
+    },
+    'dw-match-next'() {
+      const g = ui.dwGame;
+      if (g.r + 1 < g.items.length) { g.r += 1; g.sel = null; g.flash = null; render(); dwScrollToGame(); return; }
+      g.score = Math.max(0, g.total - g.wrong);
+      dwFinishGame(g); render(); dwScrollToGame();
+    },
+    'dw-cloze-mode'(el) { ui.dwClozeMode = el.dataset.mode; ui.dwGame.mode = el.dataset.mode; render(); const f = view.querySelector('#dw-type'); if (f) f.focus(); },
+    'dw-cloze-pick'(el) {
+      const g = ui.dwGame;
+      if (g.picked !== null) return;
+      const it = g.items[g.i];
+      g.picked = it.options[Number(el.dataset.k)];
+      g.typed = false;
+      g.correct = g.picked.toLowerCase() === it.answer.toLowerCase();
+      if (g.correct) { g.score += 1; addXp(2); }
+      render();
+      say(it.before + it.answer + it.after);
+    },
+    'dw-cloze-reveal'() { const g = ui.dwGame; g.picked = ''; g.correct = false; render(); },
+    'dw-next'() {
+      const g = ui.dwGame;
+      if (g.i + 1 < g.items.length) {
+        g.i += 1; g.picked = null; g.correct = false; g.state = ''; g.firstTry = true; if (g.gid === 'puzzle') g.picked = [];
+        render(); dwScrollToGame();
+        if (g.gid === 'cloze' && g.mode === 'type') { const f = view.querySelector('#dw-type'); if (f) f.focus(); }
+        return;
+      }
+      dwFinishGame(g); render(); dwScrollToGame();
+    },
+    'dw-puz-add'(el) {
+      const g = ui.dwGame;
+      const it = g.items[g.i];
+      const k = Number(el.dataset.k);
+      if (g.state || g.picked.includes(k)) return;
+      g.picked.push(k);
+      if (g.picked.length === it.shuffled.length) {
+        const ok = DW.puzzleSolved(it, g.picked.map((n) => it.shuffled[n]));
+        g.state = ok ? 'good' : 'bad';
+        if (ok) { if (g.firstTry) { g.score += 1; addXp(2); } render(); say(it.words.join(' ')); return; }
+      }
+      render();
+    },
+    'dw-puz-remove'(el) { const g = ui.dwGame; if (g.state) return; g.picked.splice(Number(el.dataset.n), 1); render(); },
+    'dw-puz-retry'() { const g = ui.dwGame; g.picked = []; g.state = ''; g.firstTry = false; render(); },
+    'dw-puz-show'() { const g = ui.dwGame; g.state = 'shown'; g.firstTry = false; render(); say(g.items[g.i].words.join(' ')); },
+    'dw-tf'(el) {
+      const g = ui.dwGame;
+      if (g.picked !== null) return;
+      g.picked = el.dataset.v === '1';
+      if (g.picked === g.items[g.i].truth) { g.score += 1; addXp(2); }
+      render();
+    },
   };
+  // Typed Lückentext answers (Enter on the phone keyboard submits the form).
+  document.addEventListener('submit', (ev) => {
+    const form = ev.target.closest('[data-dw-submit]');
+    if (!form) return;
+    ev.preventDefault();
+    const g = ui.dwGame;
+    if (!g || g.gid !== 'cloze' || g.picked !== null) return;
+    const field = form.querySelector('#dw-type');
+    const value = field ? field.value.trim() : '';
+    if (!value) { if (field) field.focus(); return; }
+    const it = g.items[g.i];
+    g.picked = value;
+    g.typed = true;
+    g.correct = DW.checkTyped(value, it.answer);
+    if (g.correct) { g.score += 1; addXp(2); }
+    render();
+    say(it.before + it.answer + it.after);
+  });
+  // "Older episodes" picker on the DW page.
+  document.addEventListener('change', (ev) => {
+    if (ev.target.matches && ev.target.matches('[data-dw-pick]') && ev.target.value) location.hash = `#/dw/${ev.target.value}`;
+  });
   document.addEventListener('click', (ev) => {
     const el = ev.target.closest('[data-act]');
     if (!el) return;

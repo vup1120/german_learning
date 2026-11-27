@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns:yt="http://www.youtube.com/xml/schemas/2015" xmlns:media="http://search.yahoo.com/mrss/" xmlns="http://www.w3.org/2005/Atom">
+ <title>Deutsch lernen mit der DW</title>
+ <yt:channelId>UCxUWIEL-USsiPak0Qy6_vVg</yt:channelId>
+ <entry>
+  <id>yt:video:AbCdEfGhI_1</id>
+  <yt:videoId>AbCdEfGhI_1</yt:videoId>
+  <title>Kennt ihr schon Kurz und leicht? #shorts</title>
+  <link rel="alternate" href="https://www.youtube.com/shorts/AbCdEfGhI_1"/>
+  <published>2026-11-26T15:00:00+00:00</published>
+  <media:group><media:description>Teaser</media:description></media:group>
+ </entry>
+ <entry>
+  <id>yt:video:qbtwkT0ul6o</id>
+  <yt:videoId>qbtwkT0ul6o</yt:videoId>
+  <title>Deutsch lernen mit Videos | Kurz und leicht vom 26.11.2026 | mit deutschen Untertiteln</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=qbtwkT0ul6o"/>
+  <published>2026-11-26T10:05:00+00:00</published>
+  <media:group>
+   <media:title>Deutsch lernen mit Videos | Kurz und leicht vom 26.11.2026 | mit deutschen Untertiteln</media:title>
+   <media:description>- Waffenruhe im Nahen Osten verlängert
+- Bahnstreik in Bayern
+- Rekordschnee in den Alpen
+
+Manuskript und Glossar: https://learngerman.dw.com/de/kurz-und-leicht-vom-26112026/l-70000001.
+Alle Folgen: https://www.dw.com/kurzundleicht #deutschlernen</media:description>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:ZZZZZZZZZZZ</id>
+  <yt:videoId>ZZZZZZZZZZZ</yt:videoId>
+  <title>Deutsch lernen (A2) | Nicos Weg | Folge 40</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=ZZZZZZZZZZZ"/>
+  <published>2026-11-26T08:00:00+00:00</published>
+  <media:group><media:description>Nicos Weg</media:description></media:group>
+ </entry>
+ <entry>
+  <id>yt:video:prevDay0001</id>
+  <yt:videoId>prevDay0001</yt:videoId>
+  <title>Deutsch lernen mit Videos | Kurz und leicht vom 25.11.2026 | mit deutschen Untertiteln</title>
+  <link rel="alternate" href="https://www.youtube.com/watch?v=prevDay0001"/>
+  <published>2026-11-25T10:00:00+00:00</published>
+  <media:group><media:description>Keine Links heute.</media:description></media:group>
+ </entry>
+</feed>
